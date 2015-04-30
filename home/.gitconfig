@@ -1,0 +1,5 @@
+[user]
+	name = Max Mulatz
+	email = klappradla@gmail.com
+[core]
+	excludesfile = /Users/Max/.gitignore_global

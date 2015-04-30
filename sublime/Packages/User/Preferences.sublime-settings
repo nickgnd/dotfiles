@@ -1,0 +1,14 @@
+{
+	"color_scheme": "Packages/Oceanic Color Scheme/Themes/Oceanic.tmTheme",
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"font_size": 12,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"index_files": true,
+	"remember_open_files": false,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true
+}
