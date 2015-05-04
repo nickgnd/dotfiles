@@ -5,12 +5,11 @@ Config and utility files to set up my working environment (on OSX). Inspired by 
 I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my zsh settings.
 
 
-## content
-
-My dotfiles include:
+## directory
 
 * home
   * files to be symlinked into the user's home directory
+
 * sublime
   * settings for sublime text 3 to be symlinked into the sublime text application directory
 
@@ -35,9 +34,28 @@ curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/insta
 This will clone the repo and symlink all dotfiles, launch agents and sublime settings.
 
 
-## backups
+## usage
 
-'backup.plist' handles the backup process: plugging in an external harddrive will open up iTerm2 and prompt for a yes or know to perform the backup process - 'backup.sh' will sync the user's dropbox folder to the external harddrive with rsync.
+### dotfiles
+
+Configs for:
+* git
+* gemrc (install gems without rdoc)
+* zsh
+
+
+### backups
+
+Automated task watching for mounting of harddrive to backup local Dropbox folder:
+
+'backup.plist' handles the backup process: plugging in an external harddrive will open up iTerm2 and prompt for a yes or now to perform the backup process - 'backup.sh' will sync the user's dropbox folder to the external harddrive with rsync.
+
+
+### Terminal / iTerm setup
+
+Terminal: import profile from 'util/terminal'
+
+iTerm2: set preferences path to '~/dotfiles/util/iterm2'
 
 
 ## setup system from scratch
