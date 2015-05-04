@@ -9,20 +9,19 @@ I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https:/
 
 My dotfiles include:
 
-home
-* files to be symlinked into the user's home directory
+* home
+  * files to be symlinked into the user's home directory
+* sublime
+  * settings for sublime text 3 to be symlinked into the sublime text application directory
 
-sublime
-* settings for sublime text 3 to be symlinked into the sublime text application directory
+* launch_agents
+  * scripts for launch d to be symlinked into 'Library/LaunchAgents'
 
-launch_agents
-* scripts for launch d to be symlinked into 'Library/LaunchAgents'
-
-scripts
-* useful apple scripts
+* scripts
+  * useful apple scripts (to be used by launch agents)
 
 * util
-settings and icons for terminal and iTerm2
+  * settings and icons for terminal and iTerm2
 
 
 ## getting started
