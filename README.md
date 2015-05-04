@@ -5,7 +5,7 @@ Config and utility files to set up my working environment (on OSX). Inspired by 
 I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my zsh settings.
 
 
-## directory
+## Directory
 
 * home
   * files to be symlinked into the user's home directory
@@ -23,7 +23,7 @@ I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https:/
   * settings and icons for terminal and iTerm2
 
 
-## getting started
+## Getting started
 
 cd into /~ and run:
 
@@ -34,9 +34,9 @@ curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/insta
 This will clone the repo and symlink all dotfiles, launch agents and sublime settings.
 
 
-## usage
+## Usage
 
-### dotfiles
+### Dotfiles
 
 Configs for:
 * git
@@ -44,7 +44,7 @@ Configs for:
 * zsh
 
 
-### backups
+### Backups
 
 Automated task watching for mounting of harddrive to backup local Dropbox folder:
 
@@ -58,7 +58,7 @@ Terminal: import profile from 'util/terminal'
 iTerm2: set preferences path to '~/dotfiles/util/iterm2'
 
 
-## setup system from scratch
+## Setup system from scratch
 
 When setting up a new system, I prefer taking the time on cleaning up and focusing on what is really needed, rather than running a bootstrap script. Here some useful commands:
 
