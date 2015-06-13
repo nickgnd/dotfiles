@@ -2,12 +2,11 @@
 
 # variables
 #SOURCE_DIR=~/Dropbox
-declare -a SOURCE_DIRS=(~/Box ~/Code)
+declare -a SOURCE_DIRS=(~/Dropbox ~/Code)
 BACKUP_DIR=/Volumes/archive/backup/weekly
 EXCLUDES='.DS_STORE'
 
 # run backup task
-#echo "Weekly backup, please connect $BACKUP_DIR"
 read -p "Ready to backup files now? (y/n) " RESP
 if [ "$RESP" = "y" ]; then
   if [ -d $BACKUP_DIR ]; then
