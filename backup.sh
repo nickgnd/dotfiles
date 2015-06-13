@@ -3,7 +3,7 @@
 # variables
 #SOURCE_DIR=~/Dropbox
 declare -a SOURCE_DIRS=(~/Box ~/Code)
-BACKUP_DIR=/Volumes/archive/backup
+BACKUP_DIR=/Volumes/archive/backup/weekly
 EXCLUDES='.DS_STORE'
 
 # run backup task

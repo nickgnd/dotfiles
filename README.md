@@ -1,4 +1,4 @@
-# dotfiles
+# ~/dotfiles
 
 Config and utility files to set up my working environment (on OSX). Inspired by [paulmillr's](https://github.com/paulmillr/dotfiles) and [ryanb's](https://github.com/ryanb/dotfiles) dotfiles. Thanks!
 
@@ -7,20 +7,36 @@ I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https:/
 
 ## Directory
 
-* home
-  * files to be symlinked into the user's home directory
+```
+├── home (symlinked to ~/)
+│   ├── .gemrc (global config for ruby gems)
+│   ├── .gitconfig (global git config)
+│   ├── .gitignore_global (global gitignore)
+│   └── .zshrc (zsh/oh-my-zsh config)
+│
+├── launch_agents (symlinked to ~/Library/LaunchAgents)
+│   └── backup.plist (to launch backup process)
+│
+├── scripts (executed for backup process)
+│   └── backup.scpt
+│
+├── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
+│   └── Packages
+│       └── User
+│           └── *.sublime-settings
+│
+└── *.sh (scripts to symlink and backup)
+```
 
-* sublime
-  * settings for sublime text 3 to be symlinked into the sublime text application directory
+* home: files symlinked to ~/
 
-* launch_agents
-  * scripts for launch d to be symlinked into 'Library/LaunchAgents'
+* sublime: settings for sublime text 3 symlinked to sublime text application directory
 
-* scripts
-  * useful apple scripts (to be used by launch agents)
+* launch_agents: scripts for launchD symlinked to '~/Library/LaunchAgents'
 
-* util
-  * settings and icons for terminal and iTerm2
+* scripts: apple scripts (used by launch agents)
+
+* util: application settings and icons
 
 
 ## Getting started
