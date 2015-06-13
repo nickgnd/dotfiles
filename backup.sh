@@ -1,9 +1,10 @@
 #!/usr/local/bin/zsh
 
 # variables
-SOURCE_DIR=~/Dropbox
+#SOURCE_DIR=~/Dropbox
+declare -a SOURCE_DIRS=(~/Box ~/Code)
 BACKUP_DIR=/Volumes/archive/backup
-EXCLUDES='.dropbox*'
+EXCLUDES='.DS_STORE'
 
 # run backup task
 #echo "Weekly backup, please connect $BACKUP_DIR"
@@ -12,7 +13,10 @@ if [ "$RESP" = "y" ]; then
   if [ -d $BACKUP_DIR ]; then
     echo "$BACKUP_DIR connected."
     echo "Backing up files..."
-    rsync -aEv --delete --exclude $EXCLUDES $SOURCE_DIR $BACKUP_DIR
+    for SOURCE_DIR in ${SOURCE_DIRS[@]}
+    do
+      rsync -av --delete --exclude $EXCLUDES $SOURCE_DIR $BACKUP_DIR
+    done
   else
     echo "Can't find $BACKUP_DIR."
   fi

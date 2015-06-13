@@ -11,8 +11,6 @@
     <string>/usr/bin/osascript</string>
     <string>/Users/Max/dotfiles/scripts/backup.scpt</string>
   </array>
-  <key>RunAtLoad</key>
-  <true/>
   <key>StartOnMount</key>
   <true/>
 </dict>
