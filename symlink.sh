@@ -20,41 +20,49 @@ else
   exit 1
 fi
 
-home
-echo "Symlink dotfiles for Home"
-for LOCATION in $(find home -name '.*'); do
-  FILE="${LOCATION##*/}"
-  if [[ "$FILE" != ".DS_Store" ]]; then
-    link "$DOTFILES_DIR/$LOCATION" "$HOME/$FILE"
-  fi
-done
+# home dir
+read -p "Symlink files for ~/ ? (y/n) " RESP
+if [ "$RESP" = "y" ]; then
+  for LOCATION in $(find home -name '.*'); do
+    FILE="${LOCATION##*/}"
+    if [[ "$FILE" != ".DS_Store" ]]; then
+      link "$DOTFILES_DIR/$LOCATION" "$HOME/$FILE"
+    fi
+  done
+fi
 
-# sublime text 3
-if [[ `uname` == 'Darwin' ]]; then
-  echo "Symlink sublime text 3 settings"
+# sublime
+read -p "Symlink files for Sublime Text? (y/n) " RESP
+if [ "$RESP" = "y" ]; then
+  if [[ `uname` == 'Darwin' ]]; then
+    echo "Symlink sublime text 3 settings"
 
-  SUBLIME_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages"
+    SUBLIME_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages"
 
-  if [[ -d "$SUBLIME_DIR" ]]; then
+    if [[ -d "$SUBLIME_DIR" ]]; then
 
-    # set internal field seperator differnt to whitespace (for filenames with whitespace char)
-    ORIGIFS=${IFS}
-    IFS=$'\n'
-    for LOCATION in $(find sublime/Packages/User -name '*.sublime-settings'); do
+      # set internal field seperator differnt to whitespace (for filenames with whitespace char)
+      ORIGIFS=${IFS}
+      IFS=$'\n'
+      for LOCATION in $(find sublime/Packages/User -name '*.sublime-settings'); do
+        IFS=${ORIGIFS}
+        FILE="${LOCATION##*/}"
+        link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/$FILE"
+      done
+
+      # reset internal field seperator
       IFS=${ORIGIFS}
-      FILE="${LOCATION##*/}"
-      link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/$FILE"
-    done
-
-    # reset internal field seperator
-    IFS=${ORIGIFS}
-  else
-    echo "Install Sublime Text http://www.sublimetext.com and rerun symlink-dotfiles.sh"
+    else
+      echo "Install Sublime Text http://www.sublimetext.com and rerun symlink-dotfiles.sh"
+    fi
   fi
 fi
 
 # launch agents
-for LOCATION in $(find launch_agents -name '*.plist'); do
-  FILE="${LOCATION##*/}"
-  link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/LaunchAgents/$FILE"
-done
+read -p "Symlink Launch Agents? (y/n) " RESP
+if [ "$RESP" = "y" ]; then
+  for LOCATION in $(find launch_agents -name '*.plist'); do
+    FILE="${LOCATION##*/}"
+    link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/LaunchAgents/$FILE"
+  done
+fi
