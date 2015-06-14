@@ -15,8 +15,8 @@ cd $DIR
 echo "clone $REPO into $DIR"
 git clone --recursive https://github.com/klappradla/dotfiles.git
 
-echo "cd into dotfiles DIR"
-cd dotfiles
+echo "cd into bin DIR"
+cd dotfiles/bin
 
 # symlink dotfiles
 sh symlink.sh

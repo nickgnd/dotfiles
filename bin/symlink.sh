@@ -8,7 +8,8 @@ link() {
   FROM="$1"
   TO="$2"
   echo "Link '$FROM' to '$TO'"
-  rm -f "$to"
+  unlink "$TO"
+  rm -R -f "$to"
   ln -s "$FROM" "$TO"
 }
 
