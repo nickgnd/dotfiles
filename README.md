@@ -8,6 +8,8 @@ I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https:/
 ## Directory
 
 ```
+.
+├── bin (*.sh scripts to symlink and backup)
 ├── home (symlinked to ~/)
 │   ├── .gemrc (global config for ruby gems)
 │   ├── .gitconfig (global git config)
@@ -20,13 +22,15 @@ I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https:/
 ├── scripts (executed for backup process)
 │   └── backup.scpt
 │
-├── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
-│   └── Packages
-│       └── User
-│           └── *.sublime-settings
-│
-└── *.sh (scripts to symlink and backup)
+└── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
+    └── Packages
+        └── User
+            └── *.sublime-settings
+ 
+
 ```
+
+* bin: shell scripts for symlinking and backup
 
 * home: files symlinked to ~/
 
@@ -44,7 +48,7 @@ I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https:/
 cd into /~ and run:
 
 ```
-curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/install.sh | sh
+curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/bin/install.sh | sh
 ```
 
 This will clone the repo and symlink all dotfiles, launch agents and sublime settings.
