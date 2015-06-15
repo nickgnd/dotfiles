@@ -8,8 +8,11 @@ link() {
   FROM="$1"
   TO="$2"
   echo "Link '$FROM' to '$TO'"
-  unlink "$TO"
-  rm -R -f "$to"
+  if [ -e "$TO" ]
+  then
+    unlink "$TO"
+    rm -R -f "$to"
+  fi
   ln -s "$FROM" "$TO"
 }
 
@@ -65,5 +68,14 @@ if [ "$RESP" = "y" ]; then
   for LOCATION in $(find launch_agents -name '*.plist'); do
     FILE="${LOCATION##*/}"
     link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/LaunchAgents/$FILE"
+  done
+fi
+
+# apple_scripts
+read -p "Symlink AppleScripts? (y/n) " RESP
+if [ "$RESP" = "y" ]; then
+  for LOCATION in $(find scripts -name '*.scpt'); do
+    FILE="${LOCATION##*/}"
+    link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/Scripts/$FILE"
   done
 fi

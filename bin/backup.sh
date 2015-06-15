@@ -6,6 +6,14 @@ declare -a SOURCE_DIRS=(~/Dropbox ~/Code)
 BACKUP_DIR=/Volumes/archive/backup/weekly
 EXCLUDES='.DS_STORE'
 
+
+VOLUME=/Volumes/archive
+
+if grep -qs "$VOLUME" /proc/mounts
+then
+  echo "It's mounted."
+fi
+
 # run backup task
 read -p "Ready to backup files now? (y/n) " RESP
 if [ "$RESP" = "y" ]; then
