@@ -1,11 +1,9 @@
 #!/usr/local/bin/zsh
 
 # variables
-#SOURCE_DIR=~/Dropbox
 declare -a SOURCE_DIRS=(~/Dropbox ~/Code)
 BACKUP_DIR=/Volumes/archive/backup/weekly
 EXCLUDES='.DS_STORE'
-
 
 VOLUME=/Volumes/archive
 
