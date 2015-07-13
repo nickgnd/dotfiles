@@ -58,13 +58,23 @@ This will clone the repo and symlink all dotfiles, launch agents and sublime set
 
 ### Dotfiles
 
-Configs for:
+My config for:
+
 * git
 * gemrc (install gems without rdoc)
-* zsh
+* zsh / oh-my-zsh
 
 
 ### Backups
+
+Tasks:
+
+* weekly: `sh bin/backup.sh`  
+transfer Dropbox and projects dir to external harddrive 'archive'
+* daily: `sh bin/transfer.sh`  
+transfer projects dir to server 'HerrDirektor' in local network
+
+Old setup:
 
 Automated task watching for mounting of harddrive to backup local Dropbox folder:
 
