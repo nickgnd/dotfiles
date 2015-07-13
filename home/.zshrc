@@ -83,6 +83,8 @@ alias code="cd ~/Code"
 alias sub="subl ./"
 alias pgup="pg_ctl start -D /usr/local/var/postgres"
 alias pgdown="pg_ctl stop -D /usr/local/var/postgres"
+alias backup="sh ~/dotfiles/bin/backup.sh"
+alias transfer="sh ~/dotfiles/bin/transfer.sh"
 
 # Functions
 function update() {
