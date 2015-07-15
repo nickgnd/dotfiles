@@ -85,6 +85,7 @@ alias pgup="pg_ctl start -D /usr/local/var/postgres"
 alias pgdown="pg_ctl stop -D /usr/local/var/postgres"
 alias backup="sh ~/dotfiles/bin/backup.sh"
 alias transfer="sh ~/dotfiles/bin/transfer.sh"
+alias transfer_media="sh ~/dotfiles/bin/transfer_media.sh"
 
 # Functions
 function update() {

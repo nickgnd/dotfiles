@@ -73,6 +73,8 @@ Tasks:
 transfer Dropbox and projects dir to external harddrive 'archive'
 * daily: `sh bin/transfer.sh`  
 transfer projects dir to server 'HerrDirektor' in local network
+* media: `sh bin/transfer_media.sh`  
+sync iTunes library with 'HerrDirektor' in local network
 
 Old setup:
 
