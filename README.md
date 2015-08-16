@@ -16,12 +16,6 @@ I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https:/
 │   ├── .gitignore_global (global gitignore)
 │   └── .zshrc (zsh/oh-my-zsh config)
 │
-├── launch_agents (symlinked to ~/Library/LaunchAgents)
-│   └── backup.plist (to launch backup process)
-│
-├── scripts (executed for backup process)
-│   └── backup.scpt
-│
 └── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
     └── Packages
         └── User
@@ -36,22 +30,29 @@ I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https:/
 
 * sublime: settings for sublime text 3 symlinked to sublime text application directory
 
-* launch_agents: scripts for launchD symlinked to '~/Library/LaunchAgents'
-
-* scripts: apple scripts (used by launch agents)
-
 * util: application settings and icons
 
 
 ## Getting started
 
-cd into /~ and run:
+### Setup
+
+in /~ run:
 
 ```
 curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/bin/install.sh | sh
 ```
 
-This will clone the repo and symlink all dotfiles, launch agents and sublime settings.
+This will clone the repo and prompt to symlink dotfiles and settings.
+
+### SSH keys
+
+Setup public key authentication with backup computer (in local network) over ssh.
+
+1. Generate public key on local machine (if not done already)<br/>
+  `ssh-keygen -t rsa`
+2. Copy to remote machine<br/>
+`scp ~/.ssh/id_rsa.pub user@remote.local:.ssh/authorized_keys2`
 
 
 ## Usage
@@ -70,11 +71,11 @@ My config for:
 Tasks:
 
 * weekly: `sh bin/backup.sh`  
-transfer Dropbox and projects dir to external harddrive 'archive'
+transfer Dropbox and projects dir to external harddrive
 * daily: `sh bin/transfer.sh`  
-transfer projects dir to server 'HerrDirektor' in local network
+transfer projects dir to remote machine in local network
 * media: `sh bin/transfer_media.sh`  
-sync iTunes library with 'HerrDirektor' in local network
+sync iTunes library with remote machine in local network
 
 Old setup:
 

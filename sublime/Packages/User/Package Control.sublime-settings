@@ -4,14 +4,16 @@
 	],
 	"installed_packages":
 	[
-		"AutoFileName",
+		"All Autocomplete",
 		"Better CoffeeScript",
+		"Dockerfile Syntax Highlighting",
 		"LaTeXTools",
 		"Oceanic Color Scheme",
 		"Package Control",
 		"Railscasts Extended",
 		"Rake",
 		"Sass",
-		"SublimeERB"
+		"SublimeERB",
+		"Theme - Spacegray"
 	]
 }

@@ -45,12 +45,11 @@ export UPDATE_ZSH_DAYS=7
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew git bundler zsh-syntax-highlighting)
+plugins=(brew git bundler zsh-syntax-highlighting sublime)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -80,21 +79,11 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias code="cd ~/Code"
-alias sub="subl ./"
 alias pgup="pg_ctl start -D /usr/local/var/postgres"
 alias pgdown="pg_ctl stop -D /usr/local/var/postgres"
 alias backup="sh ~/dotfiles/bin/backup.sh"
 alias transfer="sh ~/dotfiles/bin/transfer.sh"
 alias transfer_media="sh ~/dotfiles/bin/transfer_media.sh"
-
-# Functions
-function update() {
-  bubu
-  rvm get stable
-  upgrade_oh_my_zsh
-  npm install -g npm
-  npm update -g
-}
 
 # added by travis gem
 [ -f /Users/Max/.travis/travis.sh ] && source /Users/Max/.travis/travis.sh

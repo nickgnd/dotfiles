@@ -61,21 +61,3 @@ if [ "$RESP" = "y" ]; then
     fi
   fi
 fi
-
-# launch agents
-read -p "Symlink Launch Agents? (y/n) " RESP
-if [ "$RESP" = "y" ]; then
-  for LOCATION in $(find launch_agents -name '*.plist'); do
-    FILE="${LOCATION##*/}"
-    link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/LaunchAgents/$FILE"
-  done
-fi
-
-# apple_scripts
-read -p "Symlink AppleScripts? (y/n) " RESP
-if [ "$RESP" = "y" ]; then
-  for LOCATION in $(find scripts -name '*.scpt'); do
-    FILE="${LOCATION##*/}"
-    link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/Scripts/$FILE"
-  done
-fi
