@@ -2,7 +2,7 @@
 
 Config and utility files to set up my working environment (on OSX). Inspired by [paulmillr's](https://github.com/paulmillr/dotfiles) and [ryanb's](https://github.com/ryanb/dotfiles) dotfiles. Thanks!
 
-I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my zsh settings.
+I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my zsh settings and [vim-plug](https://github.com/junegunn/vim-plug) to manage my vim plugins.
 
 
 ## Directory
@@ -14,7 +14,9 @@ I use [iTerm2](http://iterm2.com/) as terminal and the great [oh-my-zsh](https:/
 │   ├── .gemrc (global config for ruby gems)
 │   ├── .gitconfig (global git config)
 │   ├── .gitignore_global (global gitignore)
-│   └── .zshrc (zsh/oh-my-zsh config)
+│   ├── .zshrc (zsh/oh-my-zsh config)
+│   ├── .vimrc
+│   └── .vim
 │
 └── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
     └── Packages
@@ -64,6 +66,8 @@ My config for:
 * git
 * gemrc (install gems without rdoc)
 * zsh / oh-my-zsh
+* sublime text 3
+* vim
 
 
 ### Backups
