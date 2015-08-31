@@ -10,13 +10,15 @@ I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://gi
 ```
 .
 ├── bin (*.sh scripts to symlink and backup)
+│
 ├── home (symlinked to ~/)
 │   ├── .gemrc (global config for ruby gems)
 │   ├── .gitconfig (global git config)
 │   ├── .gitignore_global (global gitignore)
 │   ├── .zshrc (zsh/oh-my-zsh config)
-│   ├── .vimrc
-│   └── .vim
+│   └── .vimrc
+│
+├── .vim (vim files)
 │
 └── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
     └── Packages

@@ -22,6 +22,11 @@ set nocompatible
 " use os clipboard by default
 set clipboard=unnamed
 
+" disable backups
+set nobackup
+set nowritebackup
+set noswapfile 
+
 " set encoding to utf-8
 set encoding=utf-8
 

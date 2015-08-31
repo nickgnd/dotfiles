@@ -35,6 +35,13 @@ if [ "$RESP" = "y" ]; then
   done
 fi
 
+# vim
+read -p "Symlink files for vim?  (y/n) " RESP
+if [ "$RESP" = "y" ]; then
+   link "$DOTFILES_DIR/.vim" "$HOME"
+fi
+
+
 # sublime
 read -p "Symlink files for Sublime Text? (y/n) " RESP
 if [ "$RESP" = "y" ]; then
