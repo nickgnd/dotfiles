@@ -5,12 +5,12 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
+		"Base16 Color Schemes",
 		"Better CoffeeScript",
 		"Dockerfile Syntax Highlighting",
 		"LaTeXTools",
 		"Oceanic Color Scheme",
 		"Package Control",
-		"Railscasts Extended",
 		"Rake",
 		"Sass",
 		"SublimeERB",
