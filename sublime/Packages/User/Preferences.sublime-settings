@@ -1,5 +1,6 @@
 {
-	"color_scheme": "Packages/User/SublimeLinter/Oceanic (SL).tmTheme",
+	"theme": "Spacegray Eighties.sublime-theme",
+  "color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"font_size": 12,
 	"hot_exit": false,
