@@ -4,6 +4,9 @@ call plug#begin('~/.vim/plugged')
 " plugins from github repos:
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'Yggdroot/indentLine'
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'bling/vim-airline'
 
 " add plugins to runtime path
 call plug#end()
@@ -11,11 +14,16 @@ call plug#end()
 " plugin specific config
 " NERDTree
 let NERDTreeShowHidden=1
+" CTRLP
+let g:ctrlp_show_hidden=1
+" indetLine
+let g:indentLine_char = '︙'
+let g:indentLine_color_term = 236
 
 " colorscheme
 set t_Co=256
 set background=dark
-colorscheme OceanicNext
+colorscheme onedark 
 
 set nocompatible
 
