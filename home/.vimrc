@@ -5,8 +5,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
+Plug 'Daetalus/atom-one-dark'
+Plug 'yosiat/oceanic-next-vim'
 "Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'bling/vim-airline'
 
 " add plugins to runtime path
 call plug#end()
@@ -23,7 +24,7 @@ let g:indentLine_color_term = 236
 " colorscheme
 set t_Co=256
 set background=dark
-colorscheme onedark 
+colorscheme default
 
 set nocompatible
 

@@ -23,7 +23,8 @@ I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://gi
 └── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
     └── Packages
         └── User
-            └── *.sublime-settings
+            ├── *.sublime-settings
+            └── *.tmTheme
  
 
 ```
@@ -90,11 +91,25 @@ Automated task watching for mounting of harddrive to backup local Dropbox folder
 'backup.plist' handles the backup process: plugging in an external harddrive will open up iTerm2 and prompt for a yes or now to perform the backup process - 'backup.sh' will sync the user's dropbox folder to the external harddrive with rsync.
 
 
-### Terminal / iTerm setup
+### Prompt setup
 
-Terminal: import profile from 'util/terminal'
+Terminal
 
-iTerm2: set preferences path to '~/dotfiles/util/iterm2'
+* import profile from **/util/terminal**
+
+iTerm2
+
+* import profile from **/util/iterm2**
+* import colorscheme *'klapprada'*
+
+My iTerm colorscheme is a mix of Oceanic and Atom One Dark:
+![Alt text](screenshots/iterm.png?raw=true)
+
+
+### Sublime
+
+My syntax theme, **klappradla** is inspired by the awesome [memco Oceanic](https://github.com/memco/Oceanic-tmTheme) and [atom one dark](https://github.com/atom/one-dark-syntax) themes.
+![Alt text](screenshots/sublime.png?raw=true)
 
 
 ## Setup system from scratch

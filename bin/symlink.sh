@@ -60,9 +60,14 @@ if [ "$RESP" = "y" ]; then
         FILE="${LOCATION##*/}"
         link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/$FILE"
       done
-
       # reset internal field seperator
       IFS=${ORIGIFS}
+
+      # themes
+      for LOCATION in $(find sublime/Packages/User -name '*.tmTheme'); do
+        FILE="${LOCATION##*/}"
+        link "$DOTFILES_DIR/$LOCATION" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/$FILE"
+      done
     else
       echo "Install Sublime Text http://www.sublimetext.com and rerun symlink-dotfiles.sh"
     fi

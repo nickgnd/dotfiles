@@ -5,7 +5,6 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
-		"Base16 Color Schemes",
 		"Better CoffeeScript",
 		"Dockerfile Syntax Highlighting",
 		"LaTeXTools",
@@ -13,7 +12,6 @@
 		"Package Control",
 		"Rake",
 		"Sass",
-		"SublimeERB",
-		"Theme - Spacegray"
+		"SublimeERB"
 	]
 }
