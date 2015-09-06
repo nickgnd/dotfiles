@@ -550,7 +550,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>240 317 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>395 426 780 451 0 0 1440 877 </string>
+	<string>0 35 1438 842 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1 19 1032 851 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1425,11 +1425,11 @@
 			<key>Ansi 9 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.45882353186607361</real>
+				<real>0.45995870232582092</real>
 				<key>Green Component</key>
-				<real>0.42352941632270813</real>
+				<real>0.42538592219352722</real>
 				<key>Red Component</key>
-				<real>0.87843137979507446</real>
+				<real>0.87868934869766235</real>
 			</dict>
 			<key>Automatically Log</key>
 			<false/>

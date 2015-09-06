@@ -24,7 +24,7 @@ let g:indentLine_color_term = 236
 " colorscheme
 set t_Co=256
 set background=dark
-colorscheme default
+colorscheme klappradla
 
 set nocompatible
 
