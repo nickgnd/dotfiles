@@ -1,4 +1,4 @@
 .DS_Store
 
 # ignore installed vim plugins
-plugged/
+/plugged
