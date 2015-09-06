@@ -1,0 +1,5 @@
+# ignore all vim plugins
+/*/
+
+# do not ignore this file!
+!.gitignore
