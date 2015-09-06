@@ -48,6 +48,8 @@ set expandtab
 
 " enable syntax highlighting
 syntax on
+" ad ruby operators
+let ruby_operators = 1
 
 " allow mouse in all modes
 set mouse=a
@@ -59,6 +61,8 @@ set ruler
 set title
 
 " Enable file type detection and do language-dependent indenting.
+filetype on
+filetype plugin on
 filetype plugin indent on
 
 " Show line numbers
