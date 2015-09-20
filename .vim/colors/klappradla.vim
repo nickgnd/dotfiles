@@ -22,7 +22,7 @@ let g:colors_name="klappradla"
 hi Normal            guifg=#ffffff    ctermfg=231    gui=NONE
 "hi Cursor
 "hi CursorLine
-hi LineNr            guifg=#E4BF7A    ctermfg=241    gui=NONE
+hi LineNr            guifg=#B9C0CB    ctermfg=146    gui=NONE
 "hi CursorLineNR
 
 " -----------------
@@ -102,7 +102,7 @@ hi Conditional        guifg=#E88388   ctermfg=174    gui=NONE
 hi Operator          guifg=#E88388    ctermfg=174    gui=NONE
 "hi Keyword
 "hi Exception
-hi Comment           guifg=#P6D6D6    ctermfg=59     gui=NONE
+hi Comment           guifg=#4A515D    ctermfg=59     gui=NONE
 " ruby "#{}"
 hi Special           guifg=#8CEDDC    ctermfg=122    gui=NONE
 "hi SpecialChar
