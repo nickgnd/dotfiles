@@ -5,6 +5,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
+Plug 'klappradla/klappradla.vim'
+"Plug 'bling/vim-airline'
 "Plug 'nathanaelkane/vim-indent-guides'
 
 " add plugins to runtime path
