@@ -19,10 +19,10 @@ let g:colors_name="klappradla"
 " ---------------------------
 " Editor Settings
 " ---------------------------
-hi Normal            guifg=#d0d0d0    ctermfg=252    gui=NONE
+hi Normal            guifg=#ffffff    ctermfg=231    gui=NONE
 "hi Cursor
 "hi CursorLine
-hi LineNr            guifg=#E4BF7A    ctermfg=180    gui=NONE
+hi LineNr            guifg=#E4BF7A    ctermfg=241    gui=NONE
 "hi CursorLineNR
 
 " -----------------
