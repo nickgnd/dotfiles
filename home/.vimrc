@@ -18,8 +18,10 @@ let NERDTreeShowHidden=1
 " CTRLP
 let g:ctrlp_show_hidden=1
 " indetLine
-let g:indentLine_char = '︙'
+let g:indentLine_char = '|'
 let g:indentLine_color_term = 236
+" airlines
+"let g:airline#extensions#tabline#enabled = 1
 
 " colorscheme
 set t_Co=256
