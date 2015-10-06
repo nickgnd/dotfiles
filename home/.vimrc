@@ -22,6 +22,7 @@ let g:indentLine_char = '|'
 let g:indentLine_color_term = 236
 " airlines
 "let g:airline#extensions#tabline#enabled = 1
+"set laststatus=2
 
 " colorscheme
 set t_Co=256
