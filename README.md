@@ -9,6 +9,8 @@ I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://gi
 
 ```
 .
+├── .atom (atom files)
+│
 ├── bin (*.sh scripts to symlink and backup)
 │
 ├── home (symlinked to ~/)

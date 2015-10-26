@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 " plugins from github repos:
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 Plug 'klappradla/klappradla.vim'
 "Plug 'bling/vim-airline'
 "Plug 'nathanaelkane/vim-indent-guides'
@@ -18,8 +18,8 @@ let NERDTreeShowHidden=1
 " CTRLP
 let g:ctrlp_show_hidden=1
 " indetLine
-let g:indentLine_char = '|'
-let g:indentLine_color_term = 236
+"let g:indentLine_char = '|'
+"let g:indentLine_color_term = 236
 " airlines
 "let g:airline#extensions#tabline#enabled = 1
 "set laststatus=2

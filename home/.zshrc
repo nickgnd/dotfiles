@@ -78,6 +78,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias at="atom ./"
 alias code="cd ~/Code"
 alias pgup="pg_ctl start -D /usr/local/var/postgres"
 alias pgdown="pg_ctl stop -D /usr/local/var/postgres"

@@ -1,0 +1,16 @@
+"*":
+  "exception-reporting":
+    userId: "1c55a852-c707-9d50-af21-7175ee744d0e"
+  welcome:
+    showOnStartup: false
+  core: {}
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    tabType: "soft"
+    fontSize: 12
+  "one-dark-ui":
+    layoutMode: "Compact"
+  tabs:
+    usePreviewTabs: true
+  "autoclose-html": {}

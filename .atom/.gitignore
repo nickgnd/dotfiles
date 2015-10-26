@@ -1,0 +1,10 @@
+# ignore all files here
+storage
+compile-cache
+dev
+.npm
+.node-gyp
+.apm
+
+# do not ignore this file!
+!.gitignore

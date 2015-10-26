@@ -41,6 +41,11 @@ if [ "$RESP" = "y" ]; then
    link "$DOTFILES_DIR/.vim" "$HOME"
 fi
 
+# atom
+read -p "Symlink files for atom?  (y/n) " RESP
+if [ "$RESP" = "y" ]; then
+   link "$DOTFILES_DIR/.atom" "$HOME"
+fi
 
 # sublime
 read -p "Symlink files for Sublime Text? (y/n) " RESP
