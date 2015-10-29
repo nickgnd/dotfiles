@@ -14,3 +14,6 @@
   tabs:
     usePreviewTabs: true
   "autoclose-html": {}
+  "fuzzy-finder": {}
+  "find-and-replace":
+    scrollToResultOnLiveSearch: true
