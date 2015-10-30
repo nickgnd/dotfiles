@@ -26,8 +26,9 @@ let g:ctrlp_show_hidden=1
 "set laststatus=2
 
 " colorscheme
-set t_Co=256
+"set t_Co=256
 set background=dark
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 set nocompatible
