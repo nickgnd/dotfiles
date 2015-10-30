@@ -6,8 +6,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 "Plug 'Yggdroot/indentLine'
 Plug 'klappradla/klappradla.vim'
-"Plug 'bling/vim-airline'
+Plug 'bling/vim-airline'
 "Plug 'nathanaelkane/vim-indent-guides'
+Plug 'altercation/vim-colors-solarized'
 
 " add plugins to runtime path
 call plug#end()
@@ -27,7 +28,7 @@ let g:ctrlp_show_hidden=1
 " colorscheme
 set t_Co=256
 set background=dark
-"colorscheme klappradla
+colorscheme solarized
 
 set nocompatible
 
