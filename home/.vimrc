@@ -27,7 +27,7 @@ let g:ctrlp_show_hidden=1
 " colorscheme
 set t_Co=256
 set background=dark
-colorscheme klappradla
+"colorscheme klappradla
 
 set nocompatible
 
