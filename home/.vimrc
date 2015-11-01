@@ -36,9 +36,10 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" colorscheme
-set t_Co=256
+colorscheme default
+"set t_Co=256
 set background=dark
+syntax on
 
 set nocompatible
 
