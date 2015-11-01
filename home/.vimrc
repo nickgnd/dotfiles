@@ -6,9 +6,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'klappradla/klappradla.vim'
 Plug 'bling/vim-airline'
-"Plug 'altercation/vim-colors-solarized'
-Plug 'chriskempson/vim-tomorrow-theme'
-
 " add plugins to runtime path
 call plug#end()
 
@@ -18,15 +15,32 @@ let NERDTreeShowHidden=1
 " CTRLP
 let g:ctrlp_show_hidden=1
 " airlines
-"let g:airline#extensions#tabline#enabled = 1
+set noshowmode
 set laststatus=2
+let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+set noshowmode
+let g:bufferline_echo = 0
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " colorscheme
+set t_Co=256
 set background=dark
-colorscheme tomorrow-night
-"let g:solarized_termtrans = 1
-"colorscheme solarized
-
 set nocompatible
 
 " use os clipboard by default
