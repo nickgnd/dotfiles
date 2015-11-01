@@ -362,20 +362,20 @@
 			<key>Ansi 7 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.69803921570000005</real>
+				<real>0.69803923368453979</real>
 				<key>Green Component</key>
-				<real>0.63529411759999999</real>
+				<real>0.63529413938522339</real>
 				<key>Red Component</key>
-				<real>0.60784313729999995</real>
+				<real>0.60784316062927246</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.15294118225574493</real>
+				<real>0.30804693698883057</real>
 				<key>Green Component</key>
-				<real>0.12941177189350128</real>
+				<real>0.26155704259872437</real>
 				<key>Red Component</key>
-				<real>0.11764705926179886</real>
+				<real>0.23797148466110229</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -400,9 +400,9 @@
 				<key>Blue Component</key>
 				<real>1</real>
 				<key>Green Component</key>
-				<real>0.90859544147195581</real>
+				<real>0.90859544277191162</real>
 				<key>Red Component</key>
-				<real>0.86938229080510965</real>
+				<real>0.86938226222991943</real>
 			</dict>
 			<key>Cursor Color</key>
 			<dict>
@@ -581,11 +581,11 @@
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.15170273184776306</real>
+				<real>0.3843137254901961</real>
 				<key>Green Component</key>
-				<real>0.11783610284328461</real>
+				<real>0.35686274509803922</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.27450980392156865</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -758,9 +758,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>377 138 231 329 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>27 188 924 485 0 0 1440 877 </string>
+	<string>204 135 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>640 4 780 873 0 0 1440 877 </string>
+	<string>0 4 780 873 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>517 105 795 876 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -2247,7 +2247,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453205562.15598297</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>467906713.21898699</real>
+	<real>468110056.36647803</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -2310,7 +2310,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-30T14:05:05Z</date>
+	<date>2015-11-01T22:34:15Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
