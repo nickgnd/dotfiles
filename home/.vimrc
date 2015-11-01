@@ -4,11 +4,10 @@ call plug#begin('~/.vim/plugged')
 " plugins from github repos:
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-"Plug 'Yggdroot/indentLine'
 Plug 'klappradla/klappradla.vim'
 Plug 'bling/vim-airline'
-"Plug 'nathanaelkane/vim-indent-guides'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/vim-tomorrow-theme'
 
 " add plugins to runtime path
 call plug#end()
@@ -18,16 +17,13 @@ call plug#end()
 let NERDTreeShowHidden=1
 " CTRLP
 let g:ctrlp_show_hidden=1
-" indetLine
-"let g:indentLine_char = '|'
-"let g:indentLine_color_term = 236
 " airlines
 "let g:airline#extensions#tabline#enabled = 1
-"set laststatus=2
+set laststatus=2
 
 " colorscheme
-"set t_Co=256
 set background=dark
+colorscheme tomorrow-night
 "let g:solarized_termtrans = 1
 "colorscheme solarized
 
@@ -54,7 +50,7 @@ set shiftround
 set expandtab
 
 " enable syntax highlighting
-syntax on
+syntax enable
 " ad ruby operators
 let ruby_operators = 1
 
