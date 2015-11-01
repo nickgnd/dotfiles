@@ -21,8 +21,6 @@ let g:airline_powerline_fonts=1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-set noshowmode
-let g:bufferline_echo = 0
 
 " unicode symbols
 let g:airline_left_sep = '»'
@@ -41,6 +39,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 " colorscheme
 set t_Co=256
 set background=dark
+
 set nocompatible
 
 " use os clipboard by default
