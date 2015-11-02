@@ -6,6 +6,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'klappradla/klappradla.vim'
 Plug 'bling/vim-airline'
+Plug 'altercation/vim-colors-solarized'
 " add plugins to runtime path
 call plug#end()
 
@@ -35,10 +36,11 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-colorscheme default
-"set t_Co=256
-set background=dark
+" colorscheme 
 syntax on
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
 
 set nocompatible
 
