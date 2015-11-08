@@ -2,7 +2,7 @@
 
 Config and utility files to set up my working environment (on OSX). Inspired by [paulmillr's](https://github.com/paulmillr/dotfiles) and [ryanb's](https://github.com/ryanb/dotfiles) dotfiles. Thanks!
 
-I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my zsh settings and [vim-plug](https://github.com/junegunn/vim-plug) to manage my vim plugins.
+I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my zsh settings and [vim-plug](https://github.com/junegunn/vim-plug) to manage my vim plugins. For colors, I recently switched to Ethan Schoonover's awesome [solarized](http://ethanschoonover.com/solarized) scheme and use it in iTerm, Vim and Atom.
 
 
 ## Directory
@@ -27,7 +27,7 @@ I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://gi
         └── User
             ├── *.sublime-settings
             └── *.tmTheme
- 
+
 
 ```
 
@@ -93,7 +93,7 @@ Automated task watching for mounting of harddrive to backup local Dropbox folder
 'backup.plist' handles the backup process: plugging in an external harddrive will open up iTerm2 and prompt for a yes or now to perform the backup process - 'backup.sh' will sync the user's dropbox folder to the external harddrive with rsync.
 
 
-### Prompt setup
+### Terminal setup
 
 Terminal
 
@@ -101,11 +101,8 @@ Terminal
 
 iTerm2
 
-* import profile from **/util/iterm2**
-* import colorscheme *'klapprada'*
-
-My iTerm colorscheme is a mix of Oceanic and Atom One Dark:
-![Alt text](screenshots/iterm.png?raw=true)
+* import profile *klappradla* from ``/util/iterm2`
+* import and use colorscheme `solarized_dark.itermcolors`
 
 
 ### Sublime

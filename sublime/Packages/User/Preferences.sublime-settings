@@ -1,6 +1,7 @@
 {
 	"color_scheme": "Packages/User/klappradla.tmTheme",
 	"dictionary": "Packages/Language - English/en_US.dic",
+	"font_face": "Monaco",
 	"font_size": 12,
 	"hot_exit": false,
 	"ignored_packages":
@@ -8,12 +9,14 @@
 		"Vintage"
 	],
 	"index_files": true,
+	"line_padding_bottom": 0.5,
+	"line_padding_top": 0.5,
+	"lioshi_disable_fileicons": true,
 	"remember_open_files": false,
 	"rulers":
 	[
 		80
 	],
 	"tab_size": 2,
-	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
