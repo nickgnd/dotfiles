@@ -1,0 +1,39 @@
+{
+  "name": "ctrl-last-tab",
+  "main": "./lib/ctrl-last-tab",
+  "version": "0.3.0",
+  "description": "Go to previous tabs by pressing ctrl-tab.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinruenz/atom-ctrl-last-tab.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {},
+  "readme": "# ctrl-last-tab package\n\nA package for the Atom editor, which allows you to go to previous tabs by pressing ctrl-tab.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/martinruenz/atom-ctrl-last-tab/issues"
+  },
+  "homepage": "https://github.com/martinruenz/atom-ctrl-last-tab#readme",
+  "_id": "ctrl-last-tab@0.3.0",
+  "_shasum": "5f4da73c71c4147cd417e0fb2a22c58bd832ea47",
+  "_resolved": "file:../d-1151019-4056-j1o888/package.tgz",
+  "_from": "../d-1151019-4056-j1o888/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib/ctrl-last-tab.coffee",
+        "lib/mru.coffee"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
