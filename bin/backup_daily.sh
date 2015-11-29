@@ -10,12 +10,17 @@ VOLUME=/Volumes/archive
 # run backup task
 read -p "Ready to backup files now? (y/n) " RESP
 if [ "$RESP" = "y" ]; then
-  if [ -d $BACKUP_DIR ]; then
+  if [ -d $VOLUME ]; then
+    echo "Local backup"
     for SOURCE_DIR in ${SOURCE_DIRS[@]}
     do
       rsync -a --delete --progress --exclude-from $EXCLUDE_LIST $SOURCE_DIR $BACKUP_DIR
     done
   else
-    echo "Can't find $BACKUP_DIR."
+    echo "Try remote backup"
+    for SOURCE_DIR in ${SOURCE_DIRS[@]}
+    do
+      rsync -a --delete --progress --exclude-from $EXCLUDE_LIST $SOURCE_DIR -e ssh Max@192.168.0.18:"$BACKUP_DIR"
+    done
   fi
 fi
