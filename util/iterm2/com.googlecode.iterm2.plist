@@ -679,12 +679,19 @@
 	<real>1</real>
 	<key>GlobalKeyMap</key>
 	<dict>
-		<key>0x69-0x100000</key>
+		<key>0x9-0x40000</key>
 		<dict>
 			<key>Action</key>
 			<integer>32</integer>
 			<key>Text</key>
 			<string></string>
+		</dict>
+		<key>0xd-0x120000</key>
+		<dict>
+			<key>Action</key>
+			<integer>25</integer>
+			<key>Text</key>
+			<string>Zoom</string>
 		</dict>
 		<key>0xf700-0x300000</key>
 		<dict>
@@ -1910,13 +1917,6 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x1b 0x7f</string>
-				</dict>
-				<key>0xd-0x120000</key>
-				<dict>
-					<key>Action</key>
-					<integer>25</integer>
-					<key>Text</key>
-					<string>Zoom</string>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
