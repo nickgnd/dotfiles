@@ -13,6 +13,9 @@
 'atom-text-editor':
   'alt-shift-up': 'core:select-up'
   'alt-shift-down': 'core:select-down'
+
+'body':
+  'shift-cmd-m': 'application:zoom'
 #
 # 'atom-workspace':
 #   'ctrl-shift-p': 'core:move-up'

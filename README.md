@@ -103,7 +103,7 @@ iTerm2
 
 * import profile *klappradla* from ``/util/iterm2`
 * import and use colorscheme `solarized_dark.itermcolors`
-* I use `⇧⌘↩` to maximize the window horizontally and vertially
+* I use `⇧⌘m` to maximize the window horizontally and vertially
 
 
 ### Sublime
