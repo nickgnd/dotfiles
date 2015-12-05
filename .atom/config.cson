@@ -12,7 +12,6 @@
     invisibles: {}
     showIndentGuide: true
     tabType: "soft"
-    fontSize: 12
   "one-dark-ui":
     layoutMode: "Compact"
   tabs:
