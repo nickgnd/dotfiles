@@ -7,6 +7,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'klappradla/klappradla.vim'
 Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
+Plug 'rust-lang/rust.vim'
 " add plugins to runtime path
 call plug#end()
 
