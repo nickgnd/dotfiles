@@ -1,8 +1,13 @@
 # ~/dotfiles
 
-Config and utility files to set up my working environment (on OSX). Inspired by [paulmillr's](https://github.com/paulmillr/dotfiles) and [ryanb's](https://github.com/ryanb/dotfiles) dotfiles. Thanks!
+How to setup an environment (unix/osx) the way I like it.   
+Inspired by [paulmillr's](https://github.com/paulmillr/dotfiles), [ryanb's](https://github.com/ryanb/dotfiles) and lots of other great **dotfiles** repos out there. Thanks!
 
-I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my zsh settings and [vim-plug](https://github.com/junegunn/vim-plug) to manage my vim plugins. For colors, I recently switched to Ethan Schoonover's awesome [solarized](http://ethanschoonover.com/solarized) scheme and use it in iTerm, Vim and Atom.
+## General
+
+I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a terminal replacement and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my settings there. On text-editors, I switch between Vim and Github's Atom, using [vim-plug](https://github.com/junegunn/vim-plug) for managing my Vim plugins. For colors, I like Ethan Schoonover's awesome [solarized](http://ethanschoonover.com/solarized) scheme and use it in iTerm, Vim and Atom.
+
+*(I switched from Sublime Text to Atom but will keep the settings for some time for the sake of completeness)*
 
 
 ## Directory
@@ -79,14 +84,7 @@ My config for:
 
 ### Backups
 
-Tasks:
-
-* weekly: `sh bin/backup.sh`  
-transfer Dropbox and projects dir to external harddrive
-* daily: `sh bin/transfer.sh`  
-transfer projects dir to remote machine in local network
-* media: `sh bin/transfer_media.sh`  
-sync iTunes library with remote machine in local network
+*(currently reworking this)*
 
 
 ### iTerm setup
