@@ -11,7 +11,7 @@ I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://gi
 .
 ├── .atom (atom files)
 │
-├── bin (*.sh scripts to symlink and backup)
+├── bin (scripts for install, backup, etc.)
 │
 ├── home (symlinked to ~/)
 │   ├── .gemrc (global config for ruby gems)
@@ -22,6 +22,8 @@ I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://gi
 │
 ├── .vim (vim files)
 │
+├── iterm2 (profile and settings for iterm)
+│
 └── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
     └── Packages
         └── User
@@ -31,13 +33,13 @@ I use [iTerm2](http://iterm2.com/) as terminal, the great [oh-my-zsh](https://gi
 
 ```
 
-* bin: shell scripts for symlinking and backup
+* bin: scripts for installation, symlinking, backup
 
 * home: files symlinked to ~/
 
 * sublime: settings for sublime text 3 symlinked to sublime text application directory
 
-* util: application settings and icons
+* iterm2: settings, profile, icon
 
 
 ## Getting started
@@ -86,20 +88,8 @@ transfer projects dir to remote machine in local network
 * media: `sh bin/transfer_media.sh`  
 sync iTunes library with remote machine in local network
 
-Old setup:
 
-Automated task watching for mounting of harddrive to backup local Dropbox folder:
-
-'backup.plist' handles the backup process: plugging in an external harddrive will open up iTerm2 and prompt for a yes or now to perform the backup process - 'backup.sh' will sync the user's dropbox folder to the external harddrive with rsync.
-
-
-### Terminal setup
-
-Terminal
-
-* import profile from **/util/terminal**
-
-iTerm2
+### iTerm setup
 
 * import profile *klappradla* from ``/util/iterm2`
 * import and use colorscheme `solarized_dark.itermcolors`
