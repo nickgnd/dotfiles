@@ -9,6 +9,8 @@ I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a t
 
 *(I switched from Sublime Text to Atom but will keep the settings for some time for the sake of completeness)*
 
+Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `13pt` in both, Atom and Vim *(it's one of the few fonts looking okish in size 13)*.
+
 
 ## Directory
 
