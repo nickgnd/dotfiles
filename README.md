@@ -18,6 +18,8 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in 
 .
 ├── .atom (atom files)
 │
+├── .vim (vim files)
+│
 ├── bin (scripts for install, backup, etc.)
 │
 ├── home (symlinked to ~/)
@@ -27,15 +29,15 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in 
 │   ├── .zshrc (zsh/oh-my-zsh config)
 │   └── .vimrc
 │
-├── .vim (vim files)
-│
 ├── iterm2 (profile and settings for iterm)
 │
 └── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
-    └── Packages
-        └── User
-            ├── *.sublime-settings
-            └── *.tmTheme
+│    └── Packages
+│       └── User
+│           ├── *.sublime-settings
+│           └── *.tmTheme
+│
+└── zsh (custom dir for oh-my-zsh)
 
 
 ```
@@ -47,6 +49,8 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in 
 * sublime: settings for sublime text 3 symlinked to sublime text application directory
 
 * iterm2: settings, profile, icon
+
+* zsh: my `$ZSH_CUSTOM` directory
 
 
 ## Getting started
