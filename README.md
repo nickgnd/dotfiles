@@ -20,6 +20,8 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in 
 │
 ├── .vim (vim files)
 │
+├── backups (backup scripts)
+│
 ├── bin (scripts for install, backup, etc.)
 │
 ├── home (symlinked to ~/)

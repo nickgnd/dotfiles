@@ -23,3 +23,5 @@
   "find-and-replace":
     scrollToResultOnLiveSearch: true
   "markdown-preview": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
