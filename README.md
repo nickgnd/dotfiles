@@ -7,8 +7,6 @@ Inspired by [paulmillr's](https://github.com/paulmillr/dotfiles), [ryanb's](http
 
 I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a terminal replacement and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my settings there. On text-editors, I switch between Vim and Github's Atom, using [vim-plug](https://github.com/junegunn/vim-plug) for managing my Vim plugins. For colors, I like Ethan Schoonover's awesome [solarized](http://ethanschoonover.com/solarized) scheme and use it in iTerm, Vim and Atom.
 
-*(I switched from Sublime Text to Atom but will keep the settings for some time for the sake of completeness)*
-
 Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `13pt` in both, Atom and Vim *(it's one of the few fonts looking okish in size 13)*.
 
 
@@ -18,7 +16,7 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in 
 .
 ├── .atom (atom files)
 │
-├── .vim (vim files)
+├── agents (launchd scripts)
 │
 ├── backups (backup scripts)
 │
@@ -33,26 +31,10 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in 
 │
 ├── iterm2 (profile and settings for iterm)
 │
-└── sublime (symlinked to ~/Library/Application Support/Sublime Text 3)
-│    └── Packages
-│       └── User
-│           ├── *.sublime-settings
-│           └── *.tmTheme
-│
 └── zsh (custom dir for oh-my-zsh)
 
 
 ```
-
-* bin: scripts for installation, symlinking, backup
-
-* home: files symlinked to ~/
-
-* sublime: settings for sublime text 3 symlinked to sublime text application directory
-
-* iterm2: settings, profile, icon
-
-* zsh: my `$ZSH_CUSTOM` directory
 
 
 ## Getting started
@@ -92,7 +74,6 @@ Config for:
 * git
 * gemrc (install gems without rdoc)
 * zsh / oh-my-zsh
-* sublime text 3
 * atom
 * vim
 
@@ -108,12 +89,8 @@ Config for:
 * if the settings are not applied automatically, run:    
   `defaults read com.googlecode.iterm2`
 * use `⇧⌘m` to maximize the window horizontally and vertially
-
-
-### Sublime
-
-My syntax theme, **klappradla** is inspired by the awesome [memco Oceanic](https://github.com/memco/Oceanic-tmTheme) and [atom one dark](https://github.com/atom/one-dark-syntax) themes.
-![Alt text](screenshots/sublime.png?raw=true)
+ 
+![iterm](screenshots/iterm.png?raw=true)
 
 
 ## Setup system from scratch
