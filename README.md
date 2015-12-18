@@ -57,6 +57,12 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in 
 
 ## Getting started
 
+#### Dependencies
+* [Homebrew](http://brew.sh/)
+* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+* [vim-plug](https://github.com/junegunn/vim-plug)
+* [iTerm2](https://www.iterm2.com/)
+
 ### Setup
 
 in /~ run:
@@ -81,12 +87,13 @@ Setup public key authentication with backup computer (in local network) over ssh
 
 ### Dotfiles
 
-My config for:
+Config for:
 
 * git
 * gemrc (install gems without rdoc)
 * zsh / oh-my-zsh
 * sublime text 3
+* atom
 * vim
 
 
@@ -97,9 +104,10 @@ My config for:
 
 ### iTerm setup
 
-* import profile *klappradla* from ``/util/iterm2`
-* import and use colorscheme `solarized_dark.itermcolors`
-* I use `⇧⌘m` to maximize the window horizontally and vertially
+* point *Load preferences from custom folder or URL* to `~/dotfiles/iterm2`
+* if the settings are not applied automatically, run:    
+  `defaults read com.googlecode.iterm2`
+* use `⇧⌘m` to maximize the window horizontally and vertially
 
 
 ### Sublime

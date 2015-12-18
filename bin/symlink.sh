@@ -38,13 +38,21 @@ fi
 # vim
 read -p "Symlink files for vim?  (y/n) " RESP
 if [ "$RESP" = "y" ]; then
-   link "$DOTFILES_DIR/.vim" "$HOME"
+  link "$DOTFILES_DIR/.vim" "$HOME"
 fi
 
 # atom
 read -p "Symlink files for atom?  (y/n) " RESP
 if [ "$RESP" = "y" ]; then
-   link "$DOTFILES_DIR/.atom" "$HOME"
+  link "$DOTFILES_DIR/.atom" "$HOME"
+fi
+
+# agents
+read -p "Symlink launchd agents? (y/n)" RESP
+if [ "$RESP" = "y" ]; then
+  for f in agents/*.plist; do
+    link $f "$HOME/Library/LaunchAgents/"
+  done
 fi
 
 # sublime
