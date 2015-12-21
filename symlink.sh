@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # variables
+
+# can be global (used in 2 places: check if in right directory, symlink)
 DOTFILES_DIR="$HOME/dotfiles"
 
 # check if folder exists
@@ -33,6 +35,6 @@ read -p "Symlink launchd agents? (y/n)" RESP
 if [ "$RESP" = "y" ]; then
   for f in agents/*.plist; do
     echo "link $f to $HOME/Library/LaunchAgents/"
-    ln -s "$f" "$HOME/Library/LaunchAgents/"
+    ln -s "$DOTFILES_DIR/$f" "$HOME/Library/LaunchAgents/"
   done
 fi
