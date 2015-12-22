@@ -20,8 +20,6 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in 
 │
 ├── backups (backup scripts)
 │
-├── bin (scripts for install, backup, etc.)
-│
 ├── home (symlinked to ~/)
 │   ├── .gemrc (global config for ruby gems)
 │   ├── .gitconfig (global git config)
@@ -45,15 +43,22 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in 
 * [vim-plug](https://github.com/junegunn/vim-plug)
 * [iTerm2](https://www.iterm2.com/)
 
-### Setup
-
-in /~ run:
+### Install
 
 ```
-curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/bin/install.sh | sh
+curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/install.sh | sh
 ```
 
 This will clone the repo and prompt to symlink dotfiles and settings.
+
+
+### Symbolic links
+
+```
+sh symlink.sh
+```
+
+Prompts which parts of the dotfiles should be symlinked *(old links are replaced by new ones)*.
 
 ### SSH keys
 
@@ -89,7 +94,7 @@ Config for:
 * if the settings are not applied automatically, run:    
   `defaults read com.googlecode.iterm2`
 * use `⇧⌘m` to maximize the window horizontally and vertially
- 
+
 ![iterm](screenshots/iterm.png?raw=true)
 
 
