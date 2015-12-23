@@ -22,3 +22,4 @@ main() {
       && change_to_dir $DOTFILES_DIR \
         && sh symlink.sh
 }
+main

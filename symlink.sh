@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# global variables
 readonly DOTFILES_DIR="$HOME/dotfiles"
 
 is_symlink() {
