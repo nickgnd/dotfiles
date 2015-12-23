@@ -1,43 +1,85 @@
 #!/usr/local/bin/zsh
 
-# wait until network/volume connected
-# echo "Wait for some seconds util network is connected"
-# sleep 10
+readonly LOG_FILE=~/dotfiles/backups/log/backup.log
+readonly EXCLUDE_LIST=~/dotfiles/backups/backup-excludes.txt
+readonly SOURCE_DIRS=(~/Code
+                      ~/Dropbox
+                      /Volumes/Media/iTunes\ Media/Music)
+readonly BACKUP_VOLUME=/Volumes/archive/backup/daily
+readonly REMOTE=max@HerrDirektor.local
 
-# variables
-SOURCE_DIRS=(~/Code
-            ~/Dropbox
-            /Volumes/Media/iTunes\ Media/Music)
-BACKUP_DIR=/Volumes/archive/backup/daily
-REMOTE_HOST=max@HerrDirektor.local
-EXCLUDE_LIST=~/dotfiles/backups/backup-excludes.txt
-VOLUME=/Volumes/archive
-LOG_FILE=~/dotfiles/backups/log/backup.log
-LOG_MAXLINES=7000
-LOG_MINLINES=2000
+print_to_log() {
+  local txt=$1
+  echo "$1" >> $LOG_FILE
+}
 
-# run backup task
-if [ -d $VOLUME ]; then
-  echo "\nLocal backup $(date +%Y_%m_%d_%H:%M:%S)" >> $LOG_FILE
-  for SOURCE_DIR in ${SOURCE_DIRS[@]}
+remote_backup() {
+  local dir
+  print_to_log "\nTry remote backup $(date +%Y_%m_%d_%H:%M:%S)"
+  for dir in ${SOURCE_DIRS[@]}
   do
-    rsync -av --delete --exclude-from $EXCLUDE_LIST $SOURCE_DIR $BACKUP_DIR >> $LOG_FILE
+    sync_to_remote $dir
   done
-else
-  echo "\nTry remote backup $(date +%Y_%m_%d_%H:%M:%S)" >> $LOG_FILE
-  for SOURCE_DIR in "${SOURCE_DIRS[@]}"
+}
+
+sync_to_remote() {
+  local src=$1
+  print_to_log "Transfer $src..."
+  rsync -av --delete --exclude-from $EXCLUDE_LIST \
+    "$src" -e ssh "$REMOTE":"$BACKUP_VOLUME" >> $LOG_FILE
+}
+
+local_backup() {
+  local dir
+  print_to_log "\nLocal backup $(date +%Y_%m_%d_%H:%M:%S)"
+  for dir in ${SOURCE_DIRS[@]}
   do
-    rsync -av --delete --exclude-from $EXCLUDE_LIST "$SOURCE_DIR" -e ssh "$REMOTE_HOST":"$BACKUP_DIR" >> $LOG_FILE
+    sync_local $dir
   done
-fi
+}
 
-# calulate size of logfile
-LOGSIZE=$( wc $LOG_FILE | awk '{ print $1 }' )
+sync_local() {
+  local src=$1
+  print_to_log "Transfer $src..."
+  rsync -av --delete --exclude-from $EXCLUDE_LIST \
+    $src $BACKUP_DIR >> $LOG_FILE
+}
 
-# truncate logfile if needed
-if [ $LOGSIZE -ge $LOG_MAXLINES ]
-then
-  LINECUT=`expr $LOGSIZE - $LOG_MINLINES`
-  sed -i "1,$LINECUT d" $LOG_FILE
-  sed -i "1i ////////////////  File truncated here on `date`. //////////////// " $LOG_FILE
-fi
+calculate_log_size() {
+  ( wc $LOG_FILE | awk '{ print $1 }' )
+}
+
+log_too_big() {
+  local size=$1
+  local max_size=3000
+  [ $size -ge $max_size ]
+}
+
+truncate_log() {
+  local size=$1
+  local min_size=300
+  local cut=$(($size-$min_size))
+
+  sed -i '' "1,$cut d" $LOG_FILE
+}
+
+drive_connected() {
+  local dir=$1
+  [ -d $dir ]
+}
+
+main() {
+  local log_size
+
+  if drive_connected $BACKUP_VOLUME
+  then
+    local_backup
+  else
+    remote_backup
+  fi
+
+  log_size=$(calculate_log_size)
+  log_too_big $log_size \
+    && truncate_log $log_size
+}
+main
