@@ -16,7 +16,7 @@ print_to_log() {
 remote_backup() {
   local dir
   print_to_log "\nTry remote backup $(date +%Y_%m_%d_%H:%M:%S)"
-  for dir in ${SOURCE_DIRS[@]}
+  for dir in "${SOURCE_DIRS[@]}"
   do
     sync_to_remote $dir
   done
@@ -32,7 +32,7 @@ sync_to_remote() {
 local_backup() {
   local dir
   print_to_log "\nLocal backup $(date +%Y_%m_%d_%H:%M:%S)"
-  for dir in ${SOURCE_DIRS[@]}
+  for dir in "${SOURCE_DIRS[@]}"
   do
     sync_local $dir
   done
@@ -42,7 +42,7 @@ sync_local() {
   local src=$1
   print_to_log "Transfer $src..."
   rsync -av --delete --exclude-from $EXCLUDE_LIST \
-    $src $BACKUP_DIR >> $LOG_FILE
+    "$src" $BACKUP_VOLUME >> $LOG_FILE
 }
 
 calculate_log_size() {
