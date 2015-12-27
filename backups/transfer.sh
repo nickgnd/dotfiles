@@ -29,7 +29,7 @@ calculate_log_size() {
 
 log_too_big() {
   local size=$1
-  local max_size=3000
+  local max_size=6000
   [ $size -ge $max_size ]
 }
 
@@ -45,7 +45,7 @@ main() {
   local log_size
 
   print_info
-  sync_files "~/Code" "~"
+  sync_files ~/Code ~
   sync_files "/Volumes/Media/iTunes Media/Music" "~/Music/iTunes/iTunes\ Media/"
   sync_files "/Volumes/Media/iTunes Library.itl" "~/Music/iTunes/"
 

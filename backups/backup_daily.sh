@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/bash
 
 readonly LOG_FILE=~/dotfiles/backups/log/backup.log
 readonly EXCLUDE_LIST=~/dotfiles/backups/backup-excludes.txt
@@ -34,7 +34,7 @@ local_backup() {
   print_to_log "\nLocal backup $(date +%Y_%m_%d_%H:%M:%S)"
   for dir in "${SOURCE_DIRS[@]}"
   do
-    sync_local $dir
+    sync_local "$dir"
   done
 }
 
@@ -51,7 +51,7 @@ calculate_log_size() {
 
 log_too_big() {
   local size=$1
-  local max_size=3000
+  local max_size=6000
   [ $size -ge $max_size ]
 }
 
