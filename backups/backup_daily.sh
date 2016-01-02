@@ -18,7 +18,7 @@ remote_backup() {
   print_to_log "\nTry remote backup $(date +%Y_%m_%d_%H:%M:%S)"
   for dir in "${SOURCE_DIRS[@]}"
   do
-    sync_to_remote $dir
+    sync_to_remote "$dir"
   done
 }
 
