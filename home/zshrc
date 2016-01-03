@@ -82,8 +82,8 @@ alias at="atom ./"
 alias code="cd ~/Code"
 alias pgup="pg_ctl start -D /usr/local/var/postgres"
 alias pgdown="pg_ctl stop -D /usr/local/var/postgres"
-alias backup="sh ~/dotfiles/bin/backup_daily.sh"
-alias transfer="sh ~/dotfiles/bin/transfer.sh"
+alias backup="sh ~/dotfiles/backups/backup_daily.sh"
+alias transfer="sh ~/dotfiles/backups/transfer.sh"
 #alias dockerenv="eval '$(docker-machine env default)'"
 
 # added by travis gem
