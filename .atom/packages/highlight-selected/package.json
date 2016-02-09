@@ -1,7 +1,7 @@
 {
   "name": "highlight-selected",
   "main": "./lib/highlight-selected",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "Highlights the current word selected when double clicking",
   "repository": {
     "type": "git",
@@ -25,12 +25,12 @@
     "url": "https://github.com/richrace/highlight-selected/issues"
   },
   "homepage": "https://github.com/richrace/highlight-selected",
-  "_id": "highlight-selected@0.11.1",
+  "_id": "highlight-selected@0.11.2",
   "dist": {
     "shasum": "7c9da46b1412aceb069f8ca2ca54d014986ad408"
   },
-  "_resolved": "file:../d-1151016-7412-9yr1pl/package.tgz",
-  "_from": "../d-1151016-7412-9yr1pl/package.tgz",
+  "_resolved": "file:../d-11619-644-6jyp9f/package.tgz",
+  "_from": "../d-11619-644-6jyp9f/package.tgz",
   "providedServices": {
     "highlightSelected": {
       "description": "Exposes Highlight Selected Events",
@@ -46,7 +46,7 @@
       }
     }
   },
-  "_shasum": "60fe02590132f40ab0e5295a23b7b55bf05cd104",
+  "_shasum": "b218d2f9dd493e9dfb6b0d206e69f0cc831cb221",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [

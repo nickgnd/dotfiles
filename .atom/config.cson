@@ -1,26 +1,26 @@
 "*":
-  "exception-reporting":
-    userId: "1c55a852-c707-9d50-af21-7175ee744d0e"
-  welcome:
-    showOnStartup: false
+  "autoclose-html": {}
   core:
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
   editor:
+    fontFamily: "Monaco"
+    fontSize: 13
     invisibles: {}
     showIndentGuide: true
     tabType: "soft"
-    fontSize: 13
-    fontFamily: "Monaco"
+  "exception-reporting":
+    userId: "1c55a852-c707-9d50-af21-7175ee744d0e"
+  "find-and-replace":
+    scrollToResultOnLiveSearch: true
+  "fuzzy-finder": {}
+  "markdown-preview": {}
   "one-dark-ui":
     layoutMode: "Compact"
   tabs:
     usePreviewTabs: true
-  "autoclose-html": {}
-  "fuzzy-finder": {}
-  "find-and-replace":
-    scrollToResultOnLiveSearch: true
-  "markdown-preview": {}
   "tree-view": {}
+  welcome:
+    showOnStartup: false
