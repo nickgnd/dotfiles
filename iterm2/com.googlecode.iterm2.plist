@@ -787,7 +787,7 @@
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideScrollbar</key>
-	<false/>
+	<true/>
 	<key>HideTab</key>
 	<true/>
 	<key>HighlightTabLabels</key>
@@ -834,6 +834,8 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSScrollViewShouldScrollUnderTitlebar</key>
+	<false/>
 	<key>NSTableView Columns KeyBingingTable</key>
 	<array>
 		<data>
@@ -845,7 +847,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>302</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -859,13 +861,17 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>540 203 231 329 0 0 1440 877 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>903 37 445 77 0 0 1440 877 </string>
+	<string>889 222 445 77 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>256 261 924 485 0 0 1440 877 </string>
+	<string>374 476 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1914 1053 0 0 1920 1057 </string>
+	<string>0 5 1913 1052 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 4 890 873 0 0 1440 877 </string>
+	<string>277 4 890 873 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>296 74 905 926 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>0 4 1913 1053 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2347,10 +2353,14 @@
 			<string>/Users/Max</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>477569743.45147699</real>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>453205562.15598297</real>
+	<real>477569638.470312</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>471349630.08075202</real>
+	<real>477569632.68715101</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -2408,12 +2418,14 @@
 	<integer>3</integer>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUFeedAlternateAppNameKey</key>
+	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing3.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-12-09T10:27:04Z</date>
+	<date>2016-02-19T10:13:26Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2428,6 +2440,8 @@
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>6</integer>
+	<key>TabStyle</key>
+	<integer>0</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
@@ -2455,6 +2469,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>2.1.4</string>
+	<string>2.9.20160206</string>
 </dict>
 </plist>
