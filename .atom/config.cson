@@ -7,7 +7,6 @@
     ]
   editor:
     fontFamily: "Monaco"
-    fontSize: 13
     invisibles: {}
     showIndentGuide: true
     tabType: "soft"
@@ -16,7 +15,8 @@
   "find-and-replace":
     scrollToResultOnLiveSearch: true
   "fuzzy-finder": {}
-  "markdown-preview": {}
+  "markdown-preview":
+    breakOnSingleNewline: true
   "one-dark-ui":
     layoutMode: "Compact"
   tabs:

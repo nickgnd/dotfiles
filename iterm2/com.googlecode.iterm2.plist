@@ -861,13 +861,13 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>540 203 231 329 0 0 1440 877 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>889 222 445 77 0 0 1440 877 </string>
+	<string>1318 132 445 77 0 0 1920 1057 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>374 476 606 456 0 0 1920 1057 </string>
+	<string>374 576 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 5 1913 1052 0 0 1920 1057 </string>
+	<string>0 4 1920 1053 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>277 4 890 873 0 0 1440 877 </string>
+	<string>519 130 890 927 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>296 74 905 926 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -2174,11 +2174,11 @@
 			<key>Name</key>
 			<string>klappradla</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 13</string>
+			<string>Monaco 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 13</string>
+			<string>Monaco 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2329,6 +2329,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -2343,6 +2345,8 @@
 			<false/>
 			<key>Use Italic Font</key>
 			<true/>
+			<key>Use Non-ASCII Font</key>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -2355,12 +2359,34 @@
 	</array>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
+	<key>NoSyncLastTipTime</key>
+	<real>479061833.002096</real>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>477569743.45147699</real>
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>477569638.470312</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>477569632.68715101</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
+	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -2425,7 +2451,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-02-19T10:13:26Z</date>
+	<date>2016-03-07T14:25:34Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
