@@ -23,18 +23,24 @@
   'defstruct':
     'prefix': 'defstruct'
     'body': 'defstruct [$1]'
-  'do':
-    'prefix': 'do'
-    'body': 'do\n\t$0\nend'
   'doc':
     'prefix': 'doc'
     'body': '@doc """\n$0\n"""'
+  'do':
+    'prefix': 'do'
+    'body': 'do\n\t$0\nend'
   'for':
     'prefix': 'for'
     'body': 'for $1 <- $2 do\n\t$3\nend'
   'if':
     'prefix': 'if'
     'body': 'if $1 do\n\t$0\nend'
+  'inline def':
+    'prefix': 'idef'
+    'body': 'def $1, do: $2'
+  'inline defp':
+    'prefix': 'idefp'
+    'body': 'defp $1, do: $2'
   'moduledoc':
     'prefix': 'mdoc'
     'body': '@moduledoc """\n$0\n"""'
@@ -56,6 +62,12 @@
   'test':
     'prefix': 'test'
     'body': 'test "$1" do\n\t$0\nend'
+  'Logger.debug':
+    'prefix': 'deb'
+    'body': 'Logger.debug "$0"'
+  'Logger.debug inspect':
+    'prefix': 'debi'
+    'body': 'Logger.debug "\#{inspect $0}"'
 '.text.elixir':
   '<% inline %>':
     'prefix': '%'

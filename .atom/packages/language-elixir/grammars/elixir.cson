@@ -21,7 +21,7 @@
     'begin': '@(module|type)?doc (~[a-z])?"""'
     'comment': '@doc with heredocs is treated as documentation'
     'end': '\\s*"""'
-    'name': 'comment.documentation.heredoc'
+    'name': 'comment.documentation.heredoc.elixir'
     'patterns': [
       {
         'include': '#interpolated_elixir'
@@ -35,7 +35,7 @@
     'begin': '@(module|type)?doc ~[A-Z]"""'
     'comment': '@doc with heredocs is treated as documentation'
     'end': '\\s*"""'
-    'name': 'comment.documentation.heredoc'
+    'name': 'comment.documentation.heredoc.elixir'
   }
   {
     'comment': '@doc false is treated as documentation'
@@ -84,20 +84,6 @@
   {
     'match': '\\b(__(CALLER|ENV|MODULE|DIR)__)\\b(?![?!])'
     'name': 'variable.language.elixir'
-  }
-  {
-    'captures':
-      '1':
-        'name': 'punctuation.definition.variable.elixir'
-    'match': '(@)[a-zA-Z_]\\w*'
-    'name': 'variable.other.readwrite.module.elixir'
-  }
-  {
-    'captures':
-      '1':
-        'name': 'punctuation.definition.variable.elixir'
-    'match': '(&)\\d*'
-    'name': 'variable.other.anonymous.elixir'
   }
   {
     'match': '\\b[A-Z]\\w*\\b'
@@ -451,14 +437,6 @@
       '1':
         'name': 'punctuation.definition.constant.elixir'
     'comment': 'symbols'
-    'match': '(?<!:)(:)(?>[a-zA-Z_][\\w@]*(?>[?!]|=(?![>=]))?|\\<\\>|===?|!==?|<<>>|<<<|>>>|~~~|::|<\\-|\\|>|=>|~|~=|=|/|\\\\\\\\|\\*\\*?|\\.\\.?\\.?|>=?|<=?|&&?&?|\\+\\+?|\\-\\-?|\\|\\|?\\|?|\\!|@|\\%?\\{\\}|%|\\[\\]|\\^(\\^\\^)?)'
-    'name': 'constant.other.symbol.elixir'
-  }
-  {
-    'captures':
-      '1':
-        'name': 'punctuation.definition.constant.elixir'
-    'comment': 'symbols'
     'match': '(?>[a-zA-Z_][\\w@]*(?>[?!])?)(:)(?!:)'
     'name': 'constant.other.symbol.elixir'
   }
@@ -515,21 +493,17 @@
     ]
   }
   {
-    'comment': 'matches: | ++ -- ** \\ <- <> << >> :: .. |> ~ => ->'
-    'match': '\\+\\+|\\-\\-|\\*\\*|\\\\\\\\|\\<\\-|\\<\\>|\\<\\<|\\>\\>|\\:\\:|\\.\\.|\\|>|~|=>|->|\\|'
+    'match': '(\\|\\|\\||&&&|\\^\\^\\^|<<<|>>>|~~~)'
+    'name': 'keyword.operator.bitwise.elixir'
+  }
+  {
+    'comment': 'matches: | ++ -- ** \\ <- <> << >> :: .. |> => -> <|> <~> <~ <<~ ~> ~>>'
+    'match': '\\+\\+|\\-\\-|\\*\\*|\\\\\\\\|\\<\\-|<\\<\\~|\\<\\>|\\<\\<|\\>\\>|\\:\\:|\\.\\.|\\|>|=>|<\\|\\>|<~>|->|~>>|~>|<~'
     'name': 'keyword.operator.other.elixir'
   }
   {
-    'match': '\\+=|\\-=|\\|\\|=|~=|&&='
-    'name': 'keyword.operator.assignment.augmented.elixir'
-  }
-  {
-    'match': '===?|!==?|<=?|>=?'
+    'match': '===?|!==?|<=?|>=?|=~'
     'name': 'keyword.operator.comparison.elixir'
-  }
-  {
-    'match': '(\\|\\|\\||&&&|\\^\\^\\^|<<<|>>>|~~~)'
-    'name': 'keyword.operator.bitwise.elixir'
   }
   {
     'match': '(?<=[ \\t])!+|\\bnot\\b|&&|\\band\\b|\\|\\||\\bor\\b|\\bxor\\b'
@@ -542,10 +516,6 @@
   {
     'match': '='
     'name': 'keyword.operator.assignment.elixir'
-  }
-  {
-    'match': ':'
-    'name': 'punctuation.separator.other.elixir'
   }
   {
     'match': '\\;'
@@ -564,12 +534,38 @@
     'name': 'punctuation.section.scope.elixir'
   }
   {
-    'match': '\\[|\\]'
+    'match': '\\[\\]|\\[|\\]'
     'name': 'punctuation.section.array.elixir'
   }
   {
     'match': '\\(|\\)'
     'name': 'punctuation.section.function.elixir'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'punctuation.definition.variable.elixir'
+    'match': '(@)[a-zA-Z_]\\w*'
+    'name': 'variable.other.readwrite.module.elixir'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'punctuation.definition.variable.elixir'
+    'match': '(&)\\d*'
+    'name': 'variable.other.anonymous.elixir'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'punctuation.definition.constant.elixir'
+    'comment': 'symbols'
+    'match': '(?<!:)(:)(?>[a-zA-Z_][\\w@]*(?>[?!]|=(?![>=]))?|\\<\\>|===?|!==?|<<>>|<<<|>>>|~~~|::|<\\-|\\|>|=>|~|~=|=|/|\\\\\\\\|\\*\\*?|\\.\\.?\\.?|>=?|<=?|&&?&?|\\+\\+?|\\-\\-?|\\|\\|?\\|?|\\!|@|\\%?\\{\\}|%|\\[\\]|\\^(\\^\\^)?)'
+    'name': 'constant.other.symbol.elixir'
+  }
+  {
+    'match': ':'
+    'name': 'punctuation.separator.other.elixir'
   }
 ]
 'repository':
