@@ -15,8 +15,7 @@
   "find-and-replace":
     scrollToResultOnLiveSearch: true
   "fuzzy-finder": {}
-  "markdown-preview":
-    breakOnSingleNewline: true
+  "markdown-preview": {}
   "one-dark-ui":
     layoutMode: "Compact"
   tabs:
