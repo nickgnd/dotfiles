@@ -57,9 +57,6 @@ prompt_user() {
 
 # main
 main() {
-  local dir=$HOME
-  local f=$HOME/dotfiles/zshrc2
-
   prompt_user "~/" \
     && symlink_files "home/*" "$HOME/."
 
