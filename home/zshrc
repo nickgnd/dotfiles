@@ -52,6 +52,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:/usr/local/bin/elixir" # Add Elixir for development
+export PATH="$PATH:/usr/local/bin/elixir" # Add Elixir for development
+export GOPATH=$HOME/Code/go
 
 # Chruby
 source /usr/local/share/chruby/chruby.sh # auto change in directory
