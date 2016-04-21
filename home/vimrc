@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'klappradla/klappradla.vim'
-Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
@@ -17,28 +17,11 @@ call plug#end()
 let NERDTreeShowHidden=1
 " CTRLP
 let g:ctrlp_show_hidden=1
-" airlines
-set noshowmode
+" lighline
 set laststatus=2
-let g:airline_powerline_fonts=1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
+let g:lightline = {'colorscheme': 'solarized'}
 
-" unicode symbols
-" remove separators
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" colorscheme 
+" colorscheme
 syntax on
 set background=dark
 let g:solarized_termtrans = 1
@@ -52,7 +35,7 @@ set clipboard=unnamed
 " disable backups
 set nobackup
 set nowritebackup
-set noswapfile 
+set noswapfile
 
 " set encoding to utf-8
 set encoding=utf-8
@@ -90,3 +73,6 @@ set number
 
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
+
+" hide the default mode line
+set noshowmode
