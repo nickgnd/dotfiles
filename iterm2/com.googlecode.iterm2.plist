@@ -861,13 +861,17 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>540 203 231 329 0 0 1440 877 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1318 132 445 77 0 0 1920 1057 </string>
+	<string>1091 297 445 77 0 0 1920 1057 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>374 576 606 456 0 0 1920 1057 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>650 499 620 392 0 0 1920 1057 </string>
+	<key>NSWindow Frame com.apple.typography_panel_Monaco</key>
+	<string>560 727 260 56 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1920 1053 0 0 1920 1057 </string>
+	<string>0 4 1434 873 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>519 130 890 927 0 0 1920 1057 </string>
+	<string>519 73 890 977 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>296 74 905 926 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -2348,7 +2352,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.0960843373493976</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -2360,7 +2364,7 @@
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
 	<key>NoSyncLastTipTime</key>
-	<real>479061833.002096</real>
+	<real>482921086.97922099</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -2386,6 +2390,44 @@
 		<string>0011</string>
 		<string>0012</string>
 		<string>0013</string>
+		<string>0014</string>
+		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+		<string>0025</string>
+		<string>0026</string>
+		<string>0027</string>
+		<string>0028</string>
+		<string>0029</string>
+		<string>0030</string>
+		<string>0031</string>
+		<string>0032</string>
+		<string>0033</string>
+		<string>0034</string>
+		<string>0035</string>
+		<string>0036</string>
+		<string>0037</string>
+		<string>0038</string>
+		<string>0039</string>
+		<string>0040</string>
+		<string>0041</string>
+		<string>0042</string>
+		<string>0043</string>
+		<string>0044</string>
+		<string>0045</string>
+		<string>0046</string>
+		<string>0047</string>
+		<string>0048</string>
+		<string>0049</string>
+		<string>0050</string>
+		<string>0051</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
@@ -2451,7 +2493,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-03-07T14:25:34Z</date>
+	<date>2016-04-21T08:44:45Z</date>
+	<key>SUSkippedVersion</key>
+	<string>2.9.20160313</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
