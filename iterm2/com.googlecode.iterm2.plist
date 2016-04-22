@@ -869,7 +869,7 @@
 	<key>NSWindow Frame com.apple.typography_panel_Monaco</key>
 	<string>560 727 260 56 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1434 873 0 0 1440 877 </string>
+	<string>3 13 1914 1035 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>519 73 890 977 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2356,7 +2356,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Working Directory</key>
 			<string>/Users/Max</string>
 		</dict>
