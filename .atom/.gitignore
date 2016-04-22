@@ -1,5 +1,6 @@
 # ignore all files here
 storage
+blob-store
 compile-cache
 dev
 .npm
