@@ -1,15 +1,14 @@
 # ~/dotfiles
 
-How to setup an environment (unix/osx) the way I like it.   
-Inspired by [@paulmillr's](https://github.com/paulmillr/dotfiles), [@ryanb's](https://github.com/ryanb/dotfiles) and lots of other great **dotfiles** repos out there. Thanks!
+How I set up my OSX/Unix environment.
 
 ## General
 
 I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a terminal replacement and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my settings there. On text-editors, I switch between Vim and Github's Atom, using [vim-plug](https://github.com/junegunn/vim-plug) for managing my Vim plugins. For colors, I like Ethan Schoonover's awesome [solarized](http://ethanschoonover.com/solarized) scheme and use it in iTerm, Vim and Atom.
 
-Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `13pt` in both, Atom and Vim *(it's one of the few fonts looking okish in size 13)*.
+Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `13pt` in both, Atom and Vim *(it's one of the few fonts looking okish in size 14)*.
 
-For managing ruby versions, I use [@postmodern's](https://github.com/postmodern) [ruby-install](https://github.com/postmodern/ruby-install) with [chruby](https://github.com/postmodern/chruby).
+For managing ruby versions, I use [postmodern's](https://github.com/postmodern) [ruby-install](https://github.com/postmodern/ruby-install) with [chruby](https://github.com/postmodern/chruby).
 
 
 ## Directory
@@ -20,16 +19,17 @@ For managing ruby versions, I use [@postmodern's](https://github.com/postmodern)
 │
 ├── agents (launchd scripts)
 │
-├── backups (backup scripts)
-│
 ├── home (symlinked to ~/)
-│   ├── .gemrc (global config for ruby gems)
-│   ├── .gitconfig (global git config)
-│   ├── .gitignore_global (global gitignore)
-│   ├── .zshrc (zsh/oh-my-zsh config)
-│   └── .vimrc
+│   ├── gemrc (global config for ruby gems)
+│   ├── gitconfig (global git config)
+│   ├── gitignore_global (global gitignore)
+│   ├── ruby-version (default ruby version)
+│   ├── vimrc (vim config)
+│   └── zshrc (zsh/oh-my-zsh config)
 │
 ├── iterm2 (profile and settings for iterm)
+│
+├── scripts (backup scripts, etc.)
 │
 └── zsh (custom dir for oh-my-zsh)
 
@@ -73,22 +73,6 @@ Setup public key authentication with backup computer (in local network) over ssh
 
 
 ## Usage
-
-### Dotfiles
-
-Config for:
-
-* git
-* gemrc (install gems without rdoc)
-* zsh / oh-my-zsh
-* atom
-* vim
-
-
-### Backups
-
-*(currently reworking this)*
-
 
 ### iTerm setup
 

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-readonly LOG_FILE=~/dotfiles/backups/log/backup.log
-readonly EXCLUDE_LIST=~/dotfiles/backups/backup-excludes.txt
+readonly LOG_FILE=~/dotfiles/scripts/log/backup.log
+readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
 readonly SOURCE_DIRS=(~/Code
                       ~/Dropbox
                       /Volumes/Media/iTunes\ Media/Music)
-readonly BACKUP_VOLUME=/Volumes/archive/backup/daily
+readonly BACKUP_VOLUME=/Volumes/archive/backup
 readonly REMOTE=max@HerrDirektor.local
 
 print_to_log() {
@@ -15,7 +15,7 @@ print_to_log() {
 
 remote_backup() {
   local dir
-  print_to_log "\nTry remote backup $(date +%Y_%m_%d_%H:%M:%S)"
+  print_to_log "\n\nTry remote backup $(date +%Y_%m_%d_%H:%M:%S)"
   for dir in "${SOURCE_DIRS[@]}"
   do
     sync_to_remote "$dir"
@@ -31,7 +31,7 @@ sync_to_remote() {
 
 local_backup() {
   local dir
-  print_to_log "\nLocal backup $(date +%Y_%m_%d_%H:%M:%S)"
+  print_to_log "\n\nLocal backup $(date +%Y_%m_%d_%H:%M:%S)"
   for dir in "${SOURCE_DIRS[@]}"
   do
     sync_local "$dir"

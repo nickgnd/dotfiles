@@ -6,7 +6,7 @@
     <string>me.klappradla.backup</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/Max/dotfiles/backups/backup_daily.sh</string>
+      <string>/Users/Max/dotfiles/scripts/backup.sh</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
@@ -23,9 +23,9 @@
       <integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/Max/dotfiles/backups/log/backup.log</string>
+    <string>/Users/Max/dotfiles/scripts/log/backup.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/Max/dotfiles/backups/log/backup.log</string>
+    <string>/Users/Max/dotfiles/scripts/log/backup.log</string>
     <key>Debug</key>
     <true/>
   </dict>

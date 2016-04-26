@@ -1,6 +1,8 @@
 #!/usr/local/bin/zsh
 
-readonly LOG_FILE=~/dotfiles/backups/log/transfer.log
+readonly LOG_FILE=~/dotfiles/scripts/log/transfer.log
+readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
+readonly REMOTE=max@HerrDirektor.local
 
 print_to_log() {
   local txt=$1
@@ -12,15 +14,13 @@ print_info() {
 }
 
 sync_files() {
-  local exclude_list=~/dotfiles/backups/backup-excludes.txt
-  local remote_host=max@HerrDirektor.local
   local src=$1
   local dest=$2
 
   print_to_log "Transfer $src..."
 
-  rsync -av --delete --exclude-from $exclude_list \
-    "$src" -e ssh "$remote_host":"$dest" >> $LOG_FILE
+  rsync -av --delete --exclude-from $EXCLUDE_LIST \
+    "$src" -e ssh "$REMOTE":"$dest" >> $LOG_FILE
 }
 
 calculate_log_size() {
@@ -46,8 +46,6 @@ main() {
 
   print_info
   sync_files ~/Code ~
-  sync_files "/Volumes/Media/iTunes Media/Music" "~/Music/iTunes/iTunes\ Media/"
-  sync_files "/Volumes/Media/iTunes Library.itl" "~/Music/iTunes/"
 
   log_size=$(calculate_log_size)
   log_too_big $log_size \

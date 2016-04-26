@@ -6,7 +6,7 @@
     <string>me.klappradla.transfer</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/Max/dotfiles/backups/transfer.sh</string>
+      <string>/Users/Max/dotfiles/scripts/transfer.sh</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
@@ -14,9 +14,9 @@
       <integer>30</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/Max/dotfiles/backups/log/transfer.log</string>
+    <string>/Users/Max/dotfiles/scripts/log/transfer.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/Max/dotfiles/backups/log/transfer.log</string>
+    <string>/Users/Max/dotfiles/scripts/log/transfer.log</string>
     <key>Debug</key>
     <true/>
   </dict>

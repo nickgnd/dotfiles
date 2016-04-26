@@ -9,6 +9,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
+Plug 'tpope/vim-commentary'
 " add plugins to runtime path
 call plug#end()
 
