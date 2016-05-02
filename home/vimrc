@@ -56,6 +56,7 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+set colorcolumn=80
 
 " enable syntax highlighting
 syntax enable
