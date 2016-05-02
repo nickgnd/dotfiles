@@ -46,6 +46,11 @@ set encoding=utf-8
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
 
+" search
+set hlsearch
+set showmatch
+set incsearch
+
 " set tabsize to 2 (softtabs)
 set tabstop=2
 set shiftwidth=2
