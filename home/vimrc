@@ -1,6 +1,5 @@
-" vim plug section
+" Vim plug
 call plug#begin('~/.vim/plugged')
-" plugins from github repos:
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'klappradla/klappradla.vim'
@@ -9,10 +8,9 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-commentary'
-" add plugins to runtime path
 call plug#end()
 
-" plugin specific config
+" Plugin specific config
 " NERDTree
 let NERDTreeShowHidden=1
 " CTRLP
@@ -21,67 +19,45 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " lighline
 set laststatus=2
 let g:lightline = {'colorscheme': 'solarized'}
-" faster timeout for switching modes
-set ttimeoutlen=50
 
-" colorscheme
-syntax on
-set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
+" globals
+set nocompatible                " vim not vi mode
+set clipboard=unnamed           " use os clipboard by default
+set mouse=a                     " allow mouse in all modes
+set ruler                       " show cursor position
+set nobackup                    " disable backups
+set nowritebackup               " write file in place
+set noswapfile                  " no .swap files
+set encoding=utf-8              " set encoding to utf-8
+set backspace=indent,eol,start  " make backspace behave 'normal'
+set ttimeoutlen=50              " faster timeout for switching modes
+set autoread                    " automatically reload buffers
+set autowrite                   " automatically save changes when switching buffers
 
-set nocompatible
-
-" use os clipboard by default
-set clipboard=unnamed
-
-" disable backups
-set nobackup
-set nowritebackup
-set noswapfile
-
-" set encoding to utf-8
-set encoding=utf-8
-
-" make backspace behave in a sane manner
-set backspace=indent,eol,start
-
-" search
-set hlsearch
-set showmatch
-set incsearch
+" Search
+set hlsearch    " highlight matches
+set incsearch   " incremental search
+set ignorecase  " seach case insensitive...
+set smartcase   " ... unless it contains capital letter
 
 " set tabsize to 2 (softtabs)
 set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
-set colorcolumn=80
 
-" enable syntax highlighting
-syntax enable
-" ad ruby operators
-let ruby_operators = 1
-
-" allow mouse in all modes
-set mouse=a
-
-" show cursor position (line number, etc.)
-set ruler
-
-" show filename in window bar
-set title
-
-" Enable file type detection and do language-dependent indenting.
-filetype on
+" Language specific settings
+let ruby_operators = 1       " ad ruby operators
+filetype on                  " filetype detection
 filetype plugin on
-filetype plugin indent on
+filetype plugin indent on    " filetype matching indention
 
-" Show line numbers
-set number
-
-" Allow hidden buffers, don't limit to 1 file per window/split
-set hidden
-
-" hide the default mode line
-set noshowmode
+" appearance
+syntax on
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
+set colorcolumn=80              " highlight 80 char column
+syntax enable                   " enable syntax highlighting
+set number                      " show line numbers
+set noshowmode                  " hide default status line
