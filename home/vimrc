@@ -8,6 +8,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-commentary'
+Plug 'slim-template/vim-slim'
 call plug#end()
 
 " Plugin specific config
