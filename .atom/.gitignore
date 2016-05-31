@@ -1,5 +1,6 @@
 # ignore all files here
 storage
+packages
 blob-store
 compile-cache
 dev

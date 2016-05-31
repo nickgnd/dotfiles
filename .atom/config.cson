@@ -9,6 +9,7 @@
     fontFamily: "Monaco"
     invisibles: {}
     showIndentGuide: true
+    softWrap: true
     tabType: "soft"
   "exception-reporting":
     userId: "1c55a852-c707-9d50-af21-7175ee744d0e"
