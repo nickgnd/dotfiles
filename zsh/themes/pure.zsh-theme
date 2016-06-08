@@ -1,0 +1,1 @@
+/Users/Max/dotfiles/zsh/themes/pure/pure.zsh
