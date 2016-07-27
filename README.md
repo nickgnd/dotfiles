@@ -39,13 +39,24 @@ For managing ruby versions, I use [postmodern's](https://github.com/postmodern) 
 
 ## Getting started
 
-#### Dependencies
-* [Homebrew](http://brew.sh/)
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-* [vim-plug](https://github.com/junegunn/vim-plug)
-* [iTerm2](https://www.iterm2.com/)
+### Install Dependencies
 
-### Install
+#### Terminal
+* [iTerm2](https://www.iterm2.com/)
+* [Homebrew](http://brew.sh/)
+* ZSH *(via homebrew)*
+* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+#### Editors
+* Vim *(via homebrew)*
+* [vim-plug](https://github.com/junegunn/vim-plug)
+* [Atom](https://atom.io/)
+
+#### Ruby
+* [ruby-install](https://github.com/postmodern/ruby-install)
+* [chruby](https://github.com/postmodern/chruby)
+
+### Install Dotfiles
 
 ```
 curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/install.sh | sh
