@@ -84,8 +84,6 @@ chruby ruby-2.3.0 # default ruby
 # Aliases
 alias at="atom ./"
 alias code="cd ~/Code"
-alias pgup="pg_ctl start -D /usr/local/var/postgres"
-alias pgdown="pg_ctl stop -D /usr/local/var/postgres"
 alias backup="sh ~/dotfiles/scripts/backup.sh"
 alias transfer="sh ~/dotfiles/scripts/transfer.sh"
 
