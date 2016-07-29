@@ -15,7 +15,7 @@ For managing ruby versions, I use [postmodern's](https://github.com/postmodern) 
 
 ```
 .
-├── .atom (atom files)
+├── atom (atom files)
 │
 ├── agents (launchd scripts)
 │

@@ -64,6 +64,6 @@ main() {
     && symlink_files "agents/*.plist" "$HOME/Library/LaunchAgents/"
 
   prompt_user "Atom Editor" \
-    && symlink_files ".atom" "$HOME/"
+    && symlink_files "atom/*" "$HOME/.atom/"
 }
 main
