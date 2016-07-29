@@ -15,9 +15,9 @@ For managing ruby versions, I use [postmodern's](https://github.com/postmodern) 
 
 ```
 .
-├── atom (atom files)
-│
 ├── agents (launchd scripts)
+│
+├── atom (atom files)
 │
 ├── home (symlinked to ~/)
 │   ├── gemrc (global config for ruby gems)
@@ -58,93 +58,60 @@ For managing ruby versions, I use [postmodern's](https://github.com/postmodern) 
 
 ### Install Dotfiles
 
-```
-curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/install.sh | sh
-```
+Clone repo and symlink files *(old links are replaced by new ones)*:
 
-This will clone the repo and prompt to symlink dotfiles and settings.
+	curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/install.sh | sh
+	
+#### iTerm2
+
+Point **`Load preferences from custom folder or URL`** to `~/dotfiles/iterm2`
+
+If the settings are not applied, run:
+
+	defaults read com.googlecode.iterm2
 
 
-### Symbolic links
-
-```
-sh symlink.sh
-```
-
-Prompts which parts of the dotfiles should be symlinked *(old links are replaced by new ones)*.
-
-### SSH keys
+#### SSH keys
 
 Setup public key authentication with backup computer (in local network) over ssh.
 
-1. Generate public key on local machine (if not done already)<br/>
-  `ssh-keygen -t rsa`
-2. Copy to remote machine<br/>
-`scp ~/.ssh/id_rsa.pub user@remote.local:.ssh/authorized_keys2`
+Generate public key on local machine (if not done already)
+
+	ssh-keygen -t rsa
+	
+Copy to remote machine
+
+	scp ~/.ssh/id_rsa.pub user@remote.local:.ssh/authorized_keys2
 
 
-## Usage
-
-### iTerm setup
-
-* point *Load preferences from custom folder or URL* to `~/dotfiles/iterm2`
-* if the settings are not applied automatically, run:    
-  `defaults read com.googlecode.iterm2`
-* use `⇧⌘m` to maximize the window horizontally and vertially
-
-![iterm](screenshots/iterm.png?raw=true)
-
-
-## Setup system from scratch
-
-When setting up a new system, I prefer taking the time on cleaning up and focusing on what is really needed, rather than running a bootstrap script. Here some useful commands:
-
+## Hints to setup system from scratch
 
 ### OSX
 
-###### show hidden files in finder
-```
-defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
-```
+show hidden files in finder
 
-###### show all file endings
-```
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-```
+	defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
 
-###### install xcode command line tools
-```
-xcode-select --install
-```
+show file endings
 
+	defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-#### set up ssh keys
+install xcode command line tools
 
-###### check for ssh key, generating if it does not exist
-```
-[[ -f $pub ]] || ssh-keygen -t rsa
-```
+	xcode-select --install
+	
+use homebrew's zsh
 
-###### copy public key to clipboard
-```
-[[ -f $pub ]] && cat $pub | pbcopy
-```
+	sudo sh -c echo '/usr/local/bin/zsh' > /etc/shells
+	chsh -s /usr/local/bin/zsh
 
 
-#### other
+### SSH
 
-###### install homebrew
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+check for ssh key, generating if it does not exist
 
-###### install recent zsh
-```
-brew install zsh
-```
+	[[ -f $pub ]] || ssh-keygen -t rsa
 
-###### use recent zsh as default (prefer to system zsh)
-```
-sudo sh -c echo '/usr/local/bin/zsh' > /etc/shells
-chsh -s /usr/local/bin/zsh
-```
+copy public key to clipboard
+
+	[[ -f $pub ]] && cat $pub | pbcopy
