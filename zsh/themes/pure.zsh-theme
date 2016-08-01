@@ -1,1 +1,1 @@
-/Users/Max/dotfiles/zsh/themes/pure/pure.zsh
+pure/pure.zsh

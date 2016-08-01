@@ -1,1 +1,1 @@
-/Users/Max/dotfiles/zsh/themes/pure/async.zsh
+themes/pure/async.zsh
