@@ -2,7 +2,6 @@
 	name = Max Mulatz
 	email = klappradla@gmail.com
 [core]
-	excludesfile = /Users/Max/.gitignore_global
-  editor = /usr/local/bin/vim
+	excludesfile = ~/.gitignore_global
 [status]
 	submoduleSummary = true
