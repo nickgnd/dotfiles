@@ -57,7 +57,6 @@ export GOPATH=$HOME/Code/go # Add Go Path
 # Chruby
 source /usr/local/share/chruby/chruby.sh # auto change in directory
 source /usr/local/share/chruby/auto.sh
-chruby ruby-2.3.1 # default ruby
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
