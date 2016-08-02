@@ -1,6 +1,8 @@
 [user]
 	name = Max Mulatz
-	email = klappradla@gmail.com
+	email = maximilian.mulatz@runtastic.com
+[alias]
+  setpersonal = "config user.email 'klappradla@gmail.com'"
 [core]
 	excludesfile = ~/.gitignore_global
 [status]
