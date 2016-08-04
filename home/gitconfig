@@ -1,9 +1,10 @@
 [user]
-	name = Max Mulatz
-	email = maximilian.mulatz@runtastic.com
+  name = Max Mulatz
+  email = maximilian.mulatz@runtastic.com
 [alias]
   setpersonal = "config user.email 'klappradla@gmail.com'"
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
+  editor = /usr/local/bin/vim
 [status]
-	submoduleSummary = true
+  submoduleSummary = true
