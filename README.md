@@ -56,6 +56,9 @@ For managing ruby versions, I use [postmodern's](https://github.com/postmodern) 
 * [ruby-install](https://github.com/postmodern/ruby-install)
 * [chruby](https://github.com/postmodern/chruby)
 
+#### General
+* Git >= 2.8.0 *(via homebrew)*
+
 ### Install Dotfiles
 
 Clone repo and symlink files *(old links are replaced by new ones)*:

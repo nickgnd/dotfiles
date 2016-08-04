@@ -1,8 +1,8 @@
 [user]
   name = Max Mulatz
-  email = maximilian.mulatz@runtastic.com
+  useConfigOnly = true
 [alias]
-  setpersonal = "config user.email 'klappradla@gmail.com'"
+  personal = "config user.email 'klappradla@gmail.com'"
 [core]
   excludesfile = ~/.gitignore_global
   editor = /usr/local/bin/vim
