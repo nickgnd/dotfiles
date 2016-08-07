@@ -6,7 +6,7 @@ How I set up my OSX/Unix environment.
 
 I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a terminal replacement and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my settings there. On text-editors, I switch between Github's Atom and Vim (using [vim-plug](https://github.com/junegunn/vim-plug) for managing my Vim plugins). For colors, I like Ethan Schoonover's awesome [solarized](http://ethanschoonover.com/solarized) scheme and use it in iTerm, Vim and Atom.
 
-Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `14pt` in both, Atom and Vim *(it's one of the few fonts looking okish in size 14)*.
+Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `15pt` in both, Atom and Vim *(it's one of the few fonts looking okish in size 15)*.
 
 For managing ruby versions, I use [postmodern's](https://github.com/postmodern) [ruby-install](https://github.com/postmodern/ruby-install) with [chruby](https://github.com/postmodern/chruby).
 
