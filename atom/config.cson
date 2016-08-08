@@ -7,7 +7,6 @@
     ]
   editor:
     fontFamily: "Monaco"
-    fontSize: 15
     invisibles: {}
     showIndentGuide: true
     softWrap: true
