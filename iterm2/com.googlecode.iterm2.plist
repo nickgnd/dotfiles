@@ -841,7 +841,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -853,15 +853,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>743 226 569 94 0 0 1440 877 </string>
+	<string>173 382 569 77 0 0 1920 1057 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>269 168 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 499 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>358 174 796 473 0 0 1440 877 </string>
+	<string>625 143 796 473 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1058 0 0 1920 1057 </string>
+	<string>-1280 0 1280 778 -1280 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>152 50 570 452 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1447,7 +1447,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 15</string>
+			<string>Monaco 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
