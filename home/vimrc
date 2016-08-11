@@ -35,11 +35,17 @@ set ttimeoutlen=50              " faster timeout for switching modes
 set autoread                    " automatically reload buffers
 set autowrite                   " automatically save changes when switching buffers
 
-" Search
+" search
 set hlsearch    " highlight matches
 set incsearch   " incremental search
 set ignorecase  " seach case insensitive...
 set smartcase   " ... unless it contains capital letter
+
+" navigation
+nnoremap <C-J> <C-W><C-J>    " faster split navigation
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " set tabsize to 2 (softtabs)
 set tabstop=2
