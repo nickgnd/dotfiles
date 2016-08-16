@@ -5,7 +5,8 @@ readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
 readonly SOURCE_DIRS=(~/Code
                       ~/Dropbox
                       /Volumes/Media/iTunes\ Media/Music)
-readonly BACKUP_VOLUME=/Volumes/archive/backup
+readonly BACKUP_DRIVE="/Volumes/archive"
+readonly BACKUP_VOLUME="/Volumes/archive/backup/daily/$(date +'%A')"
 readonly REMOTE=max@HerrDirektor.local
 
 print_to_log() {
@@ -71,7 +72,7 @@ drive_connected() {
 main() {
   local log_size
 
-  if drive_connected $BACKUP_VOLUME
+  if drive_connected $BACKUP_DRIVE
   then
     local_backup
   else

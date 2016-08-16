@@ -8,20 +8,8 @@
     <array>
       <string>/Users/Max/dotfiles/scripts/backup.sh</string>
     </array>
-    <key>StartCalendarInterval</key>
-    <dict>
-      <key>Hour</key>
-      <integer>0</integer>
-      <key>Minute</key>
-      <integer>0</integer>
-    </dict>
-    <key>StartCalendarInterval</key>
-    <dict>
-      <key>Hour</key>
-      <integer>12</integer>
-      <key>Minute</key>
-      <integer>0</integer>
-    </dict>
+    <key>StartInterval</key>
+    <integer>3600</integer>
     <key>StandardOutPath</key>
     <string>/Users/Max/dotfiles/scripts/log/backup.log</string>
     <key>StandardErrorPath</key>
