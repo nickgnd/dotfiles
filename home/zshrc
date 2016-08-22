@@ -83,7 +83,7 @@ source /usr/local/share/chruby/auto.sh
 # Aliases
 alias at="atom ./"
 alias code="cd ~/Code"
-alias backup="sh ~/dotfiles/scripts/backup.sh"
+alias backup="bash ~/dotfiles/scripts/backup.sh"
 alias jrdebug="JRUBY_OPTS='--debug'"
 
 # added by travis gem
