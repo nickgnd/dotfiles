@@ -84,7 +84,7 @@ source /usr/local/share/chruby/auto.sh
 alias at="atom ./"
 alias code="cd ~/Code"
 alias backup="sh ~/dotfiles/scripts/backup.sh"
-alias jrdebug="JRUBY_OPTS='--debug'"
+alias jrdebug="JRUBY_OPTS='-Xcext.enabled=true --debug'"
 
 # added by travis gem
 [ -f /Users/Max/.travis/travis.sh ] && source /Users/Max/.travis/travis.sh
