@@ -52,11 +52,15 @@ set shiftwidth=2
 set shiftround
 set expandtab
 
-" Language specific settings
+" language specific settings
 let ruby_operators = 1       " ad ruby operators
 filetype on                  " filetype detection
 filetype plugin on
 filetype plugin indent on    " filetype matching indention
+
+" spelling
+autocmd BufRead,BufNewFile *.md setlocal spell   " spell check for markdown files
+set complete+=kspell                             " autocomplete words
 
 " appearance
 syntax on
