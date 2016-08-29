@@ -22,7 +22,7 @@ backup_ran() {
   echo "check for file"
   local date="$(date +'%F')"
   local run_file="$BACKUP_VOLUME/.last_run"
-  [ -e "$run_file" ] && [ grep -Fxq "$date" $run_file ]
+  [ -e "$run_file" ] && grep -Fxq "$date" $run_file
 }
 
 menu_bar() {
@@ -103,7 +103,7 @@ main() {
 
   if drive_connected $BACKUP_DRIVE
   then
-    (! backup_ran) || local_backup
+    backup_ran || local_backup
   else
     # remote_backup
     echo "remote"
