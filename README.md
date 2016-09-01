@@ -50,6 +50,7 @@ For managing ruby versions, I use [postmodern's](https://github.com/postmodern) 
 #### Editors
 * Vim *(via homebrew)*
 * [vim-plug](https://github.com/junegunn/vim-plug)
+* [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) for faster and smarter searches in Vim
 * [Atom](https://atom.io/)
 
 #### Ruby
