@@ -3,8 +3,7 @@
 readonly LOG_FILE=~/dotfiles/scripts/log/backup.log
 readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
 readonly SOURCE_DIRS=(~/Code
-                      ~/Dropbox
-                      /Volumes/Media/iTunes\ Media/Music)
+                      ~/Dropbox)
 readonly BACKUP_DRIVE="/Volumes/archive"
 readonly BACKUP_VOLUME="/Volumes/archive/backup/daily/$(date +'%A')"
 readonly REMOTE=max@HerrDirektor.local
