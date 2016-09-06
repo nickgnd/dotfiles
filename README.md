@@ -59,12 +59,15 @@ For managing ruby versions, I use [postmodern's](https://github.com/postmodern) 
 #### General
 * Git >= 2.8.0 *(via homebrew)*
 
+#### Backup Script (OSX)
+* [AnyBar](https://github.com/tonsky/AnyBar)
+
 ### Install Dotfiles
 
 Clone repo and symlink files *(old links are replaced by new ones)*:
 
 	curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/install.sh | sh
-	
+
 #### iTerm2
 
 Point **`Load preferences from custom folder or URL`** to `~/dotfiles/iterm2`
@@ -81,7 +84,7 @@ Setup public key authentication with backup computer (in local network) over ssh
 Generate public key on local machine (if not done already)
 
 	ssh-keygen -t rsa
-	
+
 Copy to remote machine
 
 	scp ~/.ssh/id_rsa.pub user@remote.local:.ssh/authorized_keys2
@@ -102,7 +105,7 @@ show file endings
 install xcode command line tools
 
 	xcode-select --install
-	
+
 use homebrew's zsh
 
 	sudo sh -c echo '/usr/local/bin/zsh' > /etc/shells
