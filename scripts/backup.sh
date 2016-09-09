@@ -31,6 +31,7 @@ local_backup() {
 }
 
 sync_files() {
+  menu_bar orange
   for dir in "${SOURCE_DIRS[@]}"; do
     rsync -av --delete --exclude-from \
       $EXCLUDE_LIST "$dir" $BACKUP_VOLUME
