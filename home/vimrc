@@ -13,6 +13,7 @@ call plug#end()
 " Plugin specific config
 " NERDTree
 let NERDTreeShowHidden=1
+let g:NERDTreeWinSize=25
 " CTRLP
 let g:ctrlp_show_hidden=1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
