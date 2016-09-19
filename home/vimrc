@@ -15,7 +15,7 @@ call plug#end()
 let NERDTreeShowHidden=1
 " CTRLP
 let g:ctrlp_show_hidden=1
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " lighline
 set laststatus=2
 let g:lightline = {'colorscheme': 'solarized'}
