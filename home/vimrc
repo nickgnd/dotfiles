@@ -8,6 +8,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-commentary'
 Plug 'slim-template/vim-slim'
+Plug 'vim-multiple-cursors'
 call plug#end()
 
 " Plugin specific config
