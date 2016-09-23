@@ -54,10 +54,6 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH" # Expand path for homebrew sbin
 export PATH="$PATH:/usr/local/bin/elixir" # Add Elixir for development
 export GOPATH=$HOME/Code/go # Add Go Path
-
-# Chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh # auto change in directory
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
