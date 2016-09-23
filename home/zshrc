@@ -56,6 +56,9 @@ export PATH="$PATH:/usr/local/bin/elixir" # Add Elixir for development
 export GOPATH=$HOME/Code/go # Add Go Path
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# rbenv
+eval "$(rbenv init -)"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
