@@ -1,6 +1,0 @@
-packages: [
-  "highlight-selected"
-  "language-elixir"
-  "language-slim"
-  "package-sync"
-]
