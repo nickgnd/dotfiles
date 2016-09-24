@@ -4,11 +4,11 @@ How I set up my OSX/Unix environment.
 
 ## General
 
-I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a terminal replacement and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my settings there. On text-editors, I switch between Github's Atom and Vim (using [vim-plug](https://github.com/junegunn/vim-plug) for managing my Vim plugins). For colors, I like Ethan Schoonover's awesome [solarized](http://ethanschoonover.com/solarized) scheme and use it in iTerm, Vim and Atom.
+I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a terminal replacement and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my settings there.
 
-Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `15pt` in both, Atom and Vim.
+Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `15pt` in both, my editors and my shell.
 
-For managing ruby versions, I use [postmodern's](https://github.com/postmodern) [ruby-install](https://github.com/postmodern/ruby-install) with [chruby](https://github.com/postmodern/chruby).
+For managing ruby versions, I just switched to using [rbenv](https://github.com/rbenv/rbenv).
 
 
 ## Directory
@@ -20,12 +20,12 @@ For managing ruby versions, I use [postmodern's](https://github.com/postmodern) 
 ├── atom (atom files)
 │
 ├── home (symlinked to ~/)
-│   ├── gemrc (global config for ruby gems)
-│   ├── gitconfig (global git config)
+│   ├── gemrc            (global config for ruby gems)
+│   ├── gitconfig        (global git config)
 │   ├── gitignore_global (global gitignore)
-│   ├── ruby-version (default ruby version)
-│   ├── vimrc (vim config)
-│   └── zshrc (zsh/oh-my-zsh config)
+│   ├── hushlogin        (omit "last login" message)
+│   ├── rcdebug          (config for ruby-debug)
+│   └── zshrc            (zsh/oh-my-zsh config)
 │
 ├── iterm2 (profile and settings for iterm)
 │
@@ -41,26 +41,21 @@ For managing ruby versions, I use [postmodern's](https://github.com/postmodern) 
 
 ### Install Dependencies
 
-#### Terminal
+#### 1. Terminal
 * [iTerm2](https://www.iterm2.com/)
 * [Homebrew](http://brew.sh/)
-* ZSH *(via homebrew)*
+* **zsh:** `brew install zsh`
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-#### Editors
-* Vim *(via homebrew)*
-* [vim-plug](https://github.com/junegunn/vim-plug)
-* [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) for faster and smarter searches in Vim
+#### 2. General
+* [rbenv](https://github.com/rbenv/rbenv) `brew install rbenv`
+* Git >= 2.8.0 `brew install git`
+
+#### 3. Editors *(optional)*
 * [Atom](https://atom.io/)
 
-#### Ruby
-* [ruby-install](https://github.com/postmodern/ruby-install)
-* [chruby](https://github.com/postmodern/chruby)
 
-#### General
-* Git >= 2.8.0 *(via homebrew)*
-
-#### Backup Script (OSX)
+#### 4. Backup Script *(optional)*
 * [AnyBar](https://github.com/tonsky/AnyBar)
 
 ### Install Dotfiles
