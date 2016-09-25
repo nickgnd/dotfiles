@@ -2,6 +2,7 @@
 
 How I set up my OSX/Unix environment.
 
+
 ## General
 
 I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a terminal replacement and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my settings there.
@@ -62,7 +63,9 @@ For managing ruby versions, I just switched to using [rbenv](https://github.com/
 
 Clone repo and symlink files *(old links are replaced by new ones)*:
 
-	curl --silent https://raw.githubusercontent.com/klappradla/dotfiles/master/install.sh | sh
+    $ git clone --recursively git@github.com:klappradla/dotfiles.git
+    $ cd dotfiles
+    $ sh install.sh
 
 #### iTerm2
 
@@ -71,19 +74,6 @@ Point **`Load preferences from custom folder or URL`** to `~/dotfiles/iterm2`
 If the settings are not applied, run:
 
 	defaults read com.googlecode.iterm2
-
-
-#### SSH keys
-
-Setup public key authentication with backup computer (in local network) over ssh.
-
-Generate public key on local machine (if not done already)
-
-	ssh-keygen -t rsa
-
-Copy to remote machine
-
-	scp ~/.ssh/id_rsa.pub user@remote.local:.ssh/authorized_keys2
 
 
 ## Hints to setup system from scratch
