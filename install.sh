@@ -21,7 +21,7 @@ remove_old_link() {
 
 is_file() {
   local file=$1
-  file_exists $file &&
+  file_exists $file || return 0
   echo "Warning: $file is a not a symlink! Go double check before removing!\n" &&
   return 1
 }

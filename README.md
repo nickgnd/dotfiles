@@ -63,7 +63,7 @@ For managing ruby versions, I just switched to using [rbenv](https://github.com/
 
 Clone repo and symlink files *(old links are replaced by new ones)*:
 
-    $ git clone --recursively git@github.com:klappradla/dotfiles.git
+    $ git clone --recursive git@github.com:klappradla/dotfiles.git
     $ cd dotfiles
     $ sh install.sh
 
