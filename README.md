@@ -26,6 +26,7 @@ For managing ruby versions, I just switched to using [rbenv](https://github.com/
 │   ├── gitignore_global (global gitignore)
 │   ├── hushlogin        (omit "last login" message)
 │   ├── rcdebug          (config for ruby-debug)
+│   ├── vimrc            (config for vim)
 │   └── zshrc            (zsh/oh-my-zsh config)
 │
 ├── iterm2 (profile and settings for iterm)
@@ -54,6 +55,7 @@ For managing ruby versions, I just switched to using [rbenv](https://github.com/
 
 #### 3. Editors *(optional)*
 * [Atom](https://atom.io/)
+* **vim:** `brew install vim`
 
 
 #### 4. Backup Script *(optional)*
