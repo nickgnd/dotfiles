@@ -3,7 +3,7 @@ readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
 readonly SOURCE_DIRS=(~/Code
                       ~/Dropbox)
 readonly BACKUP_DRIVE="/Volumes/archive"
-readonly BACKUP_VOLUME="/Volumes/archive/backup/daily/$(date +'%A')"
+readonly BACKUP_VOLUME="/Volumes/archive/backup/$(hostname -s)/daily/$(date +'%A')"
 readonly TODAY="$(date +'%F')"
 readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_backup
 
