@@ -1,6 +1,7 @@
 "*":
   "autoclose-html": {}
   core:
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
