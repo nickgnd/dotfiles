@@ -6,6 +6,7 @@
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
+    useCustomTitleBar: true
   editor:
     fontFamily: "Monaco"
     fontSize: 15
