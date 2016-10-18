@@ -77,6 +77,10 @@ If the settings are not applied, run:
 
 	defaults read com.googlecode.iterm2
 
+#### Atom
+
+Run `Package List: Install` from the command palette to install all packages from `/atom/packages.txt`
+
 
 ## Hints to setup system from scratch
 
