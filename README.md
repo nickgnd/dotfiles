@@ -56,6 +56,7 @@ For managing ruby versions, I just switched to using [rbenv](https://github.com/
 #### 3. Editors *(optional)*
 * [Atom](https://atom.io/)
 * **vim:** `brew install vim`
+  * install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management
 
 
 #### 4. Backup Script *(optional)*
