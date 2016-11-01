@@ -1,9 +1,4 @@
-" Plugins
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
+" Plugins (require vim-plug)
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -11,38 +6,36 @@ Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
-" Plugin specific config
-" NERDTree
+" Plugin specific settings
 let NERDTreeShowHidden=1
 let g:NERDTreeWinSize=25
-" CTRLP
 let g:ctrlp_show_hidden=1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-" lighline
+let g:vim_markdown_folding_disabled = 1    " disable auto-folding
+let g:vim_markdown_new_list_item_indent=2  " indent lists by 2 spaces in .md files
 set laststatus=2
 let g:lightline = {'colorscheme': 'solarized'}
 
-" Globals
-set nocompatible                " vim not vi mode
-set mouse=a                     " allow mouse in all modes
-set ruler                       " show cursor position
-set nobackup                    " disable backups
-set nowritebackup               " write file in place
-set noswapfile                  " no .swap files
-set encoding=utf-8              " set encoding to utf-8
-set backspace=indent,eol,start  " make backspace behave 'normal'
-set ttimeoutlen=50              " faster timeout for switching modes
-set autoread                    " automatically reload buffers
-set autowrite                   " automatically save changes when switching buffers
+" General
+set nocompatible                           " vim not vi mode
+set mouse=a                                " allow mouse in all modes
+set autoread                               " automatically reload buffers
+set autowrite                              " automatically save files
+set nobackup                               " disable backups
+set nowritebackup                          " write file in place
+set noswapfile                             " no .swap files
+set backspace=indent,eol,start             " make backspace behave normal
 
 " Search
-set incsearch                  " incremental search
-set ignorecase                 " seach case insensitive...
-set smartcase                  " ... unless it contains capital letter
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
+set incsearch                              " incremental search
+set ignorecase                             " seach case insensitive...
+set smartcase                              " ... unless it contains capital letter
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " ignore tmp directories
+if executable('ag')                        " use the_silver_searcher
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
@@ -61,28 +54,26 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Tabsize to 2 (softtabs)
+" Editing
+set expandtab                              " use softtabs
 set tabstop=2
 set shiftwidth=2
 set shiftround
-set expandtab
-
-" Language specific settings
-let ruby_operators = 1       " ad ruby operators
-filetype on                  " filetype detection
+filetype on                                " filetype detection
 filetype plugin on
-filetype plugin indent on    " filetype matching indention
+filetype plugin indent on                  " filetype matching indention
+syntax on                                  " syntax highlighting
+syntax enable                              " syntax highlighting
 
 " Spelling
 autocmd BufRead,BufNewFile *.md setlocal spell   " spell check for markdown files
 set complete+=kspell                             " autocomplete words
 
 " Appearance
-syntax on
-set background=dark
-let g:solarized_termtrans = 1
+set ruler                                  " display cursor position
+set colorcolumn=80                         " highlight 80 char column
+set number                                 " show line numbers
+let g:solarized_termtrans=1
 colorscheme solarized
-set colorcolumn=80              " highlight 80 char column
-syntax enable                   " enable syntax highlighting
-set number                      " show line numbers
-set noshowmode                  " hide default status line
+set background=dark
+set noshowmode                             " hide default status line
