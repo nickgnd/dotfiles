@@ -57,6 +57,7 @@ For managing ruby versions, I just switched to using [rbenv](https://github.com/
 * [Atom](https://atom.io/)
 * **vim:** `brew install vim`
   * install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management
+  * install [the silver searcher](https://github.com/ggreer/the_silver_searcher) for faster search: `brew install the_silver_searcher`
 
 
 #### 4. Backup Script *(optional)*

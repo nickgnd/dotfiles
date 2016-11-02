@@ -9,6 +9,7 @@ Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'alvan/vim-closetag'
 call plug#end()
 
 " Plugin specific settings
@@ -20,6 +21,7 @@ let g:vim_markdown_new_list_item_indent=2  " indent lists by 2 spaces in .md fil
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 set laststatus=2
 let g:lightline = {'colorscheme': 'solarized'}
+let g:closetag_filenames = "*.html.*"
 
 " General
 set nocompatible                           " vim not vi mode
@@ -36,17 +38,9 @@ set incsearch                              " incremental search
 set ignorecase                             " seach case insensitive...
 set smartcase                              " ... unless it contains capital letter
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " ignore tmp directories
-if executable('ag')                        " use the_silver_searcher
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-  if !exists(":Ag")
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-  endif
+if executable('ag')                        " use the_silver_searcher (if available)
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
+  set grepformat=%f:%l:%c%m
 endif
 
 " Navigation
