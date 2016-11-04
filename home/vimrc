@@ -50,6 +50,7 @@ nnoremap <C-J> <C-W><C-J>    " faster split navigation
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+set scrolloff=3              " start scrolling 3 lines off the border
 
 " Editing
 set expandtab                              " use softtabs
