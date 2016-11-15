@@ -18,7 +18,6 @@ let g:NERDTreeWinSize=25
 let g:ctrlp_show_hidden=1
 let g:vim_markdown_folding_disabled = 1    " disable auto-folding
 let g:vim_markdown_new_list_item_indent=2  " indent lists by 2 spaces in .md files
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 set laststatus=2
 let g:lightline = {'colorscheme': 'solarized'}
 let g:closetag_filenames = "*.html.*"
@@ -41,8 +40,15 @@ set ignorecase                             " seach case insensitive...
 set smartcase                              " ... unless it contains capital letter
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " ignore tmp directories
 if executable('ag')                        " use the_silver_searcher (if available)
+  " use for grep
   set grepprg=ag\ --nogroup\ --nocolor\ --column
   set grepformat=%f:%l:%c%m
+
+  " use for ctrl-p
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+else
+  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 endif
 
 " Navigation
