@@ -10,6 +10,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'alvan/vim-closetag'
+Plug 'slim-template/vim-slim'
 call plug#end()
 
 " Plugin specific settings
@@ -32,7 +33,7 @@ set nowritebackup                          " write file in place
 set noswapfile                             " no .swap files
 set backspace=indent,eol,start             " make backspace behave normal
 set ttyfast                                " I have a fast terminal
-set synmaxcol=200                          " limit syntax highlighting (for performance reasons)
+" set synmaxcol=2000                         " limit syntax highlighting (for performance reasons)
 
 " Search
 set incsearch                              " incremental search
@@ -56,7 +57,7 @@ nnoremap <C-J> <C-W><C-J>    " faster split navigation
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-set scrolloff=3              " start scrolling 3 lines off the border
+set scrolloff=2              " start scrolling 3 lines off the border
 
 " Editing
 set expandtab                              " use softtabs
@@ -66,8 +67,9 @@ set shiftround
 filetype on                                " filetype detection
 filetype plugin on
 filetype plugin indent on                  " filetype matching indention
-syntax on                                  " syntax highlighting
 syntax enable                              " syntax highlighting
+set wrap linebreak nolist                  " line wrapping
+set breakindent                            " indent wrapped lines
 
 " Spelling
 autocmd BufRead,BufNewFile *.md setlocal spell   " spell check for markdown files
