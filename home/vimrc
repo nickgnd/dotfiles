@@ -33,7 +33,6 @@ set nowritebackup                          " write file in place
 set noswapfile                             " no .swap files
 set backspace=indent,eol,start             " make backspace behave normal
 set ttyfast                                " I have a fast terminal
-" set synmaxcol=2000                         " limit syntax highlighting (for performance reasons)
 
 " Search
 set incsearch                              " incremental search
@@ -79,6 +78,7 @@ set complete+=kspell                             " autocomplete words
 set ruler                                  " display cursor position
 set colorcolumn=80                         " highlight 80 char column
 set number                                 " show line numbers
+set t_Co=256                               " use 256 colors
 let g:solarized_termtrans=1
 colorscheme solarized
 set background=dark
