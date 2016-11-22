@@ -63,10 +63,8 @@ set expandtab                              " use softtabs
 set tabstop=2
 set shiftwidth=2
 set shiftround
-filetype on                                " filetype detection
-filetype plugin on
 filetype plugin indent on                  " filetype matching indention
-syntax enable                              " syntax highlighting
+syntax on                                  " syntax highlighting
 set wrap linebreak nolist                  " line wrapping
 set breakindent                            " indent wrapped lines
 
