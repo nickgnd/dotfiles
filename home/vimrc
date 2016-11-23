@@ -1,3 +1,5 @@
+let g:ruby_path = system('echo $HOME/.rbenv/shims') " speed up vim-ruby
+
 " Plugins (require vim-plug)
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
