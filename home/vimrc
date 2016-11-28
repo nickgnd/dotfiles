@@ -13,6 +13,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'alvan/vim-closetag'
 Plug 'slim-template/vim-slim'
+Plug 'fatih/vim-go'
 call plug#end()
 
 " Plugin specific settings
