@@ -14,7 +14,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'alvan/vim-closetag'
 Plug 'slim-template/vim-slim'
 Plug 'fatih/vim-go'
-Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 " Plugin specific settings
@@ -26,7 +25,6 @@ let g:vim_markdown_new_list_item_indent=2  " indent lists by 2 spaces in .md fil
 set laststatus=2
 let g:lightline = {'colorscheme': 'solarized'}
 let g:closetag_filenames = "*.html.*"
-autocmd BufWritePre * StripWhitespace      " strip trailing whitespaces on save
 
 " General
 set nocompatible                           " vim not vi mode
@@ -87,3 +85,12 @@ let g:solarized_termtrans=1
 colorscheme solarized
 set background=dark
 set noshowmode                             " hide default status line
+
+" Functions
+fun! StripTrailingWhiteSpace()             " Strip trailing whitespaces (where needed)
+  if &ft =~ 'markdown'
+    return
+  endif
+  %s/\s\+$//e
+endfun
+autocmd bufwritepre * :call StripTrailingWhiteSpace()
