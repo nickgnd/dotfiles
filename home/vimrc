@@ -55,12 +55,14 @@ else
 endif
 
 " Navigation
-nnoremap <C-J> <C-W><C-J>      " faster split navigation
+nnoremap <C-J> <C-W><C-J>        " faster split navigation
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-set scrolloff=2                " start scrolling 3 lines off the border
-map <C-t> :NERDTreeToggle<CR>  " toggle NERDTree with ctrl t
+set scrolloff=2                  " start scrolling 3 lines off the border
+map <C-t> :NERDTreeToggle<CR>    " toggle NERDTree with ctrl t
+nnoremap <Tab> :bnext<CR>        " cylce through buffers
+nnoremap <S-Tab> :bprevious<CR>
 
 " Editing
 set expandtab                              " use softtabs
