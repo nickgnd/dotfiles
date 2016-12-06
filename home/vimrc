@@ -8,7 +8,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'alvan/vim-closetag'
@@ -36,6 +35,8 @@ set nowritebackup                          " write file in place
 set noswapfile                             " no .swap files
 set backspace=indent,eol,start             " make backspace behave normal
 set ttyfast                                " I have a fast terminal
+set visualbell                             " don't beep
+set noerrorbells                           " don't beep
 
 " Search
 set incsearch                              " incremental search
@@ -60,9 +61,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set scrolloff=2                  " start scrolling 3 lines off the border
-map <C-t> :NERDTreeToggle<CR>    " toggle NERDTree with ctrl t
+map <C-n> :NERDTreeToggle<CR>    " toggle NERDTree with ctrl n
 nnoremap <Tab> :bnext<CR>        " cylce through buffers
-nnoremap <S-Tab> :bprevious<CR>
 
 " Editing
 set expandtab                              " use softtabs
