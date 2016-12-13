@@ -26,6 +26,12 @@ let g:vim_markdown_new_list_item_indent=2  " indent lists by 2 spaces in .md fil
 set laststatus=2
 let g:lightline = {'colorscheme': 'solarized'}
 let g:closetag_filenames = "*.html.*"
+let g:go_highlight_functions = 1           " syntax highlighting for all the go stuff
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 " General
 set nocompatible                           " vim not vi mode
