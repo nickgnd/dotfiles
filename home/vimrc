@@ -13,6 +13,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'alvan/vim-closetag'
 Plug 'slim-template/vim-slim'
 Plug 'fatih/vim-go'
+Plug 'pbrisbin/vim-mkdir'
 call plug#end()
 
 " Plugin specific settings
