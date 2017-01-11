@@ -64,6 +64,8 @@ else
 endif
 
 " Navigation
+noremap k gk                     " move by visual lines
+noremap j gj
 nnoremap <C-J> <C-W><C-J>        " faster split navigation
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
