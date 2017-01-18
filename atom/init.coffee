@@ -9,14 +9,22 @@
 # atom.workspace.observeTextEditors (editor) ->
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
+
+# Save list of currently installed packages
 atom.commands.add 'atom-workspace', 'package-list:dump', ->
   exec = require('child_process').exec
   file = "#{process.env['DOTS']}/atom/packages.txt"
   cmd  = "apm list --installed --bare > #{file}"
   exec cmd
 
+# Install list of packages
 atom.commands.add 'atom-workspace', 'package-list:install', ->
   exec = require('child_process').exec
   file = "#{process.env['DOTS']}/atom/packages.txt"
   cmd  = "apm install --packages-file #{file}"
   exec cmd
+
+# Remap annoying alt space to space
+atom.commands.add 'atom-text-editor', 'custom:space', () ->
+  editor = atom.workspace.getActiveTextEditor()
+  editor.insertText(' ')

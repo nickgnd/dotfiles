@@ -16,6 +16,9 @@
 
 'body':
   'shift-cmd-m': 'application:zoom'
+
+'.platform-darwin .editor':
+  'alt-space': 'custom:space'
 #
 # 'atom-workspace':
 #   'ctrl-shift-p': 'core:move-up'
