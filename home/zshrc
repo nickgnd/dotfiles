@@ -54,11 +54,14 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH" # Expand path for homebrew sbin
 export PATH="$PATH:/usr/local/bin/elixir" # Add Elixir for development
 export GOPATH=$HOME/Code/go # Add Go Path
-export JRUBY_OPTS="--dev -J-noverify"
+export JRUBY_OPTS="--dev -J-Xmx2G"
 export DOTS=$HOME/dotfiles
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+
+# Supress beep for autocompletion
+setopt nolistbeep
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
