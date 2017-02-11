@@ -453,7 +453,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 499 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>497 320 796 473 0 0 1920 1057 </string>
+	<string>497 281 796 473 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>-1280 -249 1280 778 -1280 -249 1280 777 </string>
 	<key>New Bookmarks</key>
@@ -1130,7 +1130,7 @@
 			<key>Send Code When Idle</key>
 			<false/>
 			<key>Send Idle Alert</key>
-			<true/>
+			<false/>
 			<key>Set Local Environment Vars</key>
 			<true/>
 			<key>Shortcut</key>
