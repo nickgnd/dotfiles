@@ -22,6 +22,7 @@ brew 'htop'
 brew 'node'
 brew 'postgresql', restart_service: true
 brew 'ruby-build'
+brew 'ruby'
 brew 'rbenv'
 brew 'the_silver_searcher'
 brew 'tree'
