@@ -90,3 +90,6 @@ alias jrdebug="JRUBY_OPTS='--debug'"
 # added by travis gem
 [ -f /Users/Max/.travis/travis.sh ] && source /Users/Max/.travis/travis.sh
 eval "$(rbenv init -)"
+
+# fzf fuzzy search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
