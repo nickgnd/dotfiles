@@ -45,23 +45,25 @@ For managing ruby versions, I just switched to using [rbenv](https://github.com/
 
 #### 1. Terminal
 * [iTerm2](https://www.iterm2.com/)
+
+#### 2. Packages
 * [Homebrew](http://brew.sh/)
-* **zsh:** `brew install zsh`
+* Install brew packages:
+  ```sh
+  brew tap Homebrew/bundle
+
+  cd ~/dotfiles
+
+  brew bundle #using the Brewfile in ~/dotfiles/
+  ```
+
+#### 3. Shell
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-#### 2. General
-* [rbenv](https://github.com/rbenv/rbenv) `brew install rbenv`
-* Git >= 2.8.0 `brew install git`
-
-#### 3. Editors *(optional)*
+#### 4. Editors *(optional)*
 * [Atom](https://atom.io/)
-* **vim:** `brew install vim`
+* **vim:**
   * install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management
-  * install [the silver searcher](https://github.com/ggreer/the_silver_searcher) for faster search: `brew install the_silver_searcher`
-
-
-#### 4. Backup Script *(optional)*
-* [AnyBar](https://github.com/tonsky/AnyBar)
 
 ### Install Dotfiles
 
