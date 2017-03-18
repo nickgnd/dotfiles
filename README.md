@@ -50,11 +50,13 @@ For managing ruby versions, I just switched to using [rbenv](https://github.com/
 * [Homebrew](http://brew.sh/)
 * Install brew packages:
   ```sh
-  brew tap Homebrew/bundle
-
   cd ~/dotfiles
 
-  brew bundle #using the Brewfile in ~/dotfiles/
+  #using the Brewfile in ~/dotfiles/
+  brew bundle 
+
+  # install fzf shell extensions
+  /usr/local/opt/fzf/install
   ```
 
 #### 3. Shell
