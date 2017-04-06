@@ -1,6 +1,8 @@
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+  branch = master
 [submodule "zsh/themes/pure"]
 	path = zsh/themes/pure
 	url = https://github.com/sindresorhus/pure.git
+  branch = master
