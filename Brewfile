@@ -24,6 +24,7 @@ brew 'postgresql', restart_service: true
 brew 'ruby-build'
 brew 'ruby'
 brew 'rbenv'
+brew 'rsync'
 brew 'the_silver_searcher'
 brew 'tree'
 brew 'vim'
