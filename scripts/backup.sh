@@ -5,9 +5,7 @@ readonly SOURCE_DIRS=(~/Code
 readonly BACKUP_DRIVE="/Volumes/archive"
 readonly BACKUP_VOLUME="/Volumes/archive/backup/$(hostname -s)/daily/$(date +'%A')"
 readonly TODAY="$(date +'%F')"
-
-# TODO: switch this to .txt file
-readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_backup
+readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_backup.txt
 
 backup_ran() {
   [ -e $LAST_RUN_FILE ] &&
