@@ -39,7 +39,7 @@ sync_files() {
 }
 
 write_log() {
-  # TODO: also write log file on server
+  echo $TODAY > $BACKUP_VOLUME/last_run.txt
   echo $TODAY > $LAST_RUN_FILE
 }
 
