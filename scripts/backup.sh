@@ -2,8 +2,8 @@
 readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
 readonly SOURCE_DIRS=(~/Code
                       ~/Dropbox)
-readonly BACKUP_DRIVE="/Volumes/archive"
-readonly BACKUP_VOLUME="/Volumes/archive/backup/$(hostname -s)/daily/$(date +'%A')"
+readonly NAS="monster.local"
+readonly BACKUP_VOLUME="/volume1/NetBackup/$(hostname -s)/daily/$(date +'%A')"
 readonly TODAY="$(date +'%F')"
 readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_backup.txt
 
@@ -24,8 +24,8 @@ set_status() {
   menu_bar red
 }
 
-local_backup() {
-  drive_connected $BACKUP_DRIVE &&
+remote_backup() {
+  nas_available &&
   sync_files &&
   write_log
 }
@@ -34,22 +34,21 @@ sync_files() {
   menu_bar orange
   for dir in "${SOURCE_DIRS[@]}"; do
     rsync -av --delete --exclude-from \
-      $EXCLUDE_LIST "$dir" $BACKUP_VOLUME
+      $EXCLUDE_LIST "$dir" -e ssh max@$NAS:$BACKUP_VOLUME
   done
 }
 
 write_log() {
-  echo $TODAY > $BACKUP_VOLUME/last_run.txt
+  echo $TODAY | ssh max@$NAS "cat > $BACKUP_VOLUME/last_run.txt"
   echo $TODAY > $LAST_RUN_FILE
 }
 
-drive_connected() {
-  local dir=$1
-  [ -d $dir ]
+nas_available() {
+  nc -z $NAS 22 > /dev/null
 }
 
 main() {
-  backup_ran || local_backup
+  backup_ran || remote_backup
   set_status
 }
 main
