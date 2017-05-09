@@ -1,12 +1,3 @@
 .DS_Store
 .dropbox
 .dropbox.cache
-.cache
-.hex
-.mix
-.m2
-.npm
-.rbenv
-*/.Trash
-Trash
-*/Caches
