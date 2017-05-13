@@ -1,5 +1,7 @@
 #!/bin/bash
 readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
+readonly SOURCE_DIRS=(~/Code
+                      ~/Dropbox)
 readonly NAS="monster.local"
 readonly BACKUP_VOLUME="/volume1/NetBackup/$(hostname -s)/daily/$(date +'%A')"
 readonly TODAY="$(date +'%F')"
@@ -30,9 +32,11 @@ remote_backup() {
 
 sync_files() {
   menu_bar orange
-  rsync -aHXxv --numeric-ids --delete --exclude-from \
+  for dir in "${SOURCE_DIRS[@]}"; do
+  rsync -av --delete --exclude-from \
     $EXCLUDE_LIST \
-    $HOME max@$NAS:$BACKUP_VOLUME
+    "$dir" max@$NAS:$BACKUP_VOLUME
+  done
 }
 
 write_log() {
