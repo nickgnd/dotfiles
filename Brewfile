@@ -19,7 +19,6 @@ brew 'go'
 brew 'heroku'
 brew 'lua'
 brew 'htop'
-brew 'netcat'
 brew 'node'
 brew 'postgresql', restart_service: true
 brew 'ruby-build'
