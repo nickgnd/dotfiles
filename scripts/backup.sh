@@ -35,6 +35,7 @@ sync_files() {
   for dir in "${SOURCE_DIRS[@]}"; do
   rsync -av --delete --exclude-from \
     $EXCLUDE_LIST \
+    -e 'ssh -T -o compression=no'\
     "$dir" max@$NAS:$BACKUP_VOLUME
   done
 }
