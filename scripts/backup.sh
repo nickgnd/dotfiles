@@ -33,10 +33,11 @@ remote_backup() {
 sync_files() {
   menu_bar orange
   for dir in "${SOURCE_DIRS[@]}"; do
-  rsync -av --delete --exclude-from \
-    $EXCLUDE_LIST \
-    -e 'ssh -T -o compression=no'\
-    "$dir" max@$NAS:$BACKUP_VOLUME
+    # rsync -atv --delete --iconv=utf-8-mac,utf-8 --exclude-from \
+    rsync -atvz --delete --exclude-from \
+      $EXCLUDE_LIST \
+      -e 'ssh -T -c arcfour -o compression=no -x'\
+      $dir max@$NAS:$BACKUP_VOLUME
   done
 }
 
