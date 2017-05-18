@@ -20,10 +20,11 @@
     scrollToResultOnLiveSearch: true
   "fuzzy-finder": {}
   "markdown-preview": {}
-  "one-dark-ui":
-    layoutMode: "Compact"
+  "one-dark-ui": {}
   tabs:
     usePreviewTabs: true
   "tree-view": {}
   welcome:
     showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
