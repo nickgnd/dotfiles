@@ -89,7 +89,7 @@ alias backup="bash ~/dotfiles/scripts/backup.sh"
 alias tm_backup="bash ~/dotfiles/scripts/tm_backup.sh"
 
 # added by travis gem
-[ -f /Users/Max/.travis/travis.sh ] && source /Users/Max/.travis/travis.sh
+[ -f /Users/max/.travis/travis.sh ] && source /Users/max/.travis/travis.sh
 eval "$(rbenv init -)"
 
 # fzf fuzzy search
