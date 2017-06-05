@@ -10,6 +10,6 @@
       <string>/Users/Max/dotfiles/scripts/tm_backup.sh</string>
     </array>
     <key>StartInterval</key>
-    <integer>3600</integer>
+    <integer>1800</integer>
   </dict>
 </plist>
