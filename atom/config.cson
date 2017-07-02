@@ -24,6 +24,9 @@
   tabs:
     usePreviewTabs: true
   "tree-view": {}
+  "vim-mode-plus":
+    debug: true
+    statusBarModeStringStyle: "long"
   welcome:
     showOnStartup: false
   whitespace:
