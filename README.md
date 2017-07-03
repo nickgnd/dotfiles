@@ -112,8 +112,13 @@ install xcode command line tools
 
 use homebrew's zsh
 
-	sudo sh -c echo '/usr/local/bin/zsh' > /etc/shells
-	chsh -s /usr/local/bin/zsh
+```sh
+sudo vim /etc/shells
+
+# add /usr/local/bin/zsh
+
+chsh -s /usr/local/bin/zsh
+```
 
 
 ### SSH
