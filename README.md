@@ -118,10 +118,10 @@ use homebrew's zsh
 
 ### SSH
 
-check for ssh key, generating if it does not exist
+Generate ssh key
 
-	[[ -f $pub ]] || ssh-keygen -t rsa
+	ssh-keygen -t rsa
 
 copy public key to clipboard
 
-	[[ -f $pub ]] && cat $pub | pbcopy
+	pbcopy < ~/.ssh/id_rsa.pub
