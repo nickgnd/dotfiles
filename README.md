@@ -44,36 +44,42 @@ For managing ruby versions, I just switched to using [rbenv](https://github.com/
 ### Install Dependencies
 
 #### 1. Terminal
+
 * [iTerm2](https://www.iterm2.com/)
 
-#### 2. Packages
+#### 2. Homebrew
+
 * [Homebrew](http://brew.sh/)
-* Install brew packages:
-  ```sh
-  cd ~/dotfiles
 
-  #using the Brewfile in ~/dotfiles/
-  brew bundle 
+#### 3. Install Dotfiles and Packages
 
-  # install fzf shell extensions
-  /usr/local/opt/fzf/install
-  ```
+Clone repo and symlink files *(old links are replaced by new ones)*:
 
-#### 3. Shell
+```sh
+# clone repo
+git clone --recursive git@github.com:klappradla/dotfiles.git
+cd dotfiles
+
+# install Homebrew packages
+brew bundle
+
+# install fzf shell extensions
+/usr/local/opt/fzf/install
+
+# install dotfiles
+sh install.sh
+```
+
+#### 4. Shell
+
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-#### 4. Editors *(optional)*
+#### 5. Editors *(optional)*
+
 * [Atom](https://atom.io/)
 * **vim:**
   * install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management
 
-### Install Dotfiles
-
-Clone repo and symlink files *(old links are replaced by new ones)*:
-
-    $ git clone --recursive git@github.com:klappradla/dotfiles.git
-    $ cd dotfiles
-    $ sh install.sh
 
 #### iTerm2
 
