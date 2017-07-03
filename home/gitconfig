@@ -3,7 +3,7 @@
   useConfigOnly = true
 [alias]
   personal = "config user.email 'klappradla@gmail.com'"
-  work = "config user.email 'maximilian.mulatz@runtastic.com'"
+  work = "config user.email 'max@bitcrowd.net'"
 [core]
   excludesfile = ~/.gitignore_global
   editor = /usr/local/bin/vim
