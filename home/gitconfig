@@ -1,5 +1,6 @@
 [user]
   name = Max Mulatz
+  email = klappradla@gmail.com
   useConfigOnly = true
 [alias]
   personal = "config user.email 'klappradla@gmail.com'"
