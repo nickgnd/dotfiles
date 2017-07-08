@@ -9,8 +9,6 @@ I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a t
 
 Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `15pt` in both, my editors and my shell.
 
-For managing ruby versions, I just switched to using [rbenv](https://github.com/rbenv/rbenv).
-
 
 ## Directory
 

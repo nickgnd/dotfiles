@@ -71,26 +71,9 @@ else
   export EDITOR='vim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Aliases
-alias at="atom ./"
-alias code="cd ~/Code"
-alias backup="bash ~/dotfiles/scripts/backup.sh"
-alias tm_backup="bash ~/dotfiles/scripts/tm_backup.sh"
-
-# added by travis gem
-[ -f /Users/max/.travis/travis.sh ] && source /Users/max/.travis/travis.sh
-eval "$(rbenv init -)"
+# chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 # fzf fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -110,3 +93,14 @@ br() {
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Aliases
+alias at="atom ./"
+alias code="cd ~/Code"
+alias backup="bash ~/dotfiles/scripts/backup.sh"
+alias tm_backup="bash ~/dotfiles/scripts/tm_backup.sh"

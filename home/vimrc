@@ -1,5 +1,3 @@
-let g:ruby_path = system('echo $HOME/.rbenv/shims') " speed up vim-ruby
-
 set rtp+=/usr/local/opt/fzf
 
 " Plugins (require vim-plug)
