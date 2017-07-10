@@ -53,7 +53,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH" # Expand path for homebrew sbin
 export PATH="$PATH:/usr/local/bin/elixir" # Add Elixir for development
-export GOPATH=$HOME/Code/go # Add Go Path
+export GOPATH=$HOME/code/go # Add Go Path
 export JRUBY_OPTS="--dev -J-Xmx2G"
 export DOTS=$HOME/dotfiles
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH" # Add legacy mysql to path
@@ -101,6 +101,6 @@ br() {
 #
 # Aliases
 alias at="atom ./"
-alias code="cd ~/Code"
+alias code="cd ~/code"
 alias backup="bash ~/dotfiles/scripts/backup.sh"
 alias tm_backup="bash ~/dotfiles/scripts/tm_backup.sh"
