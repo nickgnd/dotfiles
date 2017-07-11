@@ -13,6 +13,7 @@ brew 'elixir'
 brew 'exercism'
 brew 'git'
 brew 'fzf'
+brew 'imagemagick'
 brew 'readline'
 brew 'sqlite'
 brew 'python'
@@ -20,8 +21,10 @@ brew 'go'
 brew 'heroku'
 brew 'lua'
 brew 'htop'
+brew 'memcached', restart_service: true
 brew 'node'
 brew 'postgresql', restart_service: true
+brew 'redis', restart_service: true
 brew 'ruby-install'
 brew 'ruby'
 brew 'rsync'
