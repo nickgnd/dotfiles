@@ -71,9 +71,8 @@ else
   export EDITOR='vim'
 fi
 
-# chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+# rbenv
+eval "$(rbenv init -)"
 
 # fzf fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

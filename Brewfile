@@ -5,7 +5,6 @@ tap 'homebrew/services'
 tap 'homebrew/versions'
 cask 'java'
 cask 'anybar'
-brew 'chruby'
 brew 'cmake'
 brew 'openssl'
 brew 'erlang'
@@ -25,8 +24,9 @@ brew 'memcached', restart_service: true
 brew 'node'
 brew 'postgresql', restart_service: true
 brew 'redis', restart_service: true
-brew 'ruby-install'
+brew 'ruby-build'
 brew 'ruby'
+brew 'rbenv'
 brew 'rsync'
 brew 'the_silver_searcher'
 brew 'tree'
