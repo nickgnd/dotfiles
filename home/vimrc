@@ -72,6 +72,7 @@ set wrap linebreak nolist                  " line wrapping
 set breakindent                            " indent wrapped lines
 
 " Spelling
+autocmd FileType gitcommit setlocal spell        " spell check for git commit messages
 autocmd BufRead,BufNewFile *.md setlocal spell   " spell check for markdown files
 set complete+=kspell                             " autocomplete words
 
