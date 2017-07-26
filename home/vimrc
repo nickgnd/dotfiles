@@ -7,7 +7,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
@@ -80,8 +80,7 @@ set complete+=kspell                             " autocomplete words
 set ruler                                  " display cursor position
 set colorcolumn=80                         " highlight 80 char column
 set number                                 " show line numbers
-set t_Co=256                               " use 256 colors
-let g:solarized_termtrans=1
+set termguicolors
 colorscheme solarized
 set background=dark
 set noshowmode                             " hide default status line
