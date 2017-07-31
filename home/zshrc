@@ -102,5 +102,4 @@ br() {
 alias at="atom ./"
 alias code="cd ~/code"
 alias backup="bash ~/dotfiles/scripts/backup.sh"
-alias tm_backup="bash ~/dotfiles/scripts/tm_backup.sh"
 alias be="bundle exec "
