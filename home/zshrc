@@ -65,7 +65,8 @@ export LANG=en_US.UTF-8
 setopt nolistbeep
 
 # Supress duplicates in CTR-R
-setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
