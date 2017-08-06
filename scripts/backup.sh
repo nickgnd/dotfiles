@@ -9,7 +9,7 @@ readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_backup.txt
 
 backup_ran() {
   [ -e $LAST_RUN_FILE ] &&
-    grep -Fxq $TODAY $LAST_RUN_FILE
+    grep -Fxq "$TODAY" "$LAST_RUN_FILE"
 }
 
 menu_bar() {
@@ -19,9 +19,12 @@ menu_bar() {
 
 set_status() {
   local last_status=$?
-  [ "$last_status" -eq "0" ] &&
-  menu_bar green ||
-  menu_bar red
+  if [ "$last_status" -eq "0" ]
+  then
+    menu_bar green
+  else
+    menu_bar red
+  fi
 }
 
 remote_backup() {
@@ -33,17 +36,16 @@ remote_backup() {
 sync_files() {
   menu_bar orange
   for dir in "${SOURCE_DIRS[@]}"; do
-    # rsync -atv --delete --iconv=utf-8-mac,utf-8 --exclude-from \
     rsync -atvz --delete --exclude-from \
       $EXCLUDE_LIST \
-      -e 'ssh -T -c arcfour -o compression=no -x'\
-      $dir max@$NAS:$BACKUP_VOLUME
+      -e "ssh -T -c arcfour -o compression=no -x"\
+      "$dir" max@"$NAS":"$BACKUP_VOLUME"
   done
 }
 
 write_log() {
-  echo $TODAY | ssh max@$NAS "cat > $BACKUP_VOLUME/last_run.txt"
-  echo $TODAY > $LAST_RUN_FILE
+  echo "$TODAY" | ssh max@$NAS "cat > $BACKUP_VOLUME/last_run.txt"
+  echo "$TODAY" > "$LAST_RUN_FILE"
 }
 
 nas_available() {
