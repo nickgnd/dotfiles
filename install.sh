@@ -3,12 +3,12 @@ readonly DOTFILES_DIR="$HOME/dotfiles"
 
 is_symlink() {
   local file_name=$1
-  [[ -h $file_name ]]
+  [ -h "$file_name" ]
 }
 
 file_exists() {
   local file_name=$1
-  [[ -e $file_name ]]
+  [ -e "$file_name" ]
 }
 
 remove_old_link() {
@@ -38,7 +38,7 @@ prompt_user() {
   local question=$1
   local response
   read -p "Symlink $question? (Y/n) " response
-  [[ "$response" != "n" ]]
+  [ "$response" != "n" ]
 }
 
 symlink() {
