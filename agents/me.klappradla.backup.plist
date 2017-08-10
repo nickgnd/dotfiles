@@ -10,6 +10,6 @@
       <string>/Users/Max/dotfiles/scripts/backup.sh</string>
     </array>
     <key>StartInterval</key>
-    <integer>3600</integer>
+    <integer>1705</integer>
   </dict>
 </plist>
