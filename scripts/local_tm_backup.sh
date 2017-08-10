@@ -5,7 +5,7 @@ readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_tm_backup.txt
 
 backup_ran() {
   [ -e $LAST_RUN_FILE ] &&
-    grep -Fxq "$TODAY $LAST_RUN_FILE"
+    grep -Fxq "$TODAY" "$LAST_RUN_FILE"
 }
 
 tm_backup() {
