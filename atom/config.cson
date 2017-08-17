@@ -1,9 +1,6 @@
 "*":
   "autoclose-html": {}
   core:
-    disabledPackages: [
-      "vim-mode-plus"
-    ]
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
