@@ -2,9 +2,9 @@ gruvbox@1.0.7
 highlight-selected@0.13.1
 language-elixir@0.19.0
 language-gherkin@1.0.4
-language-haml@0.25.0
+language-haml@0.25.1
 language-lua@0.9.11
-language-slim@0.5.0
+language-slim@0.6.0
 pretty-json@1.6.4
-vim-mode-plus@0.96.2
+xml-formatter@0.11.0
 
