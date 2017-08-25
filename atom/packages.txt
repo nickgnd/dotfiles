@@ -1,6 +1,6 @@
 gruvbox@1.0.7
 highlight-selected@0.13.1
-language-elixir@0.19.0
+language-elixir@0.20.0
 language-gherkin@1.0.4
 language-haml@0.25.1
 language-lua@0.9.11
