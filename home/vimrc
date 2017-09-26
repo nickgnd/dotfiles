@@ -8,13 +8,14 @@ Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'lifepillar/vim-solarized8'
-Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-commentary'
+
+" languages
+Plug 'elixir-lang/vim-elixir'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'slim-template/vim-slim'
 Plug 'fatih/vim-go'
-Plug 'pbrisbin/vim-mkdir'
 call plug#end()
 
 " Plugin specific settings
