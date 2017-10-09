@@ -49,6 +49,9 @@ plugins=(git docker docker-compose zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+# Load Calculator
+autoload -Uz zcalc
+
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH" # Expand path for homebrew sbin
