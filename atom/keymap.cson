@@ -19,6 +19,9 @@
 
 '.platform-darwin .editor':
   'alt-space': 'custom:space'
+
+'.platform-darwin atom-text-editor:not([mini])':
+  'ctrl-n': 'tree-view:toggle'
 #
 # 'atom-workspace':
 #   'ctrl-shift-p': 'core:move-up'
