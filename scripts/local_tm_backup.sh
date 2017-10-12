@@ -1,7 +1,7 @@
 #!/bin/bash
 readonly BACKUP_DRIVE="Volumes/herbert_backup"
 readonly TODAY="$(date +'%F')"
-readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_tm_backup.txt
+readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_local_tm_backup.txt
 
 backup_ran() {
   [ -e $LAST_RUN_FILE ] &&

@@ -1,13 +1,13 @@
 # ~/dotfiles
 
-How I set up my OSX/Unix environment.
+How I set up my dev environment.
 
 
 ## General
 
 I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a terminal replacement and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my settings there.
 
-Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font in size `15pt` in both, my editors and my shell.
+Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font (in a huge size).
 
 
 ## Directory
