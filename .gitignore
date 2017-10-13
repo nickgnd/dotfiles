@@ -2,3 +2,4 @@
 *.log
 .last_backup.txt
 .last_tm_backup.txt
+.last_local_tm_backup.txt
