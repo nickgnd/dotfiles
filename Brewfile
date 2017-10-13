@@ -16,6 +16,7 @@ cask 'font-sniglet'
 cask 'font-roboto'
 cask 'font-roboto-condensed'
 brew 'cmake'
+brew 'chromedriver', restart_service: false
 brew 'openssl'
 brew 'erlang'
 brew 'elixir'
