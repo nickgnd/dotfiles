@@ -2,6 +2,7 @@
 readonly BACKUP_DRIVE="Volumes/herbert_backup"
 readonly TODAY="$(date +'%F')"
 readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_local_tm_backup.txt
+readonly DEST_ID="18E76B51-15C9-4831-A5D9-3A6A4BBE3CF5"
 
 backup_ran() {
   [ -e $LAST_RUN_FILE ] &&
@@ -10,7 +11,7 @@ backup_ran() {
 
 tm_backup() {
   drive_available &&
-  tmutil startbackup &&
+  tmutil startbackup --destination DEST_ID &&
   write_log
 }
 

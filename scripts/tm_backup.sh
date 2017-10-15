@@ -2,6 +2,7 @@
 readonly NAS="monster.local"
 readonly TODAY="$(date +'%F')"
 readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_tm_backup.txt
+readonly DEST_ID="D0570B69-3510-4DE4-919B-59805CB4C95D"
 
 backup_ran() {
   [ -e $LAST_RUN_FILE ] &&
@@ -10,7 +11,7 @@ backup_ran() {
 
 tm_backup() {
   nas_available &&
-  tmutil startbackup &&
+  tmutil startbackup --destination DEST_ID &&
   write_log
 }
 
