@@ -11,7 +11,7 @@ backup_ran() {
 
 tm_backup() {
   drive_available &&
-  tmutil startbackup --destination DEST_ID &&
+  tmutil startbackup --destination $DEST_ID &&
   write_log
 }
 
