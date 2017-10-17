@@ -17,6 +17,7 @@ cask 'font-roboto'
 cask 'font-roboto-condensed'
 brew 'cmake'
 brew 'chromedriver', restart_service: false
+brew 'graphviz'                                  # To build ERD diagrams
 brew 'openssl'
 brew 'erlang'
 brew 'elixir'
@@ -24,12 +25,12 @@ brew 'exercism'
 brew 'git'
 brew 'fzf'
 brew 'thefuck'
-brew 'highlight'
-brew 'hivemind'
+brew 'highlight'                                 # Syntax highlight code snippets
+brew 'hivemind'                                  # Process manager (Procfile based)
 brew 'imagemagick'
 brew 'readline'
 brew 'sqlite'
-brew 'shellcheck'
+brew 'shellcheck'                                # Linter for shell scripts
 brew 'python'
 brew 'go'
 brew 'heroku'
@@ -46,6 +47,6 @@ brew 'rsync'
 brew 'the_silver_searcher'
 brew 'tree'
 brew 'vim'
-brew 'wrk'
+brew 'wrk'                                       # Simple web app benchmarking
 brew 'yarn'
 brew 'zsh'
