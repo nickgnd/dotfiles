@@ -112,4 +112,3 @@ eval $(thefuck --alias)
 alias at="atom ./"
 alias backup="bash ~/dotfiles/scripts/backup.sh"
 alias be="bundle exec"
-alias brewup="brew update && brew upgrade && brew cleanup"
