@@ -1,9 +1,11 @@
 let g:ruby_path = system('echo $HOME/.rbenv/shims') " speed up vim-ruby (rbenv)
+
+" Fuzzy finding
 set rtp+=/usr/local/opt/fzf
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'      " use ack to respect .gitignore
 
 " Plugins (require vim-plug)
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
@@ -62,7 +64,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set scrolloff=2                  " start scrolling 3 lines off the border
 map <C-n> :NERDTreeToggle<CR>    " toggle NERDTree with ctrl n
-nnoremap <Tab> :bnext<CR>        " cylce through buffers
 nnoremap <c-p> :FZF<cr>          " use fzf like ctrl p
 
 " Editing
