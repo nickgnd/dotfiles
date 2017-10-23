@@ -54,7 +54,6 @@ set novb                                   " no flashing of screen
 set incsearch                              " incremental search
 set ignorecase                             " seach case insensitive...
 set smartcase                              " ... unless it contains capital letter
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " ignore tmp directories
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Navigation
