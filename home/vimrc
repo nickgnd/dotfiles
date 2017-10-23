@@ -13,7 +13,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-commentary'                " serious commenting in/out
 Plug 'tpope/vim-eunuch'                    " unix file manipulations
 
-" languages
+" Languages
 Plug 'elixir-lang/vim-elixir'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -49,6 +49,8 @@ set backspace=indent,eol,start             " make backspace behave normal
 set visualbell                             " don't beep
 set noerrorbells                           " don't beep
 set novb                                   " no flashing of screen
+set undofile                               " keep a undo file
+set undodir=~/dotfiles/.vimundo
 
 " Search
 set incsearch                              " incremental search
