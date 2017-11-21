@@ -26,6 +26,7 @@
   "tree-view": {}
   "vim-mode-plus":
     debug: true
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     statusBarModeStringStyle: "long"
   welcome:
     showOnStartup: false

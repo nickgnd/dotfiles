@@ -13,6 +13,10 @@
 'atom-text-editor':
   'alt-shift-up': 'core:select-up'
   'alt-shift-down': 'core:select-down'
+  'ctrl-j': 'window:focus-pane-below'
+  'ctrl-k': 'window:focus-pane-above'
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-l': 'window:focus-pane-on-right'
 
 'body':
   'shift-cmd-m': 'application:zoom'
@@ -22,6 +26,10 @@
 
 '.platform-darwin atom-text-editor:not([mini])':
   'ctrl-n': 'tree-view:toggle'
+
+'.fuzzy-finder atom-text-editor[mini]':
+  'ctrl-v': 'pane:split-right'
+  'ctrl-x': 'pane:split-down'
 #
 # 'atom-workspace':
 #   'ctrl-shift-p': 'core:move-up'
