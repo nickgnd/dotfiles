@@ -17,6 +17,8 @@
   'ctrl-k': 'window:focus-pane-above'
   'ctrl-h': 'window:focus-pane-on-left'
   'ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-b': 'fuzzy-finder:toggle-buffer-finder'
 
 'body':
   'shift-cmd-m': 'application:zoom'
