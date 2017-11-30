@@ -1,8 +1,9 @@
 #!/bin/bash
-readonly NAS="monster.local"
+source "${BASH_SOURCE%/*}/backup.conf"
+readonly NAS=$NAS_ADDRESS
 readonly TODAY="$(date +'%F')"
 readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_tm_backup.txt
-readonly DEST_ID="D0570B69-3510-4DE4-919B-59805CB4C95D"
+readonly DEST_ID=$TM_DEST
 
 backup_ran() {
   [ -e $LAST_RUN_FILE ] &&

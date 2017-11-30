@@ -1,9 +1,10 @@
 #!/bin/bash
+source "${BASH_SOURCE%/*}/backup.conf"
 readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
 readonly SOURCE_DIRS=(~/Code
                       ~/Dropbox)
-readonly NAS="monster.local"
-readonly BACKUP_VOLUME="/volume1/NetBackup/$(hostname -s)/daily/$(date +'%A')"
+readonly NAS=$NAS_ADDRESS
+readonly BACKUP_VOLUME="$NET_BACKUP/$(hostname -s)/daily/$(date +'%A')"
 readonly TODAY="$(date +'%F')"
 readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_backup.txt
 

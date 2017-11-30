@@ -32,8 +32,6 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font (in
 ├── scripts (backup scripts, etc.)
 │
 └── zsh (custom dir for oh-my-zsh)
-
-
 ```
 
 
@@ -78,8 +76,7 @@ sh install.sh
 * **vim:**
   * install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management
 
-
-#### iTerm2
+### Setup iTerm2
 
 Point **`Load preferences from custom folder or URL`** to `~/dotfiles/iterm2`
 
@@ -87,10 +84,16 @@ If the settings are not applied, run:
 
 	defaults read com.googlecode.iterm2
 
-#### Atom
+### Setup Atom
 
 Run `Package List: Install` from the command palette to install all packages from `/atom/packages.txt`
 
+### Setup backups
+
+Copy the example backup config and adapt it for the current machine:
+```sh
+cp scripts/backup.conf.example scripts/backup.conf
+```
 
 ## Hints to setup system from scratch
 

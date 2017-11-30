@@ -1,8 +1,9 @@
 #!/bin/bash
-readonly BACKUP_DRIVE="Volumes/herbert_backup"
+source "${BASH_SOURCE%/*}/backup.conf"
+readonly BACKUP_DRIVE=$BACKUP_DRIVE
 readonly TODAY="$(date +'%F')"
 readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_local_tm_backup.txt
-readonly DEST_ID="18E76B51-15C9-4831-A5D9-3A6A4BBE3CF5"
+readonly DEST_ID=$LOCAL_TM_DEST
 
 backup_ran() {
   [ -e $LAST_RUN_FILE ] &&
