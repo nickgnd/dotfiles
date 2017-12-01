@@ -24,6 +24,7 @@ brew 'elixir'
 brew 'exercism'
 brew 'git'
 brew 'fzf'
+brew 'ffmpeg'
 brew 'thefuck'
 brew 'highlight'                                 # Syntax highlight code snippets
 brew 'hivemind'                                  # Process manager (Procfile based)
