@@ -100,6 +100,14 @@ br() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
+# gifify - convert a video into a gif
+# example: gifify movie.mov movie.gif
+gifify() {
+  local video=$1
+  local gif=$2
+  ffmpeg -ss 00:00:00.000 -i $video -r 10 -s 1280x960 -t 00:00:10.000 $gif
+}
+
 # alias for thefuck (correct previous commands)
 eval $(thefuck --alias)
 
