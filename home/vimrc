@@ -8,6 +8,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'      " use ack to respect .gitignore
 call plug#begin('~/.vim/plugged')
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-commentary'                " serious commenting in/out
 Plug 'tpope/vim-eunuch'                    " unix file manipulations
@@ -18,7 +19,24 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'slim-template/vim-slim'
 Plug 'fatih/vim-go'
+Plug 'mxw/vim-jsx'
+Plug 'jelera/vim-javascript-syntax'
 call plug#end()
+
+" Plugin specific settings
+let NERDTreeMinimalUI = 1                  " show less stuff in Nerdtree UI
+let NERDTreeShowHidden=1
+let g:vim_markdown_folding_disabled = 1    " disable auto-folding
+let g:vim_markdown_new_list_item_indent=2  " indent lists by 2 spaces in .md files
+set laststatus=2
+let g:lightline = {'colorscheme': 'solarized'}
+let g:closetag_filenames = "*.html.*"
+let g:go_highlight_functions = 1           " syntax highlighting for all the go stuff
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 " General
 set nocompatible                           " vim not vi mode
@@ -39,12 +57,14 @@ set undodir=~/dotfiles/.vimundo
 set incsearch                              " incremental search
 set ignorecase                             " seach case insensitive...
 set smartcase                              " ... unless it contains capital letter
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Navigation
 nnoremap <C-J> <C-W><C-J>        " faster split navigation
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+set scrolloff=2                  " start scrolling 3 lines off the border
 map <C-n> :NERDTreeToggle<CR>    " toggle NERDTree with ctrl n
 nnoremap <c-p> :FZF<cr>          " use fzf like ctrl p
 
@@ -70,6 +90,7 @@ set number                                 " show line numbers
 set termguicolors
 colorscheme solarized8_dark
 set background=dark
+set noshowmode                             " hide default status line
 
 " Functions
 fun! StripTrailingWhiteSpace()             " Strip trailing whitespaces (where needed)
