@@ -19,8 +19,6 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'slim-template/vim-slim'
 Plug 'fatih/vim-go'
-Plug 'mxw/vim-jsx'
-Plug 'jelera/vim-javascript-syntax'
 call plug#end()
 
 " Plugin specific settings
