@@ -7,18 +7,18 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'      " use ack to respect .gitignore
 " Plugins (require vim-plug)
 call plug#begin('~/.vim/plugged')
 Plug 'mileszs/ack.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'itchyny/lightline.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-commentary'                " serious commenting in/out
 Plug 'tpope/vim-eunuch'                    " unix file manipulations
 
 " Languages
-Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'slim-template/vim-slim'
-Plug 'fatih/vim-go'
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 call plug#end()
 
 " Plugin specific settings
