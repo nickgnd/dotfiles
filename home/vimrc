@@ -39,7 +39,7 @@ let g:go_highlight_build_constraints = 1
 " General
 set nocompatible                           " vim not vi mode
 set mouse=a                                " allow mouse in all modes
-set autoread                               " automatically reload buffers
+set autoread                               " read file if changed via external cmd
 set autowrite                              " automatically save files
 set nobackup                               " disable backups
 set nowritebackup                          " write file in place
@@ -57,17 +57,24 @@ set ignorecase                             " seach case insensitive...
 set smartcase                              " ... unless it contains capital letter
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" Navigation
-nnoremap <C-J> <C-W><C-J>        " faster split navigation
+" Navigate splits
+nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Move up and down on splitted lines (on small width screens)
+map <Up> gk
+map <Down> gj
+map k gk
+map j gj
+
 set scrolloff=2                  " start scrolling 3 lines off the border
 map <C-n> :NERDTreeToggle<CR>    " toggle NERDTree with ctrl n
 nnoremap <c-p> :FZF<cr>          " use fzf like ctrl p
 
 " Editing
-set expandtab                              " use softtabs
+set expandtab                              " expand tabs to spaces
 set tabstop=2
 set shiftwidth=2
 set shiftround
