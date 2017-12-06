@@ -7,7 +7,7 @@ language-gherkin@1.0.4
 language-haml@0.25.2
 language-javascript-jsx@0.3.7
 language-lua@0.9.11
-language-slim@0.6.0
+language-slim@1.0.0
 pretty-json@1.6.4
 xml-formatter@0.11.0
 
