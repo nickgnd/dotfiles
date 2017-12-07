@@ -39,7 +39,7 @@ sync_files() {
   for dir in "${SOURCE_DIRS[@]}"; do
     rsync -atvz --delete --exclude-from \
       $EXCLUDE_LIST \
-      -e "ssh -T -c arcfour -o compression=no -x"\
+      -e "ssh -T -c aes128-gcm@openssh.com -o compression=no -x"\
       "$dir" max@"$NAS":"$BACKUP_VOLUME"
   done
 }
