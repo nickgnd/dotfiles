@@ -9,9 +9,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'itchyny/lightline.vim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-commentary'                " serious commenting in/out
 Plug 'tpope/vim-eunuch'                    " unix file manipulations
+Plug 'jiangmiao/auto-pairs'                " autoclose brackets and quotes
+
+" Colors
+Plug 'lifepillar/vim-solarized8'
+Plug 'iCyMind/NeoSolarized'
 
 " Languages
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
@@ -24,9 +28,10 @@ call plug#end()
 " Plugin specific settings
 let NERDTreeMinimalUI = 1                  " show less stuff in Nerdtree UI
 let NERDTreeShowHidden=1
+
 let g:vim_markdown_folding_disabled = 1    " disable auto-folding
 let g:vim_markdown_new_list_item_indent=2  " indent lists by 2 spaces in .md files
-set laststatus=2
+
 let g:lightline = {'colorscheme': 'solarized'}
 let g:closetag_filenames = "*.html.*"
 let g:go_highlight_functions = 1           " syntax highlighting for all the go stuff
@@ -36,7 +41,10 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+let g:neosolarized_vertSplitBgTrans = 1
+
 " General
+set laststatus=2                           " always show statusline
 set nocompatible                           " vim not vi mode
 set mouse=a                                " allow mouse in all modes
 set autoread                               " read file if changed via external cmd
@@ -93,7 +101,7 @@ set ruler                                  " display cursor position
 set colorcolumn=80                         " highlight 80 char column
 set number                                 " show line numbers
 set termguicolors
-colorscheme solarized8_dark
+colorscheme NeoSolarized
 set background=dark
 set noshowmode                             " hide default status line
 
