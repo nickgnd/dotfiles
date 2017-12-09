@@ -77,6 +77,10 @@ map <Down> gj
 map k gk
 map j gj
 
+" Cycle through buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
 set scrolloff=2                  " start scrolling 3 lines off the border
 map <C-n> :NERDTreeToggle<CR>    " toggle NERDTree with ctrl n
 nnoremap <c-p> :FZF<cr>          " use fzf like ctrl p
