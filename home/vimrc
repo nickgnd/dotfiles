@@ -23,6 +23,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'isRuslan/vim-es6'
 call plug#end()
 
 " Plugin specific settings
