@@ -36,7 +36,6 @@ brew 'python'
 brew 'go'
 brew 'heroku'
 brew 'lua'
-brew 'htop'
 brew 'memcached', restart_service: true
 brew 'node'
 brew 'postgresql', restart_service: true
