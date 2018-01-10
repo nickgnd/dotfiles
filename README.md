@@ -97,7 +97,7 @@ cp scripts/backup.conf.example scripts/backup.conf
 
 ## Hints to setup system from scratch
 
-### OSX
+### macOS
 
 show hidden files in finder
 
@@ -120,6 +120,10 @@ sudo vim /etc/shells
 
 chsh -s /usr/local/bin/zsh
 ```
+
+allow rbenv's ruby on the macOS firewall
+
+    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/max/.rbenv/shims/ruby
 
 
 ### SSH
