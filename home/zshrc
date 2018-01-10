@@ -60,6 +60,7 @@ export GOPATH=$HOME/code/go # Add Go Path
 export JRUBY_OPTS="--dev -J-Xmx2G"
 export DOTS=$HOME/dotfiles
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH" # Add legacy mysql to path
+export PATH="/usr/local/opt/openssl/bin:$PATH" # Add openssl
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
