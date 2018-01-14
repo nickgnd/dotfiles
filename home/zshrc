@@ -53,12 +53,13 @@ source $ZSH/oh-my-zsh.sh
 autoload -Uz zcalc
 
 # User configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="/usr/local/sbin:$PATH" # Expand path for homebrew sbin
+# PATH by system: "/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:$PATH" # homebrew bin
+export PATH="/usr/local/sbin:$PATH" # homebrew sbin
 export PATH="$PATH:/usr/local/bin/elixir" # Add Elixir for development
-export PATH="$PATH:/$ZSH_CUSTOM/plugins/git-open" # Add git-open
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH" # Add legacy mysql to path
 export PATH="/usr/local/opt/openssl/bin:$PATH" # Add openssl
+
 export GOPATH=$HOME/code/go # Add Go Path
 export JRUBY_OPTS="--dev -J-Xmx2G"
 export DOTS=$HOME/dotfiles
