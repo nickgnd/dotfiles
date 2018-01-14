@@ -6,3 +6,7 @@
 	path = zsh/themes/pure
 	url = https://github.com/sindresorhus/pure.git
   branch = master
+[submodule "zsh/plugins/git-open"]
+	path = zsh/plugins/git-open
+	url = https://github.com/paulirish/git-open.git
+  branch = master

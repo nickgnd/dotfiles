@@ -45,7 +45,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose zsh-syntax-highlighting)
+plugins=(git docker docker-compose zsh-syntax-highlighting git-open)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,11 +56,12 @@ autoload -Uz zcalc
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH" # Expand path for homebrew sbin
 export PATH="$PATH:/usr/local/bin/elixir" # Add Elixir for development
+export PATH="$PATH:/$ZSH_CUSTOM/plugins/git-open" # Add git-open
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH" # Add legacy mysql to path
+export PATH="/usr/local/opt/openssl/bin:$PATH" # Add openssl
 export GOPATH=$HOME/code/go # Add Go Path
 export JRUBY_OPTS="--dev -J-Xmx2G"
 export DOTS=$HOME/dotfiles
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH" # Add legacy mysql to path
-export PATH="/usr/local/opt/openssl/bin:$PATH" # Add openssl
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
