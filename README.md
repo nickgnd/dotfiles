@@ -121,7 +121,7 @@ sudo vim /etc/shells
 chsh -s /usr/local/bin/zsh
 ```
 
-allow rbenv's ruby on the macOS firewall
+allow rbenv's ruby on the macOS firewall *(same for rspec and other ruby executables)*
 
     sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/max/.rbenv/shims/ruby
 
