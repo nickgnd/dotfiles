@@ -106,7 +106,7 @@ set ruler                                  " display cursor position
 set colorcolumn=80                         " highlight 80 char column
 set number                                 " show line numbers
 set termguicolors
-colorscheme NeoSolarized
+colorscheme solarized8
 set background=dark
 set noshowmode                             " hide default status line
 
