@@ -414,6 +414,8 @@
 	<string>6</string>
 	<key>NSColorPickerPreferredRGBEntryMode</key>
 	<integer>2</integer>
+	<key>NSFontPanelSizeSliderParams</key>
+	<string>2 0 100</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>/Applications</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -458,10 +460,12 @@
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>427 368 228 297 0 0 1680 1027 </string>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>552 217 608 251 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1410 769 620 392 0 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>450 511 796 473 0 0 1680 1027 </string>
+	<string>330 501 918 401 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1680 1028 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -1086,7 +1090,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 15</string>
+			<string>Monaco 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1349,7 +1353,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-06T11:07:23Z</date>
+	<date>2018-02-02T09:15:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
