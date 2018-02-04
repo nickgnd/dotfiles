@@ -15,6 +15,7 @@ cask 'font-source-code-pro'
 cask 'font-sniglet'
 cask 'font-roboto'
 cask 'font-roboto-condensed'
+cask 'spectacle'                                 # window management
 brew 'cmake'
 brew 'chromedriver', restart_service: false
 brew 'graphviz'                                  # To build ERD diagrams
