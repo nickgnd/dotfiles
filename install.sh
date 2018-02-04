@@ -53,13 +53,16 @@ main() {
   prompt_user "dotfiles for ~/" &&
   symlink "home/*" "$HOME/."
 
+  prompt_user "Atom Editor files" &&
+  symlink "atom/*" "$HOME/.atom/"
+
   prompt_user "LaunchD Agents" &&
     for target in agents/*.plist; do
       prompt_user "$target" &&
       symlink "$target" "$HOME/Library/LaunchAgents/"
     done
 
-  prompt_user "Atom Editor files" &&
-  symlink "atom/*" "$HOME/.atom/"
+  prompt_user "Spectacle shortcuts" &&
+  symlink "config/spectacle/*" "$HOME/Library/Application Support/Spectacle/"
 }
 main
