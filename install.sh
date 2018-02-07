@@ -63,6 +63,6 @@ main() {
     done
 
   prompt_user "Spectacle shortcuts" &&
-  symlink "config/spectacle/*" "$HOME/Library/Application Support/Spectacle/"
+  symlink "config/Spectacle" "$HOME/Library/Application Support/"
 }
 main
