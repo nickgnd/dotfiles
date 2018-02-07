@@ -15,6 +15,7 @@ cask 'font-source-code-pro'
 cask 'font-sniglet'
 cask 'font-roboto'
 cask 'font-roboto-condensed'
+cask 'karabiner-elements'                        # remapping keys for my ergo keyboard
 cask 'spectacle'                                 # window management
 brew 'cmake'
 brew 'chromedriver', restart_service: false
