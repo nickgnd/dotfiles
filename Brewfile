@@ -28,6 +28,7 @@ brew 'git'
 brew 'fzf'
 brew 'ffmpeg'
 brew 'thefuck'
+brew 'tmux'
 brew 'highlight'                                 # Syntax highlight code snippets
 brew 'imagemagick'
 brew 'overmind'                                  # Process manager (Procfile based)
