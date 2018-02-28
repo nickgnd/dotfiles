@@ -2,14 +2,6 @@
 
 How I set up my dev environment.
 
-
-## General
-
-I use [zsh](http://www.zsh.org/) as a shell, [iTerm2](http://iterm2.com/) as a terminal replacement and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework to manage my settings there.
-
-Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font (in a huge size).
-
-
 ## Directory
 
 ```
@@ -24,10 +16,13 @@ Fontwise, I use Apple's [Monaco](https://github.com/cstrap/monaco-font) font (in
 │   ├── gitignore_global (global gitignore)
 │   ├── hushlogin        (omit "last login" message)
 │   ├── rcdebug          (config for ruby-debug)
+│   ├── tmux.conf        (config for tmux)
 │   ├── vimrc            (config for vim)
 │   └── zshrc            (zsh/oh-my-zsh config)
 │
 ├── iterm2 (profile and settings for iterm)
+│
+├── config (app specific configs)
 │
 ├── scripts (backup scripts, etc.)
 │
