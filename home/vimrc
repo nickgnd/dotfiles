@@ -2,7 +2,7 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims') " speed up vim-ruby (rbenv)
 
 " Fuzzy finding
 set rtp+=/usr/local/opt/fzf
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'      " use ack to respect .gitignore
+let $FZF_DEFAULT_COMMAND = 'ag --hidden -g ""'      " use ack to respect .gitignore
 
 " Plugins (require vim-plug)
 call plug#begin('~/.vim/plugged')
