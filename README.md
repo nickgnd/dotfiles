@@ -26,6 +26,8 @@ How I set up my dev environment.
 │
 ├── scripts (backup scripts, etc.)
 │
+├── ssh (config for macOS ssh agent)
+│
 └── zsh (custom dir for oh-my-zsh)
 ```
 
@@ -89,6 +91,16 @@ Copy the example backup config and adapt it for the current machine:
 ```sh
 cp scripts/backup.conf.example scripts/backup.conf
 ```
+
+## Usage
+
+### SSH
+
+Add ssh keys to macOS' ssh-agent, e.g.:
+
+    ssh-add -K ~/.ssh/id_rsa
+
+The ssh-agent will no automatically load the key from the keychain every time it needs it.
 
 ## Hints to setup system from scratch
 
