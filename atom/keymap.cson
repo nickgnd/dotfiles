@@ -32,6 +32,10 @@
 '.fuzzy-finder atom-text-editor[mini]':
   'ctrl-v': 'pane:split-right'
   'ctrl-x': 'pane:split-down'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  'g c': 'vim-mode-plus:toggle-line-comments'
+  'g c c': 'editor:toggle-line-comments'
 #
 # 'atom-workspace':
 #   'ctrl-shift-p': 'core:move-up'
