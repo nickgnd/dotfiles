@@ -1,9 +1,9 @@
 [user]
   name = Max Mulatz
-  email = klappradla@gmail.com
+  email = klappradla@posteo.net
   useConfigOnly = true
 [alias]
-  personal = "config user.email 'klappradla@gmail.com'"
+  personal = "config user.email 'klappradla@posteo.net'"
   work = "config user.email 'max@bitcrowd.net'"
 [core]
   excludesfile = ~/.gitignore_global
