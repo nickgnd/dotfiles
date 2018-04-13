@@ -18,6 +18,7 @@ cask 'font-roboto-condensed'
 cask 'karabiner-elements'                        # remapping keys for my ergo keyboard
 cask 'kap'                                       # capture screen as gif
 cask 'spectacle'                                 # window management
+brew 'archey'                                    # colorful system information
 brew 'cmake'
 brew 'chromedriver', restart_service: false
 brew 'graphviz'                                  # To build ERD diagrams
