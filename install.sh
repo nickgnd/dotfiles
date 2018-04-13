@@ -65,6 +65,9 @@ main() {
   prompt_user "Spectacle shortcuts" &&
   symlink "config/Spectacle" "$HOME/Library/Application Support/"
 
+  prompt_user "Karabiner config" &&
+  symlink "config/karabiner" "$HOME/.config/"
+
   prompt_user "ssh config" &&
   symlink "ssh/config" "$HOME/.ssh/"
 }
