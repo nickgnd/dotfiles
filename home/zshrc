@@ -109,7 +109,7 @@ gifify() {
   local video=$1
   local name=${video:r}
   local gif=${name}.gif
-  ffmpeg -ss 00:00:00.000 -i $video -r 10 -s 1280x960 -t 00:00:10.000 $gif
+  ffmpeg -ss 00:00:00.000 -i $video -r 10 -t 00:00:10.000 $gif
 }
 
 # alias for thefuck (correct previous commands)
