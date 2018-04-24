@@ -17,6 +17,7 @@ cask 'font-roboto'
 cask 'font-roboto-condensed'
 cask 'karabiner-elements'                        # remapping keys for my ergo keyboard
 cask 'kap'                                       # capture screen as gif
+cask 'muzzle'                                    # block all notifications
 cask 'spectacle'                                 # window management
 brew 'archey'                                    # colorful system information
 brew 'cmake'
