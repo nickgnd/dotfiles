@@ -35,6 +35,7 @@ brew 'tmux'
 brew 'highlight'                                 # Syntax highlight code snippets
 brew 'imagemagick'
 brew 'overmind'                                  # Process manager (Procfile based)
+brew 'pstree'                                    # ausxf for macOS
 brew 'readline'
 brew 'sqlite'
 brew 'shellcheck'                                # Linter for shell scripts
