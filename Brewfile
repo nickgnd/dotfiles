@@ -21,6 +21,7 @@ cask 'muzzle'                                    # block all notifications
 cask 'ngrok'                                     # local server
 cask 'spectacle'                                 # window management
 brew 'archey'                                    # colorful system information
+brew 'blueutil'                                  # bluetooth from command line
 brew 'cmake'
 brew 'chromedriver', restart_service: false
 brew 'graphviz'                                  # To build ERD diagrams
