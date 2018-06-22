@@ -57,6 +57,7 @@ brew 'rsync'
 brew 'the_silver_searcher'
 brew 'tree'
 brew 'vim'
+brew 'vips'                                      # Fast image processing
 brew 'wrk'                                       # Simple web app benchmarking
 brew 'yarn'
 brew 'zsh'
