@@ -22,7 +22,7 @@ cask 'karabiner-elements'                        # remapping keys for my ergo ke
 cask 'kap'                                       # capture screen as gif
 cask 'spectacle'                                 # window management
 
-brew 'archey'                                    # colorful system information
+brew 'neofetch'                                  # colorful system information
 brew 'cmake'
 brew 'chromedriver', restart_service: false
 brew 'openssl'
