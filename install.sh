@@ -68,6 +68,9 @@ main() {
   prompt_user "Karabiner config" &&
   symlink "config/karabiner" "$HOME/.config/"
 
+  prompt_user "Neovim config" &&
+  symlink "config/nvim" "$HOME/.config/"
+
   prompt_user "ssh config" &&
   symlink "ssh/config" "$HOME/.ssh/"
 }

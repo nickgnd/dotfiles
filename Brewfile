@@ -53,7 +53,7 @@ brew 'rbenv'
 brew 'rsync'
 brew 'the_silver_searcher'
 brew 'tree'
-brew 'vim'
+brew 'neovim'
 brew 'wrk'                                       # Simple web app benchmarking
 brew 'yarn'
 brew 'zsh'
