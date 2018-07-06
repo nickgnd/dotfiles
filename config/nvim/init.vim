@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'ajh17/VimCompletesMe'
 
 " Plug 'sheerun/vim-polyglot'
+Plug 'slim-template/vim-slim'
 call plug#end()
 
 """"""
@@ -53,7 +54,8 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 " show line numbers
 set number
 " highlight the current line
-set cursorline
+" this apparently makes neovim super slow in iterm :(
+" set cursorline
 " use true colors
 set termguicolors
 " dark background
