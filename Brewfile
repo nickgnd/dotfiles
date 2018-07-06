@@ -6,6 +6,8 @@ tap 'homebrew/services'
 tap 'homebrew/versions'
 
 cask 'anybar'
+cask 'chromedriver'
+cask 'google-chrome'
 cask 'iterm2'
 cask 'java'
 cask 'firefox'
@@ -24,7 +26,6 @@ cask 'spectacle'                                 # window management
 
 brew 'neofetch'                                  # colorful system information
 brew 'cmake'
-brew 'chromedriver', restart_service: false
 brew 'openssl'
 brew 'erlang'
 brew 'elixir'

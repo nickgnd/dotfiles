@@ -7,6 +7,5 @@
   work = "config user.email 'max@bitcrowd.net'"
 [core]
   excludesfile = ~/.gitignore_global
-  editor = /usr/local/bin/vim
 [status]
   submoduleSummary = true
