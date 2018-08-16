@@ -5,14 +5,13 @@ call plug#begin()
 Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
-Plug 'rking/ag.vim'
 
+Plug 'rking/ag.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'ajh17/VimCompletesMe'
 
-" Plug 'sheerun/vim-polyglot'
 Plug 'slim-template/vim-slim'
 call plug#end()
 
@@ -21,6 +20,8 @@ call plug#end()
 """"""
 " utf8 encoding
 set encoding=utf8
+" automatically write buffers when switching focus
+set autowriteall
 " use system clipboard for yanking
 " set clipboard^=unnamed,unnamedplus
 " 2 spaces indentation
@@ -53,9 +54,8 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 """"""
 " show line numbers
 set number
-" highlight the current line
-" this apparently makes neovim super slow in iterm :(
-" set cursorline
+" speed up scrolling ruby files (by not showing the cursorline)
+set nocursorline
 " use true colors
 set termguicolors
 " dark background
