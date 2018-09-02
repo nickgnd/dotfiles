@@ -22,8 +22,6 @@ call plug#end()
 set encoding=utf8
 " automatically write buffers when switching focus
 set autowriteall
-" use system clipboard for yanking
-" set clipboard^=unnamed,unnamedplus
 " 2 spaces indentation
 set tabstop=2
 set softtabstop=2
@@ -81,6 +79,9 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 let NERDTreeMinimalUI = 1
 let NERDTreeWinSize=40
 let NERDTreeShowHidden=1
+" disable highlighting bold and italic text in markdown
+hi! link markdownItalic Italic
+hi! link markdownBold Bold
 
 
 """"""
@@ -122,8 +123,3 @@ fun! StripTrailingWhiteSpace()
   %s/\s\+$//e
 endfun
 autocmd bufwritepre * :call StripTrailingWhiteSpace()
-
-" tryout
-" disable highlighting bold and italic text in markdown
-hi! link markdownItalic Italic
-hi! link markdownBold Bold
