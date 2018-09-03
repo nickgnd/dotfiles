@@ -11,6 +11,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'ajh17/VimCompletesMe'
+Plug 'bogado/file-line'
 
 Plug 'slim-template/vim-slim'
 call plug#end()
