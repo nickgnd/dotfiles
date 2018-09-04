@@ -121,7 +121,6 @@ eval $(thefuck --alias)
 # For a full list of active aliases, run `alias`.
 #
 # Aliases
-alias at="atom ./"
 alias backup="bash ~/dotfiles/scripts/backup.sh"
 alias be="bundle exec"
 alias vim="nvim"
