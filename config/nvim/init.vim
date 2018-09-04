@@ -33,7 +33,7 @@ set expandtab
 set ignorecase
 set smartcase
 " interactive substitute
-set inccommand=nosplit
+set inccommand=split
 " start scrolling before end
 set scrolloff=2
 " don't wrap lines (except markdown)
