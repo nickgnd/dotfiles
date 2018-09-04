@@ -43,8 +43,7 @@ set nowrap
 set undofile
 " enable mouse to stay compatible with tmux scrolling
 set mouse=a
-" fzf
-" use ag and show hidden files
+" fzf: use ag and show hidden files
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 
