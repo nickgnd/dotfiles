@@ -12,6 +12,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'ajh17/VimCompletesMe'
 Plug 'bogado/file-line'
+Plug 'machakann/vim-highlightedyank'
 
 Plug 'slim-template/vim-slim'
 call plug#end()
