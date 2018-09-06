@@ -6,7 +6,7 @@ Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -51,6 +51,8 @@ set undofile
 set mouse=a
 " fzf: use ag and show hidden files
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+" use thesilversearcher with ack
+let g:ackprg = 'ag --vimgrep --smart-case'
 
 
 """"""
@@ -116,6 +118,8 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <c-p> :FZF<cr>
 " ctrl n to toggle tree view
 map <C-n> :NERDTreeToggle<CR>
+" use ag for Ack
+cnoreabbrev ag Ack
 
 
 """"""
