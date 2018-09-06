@@ -12,7 +12,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'ajh17/VimCompletesMe'
 Plug 'bogado/file-line'
+" not sure about this one yet...
+" Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-eunuch'
+
 Plug 'machakann/vim-highlightedyank'
+Plug 'tonekk/vim-binding-pry'
 
 Plug 'slim-template/vim-slim'
 call plug#end()
@@ -83,6 +88,9 @@ let NERDTreeShowHidden=1
 " disable highlighting bold and italic text in markdown
 hi! link markdownItalic Italic
 hi! link markdownBold Bold
+" split down and right by default
+set splitbelow
+set splitright
 
 
 """"""
