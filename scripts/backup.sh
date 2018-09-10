@@ -2,6 +2,7 @@
 source "${BASH_SOURCE%/*}/backup.conf"
 readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
 readonly SOURCE_DIRS=(~/Code
+                      ~/Nextcloud
                       ~/Dropbox)
 readonly NAS=$NAS_ADDRESS
 readonly BACKUP_VOLUME="$NET_BACKUP/$(hostname -s)/daily/$(date +'%A')"
