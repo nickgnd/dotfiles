@@ -15,6 +15,8 @@ Plug 'bogado/file-line'
 " not sure about this one yet...
 " Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-eunuch'
+Plug 'janko-m/vim-test'
+Plug 'benmills/vimux'
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tonekk/vim-binding-pry'
@@ -25,6 +27,8 @@ call plug#end()
 """"""
 """ general
 """"""
+" map leader to space
+let mapleader=" "
 " utf8 encoding
 set encoding=utf8
 " automatically write buffers when switching focus
@@ -87,6 +91,8 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 let NERDTreeMinimalUI = 1
 let NERDTreeWinSize=40
 let NERDTreeShowHidden=1
+" configure test runner to run tests in small tmux split
+let test#strategy = "vimux"
 " disable highlighting bold and italic text in markdown
 hi! link markdownItalic Italic
 hi! link markdownBold Bold
@@ -120,6 +126,9 @@ nnoremap <c-p> :FZF<cr>
 map <C-n> :NERDTreeToggle<CR>
 " use ag for Ack
 cnoreabbrev ag Ack
+" run tests in tmux split
+map <silent> <leader>t :TestNearest<CR>
+map <silent> <leader>f :TestFile<CR>
 
 
 """"""
