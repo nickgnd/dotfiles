@@ -8,6 +8,7 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'mileszs/ack.vim'
 Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'ajh17/VimCompletesMe'
@@ -121,14 +122,14 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " ctrl p for fzf
-nnoremap <c-p> :FZF<cr>
+nnoremap <silent> <c-p> :Files<cr>
 " ctrl n to toggle tree view
-map <C-n> :NERDTreeToggle<CR>
+map <silent> <C-n> :NERDTreeToggle<cr>
 " use ag for Ack
 cnoreabbrev ag Ack
 " run tests in tmux split
-map <silent> <leader>t :TestNearest<CR>
-map <silent> <leader>f :TestFile<CR>
+map <leader>t :TestNearest<cr>
+map <leader>f :TestFile<cr>
 
 
 """"""
