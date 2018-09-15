@@ -145,3 +145,21 @@ fun! StripTrailingWhiteSpace()
   %s/\s\+$//e
 endfun
 autocmd bufwritepre * :call StripTrailingWhiteSpace()
+
+" preview markdown
+function! OpenMarkdownPreview()
+  if exists('s:markdown_job_id') && s:markdown_job_id > 0
+    call jobstop(s:markdown_job_id)
+    unlet s:markdown_job_id
+  endif
+  let s:markdown_job_id = jobstart(
+    \ 'grip ' . shellescape(expand('%:p')) . " 0 2>&1 | awk -F ':|/' '/Running/ { print $5 }'",
+    \ { 'on_stdout': function('OnGripStart'), 'pty': 1 })
+endfunction
+" determine grip port
+function! OnGripStart(job_id, data, event)
+  let port = a:data[0][0:-2]
+  call system('open http://localhost:' . port)
+endfunction
+" command for it
+:command MarkdownPreview :call OpenMarkdownPreview()

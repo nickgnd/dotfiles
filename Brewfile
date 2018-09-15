@@ -30,7 +30,6 @@ brew 'openssl'
 brew 'erlang'
 brew 'elixir'
 brew 'exercism'
-brew 'git'
 brew 'fzf'
 brew 'ffmpeg'
 brew 'thefuck'
@@ -42,7 +41,9 @@ brew 'readline'
 brew 'sqlite'
 brew 'shellcheck'                                # Linter for shell scripts
 brew 'python'
+brew 'git'
 brew 'go'
+brew 'grip'                                      # Render github flavored Markdown
 brew 'heroku'
 brew 'memcached', restart_service: true
 brew 'node'
