@@ -97,6 +97,8 @@ let test#strategy = "vimux"
 " disable highlighting bold and italic text in markdown
 hi! link markdownItalic Italic
 hi! link markdownBold Bold
+" highlight fenced code in markdown files
+let g:markdown_fenced_languages = ['bash=sh', 'ruby', 'json', 'html']
 " split down and right by default
 set splitbelow
 set splitright
