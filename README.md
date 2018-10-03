@@ -17,7 +17,7 @@ How I set up my dev environment.
 │   ├── hushlogin        (omit "last login" message)
 │   ├── rcdebug          (config for ruby-debug)
 │   ├── tmux.conf        (config for tmux)
-│   ├── vimrc            (config for vim)
+│   ├── vimrc            (config for vanilla vim)
 │   └── zshrc            (zsh/oh-my-zsh config)
 │
 ├── iterm2 (profile and settings for iterm)
@@ -70,8 +70,7 @@ sh install.sh
 #### 5. Editors *(optional)*
 
 * [Atom](https://atom.io/)
-* **vim:**
-  * install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management
+* Vim / Neovim: install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management
 
 ### Setup iTerm2
 

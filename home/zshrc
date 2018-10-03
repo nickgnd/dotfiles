@@ -78,7 +78,7 @@ setopt HIST_IGNORE_ALL_DUPS
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # rbenv
@@ -121,6 +121,6 @@ eval $(thefuck --alias)
 # For a full list of active aliases, run `alias`.
 #
 # Aliases
-alias at="atom ./"
 alias backup="bash ~/dotfiles/scripts/backup.sh"
 alias be="bundle exec"
+alias vim="nvim"

@@ -6,6 +6,8 @@ tap 'homebrew/services'
 tap 'homebrew/versions'
 
 cask 'anybar'
+cask 'chromedriver'
+cask 'google-chrome'
 cask 'iterm2'
 cask 'java'
 cask 'firefox'
@@ -24,12 +26,10 @@ cask 'spectacle'                                 # window management
 
 brew 'neofetch'                                  # colorful system information
 brew 'cmake'
-brew 'chromedriver', restart_service: false
 brew 'openssl'
 brew 'erlang'
 brew 'elixir'
 brew 'exercism'
-brew 'git'
 brew 'fzf'
 brew 'ffmpeg'
 brew 'thefuck'
@@ -41,7 +41,9 @@ brew 'readline'
 brew 'sqlite'
 brew 'shellcheck'                                # Linter for shell scripts
 brew 'python'
+brew 'git'
 brew 'go'
+brew 'grip'                                      # Render github flavored Markdown
 brew 'heroku'
 brew 'memcached', restart_service: true
 brew 'node'
@@ -53,7 +55,7 @@ brew 'rbenv'
 brew 'rsync'
 brew 'the_silver_searcher'
 brew 'tree'
-brew 'vim'
+brew 'neovim'
 brew 'wrk'                                       # Simple web app benchmarking
 brew 'yarn'
 brew 'zsh'
