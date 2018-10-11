@@ -66,8 +66,6 @@ set ttyfast
 set lazyredraw
 " don't render special characters (tabs, etc.)
 set nolist
-" don't automatch parenthesis (for performance reasons)
-let g:loaded_matchparen=1
 
 
 """"""
@@ -75,8 +73,8 @@ let g:loaded_matchparen=1
 """"""
 " show line numbers
 set number
-" speed up scrolling ruby files (by not showing the cursorline)
-set nocursorline
+" highlight the cursorline (this may be slow with ruby files)
+set cursorline
 " use true colors
 set termguicolors
 " dark background
