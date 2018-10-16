@@ -140,6 +140,7 @@ cnoreabbrev ag Ack
 " run tests in tmux split
 map <leader>t :TestNearest<cr>
 map <leader>f :TestFile<cr>
+map <leader>l :TestLast<cr>
 
 
 """"""
