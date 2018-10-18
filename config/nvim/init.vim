@@ -141,6 +141,8 @@ cnoreabbrev ag Ack
 map <leader>t :TestNearest<cr>
 map <leader>f :TestFile<cr>
 map <leader>l :TestLast<cr>
+" fuzzy find buffers
+map <leader><space> :Buffers<cr>
 
 
 """"""
