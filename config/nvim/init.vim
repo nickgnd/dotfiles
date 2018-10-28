@@ -29,7 +29,7 @@ call plug#end()
 """ general
 """"""
 " map leader to space
-let mapleader=" "
+let mapleader="\<Space>"
 " utf8 encoding
 set encoding=utf8
 " automatically write buffers when switching focus
