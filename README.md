@@ -131,6 +131,9 @@ allow rbenv's ruby on the macOS firewall *(same for rspec and other ruby executa
 
     sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/max/.rbenv/shims/ruby
 
+    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/max/.asdf/shims/ruby
+
+
 
 ### SSH
 

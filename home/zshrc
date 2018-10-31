@@ -80,8 +80,9 @@ else
   export EDITOR='nvim'
 fi
 
-# rbenv
-eval "$(rbenv init -)"
+# asdf all things all things version manager
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
 # fzf fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -9,7 +9,6 @@ cask 'anybar'
 cask 'chromedriver'
 cask 'google-chrome'
 cask 'iterm2'
-cask 'java'
 cask 'firefox'
 cask 'font-dosis'
 cask 'font-lato'
@@ -25,37 +24,20 @@ cask 'kap'                                       # capture screen as gif
 cask 'spectacle'                                 # window management
 
 brew 'neofetch'                                  # colorful system information
-brew 'cmake'
 brew 'openssl'
-brew 'erlang'
-brew 'elixir'
-brew 'exercism'
 brew 'fzf'
-brew 'ffmpeg'
 brew 'thefuck'
 brew 'tmux'
-brew 'highlight'                                 # Syntax highlight code snippets
-brew 'imagemagick'
 brew 'overmind'                                  # Process manager (Procfile based)
 brew 'readline'
 brew 'sqlite'
 brew 'shellcheck'                                # Linter for shell scripts
 brew 'python'
 brew 'git'
-brew 'go'
-brew 'grip'                                      # Render github flavored Markdown
-brew 'heroku'
 brew 'memcached', restart_service: true
-brew 'node'
 brew 'postgresql', restart_service: true
 brew 'redis', restart_service: true
-brew 'ruby-build'
-brew 'ruby'
-brew 'rbenv'
 brew 'rsync'
 brew 'the_silver_searcher'
-brew 'tree'
 brew 'neovim'
-brew 'wrk'                                       # Simple web app benchmarking
-brew 'yarn'
 brew 'zsh'

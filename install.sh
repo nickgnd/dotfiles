@@ -49,7 +49,15 @@ symlink() {
   done
 }
 
+install_asdf() {
+  [ ! -d "$HOME/.asdf" ] &&
+  echo "Installing asdf..." &&
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
+}
+
 main() {
+  install_asdf
+
   prompt_user "dotfiles for ~/" &&
   symlink "home/*" "$HOME/."
 

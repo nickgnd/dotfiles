@@ -1,3 +1,6 @@
+" don't traverse $PATH to find Ruby
+let g:ruby_path = "$HOME/.asdf/shims/ruby"
+
 """"""
 """ plugins
 """"""
@@ -11,7 +14,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
-Plug 'ajh17/VimCompletesMe'
 Plug 'bogado/file-line'
 " not sure about this one yet...
 " Plug 'jiangmiao/auto-pairs'
@@ -156,6 +158,17 @@ fun! StripTrailingWhiteSpace()
   %s/\s\+$//e
 endfun
 autocmd bufwritepre * :call StripTrailingWhiteSpace()
+
+" use tab for autocompletion
+function! CleverTab()
+  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+    return "\<Tab>"
+  else
+    return "\<C-N>"
+  endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
+
 
 " preview markdown
 function! OpenMarkdownPreview()
