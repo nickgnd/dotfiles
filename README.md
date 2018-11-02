@@ -60,14 +60,10 @@ brew bundle
 /usr/local/opt/fzf/install
 
 # install dotfiles
-sh install.sh
+./install.sh
 ```
 
-#### 4. Shell
-
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-#### 5. Editors *(optional)*
+#### 4. Editors *(optional)*
 
 * [Atom](https://atom.io/)
 * Vim / Neovim: install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management

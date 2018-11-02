@@ -20,7 +20,6 @@ cask 'font-sniglet'
 cask 'font-source-sans-pro'
 cask 'font-source-code-pro'
 cask 'karabiner-elements'                        # remapping keys for my ergo keyboard
-cask 'kap'                                       # capture screen as gif
 cask 'spectacle'                                 # window management
 
 brew 'neofetch'                                  # colorful system information
