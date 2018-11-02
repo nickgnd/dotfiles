@@ -7,7 +7,6 @@ let g:ruby_path = "$HOME/.asdf/shims/ruby"
 call plug#begin()
 Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
-Plug 'itchyny/lightline.vim'
 
 Plug 'mileszs/ack.vim'
 Plug '/usr/local/opt/fzf'
@@ -15,8 +14,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'bogado/file-line'
-" not sure about this one yet...
-" Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-eunuch'
 Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
@@ -85,15 +82,6 @@ set background=dark
 colorscheme NeoSolarized
 " transparent split bars
 let g:neosolarized_vertSplitBgTrans = 1
-" configure lightline
-let g:lightline = { 'colorscheme': 'solarized',
-  \     'active': {
-  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
-  \         'right': [['lineinfo']]
-  \     }
-  \ }
-" hide default status line
-set noshowmode
 " hide status line when using FZF
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
@@ -112,6 +100,14 @@ let g:markdown_fenced_languages = ['bash=sh', 'ruby', 'json', 'html']
 " split down and right by default
 set splitbelow
 set splitright
+" statusline
+set statusline=
+set statusline+=%r\     " readonly flag
+set statusline+=%t\     " file name
+set statusline+=%m      " modfied flag
+set statusline+=%=      " --- right side ---
+set statusline+=%l:%c\  " cursor position
+
 
 
 """"""
