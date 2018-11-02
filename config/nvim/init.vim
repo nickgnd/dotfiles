@@ -11,7 +11,6 @@ Plug 'morhetz/gruvbox'
 Plug 'mileszs/ack.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'bogado/file-line'
 Plug 'tpope/vim-eunuch'
@@ -65,6 +64,8 @@ set ttyfast
 set lazyredraw
 " don't render special characters (tabs, etc.)
 set nolist
+" disable tree view history
+let g:netrw_dirhistmax=0
 
 
 """"""
@@ -86,10 +87,6 @@ let g:neosolarized_vertSplitBgTrans = 1
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-" configure nerdtree
-let NERDTreeMinimalUI = 1
-let NERDTreeWinSize=40
-let NERDTreeShowHidden=1
 " configure test runner to run tests in small tmux split
 let test#strategy = "vimux"
 " disable highlighting bold and italic text in markdown
@@ -131,8 +128,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " ctrl p for fzf
 nnoremap <silent> <c-p> :Files<cr>
-" ctrl n to toggle tree view
-map <silent> <C-n> :NERDTreeToggle<cr>
 " use ag for Ack
 cnoreabbrev ag Ack
 " run tests in tmux split
@@ -164,7 +159,6 @@ function! CleverTab()
   endif
 endfunction
 inoremap <Tab> <C-R>=CleverTab()<CR>
-
 
 " preview markdown
 function! OpenMarkdownPreview()
