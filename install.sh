@@ -51,11 +51,19 @@ symlink() {
 
 install_asdf() {
   [ ! -d "$HOME/.asdf" ] &&
-  echo "Installing asdf..." &&
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
+    echo "Installing asdf..." &&
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
+}
+
+install_oh_my_zsh() {
+  [ ! -d "$HOME/.oh-my-zsh" ] &&
+    echo "Installing oh-my-zsh..." &&
+    curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+
 }
 
 main() {
+  install_oh_my_zsh
   install_asdf
 
   prompt_user "dotfiles for ~/" &&
