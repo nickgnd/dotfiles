@@ -58,12 +58,8 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 let g:ackprg = 'ag --vimgrep --smart-case'
 " don't show the command history
 set noshowcmd
-" we're using a fast terminal
-set ttyfast
 " lazy redraw (for hopefully performance benefits)
 set lazyredraw
-" don't render special characters (tabs, etc.)
-set nolist
 " disable tree view history
 let g:netrw_dirhistmax=0
 
