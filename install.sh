@@ -21,7 +21,7 @@ remove_old_link() {
 is_file() {
   local file=$1
   file_exists "$file" || return 0
-  echo "Warning: $file is a not a symlink! Go double check before removing!\n" &&
+  echo -e "Warning: $file is a not a symlink! Go double check before removing!\n" &&
   return 1
 }
 
@@ -31,7 +31,7 @@ link_files() {
 
   remove_old_link "$link" || is_file "$link" &&
   ln -s "$target" "$link" &&
-  echo "Link $link to $target\n"
+  echo -e "Link $link to $target\n"
 }
 
 prompt_user() {
