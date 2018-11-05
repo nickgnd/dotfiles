@@ -2,6 +2,8 @@
 
 How I set up my dev environment.
 
+![screenshot](./screenshot.png)
+
 ## Directory
 
 ```
@@ -10,6 +12,8 @@ How I set up my dev environment.
 │
 ├── atom (atom files)
 │
+├── config (app specific configs)
+│
 ├── home (symlinked to ~/)
 │   ├── gemrc            (global config for ruby gems)
 │   ├── gitconfig        (global git config)
@@ -17,18 +21,17 @@ How I set up my dev environment.
 │   ├── hushlogin        (omit "last login" message)
 │   ├── rcdebug          (config for ruby-debug)
 │   ├── tmux.conf        (config for tmux)
+│   ├── tool-versions    (asdf default versions)
 │   ├── vimrc            (config for vanilla vim)
 │   └── zshrc            (zsh/oh-my-zsh config)
 │
 ├── iterm2 (profile and settings for iterm)
 │
-├── config (app specific configs)
-│
 ├── scripts (backup scripts, etc.)
 │
 ├── ssh (config for macOS ssh agent)
 │
-└── zsh (custom dir for oh-my-zsh)
+└── zsh (custom dir for oh-my-zsh, plugins, etc.)
 ```
 
 
