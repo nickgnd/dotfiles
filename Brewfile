@@ -20,6 +20,8 @@ cask 'font-source-code-pro'
 cask 'karabiner-elements'                        # remapping keys for my ergo keyboard
 cask 'spectacle'                                 # window management
 
+brew 'coreutils'                                 # for integrity checks
+brew 'gpg'
 brew 'neofetch'                                  # colorful system information
 brew 'openssl'
 brew 'fzf'
