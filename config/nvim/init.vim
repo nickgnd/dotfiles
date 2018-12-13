@@ -16,11 +16,13 @@ Plug 'bogado/file-line'
 Plug 'tpope/vim-eunuch'
 Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
+Plug 'mhinz/vim-mix-format'
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tonekk/vim-binding-pry'
 
 Plug 'slim-template/vim-slim'
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 """"""
@@ -60,6 +62,8 @@ let g:ackprg = 'ag --vimgrep --smart-case'
 set noshowcmd
 " disable tree view history
 let g:netrw_dirhistmax=0
+" automatically format elxir code
+let g:mix_format_on_save = 1
 
 
 """"""
@@ -153,6 +157,15 @@ function! CleverTab()
   endif
 endfunction
 inoremap <Tab> <C-R>=CleverTab()<CR>
+
+function! CleverShiftTab()
+  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+    return "\<Tab>"
+  else
+    return "\<C-P>"
+  endif
+endfunction
+inoremap <S-Tab> <C-R>=CleverShiftTab()<CR>
 
 " preview markdown
 function! OpenMarkdownPreview()
