@@ -15,8 +15,6 @@ cask 'font-quicksand'
 cask 'font-roboto'
 cask 'font-roboto-condensed'
 cask 'font-sniglet'
-cask 'font-source-sans-pro'
-cask 'font-source-code-pro'
 cask 'karabiner-elements'                        # remapping keys for my ergo keyboard
 cask 'spectacle'                                 # window management
 
