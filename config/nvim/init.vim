@@ -16,14 +16,14 @@ Plug 'bogado/file-line'
 Plug 'tpope/vim-eunuch'
 Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
-Plug 'mhinz/vim-mix-format'
 
 Plug 'machakann/vim-highlightedyank'
-Plug 'tonekk/vim-binding-pry'
 
-Plug 'slim-template/vim-slim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'pangloss/vim-javascript'
+Plug 'tonekk/vim-binding-pry',    { 'for': 'ruby' }
+Plug 'slim-template/vim-slim',    { 'for': 'slim' }
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'mhinz/vim-mix-format',      { 'for': 'elixir' }
+Plug 'pangloss/vim-javascript',   { 'for': 'javascipt' }
 call plug#end()
 
 """"""
