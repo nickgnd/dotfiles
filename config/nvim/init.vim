@@ -23,6 +23,7 @@ Plug 'tonekk/vim-binding-pry'
 
 Plug 'slim-template/vim-slim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 """"""
