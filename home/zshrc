@@ -108,6 +108,11 @@ gifify() {
   ffmpeg -ss 00:00:00.000 -i $video -r 10 -t 00:00:10.000 $gif
 }
 
+# bulk rename all image files to their exif creation date
+exifify() {
+  jhead '-n%Y-%m-%d %H.%M.%S' *.*
+}
+
 # alias for thefuck (correct previous commands)
 eval $(thefuck --alias)
 
