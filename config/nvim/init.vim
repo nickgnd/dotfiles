@@ -135,6 +135,8 @@ map <leader>f :TestFile<cr>
 map <leader>l :TestLast<cr>
 " fuzzy find buffers
 map <leader><space> :Buffers<cr>
+" clear search highlights with ESC in normal mode
+nnoremap <silent><ESC> :noh<return><ESC>
 
 
 """"""
