@@ -37,7 +37,7 @@ link_files() {
 prompt_user() {
   local question=$1
   local response
-  read -p "Symlink $question? (Y/n) " response
+  read -rp "Symlink $question? (Y/n) " response
   [ "$response" != "n" ]
 }
 
@@ -45,7 +45,7 @@ symlink() {
   local targets=$1
   local link_path=$2
   for target in $targets; do
-    link_files "$DOTFILES_DIR/$target" "$link_path$(basename $target)"
+    link_files "$DOTFILES_DIR/$target" "$link_path$(basename "$target")"
   done
 }
 
