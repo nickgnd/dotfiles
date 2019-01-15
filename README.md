@@ -22,7 +22,6 @@ How I set up my dev environment.
 │   ├── rcdebug          (config for ruby-debug)
 │   ├── tmux.conf        (config for tmux)
 │   ├── tool-versions    (asdf default versions)
-│   ├── vimrc            (config for vanilla vim)
 │   └── zshrc            (zsh/oh-my-zsh config)
 │
 ├── iterm2 (profile and settings for iterm)
@@ -69,7 +68,7 @@ brew bundle
 #### 4. Editors *(optional)*
 
 * [Atom](https://atom.io/)
-* Vim / Neovim: install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management
+* Neovim: install [vim-plug](https://github.com/junegunn/vim-plug) for plugin management
 
 ### Setup iTerm2
 
