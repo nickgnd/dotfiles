@@ -19,7 +19,6 @@ How I set up my dev environment.
 │   ├── gitconfig        (global git config)
 │   ├── gitignore_global (global gitignore)
 │   ├── hushlogin        (omit "last login" message)
-│   ├── rcdebug          (config for ruby-debug)
 │   ├── tmux.conf        (config for tmux)
 │   ├── tool-versions    (asdf default versions)
 │   └── zshrc            (zsh/oh-my-zsh config)
