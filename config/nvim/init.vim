@@ -12,11 +12,11 @@ Plug 'mileszs/ack.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
-Plug 'bogado/file-line'
+Plug 'bogado/file-line'              " open files directly at line number
 Plug 'tpope/vim-eunuch'
 Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
-
+Plug 'cohama/lexima.vim'             " for auto-pairing parenthesis
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'tonekk/vim-binding-pry',    { 'for': 'ruby' }
