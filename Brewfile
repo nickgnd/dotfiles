@@ -37,5 +37,4 @@ brew 'redis', restart_service: true
 brew 'rsync'
 brew 'the_silver_searcher'
 brew 'neovim'
-brew 'yarn', args: ['without-node']
 brew 'zsh'
