@@ -1,4 +1,3 @@
 Host *
   UseKeychain yes
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/herbert/id_rsa
