@@ -131,7 +131,6 @@ allow rbenv's ruby on the macOS firewall *(same for rspec and other ruby executa
     sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/max/.asdf/shims/ruby
 
 
-
 ### SSH
 
 Generate ssh key
@@ -141,3 +140,12 @@ Generate ssh key
 copy public key to clipboard
 
 	pbcopy < ~/.ssh/id_rsa.pub
+
+### Neovim
+
+Install python (2 and 3) for neovim
+
+```shell
+pip2 install --user neovim
+pip3 install --user neovim
+```

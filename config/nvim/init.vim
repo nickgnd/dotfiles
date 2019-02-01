@@ -20,6 +20,8 @@ Plug 'jiangmiao/auto-pairs'          " for auto-pairing parenthesis
 Plug 'tpope/vim-endwise'             " for automatically adding 'ends' in ruby
 Plug 'machakann/vim-highlightedyank'
 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 Plug 'tonekk/vim-binding-pry',    { 'for': 'ruby' }
 Plug 'slim-template/vim-slim',    { 'for': 'slim' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
@@ -66,9 +68,13 @@ set noshowcmd
 let g:netrw_dirhistmax=0
 " automatically format elxir code
 let g:mix_format_on_save = 1
+" tab / shift-tab autocompletion
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 
-""""""
+"""""
 """ layout
 """"""
 " show line numbers
@@ -104,7 +110,6 @@ set statusline+=%t\     " file name
 set statusline+=%m      " modfied flag
 set statusline+=%=      " --- right side ---
 set statusline+=%l:%c\  " cursor position
-
 
 
 """"""
@@ -151,40 +156,3 @@ fun! StripTrailingWhiteSpace()
   %s/\s\+$//e
 endfun
 autocmd bufwritepre * :call StripTrailingWhiteSpace()
-
-" use tab for autocompletion
-function! CleverTab()
-  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-    return "\<Tab>"
-  else
-    return "\<C-N>"
-  endif
-endfunction
-inoremap <Tab> <C-R>=CleverTab()<CR>
-
-function! CleverShiftTab()
-  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-    return "\<Tab>"
-  else
-    return "\<C-P>"
-  endif
-endfunction
-inoremap <S-Tab> <C-R>=CleverShiftTab()<CR>
-
-" preview markdown
-function! OpenMarkdownPreview()
-  if exists('s:markdown_job_id') && s:markdown_job_id > 0
-    call jobstop(s:markdown_job_id)
-    unlet s:markdown_job_id
-  endif
-  let s:markdown_job_id = jobstart(
-    \ 'grip ' . shellescape(expand('%:p')) . " 0 2>&1 | awk -F ':|/' '/Running/ { print $5 }'",
-    \ { 'on_stdout': function('OnGripStart'), 'pty': 1 })
-endfunction
-" determine grip port
-function! OnGripStart(job_id, data, event)
-  let port = a:data[0][0:-2]
-  call system('open http://localhost:' . port)
-endfunction
-" command for it
-:command MarkdownPreview :call OpenMarkdownPreview()
