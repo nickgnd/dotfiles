@@ -125,6 +125,7 @@ eval $(thefuck --alias)
 alias backup="bash ~/dotfiles/scripts/backup.sh"
 alias be="bundle exec"
 alias vim="nvim"
+alias vi="vim"
 
 # Pure Prompt
 autoload -U promptinit; promptinit
