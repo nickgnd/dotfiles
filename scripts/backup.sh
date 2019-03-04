@@ -48,7 +48,7 @@ remote_backup() {
 sync_files() {
   menu_bar orange
   for dir in "${SOURCE_DIRS[@]}"; do
-    rsync -aEXq --delete --exclude-from $EXCLUDE_LIST \
+    rsync --archive --verbose --xattrs --executability --delete --exclude-from $EXCLUDE_LIST \
       -e "ssh -T -c $CIPHERS -o Compression=no -x"\
       "$dir" max@"$NAS":"$BACKUP_VOLUME"
   done
@@ -60,11 +60,12 @@ write_log() {
 }
 
 nas_available() {
-  nc -z $NAS 22 > /dev/null
+  nc -z "$NAS" 22 > /dev/null
 }
 
 main() {
   backup_ran || remote_backup
   set_status
 }
+export PATH="/usr/local/bin:$PATH"
 main
