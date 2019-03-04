@@ -1,8 +1,9 @@
 #!/bin/bash
+export PATH="/usr/local/bin:$PATH"
+
 source "${BASH_SOURCE%/*}/backup.conf"
 readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
-readonly SOURCE_DIRS=(~/Code
-                      ~/Nextcloud)
+readonly SOURCE_DIRS=(~/Code ~/Nextcloud)
 readonly NAS=$NAS_ADDRESS
 readonly BACKUP_VOLUME="$NET_BACKUP/$(hostname -s)/daily/$(date +'%A')"
 readonly TODAY="$(date +'%F')"
@@ -47,11 +48,9 @@ remote_backup() {
 # c <ciphers>      -> use a weaker, but faster openssl cipher
 sync_files() {
   menu_bar orange
-  for dir in "${SOURCE_DIRS[@]}"; do
-    rsync --archive --verbose --xattrs --executability --delete --exclude-from $EXCLUDE_LIST \
-      -e "ssh -T -c $CIPHERS -o Compression=no -x"\
-      "$dir" max@"$NAS":"$BACKUP_VOLUME"
-  done
+  rsync --archive --xattrs --executability --delete --exclude-from $EXCLUDE_LIST \
+    -e "ssh -T -c $CIPHERS -o Compression=no -x"\
+    "${SOURCE_DIRS[@]}" max@"$NAS":"$BACKUP_VOLUME"
 }
 
 write_log() {
@@ -67,5 +66,5 @@ main() {
   backup_ran || remote_backup
   set_status
 }
-export PATH="/usr/local/bin:$PATH"
+
 main
