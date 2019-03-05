@@ -6,10 +6,14 @@
     <string>me.klappradla.backup</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/bin/bash</string>
       <string>/Users/Max/dotfiles/scripts/backup.sh</string>
     </array>
     <key>StartInterval</key>
-    <integer>1705</integer>
+    <!-- <integer>901</integer> -->
+    <integer>20</integer>
+		<key>StandardOutPath</key>
+    <string>/private/tmp/backup.log</string>
+    <key>StandardErrorPath</key>
+    <string>/private/tmp/backup_error.log</string>
   </dict>
 </plist>
