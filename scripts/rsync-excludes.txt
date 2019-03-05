@@ -1,4 +1,2 @@
 .DS_Store
-.dropbox
-.dropbox.cache
 .owncloudsync.log*
