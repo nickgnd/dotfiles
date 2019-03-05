@@ -36,19 +36,13 @@ remote_backup() {
   write_log
 }
 
-# rsync options explained:
-# a -> archive mode (sets some convenient flags)
-# E -> preserve executabiliy
-# X -> preserve extended attributes
-# q -> quite mode (since running in background anyways)
-#
-# ssh options explained:
+# NOTE: ssh options:
 # T                -> no pseudo tty (less CPU load on destination)
 # o Compression=no -> no compression (faster)
 # c <ciphers>      -> use a weaker, but faster openssl cipher
 sync_files() {
   menu_bar orange
-  rsync --archive --xattrs --executability --delete --exclude-from $EXCLUDE_LIST \
+  rsync --archive --verbose --xattrs --executability --delete --exclude-from $EXCLUDE_LIST \
     -e "ssh -T -c $CIPHERS -o Compression=no -x"\
     "${SOURCE_DIRS[@]}" max@"$NAS":"$BACKUP_VOLUME"
 }
