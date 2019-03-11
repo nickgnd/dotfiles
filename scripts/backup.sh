@@ -40,9 +40,10 @@ remote_backup() {
 # T                -> no pseudo tty (less CPU load on destination)
 # o Compression=no -> no compression (faster)
 # c <ciphers>      -> use a weaker, but faster openssl cipher
+# Rsync option: would like to include --xattrs (but does not work)
 sync_files() {
   menu_bar orange
-  rsync --archive --verbose --xattrs --executability --delete --exclude-from $EXCLUDE_LIST \
+  rsync --archive --verbose --executability --delete --exclude-from $EXCLUDE_LIST \
     -e "ssh -T -c $CIPHERS -o Compression=no -x"\
     "${SOURCE_DIRS[@]}" max@"$NAS":"$BACKUP_VOLUME"
 }
