@@ -28,6 +28,7 @@ brew 'thefuck'
 brew 'tmux'
 brew 'readline'
 brew 'the_silver_searcher' # the Ag search tool
+brew 'wget'
 brew 'zsh'
 brew 'rsync'
 
@@ -40,7 +41,13 @@ brew 'git'
 brew 'neovim'
 brew 'yarn'
 
+# postgres / postgis dependencies
+brew 'geos'
+brew 'proj'
+brew 'gdal'
+brew 'libxml2'
+brew 'json-c'
+
 # services
 brew 'memcached', restart_service: true
-brew 'postgresql', restart_service: true
 brew 'redis', restart_service: true
