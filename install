@@ -1,6 +1,10 @@
 #!/bin/bash
 readonly DOTFILES_DIR="$HOME/dotfiles"
 
+insert_blank_line() {
+  echo
+}
+
 is_symlink() {
   local file_name=$1
   [ -h "$file_name" ]
@@ -14,14 +18,14 @@ file_exists() {
 remove_old_link() {
   local file=$1
   is_symlink "$file" &&
-  echo "Remove old symlink: $file" &&
+  echo -e "\tRemoving old symlink for $file..." &&
   rm -rf "$file"
 }
 
 is_file() {
   local file=$1
   file_exists "$file" || return 0
-  echo -e "Warning: $file is a not a symlink! Go double check before removing!\n" &&
+  echo -e "\tWARNING: $file is a not a symlink! Please remove by hand..." &&
   return 1
 }
 
@@ -31,13 +35,14 @@ link_files() {
 
   remove_old_link "$link" || is_file "$link" &&
   ln -s "$target" "$link" &&
-  echo -e "Link $link to $target\n"
+  echo -e "\tLinking $link to $target..."
 }
 
 prompt_user() {
   local question=$1
   local response
-  read -rp "Symlink $question? (Y/n) " response
+  insert_blank_line
+  read -rp "Symlink $question? [y|n] " response
   [ "$response" != "n" ]
 }
 
@@ -51,13 +56,14 @@ symlink() {
 
 install_asdf() {
   [ ! -d "$HOME/.asdf" ] &&
-    echo "Installing asdf..." &&
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
+    echo -e "\nInstalling asdf..." &&
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.0
 }
 
 install_oh_my_zsh() {
+  echo -e "\nInstalling oh-my-zsh..."
   [ ! -d "$HOME/.oh-my-zsh" ] &&
-    echo "Installing oh-my-zsh..." &&
+    echo -e "\nInstalling oh-my-zsh..." &&
     curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 
 }
@@ -69,7 +75,7 @@ main() {
   prompt_user "dotfiles for ~/" &&
   symlink "home/*" "$HOME/."
 
-  prompt_user "Atom Editor files" &&
+  prompt_user "Atom Editor config" &&
   symlink "atom/*" "$HOME/.atom/"
 
   prompt_user "LaunchD Agents" &&
