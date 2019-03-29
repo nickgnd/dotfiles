@@ -6,7 +6,7 @@
     <string>me.klappradla.backup</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/Max/dotfiles/scripts/backup.sh</string>
+      <string>/Users/Max/dotfiles/bin/backup</string>
     </array>
     <key>StartInterval</key>
     <!-- <integer>901</integer> -->

@@ -1,9 +1,12 @@
 #!/bin/bash
-source "${BASH_SOURCE%/*}/backup.conf"
-readonly NAS=$NAS_ADDRESS
+readonly WORKING_DIR="$(dirname "${BASH_SOURCE[0]}")"
+
+source "$WORKING_DIR/backup.conf"
+
+readonly BACKUP_DRIVE=$BACKUP_DRIVE
 readonly TODAY="$(date +'%F')"
-readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_tm_backup.txt
-readonly DEST_ID=$TM_DEST
+readonly LAST_RUN_FILE="$WORKING_DIR/.last_local_tm_backup.txt"
+readonly DEST_ID=$LOCAL_TM_DEST
 
 backup_ran() {
   [ -e $LAST_RUN_FILE ] &&
@@ -11,7 +14,7 @@ backup_ran() {
 }
 
 tm_backup() {
-  nas_available &&
+  drive_available &&
   tmutil startbackup --destination $DEST_ID &&
   write_log
 }
@@ -20,8 +23,8 @@ write_log() {
   echo "$TODAY" > "$LAST_RUN_FILE"
 }
 
-nas_available() {
-  nc -z $NAS 22 > /dev/null
+drive_available() {
+  [ -d $BACKUP_DRIVE ]
 }
 
 main() {

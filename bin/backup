@@ -1,13 +1,15 @@
 #!/bin/bash
 export PATH="/usr/local/bin:$PATH"
+readonly WORKING_DIR="$(dirname "${BASH_SOURCE[0]}")"
 
-source "${BASH_SOURCE%/*}/backup.conf"
-readonly EXCLUDE_LIST=~/dotfiles/scripts/rsync-excludes.txt
+source "$WORKING_DIR/backup.conf"
+
+readonly EXCLUDE_LIST="$WORKING_DIR/rsync-excludes.txt"
 readonly SOURCE_DIRS=(~/Code ~/Nextcloud)
 readonly NAS=$NAS_ADDRESS
 readonly BACKUP_VOLUME="$NET_BACKUP/$(hostname -s)/daily/$(date +'%A')"
 readonly TODAY="$(date +'%F')"
-readonly LAST_RUN_FILE=~/dotfiles/scripts/.last_backup.txt
+readonly LAST_RUN_FILE="$WORKING_DIR/.last_backup.txt"
 readonly CIPHERS=chacha20-poly1305@openssh.com,aes128-gcm@openssh.com
 
 backup_ran() {

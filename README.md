@@ -25,7 +25,7 @@ How I set up my dev environment.
 │
 ├── iterm2 (profile and settings for iterm)
 │
-├── scripts (backup scripts, etc.)
+├── bin (executable scripts for backups, etc.)
 │
 ├── ssh (config for macOS ssh agent)
 │
@@ -61,7 +61,7 @@ brew bundle
 /usr/local/opt/fzf/install
 
 # install dotfiles
-./install.sh
+bin/install
 ```
 
 #### 4. Editors *(optional)*
@@ -85,7 +85,7 @@ Run `Package List: Install` from the command palette to install all packages fro
 
 Copy the example backup config and adapt it for the current machine:
 ```sh
-cp scripts/backup.conf.example scripts/backup.conf
+cp bin/backup.conf.example bin/backup.conf
 ```
 
 ## Usage
