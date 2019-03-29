@@ -5,7 +5,9 @@
 [alias]
   personal = "config user.email 'klappradla@posteo.net'"
   work = "config user.email 'max@bitcrowd.net'"
+  cleanup = "!git branch -vv | grep ': gone]' | grep -v '*' | grep -v 'master' | awk '{print $1}' | xargs git branch -D"
 [core]
   excludesfile = ~/.gitignore_global
 [status]
   submoduleSummary = true
+
