@@ -15,7 +15,6 @@ How I set up my dev environment.
 ├── config (app specific configs)
 │
 ├── home (symlinked to ~/)
-│   ├── gemrc            (global config for ruby gems)
 │   ├── gitconfig        (global git config)
 │   ├── gitignore_global (global gitignore)
 │   ├── hushlogin        (omit "last login" message)
