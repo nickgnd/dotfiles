@@ -36,6 +36,8 @@ call plug#end()
 let mapleader="\<Space>"
 " utf8 encoding
 set encoding=utf8
+" use the system clipboard
+set clipboard=unnamedplus
 " automatically write buffers when switching focus
 set autowriteall
 " 2 spaces indentation
