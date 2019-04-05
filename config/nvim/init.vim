@@ -83,6 +83,8 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 set number
 " highlight the cursorline (this may be slow with ruby files)
 set cursorline
+" highlight 80 and 120 columns
+set colorcolumn=80,120
 " use true colors
 set termguicolors
 " dark background
