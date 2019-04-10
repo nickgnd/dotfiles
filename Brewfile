@@ -28,6 +28,7 @@ brew 'thefuck'
 brew 'tmux'
 brew 'readline'
 brew 'the_silver_searcher' # the Ag search tool
+brew 'watch'               # execute command periodically
 brew 'wget'
 brew 'zsh'
 brew 'rsync'
