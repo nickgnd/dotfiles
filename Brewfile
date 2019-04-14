@@ -29,6 +29,7 @@ brew 'vim'
 brew 'wget'
 brew 'yarn'
 brew 'youtube-dl'
+brew 'zsh'
 
 cask 'firefox'
 cask 'google-chrome'
