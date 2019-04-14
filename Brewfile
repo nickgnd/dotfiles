@@ -13,7 +13,6 @@ brew 'git'
 brew 'grc'
 brew 'imagemagick'
 brew 'jp2a'
-brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
 brew 'openssl'
 brew 'readline'
