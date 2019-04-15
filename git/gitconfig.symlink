@@ -4,9 +4,9 @@
 [hub]
         protocol = https
 [alias]
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
+        promote = !$ZSHDOT/bin/git-promote
+        wtf     = !$ZSHDOT/bin/git-wtf
+        rank-contributors = !$ZSHDOT/bin/git-rank-contributors
         count   = !git shortlog -sn
 [color]
         diff = auto
