@@ -16,3 +16,13 @@ ZSH_SYNTAX_HIGHLIGHTING_FOLDER=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-sy
 if [ -d $ZSH ] && [ ! -d "$ZSH_SYNTAX_HIGHLIGHTING_FOLDER" ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_SYNTAX_HIGHLIGHTING_FOLDER
 fi
+
+
+# This installs `spaceship-prompt` theme (https://github.com/denysdovhan/spaceship-prompt)
+#
+ZSH_THEME_FOLDER=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt
+if [ -d $ZSH ] && [ ! -d "$ZSH_THEME_FOLDER" ]; then
+  git clone https://github.com/denysdovhan/spaceship-prompt.git $ZSH_THEME_FOLDER
+fi
+
+ln -sf $ZSH_THEME_FOLDER/spaceship.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme
