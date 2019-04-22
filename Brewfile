@@ -31,6 +31,12 @@ brew 'yarn'
 brew 'youtube-dl'
 brew 'zsh'
 
+
+cask 'font-fira-code'
+cask 'font-fira-mono'
+cask 'font-fira-mono-for-powerline'
+cask 'font-fira-sans'
+
 cask 'firefox'
 cask 'google-chrome'
 cask 'kap'
