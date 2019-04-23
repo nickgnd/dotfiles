@@ -44,6 +44,12 @@ defaults write -g KeyRepeat -int 2
 defaults write -g InitialKeyRepeat -int 15
 
 
+## Mouse
+
+# Set a fast mouse cursor speed
+defaults write -g com.apple.mouse.scaling 2
+
+
 ## Finder & AirDrop
 
 # Set the Finder prefs for showing a few different volumes on the Desktop.
