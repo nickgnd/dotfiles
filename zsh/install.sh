@@ -29,11 +29,3 @@ else
     fi
     echo "\nSuccessfully changed default shell to zsh. Moving on....\n"
 fi
-
-
-        # echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells > /dev/null
-
-
-
-
-
