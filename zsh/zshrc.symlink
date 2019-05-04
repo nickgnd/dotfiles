@@ -54,3 +54,9 @@ if [[ -f "$HOME/.asdf/asdf.sh" ]]; then
   . "$HOME/.asdf/asdf.sh"
   . "$HOME/.asdf/completions/asdf.bash"
 fi
+
+# Set yarn binaries on path (must be below the .asdf source commands)
+# https://til.hashrocket.com/posts/esd7dvzfme-using-yarn-global-w-node-through-asdf-mac
+if [ -x "$(command -v yarn)" ]; then
+  export PATH="$(yarn global bin):$PATH"
+fi
