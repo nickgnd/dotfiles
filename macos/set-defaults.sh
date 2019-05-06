@@ -75,6 +75,10 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
+# Set home as the default location for new Finder windows
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+
 
 ## Dock
 
