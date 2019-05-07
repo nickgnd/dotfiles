@@ -23,4 +23,5 @@ code --install-extension mjmcloug.vscode-elixir
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension rebornix.Ruby
 code --install-extension redhat.vscode-yaml
+code --install-extension sleistner.vscode-fileutils
 code --install-extension wayou.vscode-todo-highlight
