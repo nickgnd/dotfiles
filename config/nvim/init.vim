@@ -16,8 +16,8 @@ Plug 'bogado/file-line'              " open files directly at line number
 Plug 'tpope/vim-eunuch'
 Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
-Plug 'cohama/lexima.vim'             " for auto-pairing parenthesis
 Plug 'tpope/vim-endwise'             " for automatically adding 'ends' in ruby
+Plug 'jiangmiao/auto-pairs'          " for automatically closing parenthesis
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
