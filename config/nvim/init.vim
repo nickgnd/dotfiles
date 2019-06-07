@@ -17,7 +17,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-endwise'             " for automatically adding 'ends' in ruby
-Plug 'jiangmiao/auto-pairs'          " for automatically closing parenthesis
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
