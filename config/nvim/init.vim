@@ -26,7 +26,7 @@ Plug 'slim-template/vim-slim',    { 'for': 'slim' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'mhinz/vim-mix-format',      { 'for': 'elixir' }
 Plug 'pangloss/vim-javascript',   { 'for': 'javascipt' }
-Plug 'mxw/vim-jsx',               { 'for': 'javascipt' }
+Plug 'maxmellon/vim-jsx-pretty',  { 'for': 'javascipt' }
 call plug#end()
 
 """"""
