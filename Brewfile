@@ -23,24 +23,24 @@ brew 'coreutils'           # GNU file, shell and text utilities
 brew 'gpg'                 # GNU privacy packages
 brew 'neofetch'            # colorful system information
 brew 'openssl'
-brew 'fzf'
-brew 'thefuck'
-brew 'tmux'
 brew 'readline'
-brew 'the_silver_searcher' # the Ag search tool
 brew 'watch'               # execute command periodically
 brew 'wget'
-brew 'zsh'
 brew 'rsync'
 
 # dev tools
-brew 'overmind'   # Process manager (Procfile based)
+brew 'fzf'
+brew 'thefuck'
+brew 'tmux'
+brew 'the_silver_searcher' # the Ag search tool
+brew 'overmind'            # Process manager (Procfile based)
 brew 'sqlite'
-brew 'shellcheck' # Linter for shell scripts
+brew 'shellcheck'          # Linter for shell scripts
 brew 'python'
 brew 'git'
 brew 'neovim'
 brew 'yarn'
+brew 'zsh'
 
 # postgres / postgis dependencies
 brew 'geos'
