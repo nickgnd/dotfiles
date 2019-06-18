@@ -6,10 +6,24 @@ tap 'homebrew/services'
 
 # apps
 cask 'anybar'             # menu bar info
+cask 'flux'
+cask 'spectacle'          # window management
+cask 'karabiner-elements' # keyboard mappings
+cask 'nextcloud'
+
 cask 'chromedriver'
 cask 'iterm2'
-cask 'karabiner-elements' # keyboard mappings
-cask 'spectacle'          # window management
+
+cask 'appcleaner'
+cask 'keepassx'
+cask 'firefox'
+cask 'kap'
+cask 'libreoffice'
+cask 'slack'
+
+cask 'spotify'
+cask 'spotify-notifications'
+cask 'vlc'
 
 # fonts
 cask 'font-dosis'
