@@ -46,10 +46,11 @@ brew 'rsync'
 brew 'fzf'
 brew 'thefuck'
 brew 'tmux'
-brew 'the_silver_searcher' # the Ag search tool
-brew 'overmind'            # Process manager (Procfile based)
+brew 'reattach-to-user-namespace' # fix tmux for macOS
+brew 'the_silver_searcher'        # the Ag search tool
+brew 'overmind'                   # Process manager (Procfile based)
 brew 'sqlite'
-brew 'shellcheck'          # Linter for shell scripts
+brew 'shellcheck'                 # Linter for shell scripts
 brew 'python'
 brew 'git'
 brew 'neovim'
