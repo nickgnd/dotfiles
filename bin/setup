@@ -77,13 +77,32 @@ set_computername() {
   success "Set computername to $name"
 }
 
+add_asdf_plugin() {
+  local name="$1"
+  local url="$2"
+
+  if ! asdf plugin-list | grep -Fq "$name"; then
+    asdf plugin-add "$name" "$url" | print_info
+  else
+    asdf plugin-update "$name" | print_info
+  fi
+  success "asdf plugin $name installed"
+}
+
 install_asdf() {
   if [ ! -d "$HOME/.asdf" ]; then
     info "Installing asdf"
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.2 \
-      print_info
+      | print_info
   fi
   success "asdf is installed"
+
+  # install plugins as well...
+  source "$HOME/.asdf/asdf.sh"
+  add_asdf_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
+  add_asdf_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
+  "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring" 2>&1 | print_info
+  add_asdf_plugin "postgres" "https://github.com/smashedtoatoms/asdf-postgres"
 }
 
 install_oh_my_zsh() {
@@ -95,10 +114,10 @@ install_oh_my_zsh() {
 }
 
 
-install_homebrew
-install_apps
-update_shell
+# install_homebrew
+# install_apps
+# update_shell
 set_defaults
-prompt "Change computername?" && set_computername
+# prompt "Change computername?" && set_computername
 install_asdf
 install_oh_my_zsh
