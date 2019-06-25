@@ -70,10 +70,8 @@ set noshowcmd
 let g:netrw_dirhistmax=0
 " automatically format elxir code
 let g:mix_format_on_save = 1
-" tab / shift-tab autocompletion
+" enable deoplete autocompletion
 let g:deoplete#enable_at_startup = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 
 """""
