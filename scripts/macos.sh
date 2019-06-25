@@ -33,3 +33,10 @@ defaults write com.apple.dock autohide -bool true
 # set fast key repeat rate
 defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 2
+
+####
+# Apps
+####
+# load settings for iTerm from dotfiles
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/dotfiles/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
