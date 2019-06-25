@@ -1,3 +1,9 @@
+###
+# General
+####
+# disable autocorrect
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+
 ####
 # Finder
 ####
@@ -5,7 +11,7 @@
 defaults write com.apple.finder AppleShowAllFiles -boolean true
 
 # show file extensions in Finder
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write -g AppleShowAllExtensions -bool true
 
 # do not show hard drives on desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
@@ -25,5 +31,5 @@ defaults write com.apple.dock autohide -bool true
 ####
 
 # set fast key repeat rate
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
-defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 2
