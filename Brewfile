@@ -20,6 +20,7 @@ cask 'firefox'
 cask 'kap'
 cask 'libreoffice'
 cask 'slack'
+cask 'drawio'
 
 cask 'spotify'
 cask 'spotify-notifications'
