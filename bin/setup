@@ -7,25 +7,12 @@ readonly MACOS_DEFAULTS="$HOME/dotfiles/scripts/macos.sh"
 # enable sudo by default
 # pass coputer name as argument
 # extract things...
+# move scripts into "install" subdirectory
 
 # exit immediately if a command exits with non-zero
 set -e
 
-source "$HOME/dotfiles/scripts/print.sh"
-
-install_homebrew() {
-  if ! command -v brew >/dev/null; then
-    curl -fsSL $HOMEBREW_URL \
-      | ruby 2>&1 \
-      | print_info
-  fi
-  success "Homebrew installed"
-}
-
-install_apps() {
-  brew bundle | print_info
-  success "Apps installed"
-}
+. "$HOME/dotfiles/scripts/print.sh"
 
 update_shell() {
   local shell_path="/usr/local/bin/zsh"
@@ -98,8 +85,7 @@ install_vim_plug() {
   success "Vim Plug installed"
 }
 
-install_homebrew
-install_apps
+. "$HOME/dotfiles/scripts/homebrew.sh"
 update_shell
 set_defaults
 prompt "Change computername?" && set_computername
