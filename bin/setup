@@ -1,6 +1,7 @@
 #!/bin/bash
 
 readonly HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
+readonly MACOS_DEFAULTS="$HOME/dotfiles/scripts/macos.sh"
 
 # exit immediately if a command exits with non-zero
 set -e
@@ -28,25 +29,30 @@ print_info() {
   while read -r data; do info "$data"; done
 }
 
+prompt() {
+  local question=$1
+  local response
+  user "$question [y|n]"
+  read -e response
+  [ "$response" != "n" ]
+}
+
 install_homebrew() {
-  info "HOMEBREW"
   if ! command -v brew >/dev/null; then
     curl -fsSL $HOMEBREW_URL \
       | ruby 2>&1 \
       | print_info
-  else
-    success "Homebrew already installed"
   fi
+  success "Homebrew installed"
 }
 
 install_apps() {
-  info "APPS"
   brew bundle | print_info
+  success "Apps installed"
 }
 
 update_shell() {
   local shell_path="/usr/local/bin/zsh"
-  info "Update shell"
   if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
     info "Adding '$shell_path' to /etc/shells"
     sudo sh -c "echo $shell_path >> /etc/shells" 2>&1 \
@@ -54,10 +60,25 @@ update_shell() {
   fi
   sudo chsh -s "$shell_path" "$USER" 2>&1 \
     | print_info
+  success "Using zsh from homebrew"
+}
+
+set_defaults() {
+  source $MACOS_DEFAULTS 2>&1 | print_info
+  success "Set macOS defaults"
+}
+
+set_computername() {
+  user "How should this computer be called?"
+  read -e name
+  sudo scutil --set ComputerName rmbp
+  sudo scutil --set LocalHostName rmbp
+  success "Set computername to $name"
 }
 
 
-# TODO: set username and some defaults...
 install_homebrew
 install_apps
 update_shell
+set_defaults
+prompt "Change computername?" && set_computername
