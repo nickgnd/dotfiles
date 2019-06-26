@@ -22,6 +22,9 @@ defaults write com.apple.Finder FXPreferredViewStyle icnv
 # don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# show pathbar
+defaults read com.apple.finder ShowPathbar -bool true
+
 ####
 # Dock
 ####
