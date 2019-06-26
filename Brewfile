@@ -6,10 +6,25 @@ tap 'homebrew/services'
 
 # apps
 cask 'anybar'             # menu bar info
+cask 'flux'
+cask 'spectacle'          # window management
+cask 'karabiner-elements' # keyboard mappings
+cask 'nextcloud'
+
 cask 'chromedriver'
 cask 'iterm2'
-cask 'karabiner-elements' # keyboard mappings
-cask 'spectacle'          # window management
+
+cask 'appcleaner'
+cask 'keepassx'
+cask 'firefox'
+cask 'kap'
+cask 'libreoffice'
+cask 'slack'
+cask 'drawio'
+
+cask 'spotify'
+cask 'spotify-notifications'
+cask 'vlc'
 
 # fonts
 cask 'font-dosis'
@@ -32,10 +47,11 @@ brew 'rsync'
 brew 'fzf'
 brew 'thefuck'
 brew 'tmux'
-brew 'the_silver_searcher' # the Ag search tool
-brew 'overmind'            # Process manager (Procfile based)
+brew 'reattach-to-user-namespace' # fix tmux for macOS
+brew 'the_silver_searcher'        # the Ag search tool
+brew 'overmind'                   # Process manager (Procfile based)
 brew 'sqlite'
-brew 'shellcheck'          # Linter for shell scripts
+brew 'shellcheck'                 # Linter for shell scripts
 brew 'python'
 brew 'git'
 brew 'neovim'

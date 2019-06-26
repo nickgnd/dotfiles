@@ -1,0 +1,95 @@
+#!/bin/bash
+readonly HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
+readonly OH_MY_ZSH_URL="https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+readonly MACOS_DEFAULTS="$HOME/dotfiles/scripts/macos.sh"
+
+# TODO:
+# enable sudo by default
+# pass coputer name as argument
+# extract things...
+# move scripts into "install" subdirectory
+
+# exit immediately if a command exits with non-zero
+set -e
+
+. "$HOME/dotfiles/scripts/print.sh"
+
+update_shell() {
+  local shell_path="/usr/local/bin/zsh"
+  if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
+    info "Adding '$shell_path' to /etc/shells"
+    sudo sh -c "echo $shell_path >> /etc/shells" 2>&1 \
+      | print_info
+  fi
+  sudo chsh -s "$shell_path" "$USER" 2>&1 \
+    | print_info
+  success "Using zsh from homebrew"
+}
+
+set_defaults() {
+  source $MACOS_DEFAULTS 2>&1 | print_info
+  success "Set macOS defaults"
+}
+
+set_computername() {
+  user "How should this computer be called?"
+  read -e name
+  sudo scutil --set ComputerName "$name"
+  sudo scutil --set LocalHostName "$name"
+  success "Set computername to $name"
+}
+
+add_asdf_plugin() {
+  local name="$1"
+  local url="$2"
+  if ! asdf plugin-list | grep -Fq "$name"; then
+    asdf plugin-add "$name" "$url" | print_info
+  else
+    asdf plugin-update "$name" | print_info
+  fi
+}
+
+install_asdf() {
+  local path="$HOME/.asdf"
+  if [ ! -d "$path" ]; then
+    info "Installing asdf"
+    git clone https://github.com/asdf-vm/asdf.git "$path" --branch v0.7.2 \
+      | print_info
+  fi
+  success "asdf installed"
+
+  # install plugins as well...
+  # TODO: extract into loop / separate file
+  source "$HOME/.asdf/asdf.sh"
+  add_asdf_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
+  add_asdf_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
+  "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring" 2>&1 | print_info
+  add_asdf_plugin "postgres" "https://github.com/smashedtoatoms/asdf-postgres"
+  success "asdf plugins installed"
+}
+
+install_oh_my_zsh() {
+  if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    info "Installing OH MY ZSH"
+    curl -fsSL $OH_MY_ZSH_URL | print_info
+  fi
+  success "OH MY ZSH installed"
+}
+
+install_vim_plug() {
+  local path="$HOME/.local/share/nvim/site/autoload/plug.vim"
+  if [ ! -f "$path" ]; then
+    curl -fLo "$path" --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" \
+      | print_info
+  fi
+  success "Vim Plug installed"
+}
+
+. "$HOME/dotfiles/scripts/homebrew.sh"
+update_shell
+set_defaults
+# prompt "Change computername?" && set_computername
+set_computername
+install_asdf
+install_oh_my_zsh
+install_vim_plug
