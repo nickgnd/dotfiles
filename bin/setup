@@ -71,7 +71,7 @@ install_asdf() {
 install_oh_my_zsh() {
   if [ ! -d "$HOME/.oh-my-zsh" ]; then
     info "Installing OH MY ZSH"
-    curl -fsSL $OH_MY_ZSH_URL | print_info
+    sh -c "$(curl -fsSL $OH_MY_ZSH_URL)"
   fi
   success "OH MY ZSH installed"
 }
