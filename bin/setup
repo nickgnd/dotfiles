@@ -88,7 +88,8 @@ install_vim_plug() {
 . "$HOME/dotfiles/scripts/homebrew.sh"
 update_shell
 set_defaults
-prompt "Change computername?" && set_computername
+# prompt "Change computername?" && set_computername
+set_computername
 install_asdf
 install_oh_my_zsh
 install_vim_plug
