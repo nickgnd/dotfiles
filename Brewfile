@@ -29,7 +29,6 @@ cask 'vlc'
 # fonts
 cask 'font-dosis'
 cask 'font-lato'
-cask 'font-yanone-kaffeesatz'
 cask 'font-quicksand'
 cask 'font-sniglet'
 
