@@ -13,6 +13,7 @@ cask 'karabiner-elements' # keyboard mappings
 
 cask 'chromedriver'
 cask 'iterm2'
+cask 'atom'
 
 cask 'appcleaner'
 cask 'keepassx'
