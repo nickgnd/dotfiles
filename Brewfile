@@ -12,6 +12,7 @@ cask 'karabiner-elements' # keyboard mappings
 # cask 'nextcloud' current version does not work well on macOS..
 
 cask 'chromedriver'
+cask 'google-chrome'
 cask 'iterm2'
 cask 'atom'
 
@@ -57,6 +58,7 @@ brew 'git'
 brew 'neovim'
 brew 'yarn'
 brew 'zsh'
+brew 'htop'
 
 # postgres / postgis dependencies
 brew 'geos'
