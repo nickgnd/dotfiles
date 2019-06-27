@@ -9,7 +9,7 @@ cask 'anybar'             # menu bar info
 cask 'flux'
 cask 'spectacle'          # window management
 cask 'karabiner-elements' # keyboard mappings
-cask 'nextcloud'
+# cask 'nextcloud' current version does not work well on macOS..
 
 cask 'chromedriver'
 cask 'iterm2'
