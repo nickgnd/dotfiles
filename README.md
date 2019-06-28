@@ -48,11 +48,11 @@ git clone --recursive git@github.com:klappradla/dotfiles.git
 # navigate in
 cd dotfiles
 
-# run setup script
-bin/setup
+# run install script
+bin/install
 
 # run symlink script
-bin/install
+bin/link
 ```
 
 *See [docs](./DOCS.md.png) for additional help.*

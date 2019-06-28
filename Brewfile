@@ -59,6 +59,7 @@ brew 'neovim'
 brew 'yarn'
 brew 'zsh'
 brew 'htop'
+brew 'erlang'
 
 # postgres / postgis dependencies
 brew 'geos'
