@@ -55,3 +55,11 @@ else
   echo 'asdf - installing the ruby plugin'
   asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 fi
+
+# Postgres
+if asdf_detect_plugin 'postgres'; then
+  echo 'asdf - postgres plugin already installed'
+else
+  echo 'asdf - installing the postgres plugin'
+  asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git
+fi

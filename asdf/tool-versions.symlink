@@ -2,3 +2,4 @@ erlang 21.3
 elixir 1.8.1
 nodejs 10.15.3
 ruby 2.5.3
+postgres 9.5.17
