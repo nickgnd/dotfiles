@@ -18,6 +18,7 @@ fi
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension eamodio.gitlens
 code --install-extension formulahendry.auto-rename-tag
+code --install-extension karunamurti.haml
 code --install-extension misogi.ruby-rubocop
 code --install-extension mjmcloug.vscode-elixir
 code --install-extension msjsdiag.debugger-for-chrome
