@@ -25,6 +25,9 @@ defaults write com.apple.dock mru-spaces -bool false
 # show pathbar
 defaults read com.apple.finder ShowPathbar -bool true
 
+# fix sluggish fonts on external monitors with macOS Mojave
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+
 ####
 # Dock
 ####
