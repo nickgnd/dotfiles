@@ -24,6 +24,7 @@ cask 'kap'
 cask 'libreoffice'
 cask 'slack'
 cask 'drawio'
+cask '1password'
 
 cask 'spotify'
 cask 'spotify-notifications'
