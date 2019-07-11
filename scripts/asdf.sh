@@ -16,6 +16,7 @@ install_plugins() {
   install_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
   install_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
   install_plugin "postgres" "https://github.com/smashedtoatoms/asdf-postgres"
+  install_plugin "erlang" "https://github.com/asdf-vm/asdf-erlang.git"
   install_plugin "elixir" "https://github.com/asdf-vm/asdf-elixir.git"
 }
 

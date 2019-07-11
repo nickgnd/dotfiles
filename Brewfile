@@ -16,6 +16,7 @@ cask 'chromedriver'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'atom'
+cask 'java'
 
 cask 'appcleaner'
 cask 'keepassx'
@@ -45,6 +46,8 @@ brew 'readline'
 brew 'watch'               # execute command periodically
 brew 'wget'
 brew 'rsync'
+brew 'autoconf'            # for installing erlang
+brew 'wxmac'               # for starting erlang observer / debugger
 
 # dev tools
 brew 'fzf'
@@ -61,7 +64,6 @@ brew 'neovim'
 brew 'yarn'
 brew 'zsh'
 brew 'htop'
-brew 'erlang'
 
 # postgres / postgis dependencies
 brew 'geos'
