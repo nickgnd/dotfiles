@@ -1,9 +1,10 @@
 #!/bin/bash
 readonly DOTFILES_DIR="$HOME/dotfiles"
 
-insert_blank_line() {
-  echo
-}
+# exit immediately if a command exits with non-zero
+set -e
+
+. "$HOME/dotfiles/scripts/print.sh"
 
 is_symlink() {
   local file_name=$1
@@ -18,15 +19,14 @@ file_exists() {
 remove_old_link() {
   local file=$1
   is_symlink "$file" &&
-  echo -e "\tRemoving old symlink for $file..." &&
+  info "Removing old symlink for $file..." &&
   rm -rf "$file"
 }
 
 is_file() {
   local file=$1
   file_exists "$file" || return 0
-  echo -e "\tWARNING: $file is a not a symlink! Please remove by hand..." &&
-  return 1
+  fail "WARNING: $file is a not a symlink! Please remove by hand..."
 }
 
 link_files() {
@@ -35,15 +35,7 @@ link_files() {
 
   remove_old_link "$link" || is_file "$link" &&
   ln -s "$target" "$link" &&
-  echo -e "\tLinking $link to $target..."
-}
-
-prompt_user() {
-  local question=$1
-  local response
-  insert_blank_line
-  read -rp "Symlink $question? [y|n] " response
-  [ "$response" != "n" ]
+  success "Linking $link to $target..."
 }
 
 symlink() {
@@ -55,28 +47,28 @@ symlink() {
 }
 
 main() {
-  prompt_user "dotfiles for ~/" &&
+  prompt "Symlink dotfiles for ~/ ?" &&
   symlink "home/*" "$HOME/."
 
-  prompt_user "Atom Editor config" &&
+  prompt "Symlink Atom Editor config?" &&
   symlink "atom/*" "$HOME/.atom/"
 
-  prompt_user "LaunchD Agents" &&
+  prompt "Symlink LaunchD Agents?" &&
     for target in agents/*.plist; do
-      prompt_user "$target" &&
+      prompt "Symlink $target?" &&
       symlink "$target" "$HOME/Library/LaunchAgents/"
     done
 
-  prompt_user "Spectacle shortcuts" &&
+  prompt "Symlink Spectacle shortcuts?" &&
   symlink "config/Spectacle" "$HOME/Library/Application Support/"
 
-  prompt_user "Karabiner config" &&
+  prompt "Symlink Karabiner config?" &&
   symlink "config/karabiner" "$HOME/.config/"
 
-  prompt_user "Neovim config" &&
+  prompt "Symlink Neovim config?" &&
   symlink "config/nvim" "$HOME/.config/"
 
-  prompt_user "ssh config" &&
+  prompt "Symlink ssh config?" &&
   symlink "ssh/config" "$HOME/.ssh/"
 }
 main
