@@ -60,8 +60,8 @@ set nowrap
 set undofile
 " enable mouse to stay compatible with tmux scrolling
 set mouse=a
-" fzf: use ag and show hidden files
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+" fzf: use fd and show hidden files
+let $FZF_DEFAULT_COMMAND = 'fd --type file --hidden --follow --exclude .git'
 " use thesilversearcher with ack
 let g:ackprg = 'ag --vimgrep --smart-case'
 " don't show the command history
