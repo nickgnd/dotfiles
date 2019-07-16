@@ -29,6 +29,6 @@ prompt() {
   local question=$1
   local response
   user "$question [y|n]"
-  read -e response
+  read -re response
   [ "$response" != "n" ]
 }
