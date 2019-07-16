@@ -10,7 +10,7 @@ cask 'flux'
 cask 'spectacle'          # window management
 cask 'karabiner-elements' # keyboard mappings
 cask 'nextcloud'
-cask 'whatsap'
+cask 'whatsapp'
 
 cask 'chromedriver'
 cask 'google-chrome'
