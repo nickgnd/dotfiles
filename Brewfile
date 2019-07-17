@@ -61,7 +61,6 @@ brew 'shellcheck'                 # Linter for shell scripts
 brew 'python'
 brew 'git'
 brew 'neovim'
-brew 'yarn'
 brew 'zsh'
 brew 'htop'
 brew 'fd'
