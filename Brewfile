@@ -54,7 +54,7 @@ brew 'fzf'
 brew 'thefuck'
 brew 'tmux'
 brew 'reattach-to-user-namespace' # fix tmux for macOS
-brew 'the_silver_searcher'        # the Ag search tool
+brew 'ack'                        # the ack search tool
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'sqlite'
 brew 'shellcheck'                 # Linter for shell scripts
