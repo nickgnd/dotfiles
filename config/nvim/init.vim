@@ -62,6 +62,8 @@ set undofile
 set mouse=a
 " fzf: use fd and show hidden files
 let $FZF_DEFAULT_COMMAND = 'fd --type file --hidden --follow --exclude .git'
+" use thesilversearcher with ack
+let g:ackprg = 'ag --vimgrep --smart-case'
 " don't show the command history
 set noshowcmd
 " disable tree view history
@@ -133,6 +135,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " ctrl p for fzf
 nnoremap <silent> <c-p> :Files<cr>
+" use ag for Ack
+cnoreabbrev ag Ack
 " run tests in tmux split
 map <leader>t :TestNearest<cr>
 map <leader>f :TestFile<cr>
