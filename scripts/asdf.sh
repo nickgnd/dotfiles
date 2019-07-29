@@ -1,5 +1,5 @@
 readonly REPO="https://github.com/asdf-vm/asdf.git"
-readonly VERSION="v0.7.2"
+readonly VERSION="v0.7.3"
 
 . "$HOME/dotfiles/scripts/print.sh"
 
@@ -29,7 +29,7 @@ install_asdf() {
   local path="$HOME/.asdf"
   if [ ! -d "$path" ]; then
     info "Installing asdf"
-    git clone "$REPO "$path" --branch "$VERSION \
+    git clone "$REPO" "$path" --branch "$VERSION" \
       | print_info
   fi
   source "$path/asdf.sh"
