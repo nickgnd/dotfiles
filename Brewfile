@@ -17,6 +17,7 @@ cask 'google-chrome'
 cask 'iterm2'
 cask 'atom'
 cask 'java'
+cask 'insomnia'
 
 cask 'appcleaner'
 cask 'keepassx'
