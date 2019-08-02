@@ -17,9 +17,8 @@ cask 'google-chrome'
 cask 'iterm2'
 cask 'atom'
 cask 'java'
-cask 'insomnia'
+cask 'insomnia'           # postman alternative
 
-cask 'appcleaner'
 cask 'keepassx'
 cask 'firefox'
 cask 'kap'
