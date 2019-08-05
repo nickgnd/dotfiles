@@ -3,6 +3,9 @@
 ####
 # disable autocorrect
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+# disable auto-capitalization of words
+defaults write -g NSAutomaticCapitalizationEnabled -bool false
+
 
 # never start screensaver
 defaults -currentHost write com.apple.screensaver idleTime -int 0
