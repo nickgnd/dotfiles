@@ -126,6 +126,13 @@ set complete+=kspell
 
 
 """"""
+""" syntax
+""""""
+" ruby syntax for Brewfile (only if not already set)
+au BufRead,BufNewFile Brewfile setfiletype ruby
+
+
+""""""
 """ mappings
 """"""
 " quickly navigate splits

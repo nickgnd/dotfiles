@@ -64,6 +64,7 @@ brew 'neovim'
 brew 'zsh'
 brew 'htop'
 brew 'fd'
+brew 'ansible'
 
 # postgres / postgis dependencies
 brew 'geos'
