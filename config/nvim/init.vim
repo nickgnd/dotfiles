@@ -68,6 +68,8 @@ let g:ackprg = 'ag --vimgrep --smart-case'
 set noshowcmd
 " disable tree view history
 let g:netrw_dirhistmax=0
+" disable help banner on top of netrw
+let g:netrw_banner = 0
 " automatically format elxir code
 let g:mix_format_on_save = 1
 " enable deoplete autocompletion
