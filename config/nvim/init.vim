@@ -154,6 +154,8 @@ map <leader>l :TestLast<cr>
 map <leader><space> :Buffers<cr>
 " clear search highlights with ESC in normal mode
 nnoremap <silent><ESC> :noh<return><ESC>
+" format JSON with jq
+command FormatJSON %!jq
 
 
 """"""

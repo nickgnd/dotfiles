@@ -65,6 +65,7 @@ brew 'zsh'
 brew 'htop'
 brew 'fd'
 brew 'ansible'
+brew 'jq'                        # format JSON
 
 # postgres / postgis dependencies
 brew 'geos'
