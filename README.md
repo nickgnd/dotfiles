@@ -55,7 +55,7 @@ bin/install
 bin/link
 ```
 
-*See [docs](./DOCS.md.png) for additional help.*
+*See [docs](./DOCS.md) for additional help.*
 
 ## Backups
 
