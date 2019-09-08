@@ -31,3 +31,9 @@ Allow rbenv's ruby on the macOS firewall *(same for other executables)*
     sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/max/.rbenv/shims/ruby
 
     sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/max/.asdf/shims/ruby
+
+### Git Submodules
+
+Update all submodules to the latest tips of their remote branches:
+
+    git submodule update --recursive --remote
