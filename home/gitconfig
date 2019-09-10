@@ -5,6 +5,13 @@
 [alias]
   personal = "config user.email 'klappradla@posteo.net'"
   work = "config user.email 'max@bitcrowd.net'"
+  housekeep = "!f(){\
+                git remote prune origin; \
+                git branch -vv \
+                | grep 'origin/.*: gone]' \
+                | awk '{print $1}' \
+                | xargs git branch -D;\
+              }; f"
 [core]
   excludesfile = ~/.gitignore_global
 [status]
