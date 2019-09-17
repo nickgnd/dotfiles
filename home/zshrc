@@ -126,9 +126,6 @@ alias be="bundle exec"
 alias vim="nvim"
 alias vi="vim"
 
-# Temporarily map nvim until https://github.com/Homebrew/homebrew-core/issues/44324 is resolved.
-alias nvim="nvim 2> /dev/null"
-
 # Pure Prompt
 autoload -U promptinit; promptinit
 prompt pure
