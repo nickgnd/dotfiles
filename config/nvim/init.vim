@@ -18,6 +18,7 @@ Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-endwise'             " for automatically adding 'ends' in ruby
 Plug 'machakann/vim-highlightedyank'
+Plug 'tyru/open-browser.vim'         " temporarily fix broken gx command
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -156,6 +157,10 @@ map <leader><space> :Buffers<cr>
 nnoremap <silent><ESC> :noh<return><ESC>
 " format JSON with jq
 command FormatJSON %!jq
+" temporarily fix broken gx command
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-open)
+vmap gx <Plug>(openbrowser-open)
 
 
 """"""
