@@ -8,7 +8,7 @@ If not prompted when using `git` for the first time, manually install the XCode 
 
 	xcode-select --install
 
-### iterm
+### iTerm
 
 If the preferences aren't picked up automatically: point **`Load preferences from custom folder or URL`** to `~/dotfiles/iterm2`
 

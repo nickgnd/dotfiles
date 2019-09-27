@@ -1,4 +1,4 @@
-# ~/dotfiles
+# dotfiles 🏗
 
 How I set up my dev environment.
 
