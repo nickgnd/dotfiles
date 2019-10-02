@@ -142,6 +142,11 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" fix navigation mappings for netrw
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMovementMappings()
+augroup END
 " ctrl p for fzf
 nnoremap <silent> <c-p> :Files<cr>
 " use ag for Ack
@@ -169,3 +174,7 @@ fun! StripTrailingWhiteSpace()
   %s/\s\+$//e
 endfun
 autocmd bufwritepre * :call StripTrailingWhiteSpace()
+" movement mappings applied to current buffer
+fun! NetrwMovementMappings()
+  nnoremap <buffer> <C-L> <C-W><C-L>
+endfun
