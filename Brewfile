@@ -18,6 +18,7 @@ cask 'iterm2'
 cask 'atom'
 cask 'java'
 cask 'insomnia'           # postman alternative
+cask 'docker'
 
 cask 'keepassx'
 cask 'firefox'
@@ -26,6 +27,7 @@ cask 'libreoffice'
 cask 'slack'
 cask 'drawio'
 cask '1password'
+cask 'gimp'
 
 cask 'spotify'
 cask 'spotify-notifications'
