@@ -2,7 +2,7 @@
 
 install_homebrew() {
   if ! command -v brew >/dev/null; then
-    curl -fsSL $HOMEBREW_URL \
+    curl -fsSL "$HOMEBREW_URL" \
       | ruby 2>&1 \
       | print_info
   fi
@@ -16,9 +16,12 @@ install_apps() {
 
 install_fzf() {
   if ! command -v fzf >/dev/null; then
-    fail "FZZ not installed"
+    fail "FZF not installed"
   fi
-  "$(brew --prefix)/opt/fzf/install" | print_info
+  info "Install FZF key bindings and completion..."
+  "$(brew --prefix)/opt/fzf/install" \
+    --key-bindings --completion --no-update-rc \
+    | print_info
 }
 
 install_homebrew \
