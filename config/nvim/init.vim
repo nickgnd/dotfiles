@@ -7,6 +7,7 @@ let g:ruby_path = "$HOME/.asdf/shims/ruby"
 call plug#begin()
 Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
+Plug 'KeitaNakamura/neodark.vim'
 
 Plug 'mileszs/ack.vim'
 Plug '/usr/local/opt/fzf'
