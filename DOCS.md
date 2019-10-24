@@ -1,5 +1,15 @@
 # Docs
 
+## Disk Encryption
+
+Turn on FileVault:
+
+    fdesetup status
+
+If it is not turned on, enable:
+
+    sudo fdesetup enable
+
 ## Troubleshooting Guide
 
 ### XCode Command Line Tools
