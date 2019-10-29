@@ -21,6 +21,7 @@ Plug 'tpope/vim-endwise'             " for automatically adding 'ends' in ruby
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'SirVer/ultisnips'
 
 Plug 'tonekk/vim-binding-pry',    { 'for': 'ruby' }
 Plug 'slim-template/vim-slim',    { 'for': 'slim' }
@@ -75,6 +76,11 @@ let g:netrw_banner = 0
 let g:mix_format_on_save = 1
 " enable deoplete autocompletion
 let g:deoplete#enable_at_startup = 1
+" rank snippets higher in autocomplete search
+call deoplete#custom#source('ultisnips', 'rank', 1000)
+" snippet directory for UltiSnips
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
+let g:UltiSnipsNoPythonWarning = 1
 
 
 """""
