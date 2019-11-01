@@ -3,6 +3,7 @@ tap 'caskroom/fonts'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/services'
+tap 'lukakerr/things' # tap for pine markdown app
 
 # apps
 cask 'anybar'             # menu bar info
@@ -11,6 +12,7 @@ cask 'spectacle'          # window management
 cask 'karabiner-elements' # keyboard mappings
 cask 'nextcloud'
 cask 'whatsapp'
+cask 'pine'               # markdown editor
 
 cask 'chromedriver'
 cask 'google-chrome'
