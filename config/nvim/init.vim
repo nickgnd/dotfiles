@@ -1,5 +1,5 @@
-" don't traverse $PATH to find Ruby
-let g:ruby_path = "$HOME/.asdf/shims/ruby"
+"""" pre-config
+let g:ruby_path = "$HOME/.asdf/shims/ruby"       " do not travers $PATH to find ruby
 
 """"""
 """ plugins
@@ -12,12 +12,12 @@ Plug 'KeitaNakamura/neodark.vim'
 Plug 'mileszs/ack.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-commentary'
-Plug 'bogado/file-line'              " open files directly at line number
+Plug 'tpope/vim-commentary'                      " shortcuts for commenting in/out
+Plug 'bogado/file-line'                          " open files directly at line number
 Plug 'tpope/vim-eunuch'
 Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
-Plug 'tpope/vim-endwise'             " for automatically adding 'ends' in ruby
+Plug 'tpope/vim-endwise'                         " for automatically adding 'ends' in ruby
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -34,130 +34,105 @@ call plug#end()
 """"""
 """ general
 """"""
-" map leader to space
-let mapleader="\<Space>"
-" utf8 encoding
-set encoding=utf8
-" use the system clipboard
-set clipboard=unnamedplus
-" automatically write buffers when switching focus
-set autowriteall
-" 2 spaces indentation
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-" convert tabs to spaces
-set expandtab
-" search smart about the case
-set ignorecase
-set smartcase
-" interactive substitute
-set inccommand=nosplit
-" start scrolling before end
-set scrolloff=2
-" don't wrap lines (except markdown)
-set nowrap
-  autocmd FileType markdown setlocal wrap
-" keep an undo file (in the default location)
-set undofile
-" enable mouse to stay compatible with tmux scrolling
-set mouse=a
-" fzf: use fd and show hidden files
+let mapleader="\<Space>"                         " map leader key to space
+set encoding=utf8                                " alwyas use utf8 encoding
+set clipboard=unnamedplus                        " use the system clipboard
+set autowriteall                                 " automatically write buffers when switching focus
+set undofile                                     " keep an undo file in the default location
+set mouse=a                                      " enable mouse to stay compatible with tmux scrolling
+
+"""" indentation
+set tabstop=2                                    " real tabs are 2 spaces
+set softtabstop=2                                " soft tabs are 2 spaces
+set shiftwidth=2                                 " auto-indent with 2 spaces
+set expandtab                                    " convert tabs to spaces (softtabs)
+
+"""" searching
+set ignorecase                                   " search case insensitive by default
+set smartcase                                    " search case sensitive when using mixed letters
+set inccommand=nosplit                           " show substitution 'live' in all places
+
+""" spelling
+autocmd FileType gitcommit setlocal spell        " spell check commit messages
+autocmd BufRead,BufNewFile *.md setlocal spell   " spell check markdown files
+autocmd BufRead,BufNewFile *.txt setlocal spell  " spell check text files
+set complete+=kspell                             " autocomplete words
+
+"""" window
+set scrolloff=2                                  " start scrolling w lines before the end of the screen
+set nowrap                                       " do not wrap lines
+set noshowcmd                                    " do not show the command history
+set number                                       " show line numbers
+set cursorline                                   " highlight cursor line
+set splitbelow                                   " horizontally split down by default
+set splitright                                   " vertically split to the right by default
+
+""" statusline
+set statusline=                                  " reset left side of the statusline
+set statusline+=%r\                              " show readonly flag
+set statusline+=%t\                              " show file name
+set statusline+=%m                               " show modfied flag
+set statusline+=%=                               " reset right side of the statusline
+set statusline+=%l:%c\                           " show cursor position
+
+""" netrw tree view
+let g:netrw_dirhistmax=0                         " disable history
+let g:netrw_banner = 0                           " remove banner on top
+
+""" colors
+set colorcolumn=80,120                           " highlight column at 80 and 120 characters
+set termguicolors                                " use true colors
+set background=dark                              " use a dark background
+colorscheme NeoSolarized
+let g:neosolarized_vertSplitBgTrans = 1          " transparent split bars
+
+""" markdown
+autocmd FileType markdown setlocal wrap          " wrap lines in markdown files
+hi! link markdownItalic Italic
+hi! link markdownBold Bold
+let g:markdown_fenced_languages = ['bash=sh', 'ruby', 'json', 'html']
+
+""" plugin settings
+let test#strategy = "vimux"                      " run tests in tmux split
+let g:mix_format_on_save = 1                     " autoformat elixir code
+let g:deoplete#enable_at_startup = 1             " enable deoplete autocompletion
+let g:ackprg = 'ag --vimgrep --smart-case'       " use the silversearch for Ack
+au BufRead,BufNewFile Brewfile setfiletype ruby  " use ruby syntax in brewfiles
+
+""" fzf
+" use 'fd', show hidden files, exclude gitignored files
 let $FZF_DEFAULT_COMMAND = 'fd --type file --hidden --follow --exclude .git'
-" use thesilversearcher with ack
-let g:ackprg = 'ag --vimgrep --smart-case'
-" don't show the command history
-set noshowcmd
-" disable tree view history
-let g:netrw_dirhistmax=0
-" disable help banner on top of netrw
-let g:netrw_banner = 0
-" automatically format elxir code
-let g:mix_format_on_save = 1
-" enable deoplete autocompletion
-let g:deoplete#enable_at_startup = 1
+" hide status line when using fzf
+autocmd! FileType fzf
+autocmd FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+""" snippets
 " rank snippets higher in autocomplete search
 call deoplete#custom#source('ultisnips', 'rank', 1000)
 " snippet directory for UltiSnips
 let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snips']
+" swallow python warnings
 let g:UltiSnipsNoPythonWarning = 1
 
 
-"""""
-""" layout
 """"""
-" show line numbers
-set number
-" highlight the cursorline (this may be slow with ruby files)
-set cursorline
-" highlight 80 and 120 columns
-set colorcolumn=80,120
-" use true colors
-set termguicolors
-" dark background
-set background=dark
-" use neosolarized
-colorscheme NeoSolarized
-" transparent split bars
-let g:neosolarized_vertSplitBgTrans = 1
-" hide status line when using FZF
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-" configure test runner to run tests in small tmux split
-let test#strategy = "vimux"
-" disable highlighting bold and italic text in markdown
-hi! link markdownItalic Italic
-hi! link markdownBold Bold
-" highlight fenced code in markdown files
-let g:markdown_fenced_languages = ['bash=sh', 'ruby', 'json', 'html']
-" split down and right by default
-set splitbelow
-set splitright
-" statusline
-set statusline=
-set statusline+=%r\     " readonly flag
-set statusline+=%t\     " file name
-set statusline+=%m      " modfied flag
-set statusline+=%=      " --- right side ---
-set statusline+=%l:%c\  " cursor position
-
-
-""""""
-""" spelling
-""""""
-" spell check for commit messages
-autocmd FileType gitcommit setlocal spell
-" spell check for markdown files
-autocmd BufRead,BufNewFile *.md setlocal spell
-" autocomplete words
-set complete+=kspell
-
-
-""""""
-""" syntax
-""""""
-" ruby syntax for Brewfile (only if not already set)
-au BufRead,BufNewFile Brewfile setfiletype ruby
-
-
-""""""
-""" mappings
+""" magic
 """"""
 " quickly navigate splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-" move wrapped lines line by line
-nnoremap j gj
-nnoremap k gk
 " fix navigation mappings for netrw
 augroup netrw_mapping
   autocmd!
-  autocmd filetype netrw call NetrwMovementMappings()
+  autocmd filetype netrw nnoremap <buffer> <C-L> <C-W><C-L>
 augroup END
-" ctrl p for fzf
+" move wrapped lines line by line
+nnoremap j gj
+nnoremap k gk
+" use ctrl p for fzf
 nnoremap <silent> <c-p> :Files<cr>
 " use ag for Ack
 cnoreabbrev ag Ack
@@ -169,14 +144,12 @@ map <leader>l :TestLast<cr>
 map <leader><space> :Buffers<cr>
 " clear search highlights with ESC in normal mode
 nnoremap <silent><ESC> :noh<return><ESC>
-" format JSON with jq
-command FormatJSON %!jq
 
+""" commands
+command FormatJSON %!jq                          " format json with jq
 
-""""""
 """ functions
-""""""
-" strip trailing whitespace
+" strip trailing whitespace (not in markdown files)
 fun! StripTrailingWhiteSpace()
   if &ft =~ 'markdown'
     return
@@ -184,7 +157,3 @@ fun! StripTrailingWhiteSpace()
   %s/\s\+$//e
 endfun
 autocmd bufwritepre * :call StripTrailingWhiteSpace()
-" movement mappings applied to current buffer
-fun! NetrwMovementMappings()
-  nnoremap <buffer> <C-L> <C-W><C-L>
-endfun
