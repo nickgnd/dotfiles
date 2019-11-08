@@ -149,6 +149,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" move wrapped lines line by line
+nnoremap j gj
+nnoremap k gk
 " fix navigation mappings for netrw
 augroup netrw_mapping
   autocmd!
