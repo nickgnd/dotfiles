@@ -1,6 +1,5 @@
 [user]
   name = Max Mulatz
-  email = klappradla@posteo.net
   useConfigOnly = true
 [alias]
   personal = "config user.email 'klappradla@posteo.net'"
@@ -12,6 +11,10 @@
                 | awk '{print $1}' \
                 | xargs git branch -D;\
               }; f"
+[includeIf "gitdir:code/klappradla/"]
+  path = ~/.gitconfig_personal
+[includeIf "gitdir:code/bitcrowd/"]
+  path = ~/.gitconfig_work
 [core]
   excludesfile = ~/.gitignore_global
 [status]
