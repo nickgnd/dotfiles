@@ -20,7 +20,7 @@ cask 'java'
 cask 'insomnia'           # postman alternative
 cask 'docker'
 
-cask 'keepassx'
+cask 'keepassxc'
 cask 'firefox'
 cask 'kap'
 cask 'libreoffice'
