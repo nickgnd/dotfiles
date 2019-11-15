@@ -21,8 +21,9 @@ cask 'insomnia'           # postman alternative
 cask 'docker'
 
 cask 'keepassxc'
+cask 'buttercup'          # password manager
 cask 'firefox'
-cask 'kap'
+cask 'kap'                # record screencasts
 cask 'libreoffice'
 cask 'slack'
 cask 'drawio'
@@ -67,7 +68,7 @@ brew 'zsh'
 brew 'htop'
 brew 'fd'
 brew 'ansible'
-brew 'jq'                        # format JSON
+brew 'jq'                         # format JSON
 
 # postgres / postgis dependencies
 brew 'geos'
