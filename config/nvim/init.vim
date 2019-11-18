@@ -90,7 +90,7 @@ let g:neosolarized_vertSplitBgTrans = 1          " transparent split bars
 autocmd FileType markdown setlocal wrap          " wrap lines in markdown files
 hi! link markdownItalic Italic
 hi! link markdownBold Bold
-let g:markdown_fenced_languages = ['bash=sh', 'ruby', 'json', 'html']
+let g:markdown_fenced_languages = ['bash=sh', 'ruby', 'elixir', 'json', 'html']
 
 """ plugin settings
 let test#strategy = "vimux"                      " run tests in tmux split
