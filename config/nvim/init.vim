@@ -19,6 +19,7 @@ Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-endwise'                         " for automatically adding 'ends' in ruby
 Plug 'machakann/vim-highlightedyank'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
@@ -147,13 +148,3 @@ nnoremap <silent><ESC> :noh<return><ESC>
 
 """ commands
 command FormatJSON %!jq                          " format json with jq
-
-""" functions
-" strip trailing whitespace (not in markdown files)
-fun! StripTrailingWhiteSpace()
-  if &ft =~ 'markdown'
-    return
-  endif
-  %s/\s\+$//e
-endfun
-autocmd bufwritepre * :call StripTrailingWhiteSpace()
