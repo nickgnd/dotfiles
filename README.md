@@ -33,10 +33,9 @@ How I set up my dev environment.
 └── zsh (custom dir for oh-my-zsh, plugins, etc.)
 ```
 
-
 ## Installation
 
-*(on new computer: set up ssh keys first)*
+_(on new computer: set up ssh keys first)_
 
 ```sh
 # start in home directory
@@ -55,7 +54,7 @@ bin/install
 bin/link
 ```
 
-*See [docs](./DOCS.md) for additional help.*
+_See [docs](./DOCS.md) for additional help._
 
 ## Backups
 
