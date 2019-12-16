@@ -9,20 +9,21 @@ Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
 Plug 'KeitaNakamura/neodark.vim'
 
-Plug 'mileszs/ack.vim'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'                           " use Ack / the silversearcher
+Plug '/usr/local/opt/fzf'                        " fzf executable
+Plug 'junegunn/fzf.vim'                          " additional fzf things
 Plug 'tpope/vim-commentary'                      " shortcuts for commenting in/out
 Plug 'bogado/file-line'                          " open files directly at line number
-Plug 'tpope/vim-eunuch'
-Plug 'janko-m/vim-test'
-Plug 'benmills/vimux'
+Plug 'tpope/vim-eunuch'                          " helpful unix shell commands
+Plug 'janko-m/vim-test'                          " run tests from within vim
+Plug 'benmills/vimux'                            " interact with tmux (e.g. for running tests)
 Plug 'tpope/vim-endwise'                         " for automatically adding 'ends' in ruby
-Plug 'machakann/vim-highlightedyank'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'machakann/vim-highlightedyank'             " blink-highlight what gets yanked
+Plug 'editorconfig/editorconfig-vim'             " accept editorconfig files
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'                          " snippets
+Plug 'dense-analysis/ale'                        " linting
 
 Plug 'tonekk/vim-binding-pry',    { 'for': 'ruby' }
 Plug 'slim-template/vim-slim',    { 'for': 'slim' }
@@ -99,6 +100,12 @@ let g:mix_format_on_save = 1                     " autoformat elixir code
 let g:deoplete#enable_at_startup = 1             " enable deoplete autocompletion
 let g:ackprg = 'ag --vimgrep --smart-case'       " use the silversearch for Ack
 au BufRead,BufNewFile Brewfile setfiletype ruby  " use ruby syntax in brewfiles
+let g:ale_sign_error = '!'                       " character for ale linter errors
+let g:ale_sign_warning = '~'                     " character for ale linter warnings
+let g:ale_fix_on_save = 1                        " automatically fix lint errors on save
+let g:ale_fixers = {
+  \ 'javascript': ['prettier', 'eslint']
+\ }
 
 """ fzf
 " use 'fd', show hidden files, exclude gitignored files
