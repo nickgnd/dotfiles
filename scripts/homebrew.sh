@@ -10,7 +10,7 @@ install_homebrew() {
 }
 
 install_apps() {
-  brew bundle | print_info
+  brew bundle --no-lock | print_info
   success "Apps installed"
 }
 

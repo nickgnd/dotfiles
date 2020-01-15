@@ -10,7 +10,9 @@ How I set up my dev environment.
 .
 ├── agents (launchd scripts)
 │
-├── atom (atom files)
+├── atom (config for atom editor)
+│
+├── bin (executable scripts for setup, backups, etc.)
 │
 ├── config (app specific configs)
 │
@@ -25,8 +27,6 @@ How I set up my dev environment.
 ├── iterm2 (profile and settings for iterm)
 │
 ├── scripts (util scripts)
-│
-├── bin (executable scripts for setup, backups, etc.)
 │
 ├── ssh (config for macOS ssh agent)
 │
