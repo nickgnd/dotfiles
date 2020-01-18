@@ -39,6 +39,7 @@ cask 'font-dosis'
 cask 'font-lato'
 cask 'font-quicksand'
 cask 'font-sniglet'
+cask 'font-source-sans-pro'
 
 # Unix tools
 brew 'coreutils'           # GNU file, shell and text utilities
