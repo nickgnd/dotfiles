@@ -155,3 +155,5 @@ nnoremap <silent><ESC> :noh<return><ESC>
 
 """ commands
 command FormatJSON %!jq                          " format json with jq
+command German :set spelllang=de                 " set spellcheck language to German
+command English :set spelllang=en                " set spellcheck language to English
