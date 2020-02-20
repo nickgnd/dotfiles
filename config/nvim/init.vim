@@ -154,6 +154,6 @@ map <leader><space> :Buffers<cr>
 nnoremap <silent><ESC> :noh<return><ESC>
 
 """ commands
-command FormatJSON %!jq                          " format json with jq
+command FormatJSON %!jq .
 command German :set spelllang=de                 " set spellcheck language to German
-command English :set spelllang=en                " set spellcheck language to English
+command English :set spelllang=en                " set language to English
