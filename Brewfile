@@ -11,6 +11,7 @@ cask 'spectacle'          # window management
 cask 'karabiner-elements' # keyboard mappings
 cask 'nextcloud'
 cask 'whatsapp'
+cask 'signal'
 
 cask 'chromedriver'
 cask 'google-chrome'
@@ -70,6 +71,7 @@ brew 'htop'
 brew 'fd'
 brew 'ansible'
 brew 'jq'                         # format JSON
+brew 'watchman'                   # for filewatchers
 
 # postgres / postgis dependencies
 brew 'geos'
