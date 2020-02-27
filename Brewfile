@@ -72,6 +72,7 @@ brew 'fd'
 brew 'ansible'
 brew 'jq'                         # format JSON
 brew 'watchman'                   # for filewatchers
+brew 'yarn'                       # run which --ignore-engines if incompatible with node version
 
 # postgres / postgis dependencies
 brew 'geos'
