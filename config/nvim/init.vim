@@ -42,7 +42,7 @@ set encoding=utf8                                " alwyas use utf8 encoding
 set clipboard=unnamedplus                        " use the system clipboard
 set autowriteall                                 " automatically write buffers when switching focus
 set undofile                                     " keep an undo file in the default location
-set mouse=a                                      " enable mouse to stay compatible with tmux scrolling
+set mouse=nv                                     " enable mouse in normal and visual modei to stay compatible with tmux scrolling
 
 """" indentation
 set tabstop=2                                    " real tabs are 2 spaces
