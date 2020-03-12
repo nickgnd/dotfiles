@@ -2,8 +2,8 @@
 
 set -e
 
-# readonly TOPICS=(homebrew zsh mac asdf neovim karabiner spectacle iterm editorconfig git tmux ssh)
-readonly TOPICS=(ssh)
+# readonly TOPICS=(homebrew zsh mac asdf neovim karabiner spectacle iterm editorconfig git tmux ssh launchd)
+readonly TOPICS=(launchd)
 readonly TOPICS_DIR="$(dirname "$0")/../topics"
 
 install_topics() {
