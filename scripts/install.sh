@@ -2,7 +2,8 @@
 
 set -e
 
-readonly TOPICS=(homebrew zsh)
+readonly TOPICS=(homebrew zsh mac)
+# readonly TOPICS=(mac)
 readonly TOPICS_DIR="$(dirname "$0")/../topics"
 # readonly TOPICS_DIR="$HOME/dotfiles/topics"
 
@@ -11,4 +12,5 @@ for topic in "${TOPICS[@]}"; do
 
   find . -maxdepth 1 -name install.sh \
     | while read -r installer; do $installer; done
+    # | while read -r installer; do $installer -y; done
 done
