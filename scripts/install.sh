@@ -2,8 +2,8 @@
 
 set -e
 
-# readonly TOPICS=(homebrew zsh mac asdf neovim karabiner spectacle iterm editorconfig git)
-readonly TOPICS=(git)
+# readonly TOPICS=(homebrew zsh mac asdf neovim karabiner spectacle iterm editorconfig git tmux)
+readonly TOPICS=(tmux)
 readonly TOPICS_DIR="$(dirname "$0")/../topics"
 
 install_topics() {
