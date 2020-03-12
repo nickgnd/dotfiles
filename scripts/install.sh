@@ -2,7 +2,7 @@
 
 set -e
 
-readonly TOPICS=(homebrew)
+readonly TOPICS=(homebrew zsh)
 readonly TOPICS_DIR="$(dirname "$0")/../topics"
 # readonly TOPICS_DIR="$HOME/dotfiles/topics"
 
