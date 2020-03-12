@@ -73,11 +73,3 @@ defaults write -g com.apple.trackpad.scaling -int 3
 
 ## increase scrolling speed of mouse
 defaults write -g com.apple.mouse.scaling -int 3
-
-####
-# Apps
-####
-
-# load settings for iTerm from dotfiles
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/dotfiles/iterm2"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
