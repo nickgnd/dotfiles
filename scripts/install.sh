@@ -2,8 +2,8 @@
 
 set -e
 
-# readonly TOPICS=(homebrew zsh mac asdf neovim karabiner spectacle iterm)
-readonly TOPICS=(asdf)
+# readonly TOPICS=(homebrew zsh mac asdf neovim karabiner spectacle iterm editorconfig)
+readonly TOPICS=(editorconfig)
 readonly TOPICS_DIR="$(dirname "$0")/../topics"
 
 install_topics() {
