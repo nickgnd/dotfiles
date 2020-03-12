@@ -2,8 +2,8 @@
 
 set -e
 
-readonly TOPICS=(homebrew zsh mac asdf neovim)
-# readonly TOPICS=(neovim)
+# readonly TOPICS=(homebrew zsh mac asdf neovim karabiner)
+readonly TOPICS=(karabiner)
 readonly TOPICS_DIR="$(dirname "$0")/../topics"
 
 install_topics() {

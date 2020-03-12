@@ -5,4 +5,6 @@ backup.conf
 .last_tm_backup.txt
 .last_local_tm_backup.txt
 config/karabiner/*
+topics/karabiner/karabiner.symlink/*
 !config/karabiner/karabiner.json
+!topics/karabiner/karabiner.symlink/karabiner.json
