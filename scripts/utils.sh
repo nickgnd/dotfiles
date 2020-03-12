@@ -51,23 +51,23 @@ symlink () {
 
         case "$action" in
           o ) overwrite=true;;
-          O ) overwrite=true OVERWRITE_SYMLINKS=true;;
+          O ) OVERWRITE_SYMLINKS=true;;
           b ) backup=true;;
-          B ) backup=true BACKUP_SYMLINKS=true;;
+          B ) BACKUP_SYMLINKS=true;;
           s ) skip=true;;
-          S ) skip=true SKIP_SYMLINKS=true;;
+          S ) SKIP_SYMLINKS=true;;
           * ) ;;
         esac
       fi
     fi
 
-    if [ "$overwrite" == "true" ]; then
+    if [ "$overwrite" == "true" ] || [ "$OVERWRITE_SYMLINKS" == "true" ]; then
       rm -rf "$dest"
       print_success "REMOVED $dest"
-    elif [ "$backup" == "true" ]; then
+    elif [ "$backup" == "true" ] || [ "$BACKUP_SYMLINKS" == "true" ]; then
       mv "$dest" "${dest}.backup"
       print_success "MOVED $dest TO ${dest}.backup"
-    elif [ "$skip" == "true" ]; then
+    elif [ "$skip" == "true" ] || [ "$SKIP_SYMLINKS" == "true" ]; then
       print_success "SKIPPED SYMLINK $src"
     fi
   fi

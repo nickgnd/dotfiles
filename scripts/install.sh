@@ -2,8 +2,8 @@
 
 set -e
 
-# readonly TOPICS=(homebrew zsh mac asdf neovim karabiner spectacle iterm editorconfig)
-readonly TOPICS=(editorconfig)
+# readonly TOPICS=(homebrew zsh mac asdf neovim karabiner spectacle iterm editorconfig git)
+readonly TOPICS=(git)
 readonly TOPICS_DIR="$(dirname "$0")/../topics"
 
 install_topics() {
@@ -17,6 +17,7 @@ install_topics() {
     find . -maxdepth 1 -name install.sh \
       | while read -r installer; do $installer; done
       # | while read -r installer; do $installer -y; done
+    # TODO: use default linking when no special place is necessary...
     find . -maxdepth 1 -name symlink.sh \
       | while read -r symlink; do $symlink; done
   done
