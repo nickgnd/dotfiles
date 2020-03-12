@@ -51,8 +51,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # PATH by system: "/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="/usr/local/bin:$PATH" # homebrew bin
-export PATH="/usr/local/sbin:$PATH" # homebrew sbin
+export PATH="$HOME/dotfiles/bin:$PATH"         # dotfiles bin
+export PATH="/usr/local/bin:$PATH"             # homebrew bin
+export PATH="/usr/local/sbin:$PATH"            # homebrew sbin
 export PATH="/usr/local/opt/openssl/bin:$PATH" # Add openssl
 
 export GOPATH=$HOME/code/go # Add Go Path
