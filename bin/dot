@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # dot
 #
@@ -22,6 +22,10 @@ display_usage_info() {
 	exit
 }
 
+update_dotfiles() {
+  "$DOTFILES/scripts/install.sh"
+}
+
 edit_dotfiles() {
   exec "$EDITOR" "$DOTFILES"
   exit
@@ -39,6 +43,7 @@ if [ $# -gt 0 ]; then
   case $option in
     "-h"|"--help") display_usage_info;;
     "-e"|"--edit") edit_dotfiles;;
+    "-u"|"--update") update_dotfiles;;
     *) display_invalid_usage "$option";;
   esac
 fi
