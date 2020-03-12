@@ -1,0 +1,25 @@
+snippet describe "describe" b
+describe "$1" do
+	$0
+end
+endsnippet
+
+snippet test "test" b
+test "$1" do
+	$0
+end
+endsnippet
+
+snippet testc "test with context" b
+test "$1", ${2:context} do
+	$0
+end
+endsnippet
+
+snippet IO "IO.inspect" b
+IO.inspect($0)
+endsnippet
+
+snippet IOl "IO.inspect with label" b
+IO.inspect($1, label: "$0")
+endsnippet
