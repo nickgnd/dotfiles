@@ -55,6 +55,3 @@ install_plugins
 # import keyring for nodejs plugin
 "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring" 2>&1 | print_progress
 update_plugins
-
-
-

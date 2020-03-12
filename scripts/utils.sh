@@ -45,7 +45,9 @@ symlink () {
 
         print_question "File already exists: $dest ($(basename "$src")), what do you want to do?"
         print_question "[s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
-        read -rn 1 action </dev/tty
+
+        printf -v prompt "\r  [ \033[0;33m!!\033[0m ] -> "
+        read -rn 1 -e -p "$prompt" action </dev/tty
 
         case "$action" in
           o ) overwrite=true;;
