@@ -2,8 +2,7 @@
 
 set -e
 
-readonly TOPICS=(homebrew zsh mac)
-# readonly TOPICS=(mac)
+readonly TOPICS=(homebrew zsh mac asdf)
 readonly TOPICS_DIR="$(dirname "$0")/../topics"
 # readonly TOPICS_DIR="$HOME/dotfiles/topics"
 
