@@ -16,7 +16,7 @@ readonly LAST_RUN_FILE="$WORKING_DIR/.last_backup.txt"
 readonly CIPHERS=chacha20-poly1305@openssh.com,aes128-gcm@openssh.com
 
 backup_ran() {
-  [ -e $LAST_RUN_FILE ] &&
+  [ -e "$LAST_RUN_FILE" ] &&
     grep -Fxq "$TODAY" "$LAST_RUN_FILE"
 }
 
@@ -48,7 +48,7 @@ remote_backup() {
 # Rsync option: would like to include --xattrs (but does not work)
 sync_files() {
   menu_bar orange
-  rsync --archive --verbose --executability --delete --exclude-from $EXCLUDE_LIST \
+  rsync --archive --verbose --executability --delete --exclude-from "$EXCLUDE_LIST" \
     -e "ssh -T -c $CIPHERS -o Compression=no -x"\
     "${SOURCE_DIRS[@]}" max@"$NAS":"$BACKUP_VOLUME"
 }
