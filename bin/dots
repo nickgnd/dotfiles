@@ -12,9 +12,9 @@ readonly NO_COLOR="\033[0m"
 readonly DOTFILES="$HOME/dotfiles"
 
 display_usage_info() {
-  echo "dot -- manage dotfiles"
+  echo "dots -- manage dotfiles"
   echo ""
-  echo "Usage: dot [options]"
+  echo "Usage: dots [options]"
   echo ""
 	echo "  -i, --install   Install dotfiles"
 	echo "  -u, --update    Update dotfiles"
