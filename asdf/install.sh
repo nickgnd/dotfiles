@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # TODO: check versions and fail if too old
-# use asdf from homebrew again…
 set -e
 
 source "../scripts/utils.sh"
