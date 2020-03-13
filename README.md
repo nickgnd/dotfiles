@@ -1,64 +1,53 @@
 # dotfiles 🏗
 
-How I set up my dev environment.
+How I set up my dev system.
 
 ![screenshot](./screenshot.png)
 
-## Directory
+## About
 
-```
-.
-├── agents (launchd scripts)
-│
-├── atom (config for atom editor)
-│
-├── bin (executable scripts for setup, backups, etc.)
-│
-├── config (app specific configs)
-│
-├── home (symlinked to ~/)
-│   ├── gitconfig        (global git config)
-│   ├── gitignore_global (global gitignore)
-│   ├── hushlogin        (omit "last login" message)
-│   ├── tmux.conf        (config for tmux)
-│   ├── tool-versions    (asdf default versions)
-│   └── zshrc            (zsh/oh-my-zsh config)
-│
-├── iterm2 (profile and settings for iterm)
-│
-├── scripts (util scripts)
-│
-├── ssh (config for macOS ssh agent)
-│
-└── zsh (custom dir for oh-my-zsh, plugins, etc.)
-```
+My dotfiles follow [holman](https://github.com/holman/dotfiles)'s concept of _"topical"_ organization. Each topic has its own directory with special filename conventions ⚡️:
+
+- **bin/**: contains executables added to `$PATH`
+- **topic/install.sh**: script executed when installing/updating the topic
+- **topic/symlink.sh**: script executed when symlinking the topic
+- **topic/name.symlink**: files picked up by the `symlink.sh` script of the topic
+
+_(Note: the `homebrew` topic is always evaluated first as other topics depend on it.)_
 
 ## Installation
 
 _(on new computer: set up ssh keys first)_
 
 ```sh
-# start in home directory
+# start in the home directory
 cd
 
 # clone repository
 git clone --recursive git@github.com:klappradla/dotfiles.git
 
-# navigate in
+# navigate into the new directory
 cd dotfiles
 
-# run install script
-bin/install
-
-# run symlink script
-bin/link
+# run the install script
+bin/dots --install
 ```
 
 _See [docs](./DOCS.md) for additional help._
 
-## Backups
+### Backups
+
+Configure daily backups of certain directories.
 
 ```sh
 # copy example file and adapt for current machine
-cp bin/backup.conf.example bin/backup.conf
+cp backup/backup.conf.example backup/backup.conf
+```
+
+## Updates
+
+Run the updater to stay on top of 🌊.
+
+```sh
+dots --update
 ```
