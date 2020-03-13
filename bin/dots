@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# dots
+#
+# `dots` handles installation, updates, things like that. Run it periodically
+# to make sure you're on the latest and greatest.
+
+set -e
+
+readonly RED="\033[0;31m"
+readonly NO_COLOR="\033[0m"
+readonly DOTFILES="$HOME/dotfiles"
+
+display_usage_info() {
+  echo "dot -- manage dotfiles"
+  echo ""
+  echo "Usage: dot [options]"
+  echo ""
+	echo "  -i, --install   Install dotfiles"
+	echo "  -u, --update    Update dotfiles"
+	echo "  -l, --links     Update symlinks only"
+	echo "  -e, --edit      Open dotfiles directory for editing"
+	echo "  -h, --help      Show this help message and exit"
+	exit
+}
+
+update_dotfiles() {
+  "$DOTFILES/scripts/install.sh"
+}
+
+edit_dotfiles() {
+  exec "$EDITOR" "$DOTFILES"
+  exit
+}
+
+display_invalid_usage() {
+  echo "$RED""Invalid option: ""$NO_COLOR""$1"
+  echo ""
+  display_usage_info
+}
+
+[ $# -eq 0 ] && display_usage_info
+if [ $# -gt 0 ]; then
+  option=$1
+  case $option in
+    "-h"|"--help") display_usage_info;;
+    "-e"|"--edit") edit_dotfiles;;
+    "-u"|"--update") update_dotfiles;;
+    *) display_invalid_usage "$option";;
+  esac
+fi
