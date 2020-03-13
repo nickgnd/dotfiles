@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 export PATH="/usr/local/bin:$PATH"
 readonly WORKING_DIR="$(dirname "${BASH_SOURCE[0]}")"
 

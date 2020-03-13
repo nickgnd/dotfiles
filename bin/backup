@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# backup
+#
+# `backup` performs daily backups of specified directories
+
+set -e
+
+readonly DOTFILES="$HOME/dotfiles"
+
+"$DOTFILES/backup/backup.sh"
