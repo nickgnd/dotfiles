@@ -32,6 +32,7 @@ cask 'slack'
 cask 'drawio'
 cask '1password'
 cask 'gimp'
+cask 'imageoptim'         # remove exif-data from images
 
 cask 'spotify'
 cask 'spotify-notifications'
