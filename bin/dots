@@ -18,14 +18,17 @@ display_usage_info() {
   echo ""
 	echo "  -i, --install   Install dotfiles"
 	echo "  -u, --update    Update dotfiles"
-	echo "  -l, --links     Update symlinks only"
 	echo "  -e, --edit      Open dotfiles directory for editing"
 	echo "  -h, --help      Show this help message and exit"
 	exit
 }
 
-update_dotfiles() {
+install_dotfiles() {
   "$DOTFILES/scripts/install.sh"
+}
+
+update_dotfiles() {
+  "$DOTFILES/scripts/install.sh" -f
 }
 
 edit_dotfiles() {
@@ -46,6 +49,7 @@ if [ $# -gt 0 ]; then
     "-h"|"--help") display_usage_info;;
     "-e"|"--edit") edit_dotfiles;;
     "-u"|"--update") update_dotfiles;;
+    "-i"|"--install") install_dotfiles;;
     *) display_invalid_usage "$option";;
   esac
 fi
