@@ -54,11 +54,9 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/dotfiles/bin:$PATH"         # dotfiles bin
 export PATH="/usr/local/bin:$PATH"             # homebrew bin
 export PATH="/usr/local/sbin:$PATH"            # homebrew sbin
-export PATH="/usr/local/opt/openssl/bin:$PATH" # Add openssl
+export PATH="/usr/local/opt/openssl/bin:$PATH" # add openssl
 
-export GOPATH=$HOME/code/go # Add Go Path
 export JRUBY_OPTS="--dev -J-Xmx2G"
-export DOTS=$HOME/dotfiles
 export ERL_AFLAGS="-kernel shell_history enabled" # shell history for Erlang
 export ERL_EPMD_ADDRESS=127.0.0.1 # prevent epmd from exposing a port
 
@@ -71,10 +69,6 @@ setopt nolistbeep
 # Supress duplicates in CTR-R
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
-
-# Add custom functions
-# fpath=( "$ZSH_CUSTOM/functions" $fpath )
-fpath+=$ZSH_CUSTOM/plugins/pure
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -129,5 +123,6 @@ alias vim="nvim"
 alias vi="vim"
 
 # Pure Prompt
+fpath+=$ZSH_CUSTOM/plugins/pure
 autoload -U promptinit; promptinit
 prompt pure

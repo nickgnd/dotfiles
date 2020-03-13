@@ -15,7 +15,7 @@
 // Save list of currently installed packages
 atom.commands.add('atom-workspace', 'package-list:dump', () => {
   const exec = require('child_process').exec;
-  const file = `${process.env['DOTS']}/atom/packages.txt`;
+  const file = `${process.env['HOME']}/dotfiles/atom/packages.txt`;
   const cmd = `apm list --installed --bare > ${file}`;
   return exec(cmd);
 });
@@ -23,7 +23,7 @@ atom.commands.add('atom-workspace', 'package-list:dump', () => {
 // Install list of packages
 atom.commands.add('atom-workspace', 'package-list:install', () => {
   const exec = require('child_process').exec;
-  const file = `${process.env['DOTS']}/atom/packages.txt`;
+  const file = `${process.env['HOME']}/dotfiles/atom/packages.txt`;
   const cmd = `apm install --packages-file ${file}`;
   return exec(cmd);
 });

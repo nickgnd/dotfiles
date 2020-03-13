@@ -35,7 +35,7 @@ defaults write com.apple.dock mru-spaces -bool false
 # show pathbar
 defaults write com.apple.finder ShowPathbar -bool true
 
-## fix sluggish fonts on external monitors with macOS Mojave
+# fix sluggish fonts on external monitors with macOS Mojave
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
 ####
@@ -67,9 +67,9 @@ defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
 ## increase scrolling speed of trackpad
 defaults write -g com.apple.trackpad.scaling -int 3
 
-#####
-## Mouse
-#####
+####
+# Mouse
+####
 
-## increase scrolling speed of mouse
+# increase scrolling speed of mouse
 defaults write -g com.apple.mouse.scaling -int 3
