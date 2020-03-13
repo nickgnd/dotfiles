@@ -2,15 +2,7 @@
 
 set -e
 
-print_info() {
-  local msg=$1
-  printf "\r  [\033[00;34mINFO\033[0m] %s\n" "$msg"
-}
-
-print_question() {
-  local msg=$1
-  printf "\r  [ \033[0;33m??\033[0m ] -> %s\n" "$msg"
-}
+source "../scripts/utils.sh"
 
 set_name() {
   local old_name name force=$1

@@ -1,20 +1,11 @@
 #!/bin/bash
 
 set -e
+
+source "../scripts/utils.sh"
+
 readonly OH_MY_ZSH_URL="https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
 readonly HOMEBREW_ZSH="/usr/local/bin/zsh"
-
-print_info() {
-  local msg=$1
-  printf "\r  [\033[00;34mINFO\033[0m] %s\n" "${msg}"
-}
-
-print_progress() {
-  local data
-  while read -r data; do
-    printf "\r  [ \033[00;34m..\033[0m ] %s\n" "${data}"
-  done
-}
 
 set_shell() {
   if ! grep "$HOMEBREW_ZSH" /etc/shells > /dev/null 2>&1 ; then

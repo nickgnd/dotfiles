@@ -2,19 +2,9 @@
 
 set -e
 
+source "../scripts/utils.sh"
+
 readonly HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
-
-print_info() {
-  local msg=$1
-  printf "\r  [\033[00;34mINFO\033[0m] %s\n" "${msg}"
-}
-
-print_progress() {
-  local data
-  while read -r data; do
-    printf "\r  [ \033[00;34m..\033[0m ] %s\n" "${data}"
-  done
-}
 
 install_or_update_dependencies() {
   brew bundle --no-lock | print_progress

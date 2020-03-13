@@ -2,7 +2,6 @@
 
 set -e
 
-echo $(pwd)
 source "./../scripts/utils.sh"
 
 readonly TOPIC_DIR=$(pwd)
