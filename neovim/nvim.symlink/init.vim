@@ -43,6 +43,7 @@ set clipboard=unnamedplus                        " use the system clipboard
 set autowriteall                                 " automatically write buffers when switching focus
 set undofile                                     " keep an undo file in the default location
 set mouse=nv                                     " enable mouse in normal and visual modei to stay compatible with tmux scrolling
+set noemoji                                      " do not assume all emoji are double width
 
 """" indentation
 set tabstop=2                                    " real tabs are 2 spaces
