@@ -76,6 +76,7 @@ brew 'ansible'
 brew 'jq'                         # format JSON
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run which --ignore-engines if incompatible with node version
+brew 'hadolint'                   # lint dockerfiles
 
 # postgres / postgis dependencies
 brew 'geos'
