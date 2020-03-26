@@ -106,7 +106,8 @@ let g:ale_sign_error = '!'                       " character for ale linter erro
 let g:ale_sign_warning = '~'                     " character for ale linter warnings
 let g:ale_fix_on_save = 1                        " automatically fix lint errors on save
 let g:ale_fixers = {
-  \ 'javascript': ['prettier', 'eslint']
+  \ 'javascript': ['prettier', 'eslint'],
+  \ 'javascriptreact': ['prettier', 'eslint']
 \ }
 
 """ fzf
