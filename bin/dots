@@ -32,6 +32,7 @@ update_dotfiles() {
 }
 
 edit_dotfiles() {
+  cd "$DOTFILES"
   exec "$EDITOR" "$DOTFILES"
   exit
 }

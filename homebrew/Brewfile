@@ -78,6 +78,7 @@ brew 'jq'                         # format JSON
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run which --ignore-engines if incompatible with node version
 brew 'hadolint'                   # lint dockerfiles
+brew 'exercism'                   # CLI for exercism.io
 
 # postgres / postgis dependencies
 brew 'geos'
