@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# note
+#
+# Opens a `notes.md` file on the Desktop for quick notes.
+
+set -e
+
+cd "$HOME/Desktop"
+exec "$EDITOR" "$HOME/Desktop/notes.md"
+exit
