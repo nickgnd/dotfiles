@@ -82,10 +82,7 @@ source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
 # pyenv
-pyenv-init() {
-  if which pyenv > /dev/null; then eval "$(pyenv init - --no-rehash)"; fi
-  if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-}
+if which pyenv > /dev/null; then eval "$(pyenv init - zsh --no-rehash)"; fi
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

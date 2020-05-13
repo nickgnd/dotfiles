@@ -81,7 +81,6 @@ brew 'hadolint'                   # lint dockerfiles
 brew 'exercism'                   # CLI for exercism.io
 brew 'poetry'                     # python package manager
 brew 'pyenv'                      # python version manager
-brew 'pyenv-virtualenv'           # pyenv plugin for virtual environments
 
 # postgres / postgis dependencies
 brew 'geos'
