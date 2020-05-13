@@ -1,5 +1,7 @@
 """" pre-config
-let g:ruby_path = "$HOME/.asdf/shims/ruby"       " do not travers $PATH to find ruby
+let g:ruby_path = "$HOME/.asdf/shims/ruby"         " do not travers $PATH to find ruby
+let g:python_host_prog = '/usr/bin/python'         " do not mess with pyenv here
+let g:python3_host_prog = '/usr/local/bin/python3' " do not mess with pyenv here
 
 """"""
 """ plugins
@@ -25,13 +27,14 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'                          " snippets
 Plug 'dense-analysis/ale'                        " linting
 
-Plug 'tonekk/vim-binding-pry',       { 'for': 'ruby' }
-Plug 'slim-template/vim-slim',       { 'for': 'slim' }
-Plug 'elixir-editors/vim-elixir',    { 'for': 'elixir' }
-Plug 'mhinz/vim-mix-format',         { 'for': 'elixir' }
-Plug 'pangloss/vim-javascript',      { 'for': 'javascipt' }
-Plug 'maxmellon/vim-jsx-pretty',     { 'for': 'javascript' }
-Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+Plug 'tonekk/vim-binding-pry',        { 'for': 'ruby' }
+Plug 'slim-template/vim-slim',        { 'for': 'slim' }
+Plug 'elixir-editors/vim-elixir',     { 'for': 'elixir' }
+Plug 'mhinz/vim-mix-format',          { 'for': 'elixir' }
+Plug 'pangloss/vim-javascript',       { 'for': 'javascipt' }
+Plug 'maxmellon/vim-jsx-pretty',      { 'for': 'javascript' }
+Plug 'HerringtonDarkholme/yats.vim',  { 'for': 'typescript' }
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 call plug#end()
 
 """"""
