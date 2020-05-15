@@ -60,7 +60,6 @@ brew 'wxmac'               # for starting erlang observer / debugger
 
 # dev tools
 brew 'fzf'
-brew 'thefuck'
 brew 'tmux'
 brew 'reattach-to-user-namespace' # fix tmux for macOS
 brew 'the_silver_searcher'        # the Ag search tool

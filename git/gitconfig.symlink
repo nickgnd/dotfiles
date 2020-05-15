@@ -4,6 +4,7 @@
 [alias]
   personal = "config user.email 'klappradla@posteo.net'"
   work = "config user.email 'max@bitcrowd.net'"
+  pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
   housekeep = "!f(){\
                 git remote prune origin; \
                 git branch -vv \
