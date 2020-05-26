@@ -60,6 +60,9 @@ export JRUBY_OPTS="--dev -J-Xmx2G"
 export ERL_AFLAGS="-kernel shell_history enabled" # shell history for Erlang
 export ERL_EPMD_ADDRESS=127.0.0.1 # prevent epmd from exposing a port
 
+# disable brew bundle lockfile
+export HOMEBREW_BUNDLE_NO_LOCK=1
+
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
