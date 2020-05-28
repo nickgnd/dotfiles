@@ -1,98 +1,64 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+ZSH_DIR=$HOME/dotfiles/zsh                              # zsh directory
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME=""
+# globals
+export EDITOR='nvim'                                    # default editor
+export LANG=en_US.UTF-8                                 # set language to English and force UTF-8
+export FZF_DEFAULT_OPTS='--color=16'                    # use the terminal colors for fzf
+export LSCOLORS="Gxfxcxdxbxegedabagacad"                # define colors for list command
+export CLICOLOR=1                                       # enable colors for list command
+export ERL_AFLAGS="-kernel shell_history enabled"       # shell history for Erlang / Elixir
+export ERL_EPMD_ADDRESS=127.0.0.1                       # prevent epmd from exposing a port
+export HOMEBREW_BUNDLE_NO_LOCK=1                        # disable lockfile for brew bundle
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# PATH
+export PATH="$HOME/dotfiles/bin:$PATH"                  # dotfiles bin
+export PATH="/usr/local/bin:$PATH"                      # homebrew bin
+export PATH="/usr/local/sbin:$PATH"                     # homebrew sbin
+export PATH="/usr/local/opt/openssl/bin:$PATH"          # add openssl
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# completion
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}   # use list colors for completion
+zstyle ':completion:*' special-dirs true                # complete the . and .. special directories
+zstyle ':completion:*:*:*:*:*' menu select              # show completion as menu navitage with arrow
+zstyle ':completion:*' squeeze-slashes true             # treat multiple slashes as multiple directories
+zstyle ':completion:*' use-cache yes                    # cache completion
+zstyle ':completion:*' cache-path $ZSH_DIR/.cache        # custom cache directory
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=7
+# TODO: speed this up by only loading every 24h
+# https://gist.github.com/ctechols/ca1035271ad134841284
+autoload -Uz compinit && compinit -d $ZSH_DIR/.zcompdump # load completion
+autoload bashcompinit && bashcompinit                   # load bash completion
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# histoy
+HISTFILE=$ZSH_DIR/.zsh_history
+HISTSIZE=50000
+SAVEHIST=10000
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# options
+setopt hist_find_no_dups                                # no duplicates in history
+setopt hist_ignore_all_dups                             # ignore all duplicates
+setopt extended_history                                 # record timestamp of command
+setopt hist_expire_dups_first                           # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups                                 # ignore duplicated in commands history list
+setopt hist_ignore_space                                # ignore commands that start with space
+setopt hist_verify                                      # show command with history expansion to user before running it
+setopt inc_append_history                               # all sessions write to same history
+setopt share_history                                    # all sessions read same history
+setopt nolistbeep                                       # surpress beep for autocompletion
+setopt auto_menu                                        # show completion menu on successive tab press
+setopt autocd                                           # automatically change directory without prepending `cd`
+bindkey -e                                              # emacs keybindings
+bindkey "${terminfo[kcbt]}" reverse-menu-complete       # shift-tab for reverse completion menu
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/dotfiles/zsh
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting git-open)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-# PATH by system: "/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$HOME/dotfiles/bin:$PATH"         # dotfiles bin
-export PATH="/usr/local/bin:$PATH"             # homebrew bin
-export PATH="/usr/local/sbin:$PATH"            # homebrew sbin
-export PATH="/usr/local/opt/openssl/bin:$PATH" # add openssl
-
-export JRUBY_OPTS="--dev -J-Xmx2G"
-export ERL_AFLAGS="-kernel shell_history enabled" # shell history for Erlang
-export ERL_EPMD_ADDRESS=127.0.0.1 # prevent epmd from exposing a port
-
-# disable brew bundle lockfile
-export HOMEBREW_BUNDLE_NO_LOCK=1
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# Supress beep for autocompletion
-setopt nolistbeep
-
-# Supress duplicates in CTR-R
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
+# tools
+source $HOME/.asdf/asdf.sh                              # init asdf
+source $HOME/.asdf/completions/asdf.bash                # init asdf completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                  # fzf
+if which pyenv > /dev/null; then                        # pyenv
+  eval "$(pyenv init - zsh --no-rehash)";
 fi
 
-# asdf all things all things version manager
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
-
-# pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init - zsh --no-rehash)"; fi
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# use 16 colors for fzf to adapt to terminal
-export FZF_DEFAULT_OPTS='--color=16'
-
-# fbr - checkout git branch (including remote branches)
+# functions
 br() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
@@ -101,17 +67,29 @@ br() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Aliases
+# aliases
 alias be="bundle exec"
 alias vim="nvim"
 alias vi="vim"
+alias md='mkdir -p'
+alias l='ls -lah'
+alias ll='ls -lh'
+alias -g ...='../..'
 
-# Pure Prompt
-fpath+=$ZSH_CUSTOM/plugins/pure
+# TODO: clean up git aliases
+alias gst="git status"
+alias ga="git add"
+alias gc="git commit -v"
+alias gc!="git commit -v --amend"
+alias gcn!="git commit -v --no-edit --amend"
+alias gp="git push"
+alias gpf="git push --force-with-lease"
+
+# prompt
+fpath+=$HOME/dotfiles/zsh/plugins/pure
 autoload -U promptinit; promptinit
 prompt pure
+
+# plugins
+source $ZSH_DIR/plugins/git-open/git-open.plugin.zsh
+source $ZSH_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

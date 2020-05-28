@@ -1,4 +1,10 @@
+# local zsh files
+zsh/.cache/*
+zsh/.zsh_history
+zsh/.zcompdump
+
 .DS_Store
+
 *.log
 backup.conf
 .last_backup.txt
