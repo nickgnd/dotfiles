@@ -76,12 +76,13 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias -g ...='../..'
 
-# TODO: clean up git aliases
 alias gst="git status"
 alias ga="git add"
+alias gaa="git add --all"
 alias gc="git commit -v"
 alias gc!="git commit -v --amend"
 alias gcn!="git commit -v --no-edit --amend"
+alias gco="git checkout"
 alias gp="git push"
 alias gpf="git push --force-with-lease"
 
