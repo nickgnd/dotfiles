@@ -17,7 +17,7 @@ export PATH="/usr/local/sbin:$PATH"                     # homebrew sbin
 export PATH="/usr/local/opt/openssl/bin:$PATH"          # add openssl
 
 # completion
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}   # use list colors for completion
+zstyle ':completion:*' list-colors ''                   # use LSCOLORS list colors for completion
 zstyle ':completion:*' special-dirs true                # complete the . and .. special directories
 zstyle ':completion:*:*:*:*:*' menu select              # show completion as menu navitage with arrow
 zstyle ':completion:*' squeeze-slashes true             # treat multiple slashes as multiple directories
