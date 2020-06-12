@@ -1,8 +1,8 @@
-ZSH_DIR=$HOME/dotfiles/zsh                              # zsh directory
+ZSH_DIR=$HOME/dotfiles/zsh                              # zsh config directory in dotfiles
 
 # globals
 export EDITOR='nvim'                                    # default editor
-export LANG=en_US.UTF-8                                 # set language to English and force UTF-8
+export LANG=en_US.UTF-8                                 # set language to English and UTF-8 encoding
 export FZF_DEFAULT_OPTS='--color=16'                    # use the terminal colors for fzf
 export LSCOLORS="Gxfxcxdxbxegedabagacad"                # define colors for list command
 export CLICOLOR=1                                       # enable colors for list command
@@ -19,15 +19,15 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"          # add openssl
 # completion
 zstyle ':completion:*' list-colors ''                   # use LSCOLORS list colors for completion
 zstyle ':completion:*' special-dirs true                # complete the . and .. special directories
-zstyle ':completion:*:*:*:*:*' menu select              # show completion as menu navitage with arrow
+zstyle ':completion:*:*:*:*:*' menu select              # show completion as menu and navigate with arrow keys
 zstyle ':completion:*' squeeze-slashes true             # treat multiple slashes as multiple directories
 zstyle ':completion:*' use-cache yes                    # cache completion
-zstyle ':completion:*' cache-path $ZSH_DIR/.cache        # custom cache directory
+zstyle ':completion:*' cache-path $ZSH_DIR/.cache       # custom cache directory
 
 # TODO: speed this up by only loading every 24h
 # https://gist.github.com/ctechols/ca1035271ad134841284
 autoload -Uz compinit && compinit -d $ZSH_DIR/.zcompdump # load completion
-autoload bashcompinit && bashcompinit                   # load bash completion
+autoload bashcompinit && bashcompinit                    # load bash completion
 
 # histoy
 HISTFILE=$ZSH_DIR/.zsh_history
@@ -51,8 +51,8 @@ bindkey -e                                              # emacs keybindings
 bindkey "${terminfo[kcbt]}" reverse-menu-complete       # shift-tab for reverse completion menu
 
 # tools
-source $HOME/.asdf/asdf.sh                              # init asdf
-source $HOME/.asdf/completions/asdf.bash                # init asdf completion
+source $HOME/.asdf/asdf.sh                              # asdf
+source $HOME/.asdf/completions/asdf.bash                # asdf completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                  # fzf
 if which pyenv > /dev/null; then                        # pyenv
   eval "$(pyenv init - zsh --no-rehash)";
@@ -94,7 +94,7 @@ alias gp="git push"
 alias gpf="git push --force-with-lease"
 
 # prompt
-fpath+=$HOME/dotfiles/zsh/plugins/pure
+fpath+=$ZSH_DIR/plugins/pure
 autoload -U promptinit; promptinit
 prompt pure
 
