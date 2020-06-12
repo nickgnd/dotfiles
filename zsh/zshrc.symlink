@@ -67,6 +67,13 @@ br() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
+custom_prompt_pure_clear_screen() {
+  zle -I                   # Enable output to terminal.
+  print -n '\e[2J\e[4;0H'  # Clear screen and move cursor to (4, 0).
+  zle .redisplay           # Redraw prompt.
+}
+zle -N clear-screen custom_prompt_pure_clear_screen
+
 # aliases
 alias be="bundle exec"
 alias vim="nvim"
