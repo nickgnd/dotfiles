@@ -10,7 +10,7 @@ readonly SYMLINKS=$(find "$TOPIC_DIR" -maxdepth 1 -name "*.symlink")
 
 for src in $SYMLINKS; do
   name=$(basename "$src" .symlink)
-  dest="$HOME/Library/Application Support/$name"
+  dest="$HOME/Library/Preferences/$name"
   symlink "$src" "$dest"
 done
 

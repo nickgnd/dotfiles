@@ -9,7 +9,7 @@ tap 'homebrew/services'
 # apps
 cask 'anybar'             # menu bar info
 cask 'flux'
-cask 'spectacle'          # window management
+cask 'rectangle'          # window management
 cask 'karabiner-elements' # keyboard mappings
 cask 'nextcloud'
 cask 'whatsapp'
