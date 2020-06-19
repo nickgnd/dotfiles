@@ -36,4 +36,4 @@ while getopts "f" option; do
   esac
 done
 
-install_topics $flags
+install_topics "$flags"

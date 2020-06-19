@@ -5,6 +5,7 @@ set -e
 export PATH="/usr/local/bin:$PATH"
 readonly WORKING_DIR="$(dirname "${BASH_SOURCE[0]}")"
 
+# shellcheck source=./backup.conf
 source "$WORKING_DIR/backup.conf"
 
 readonly EXCLUDE_LIST="$WORKING_DIR/rsync-excludes.txt"

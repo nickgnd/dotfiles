@@ -39,6 +39,7 @@ else
 fi
 
 # needs to be available for adding plugins
+# shellcheck source=../../.asdf/asdf.sh
 source "$ASDF_BIN/asdf.sh"
 install_plugins
 # import keyring for nodejs plugin
