@@ -84,6 +84,7 @@ alias ll='ls -lh'
 alias -g ...='../..'
 
 alias gst="git status"
+alias gb="git branch"
 alias ga="git add"
 alias gaa="git add --all"
 alias gc="git commit -v"
