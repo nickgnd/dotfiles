@@ -20,4 +20,5 @@
   excludesfile = ~/.gitignore_global
 [status]
   submoduleSummary = true
-
+[pull]
+	ff = only
