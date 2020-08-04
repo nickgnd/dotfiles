@@ -25,7 +25,7 @@ cask 'java'
 cask 'insomnia'           # postman alternative
 cask 'docker'
 
-cask 'keepassxc'
+cask 'keepassx'
 cask 'buttercup'          # password manager
 cask 'firefox'
 cask 'kap'                # record screencasts
