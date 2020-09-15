@@ -118,6 +118,8 @@ let g:ale_fixers = {
 """ fzf
 " use 'fd', show hidden files, exclude gitignored files
 let $FZF_DEFAULT_COMMAND = 'fd --type file --hidden --follow --exclude .git'
+" disable preview window
+let g:fzf_preview_window = ''
 " hide status line when using fzf
 autocmd! FileType fzf
 autocmd FileType fzf set laststatus=0 noshowmode noruler
