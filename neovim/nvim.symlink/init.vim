@@ -90,8 +90,8 @@ let g:netrw_banner = 0                           " remove banner on top
 set colorcolumn=80,120                           " highlight column at 80 and 120 characters
 set termguicolors                                " use true colors
 set background=dark                              " use a dark background
-colorscheme neodark
-let g:neosolarized_vertSplitBgTrans = 1          " transparent split bars for solarized
+colorscheme NeoSolarized
+let g:neosolarized_vertSplitBgTrans = 1          " transparent split bars
 
 """ markdown
 au FileType markdown setlocal wrap               " wrap lines in markdown files

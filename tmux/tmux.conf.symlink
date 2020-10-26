@@ -70,7 +70,7 @@ bind-key -r L resize-pane -R 3
 # Layout
 ###
 # Basic status bar colors
-set -g status-style bg=brightblack,fg=cyan
+set -g status-style bg=black,fg=cyan
 # Left side of status bar
 set -g status-left-length 40
 set -g status-left " #S "
