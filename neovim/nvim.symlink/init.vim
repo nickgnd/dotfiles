@@ -9,7 +9,6 @@ let g:python3_host_prog = '/usr/local/bin/python3' " do not mess with pyenv here
 call plug#begin()
 Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
-Plug 'KeitaNakamura/neodark.vim'
 
 Plug 'mileszs/ack.vim'                           " use Ack / the silversearcher
 Plug '/usr/local/opt/fzf'                        " fzf executable
