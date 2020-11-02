@@ -119,6 +119,8 @@ let g:ale_fixers = {
 let $FZF_DEFAULT_COMMAND = 'fd --type file --hidden --follow --exclude .git'
 " disable preview window
 let g:fzf_preview_window = ''
+" layout for overlay window
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Comment' } }
 " hide status line when using fzf
 autocmd! FileType fzf
 autocmd FileType fzf set laststatus=0 noshowmode noruler
