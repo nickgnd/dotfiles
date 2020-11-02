@@ -78,6 +78,7 @@ zle -N clear-screen custom_prompt_pure_clear_screen
 alias be="bundle exec"
 alias vim="nvim"
 alias vi="vim"
+alias tm="tmux attach || tmux"
 alias md='mkdir -p'
 alias l='ls -lah'
 alias ll='ls -lh'
