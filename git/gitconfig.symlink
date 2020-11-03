@@ -12,6 +12,7 @@
                 | awk '{print $1}' \
                 | xargs git branch -D;\
               }; f"
+  update = "!git fetch && git pull && git housekeep"
 [includeIf "gitdir:code/klappradla/"]
   path = ~/.gitconfig_personal
 [includeIf "gitdir:code/bitcrowd/"]
