@@ -1,11 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # dots
 #
 # `dots` handles installation, updates, things like that. Run it periodically
 # to make sure you're on the latest and greatest.
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
 
 readonly RED="\033[0;31m"
 readonly NO_COLOR="\033[0m"

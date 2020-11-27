@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
 
 export PATH="/usr/local/bin:$PATH"
 readonly WORKING_DIR="$(dirname "${BASH_SOURCE[0]}")"

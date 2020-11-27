@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
 
 print_success() {
   local msg=$1

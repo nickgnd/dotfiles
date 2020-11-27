@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
 
 readonly DOTS_DIR="$(dirname "$(dirname "$0")")"
 readonly DIR_PATTERN=(! -name ".git" -and ! -name "homebrew" -and ! -name "scripts")
