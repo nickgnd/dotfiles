@@ -1,0 +1,18 @@
+snippet sh "#!/usr/bin/env sh" b
+#!/usr/bin/env sh
+$0
+endsnippet
+
+snippet bash "#!/usr/bin/env bash" b
+#!/usr/bin/env bash
+$0
+endsnippet
+
+snippet set "set shell options" b
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# To debug, uncomment:
+# set -o xtrace
+endsnippet
