@@ -30,6 +30,7 @@ install_dotfiles() {
 }
 
 update_dotfiles() {
+  "$DOTFILES/scripts/update-submodules.sh"
   "$DOTFILES/scripts/install.sh" -f
 }
 
