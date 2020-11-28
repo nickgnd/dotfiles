@@ -1,14 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
 
-source "../scripts/utils.sh"
+SCRIPT_DIR=$(dirname "$0")
+
+# shellcheck source=../scripts/utils.sh
+source "$SCRIPT_DIR/../scripts/utils.sh"
 
 readonly HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
-
-install_or_update_dependencies() {
-  brew bundle --no-lock | print_progress
-}
 
 if ! command -v brew >/dev/null; then
   print_info "INSTALL HOMEBEW…"
@@ -19,4 +20,4 @@ else
 fi
 
 print_info "INSTALL/UPDATE BREWS…"
-install_or_update_dependencies
+brew bundle --no-lock --quiet --file "$SCRIPT_DIR/Brewfile" | print_progress
