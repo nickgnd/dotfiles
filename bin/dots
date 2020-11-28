@@ -13,16 +13,15 @@ readonly RED="\033[0;31m"
 readonly NO_COLOR="\033[0m"
 readonly DOTFILES="$HOME/dotfiles"
 
-display_usage_info() {
+print_usage() {
   echo "dots -- manage dotfiles"
   echo ""
-  echo "Usage: dots [options]"
+  echo "Usage: dots [<option>]"
   echo ""
 	echo "  -i, --install   Install dotfiles"
 	echo "  -u, --update    Update dotfiles"
 	echo "  -e, --edit      Open dotfiles directory for editing"
 	echo "  -h, --help      Show this help message and exit"
-	exit
 }
 
 install_dotfiles() {
@@ -40,20 +39,33 @@ edit_dotfiles() {
   exit
 }
 
-display_invalid_usage() {
-  echo "$RED""Invalid option: ""$NO_COLOR""$1"
+invalid_usage() {
+  echo -e "$RED""Invalid option: ""$NO_COLOR""$1"
   echo ""
-  display_usage_info
+  print_usage
+  exit 1
 }
 
-[ $# -eq 0 ] && display_usage_info
-if [ $# -gt 0 ]; then
-  option=$1
-  case $option in
-    "-h"|"--help") display_usage_info;;
-    "-e"|"--edit") edit_dotfiles;;
-    "-u"|"--update") update_dotfiles;;
-    "-i"|"--install") install_dotfiles;;
-    *) display_invalid_usage "$option";;
-  esac
+if [ $# -lt 1 ]; then
+  print_usage
+  exit 1
 fi
+
+option=$1
+case $option in
+  "-h"|"--help")
+    print_usage
+    ;;
+  "-e"|"--edit")
+    edit_dotfiles
+    ;;
+  "-u"|"--update")
+    update_dotfiles
+    ;;
+  "-i"|"--install")
+    install_dotfiles
+    ;;
+  *)
+    invalid_usage "$option"
+    ;;
+esac
