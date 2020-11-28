@@ -4,8 +4,10 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+SCRIPT_DIR=$(dirname "$0")
+
 # shellcheck source=./utils.sh
-source "$(dirname "$0")/utils.sh"
+source "$SCRIPT_DIR/utils.sh"
 
 COMPUTER_NAME=$(scutil --get ComputerName)
 
@@ -16,3 +18,6 @@ read -r -e -p "$prompt" name </dev/tty
 print_info "SETTING COMPUTER NAME to '$name'…"
 sudo scutil --set ComputerName "$name"
 sudo scutil --set LocalHostName "$name"
+
+print_info "INSTALLING TOPICS…"
+"$SCRIPT_DIR/install.sh"

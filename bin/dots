@@ -24,16 +24,6 @@ print_usage() {
 	echo "  -h, --help      Show this help message and exit"
 }
 
-install_dotfiles() {
-  "$DOTFILES/scripts/setup.sh"
-  "$DOTFILES/scripts/install.sh"
-}
-
-update_dotfiles() {
-  "$DOTFILES/scripts/update-submodules.sh"
-  "$DOTFILES/scripts/install.sh"
-}
-
 edit_dotfiles() {
   cd "$DOTFILES"
   exec "$EDITOR" "$DOTFILES"
@@ -57,14 +47,14 @@ case $option in
   "-h"|"--help")
     print_usage
     ;;
-  "-e"|"--edit")
-    edit_dotfiles
+  "-i"|"--install")
+    "$DOTFILES/scripts/setup.sh"
     ;;
   "-u"|"--update")
-    update_dotfiles
+    "$DOTFILES/scripts/update.sh"
     ;;
-  "-i"|"--install")
-    install_dotfiles
+  "-e"|"--edit")
+    edit_dotfiles
     ;;
   *)
     invalid_usage "$option"
