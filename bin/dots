@@ -25,6 +25,7 @@ print_usage() {
 }
 
 install_dotfiles() {
+  "$DOTFILES/scripts/setup.sh"
   "$DOTFILES/scripts/install.sh"
 }
 
