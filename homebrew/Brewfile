@@ -35,6 +35,7 @@ cask 'drawio'
 cask '1password'
 cask 'gimp'
 cask 'imageoptim'         # remove exif-data from images
+cask 'numi'               # calculator
 
 cask 'spotify'
 cask 'spotify-notifications'
