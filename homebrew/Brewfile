@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
+tap 'homebrew/cask'
 tap 'homebrew/services'
+tap 'homebrew/cask-fonts'
 tap 'pmeinhardt/tools'
 
 # apps
@@ -34,8 +34,8 @@ cask 'slack'
 cask 'drawio'
 cask '1password'
 cask 'gimp'
+cask 'inkscape'
 cask 'imageoptim'         # remove exif-data from images
-cask 'numi'               # calculator
 
 cask 'spotify'
 cask 'spotify-notifications'
@@ -45,7 +45,6 @@ cask 'vlc'
 cask 'font-dosis'
 cask 'font-lato'
 cask 'font-quicksand'
-cask 'font-sniglet'
 cask 'font-source-sans-pro'
 
 # Unix tools
