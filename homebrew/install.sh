@@ -20,4 +20,9 @@ else
 fi
 
 print_info "INSTALL/UPDATE BREWS…"
-brew bundle --no-lock --quiet --file "$SCRIPT_DIR/Brewfile" | print_progress
+brew bundle \
+  --no-lock \
+  --quiet \
+  --no-upgrade \
+  --file "$SCRIPT_DIR/Brewfile" \
+  | print_progress
