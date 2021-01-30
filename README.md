@@ -30,7 +30,7 @@ git clone --recursive git@github.com:klappradla/dotfiles.git
 cd dotfiles
 
 # run the install script
-bin/dots --install
+script/setup
 ```
 
 _See [docs](./DOCS.md) for additional help._
@@ -42,12 +42,4 @@ Configure daily backups of certain directories.
 ```sh
 # copy example file and adapt for current machine
 cp backup/backup.conf.example backup/backup.conf
-```
-
-## Updates
-
-Run the updater to stay on top of 🌊.
-
-```sh
-dots --update
 ```
