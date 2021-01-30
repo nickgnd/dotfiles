@@ -2,7 +2,7 @@
 
 set -e
 
-source "../scripts/utils.sh"
+source "../script/lib/utils.sh"
 
 readonly TOPIC_DIR=$(pwd)
 # NOTE: necessary for having absolute paths

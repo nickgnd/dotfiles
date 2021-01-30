@@ -2,7 +2,7 @@
 
 set -e
 
-source "../scripts/utils.sh"
+source "../script/lib/utils.sh"
 
 readonly TPM_DIR="$HOME/.tmux/plugins/tpm"
 

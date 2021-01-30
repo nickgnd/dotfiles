@@ -2,7 +2,7 @@
 
 set -e
 
-source "../scripts/utils.sh"
+source "../script/lib/utils.sh"
 
 print_info "SETTING MACOS DEFAULTS…"
 ./defaults.sh

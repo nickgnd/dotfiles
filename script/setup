@@ -6,8 +6,8 @@ set -o pipefail
 
 SCRIPT_DIR=$(dirname "$0")
 
-# shellcheck source=./utils.sh
-source "$SCRIPT_DIR/utils.sh"
+# shellcheck source=./lib/utils.sh
+source "$SCRIPT_DIR/lib/utils.sh"
 
 COMPUTER_NAME=$(scutil --get ComputerName)
 

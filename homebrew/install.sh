@@ -6,8 +6,8 @@ set -o pipefail
 
 SCRIPT_DIR=$(dirname "$0")
 
-# shellcheck source=../scripts/utils.sh
-source "$SCRIPT_DIR/../scripts/utils.sh"
+# shellcheck source=../script/lib/utils.sh
+source "$SCRIPT_DIR/../script/lib/utils.sh"
 
 readonly HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
 

@@ -2,7 +2,7 @@
 
 set -e
 
-source "../scripts/utils.sh"
+source "../script/lib/utils.sh"
 
 readonly HOMEBREW_ZSH="/usr/local/bin/zsh"
 

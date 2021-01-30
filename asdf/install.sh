@@ -3,7 +3,7 @@
 # TODO: check versions and fail if too old
 set -e
 
-source "../scripts/utils.sh"
+source "../script/lib//utils.sh"
 
 declare ASDF_BIN="$HOME/.asdf"
 readonly REPO="https://github.com/asdf-vm/asdf.git"
