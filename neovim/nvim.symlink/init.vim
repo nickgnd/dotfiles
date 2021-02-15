@@ -1,5 +1,5 @@
 """" pre-config
-let g:ruby_path = "$HOME/.asdf/shims/ruby"         " do not travers $PATH to find ruby
+let g:ruby_path = '/usr/bin/ruby'                  " do not travers $PATH to find ruby
 let g:python_host_prog = '/usr/bin/python'         " do not mess with pyenv here
 let g:python3_host_prog = '/usr/local/bin/python3' " do not mess with pyenv here
 
