@@ -39,7 +39,6 @@ cask 'imageoptim'         # remove exif-data from images
 cask 'bitbar'             # run scripts in menu bar
 
 cask 'spotify'
-cask 'spotify-notifications'
 cask 'vlc'
 
 # fonts
