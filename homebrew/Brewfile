@@ -69,6 +69,7 @@ brew 'sqlite'
 brew 'shellcheck'                 # Linter for shell scripts
 brew 'python'
 brew 'git'
+brew 'gh'                         # Github CLI
 brew 'neovim'
 brew 'zsh'
 brew 'htop'
