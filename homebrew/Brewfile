@@ -79,6 +79,7 @@ brew 'jq'                         # format JSON
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
 brew 'hadolint'                   # lint dockerfiles
+brew 'highlight'                  # utility for converting code to rtf
 brew 'exercism'                   # CLI for exercism.io
 brew 'poetry'                     # python package manager
 brew 'pyenv'                      # python version manager
