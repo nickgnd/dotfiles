@@ -21,6 +21,7 @@ Plug 'benmills/vimux'                            " interact with tmux (e.g. for 
 Plug 'tpope/vim-endwise'                         " for automatically adding 'ends' in ruby
 Plug 'machakann/vim-highlightedyank'             " blink-highlight what gets yanked
 Plug 'editorconfig/editorconfig-vim'             " accept editorconfig files
+Plug 'pmeinhardt/hmm'                            " joblogs
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'                          " snippets
