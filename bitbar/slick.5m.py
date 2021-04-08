@@ -1,1 +1,0 @@
-/Users/max/code/bitcrowd/internal/slick/bitbar-plugin/slick.py
