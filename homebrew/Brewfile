@@ -25,13 +25,11 @@ cask 'java'
 cask 'insomnia'           # postman alternative
 cask 'docker'
 
-cask 'keepassx'
-cask 'buttercup'          # password manager
+cask 'keepassxc'          # password manager
 cask 'firefox'
 cask 'kap'                # record screencasts
 cask 'libreoffice'
 cask 'slack'
-cask 'drawio'
 cask '1password'
 cask 'gimp'
 cask 'inkscape'
@@ -65,7 +63,6 @@ brew 'tmux'
 brew 'reattach-to-user-namespace' # fix tmux for macOS
 brew 'the_silver_searcher'        # the Ag search tool
 brew 'overmind'                   # Process manager (Procfile based)
-brew 'sqlite'
 brew 'shellcheck'                 # Linter for shell scripts
 brew 'python'
 brew 'git'
@@ -80,12 +77,11 @@ brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
-brew 'exercism'                   # CLI for exercism.io
 brew 'poetry'                     # python package manager
 brew 'pyenv'                      # python version manager
 
 # work related tools
-brew 'pmeinhardt/tools/hmm', args: ['HEAD']
+brew 'pmeinhardt/tools/hmm'
 
 # postgres / postgis dependencies
 brew 'geos'
@@ -95,5 +91,4 @@ brew 'libxml2'
 brew 'json-c'
 
 # services
-brew 'memcached', restart_service: true
 brew 'redis', restart_service: true
