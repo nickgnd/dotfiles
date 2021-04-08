@@ -20,4 +20,4 @@ sudo scutil --set ComputerName "$name"
 sudo scutil --set LocalHostName "$name"
 
 print_info "INSTALLING TOPICS…"
-"$SCRIPT_DIR/install.sh"
+"$SCRIPT_DIR/install"

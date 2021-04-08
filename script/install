@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly DOTS_DIR="$(dirname "$(dirname "$0")")"
+readonly DOTS_DIR="$( cd -- "$(dirname "$(dirname "$0")")" >/dev/null 2>&1 ; pwd -P )"
 readonly DIR_PATTERN=(! -name ".git" -and ! -name "homebrew" -and ! -name "script")
 readonly TOPICS=$(find "$DOTS_DIR" -maxdepth 1 -type d "${DIR_PATTERN[@]}")
 
