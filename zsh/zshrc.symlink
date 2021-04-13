@@ -10,12 +10,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"       # shell history for Erla
 export ERL_EPMD_ADDRESS=127.0.0.1                       # prevent epmd from exposing a port
 export HOMEBREW_BUNDLE_NO_LOCK=1                        # disable lockfile for brew bundle
 
-# locals
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
 # PATH
 export PATH="$HOME/dotfiles/bin:$PATH"                  # dotfiles bin
 export PATH="/usr/local/bin:$PATH"                      # homebrew bin
@@ -101,6 +95,12 @@ alias gcn!="git commit -v --no-edit --amend"
 alias gco="git checkout"
 alias gp="git push"
 alias gpf="git push --force-with-lease"
+
+# locals
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
 
 # prompt
 fpath+=$ZSH_DIR/plugins/pure
