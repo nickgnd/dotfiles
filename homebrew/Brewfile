@@ -30,7 +30,6 @@ cask 'firefox'
 cask 'kap'                # record screencasts
 cask 'libreoffice'
 cask 'slack'
-cask '1password'
 cask 'gimp'
 cask 'inkscape'
 cask 'imageoptim'         # remove exif-data from images
