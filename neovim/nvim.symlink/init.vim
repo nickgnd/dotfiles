@@ -41,6 +41,7 @@ call plug#end()
 """ general
 """"""
 let mapleader="\<Space>"                         " map leader key to space
+let maplocalleader="\<Space>"                    " map leader key to space
 set encoding=utf8                                " alwyas use utf8 encoding
 set clipboard=unnamedplus                        " use the system clipboard
 set autowriteall                                 " automatically write buffers when switching focus
