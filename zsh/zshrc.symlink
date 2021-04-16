@@ -11,6 +11,7 @@ export ERL_EPMD_ADDRESS=127.0.0.1                       # prevent epmd from expo
 export HOMEBREW_BUNDLE_NO_LOCK=1                        # disable lockfile for brew bundle
 
 # PATH
+typeset -U PATH path                                    # make PATH an array with unique entries
 export PATH="$HOME/dotfiles/bin:$PATH"                  # dotfiles bin
 export PATH="/usr/local/bin:$PATH"                      # homebrew bin
 export PATH="/usr/local/sbin:$PATH"                     # homebrew sbin
