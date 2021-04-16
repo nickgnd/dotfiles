@@ -109,5 +109,4 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # plugins
-source $ZSH_DIR/plugins/git-open/git-open.plugin.zsh
 source $ZSH_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

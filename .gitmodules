@@ -2,10 +2,6 @@
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
   branch = master
-[submodule "zsh/plugins/git-open"]
-	path = zsh/plugins/git-open
-	url = https://github.com/paulirish/git-open.git
-  branch = master
 [submodule "zsh/plugins/pure"]
 	path = zsh/plugins/pure
 	url = https://github.com/sindresorhus/pure
