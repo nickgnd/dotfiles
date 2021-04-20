@@ -8,7 +8,6 @@ tap 'homebrew/cask-fonts'
 tap 'pmeinhardt/tools'
 
 # apps
-cask 'anybar'             # menu bar info
 cask 'flux'
 cask 'rectangle'          # window management
 cask 'karabiner-elements' # keyboard mappings
@@ -46,7 +45,6 @@ cask 'font-source-sans-pro'
 # Unix tools
 brew 'coreutils'           # GNU file, shell and text utilities
 brew 'gpg'                 # GNU privacy packages
-brew 'neofetch'            # colorful system information
 brew 'openssl'
 brew 'readline'
 brew 'watch'               # execute command periodically
@@ -81,11 +79,9 @@ brew 'pyenv'                      # python version manager
 # work related tools
 brew 'pmeinhardt/tools/hmm'
 
-# postgres / postgis dependencies
+# postgis dependencies
 brew 'geos'
 brew 'proj'
-brew 'gdal'
-brew 'libxml2'
 brew 'json-c'
 
 # services
