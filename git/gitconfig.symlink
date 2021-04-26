@@ -25,3 +25,5 @@
 	ff = only
 [init]
   defaultBranch = main
+[branch]
+  sort = -committerdate
