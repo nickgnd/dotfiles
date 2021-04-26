@@ -1,13 +1,19 @@
 #!/bin/bash
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# To debug, uncomment:
+# set -o xtrace
+
 # TODO: check versions and fail if too old
-set -e
 
 source "../script/lib//utils.sh"
 
 declare ASDF_BIN="$HOME/.asdf"
 readonly REPO="https://github.com/asdf-vm/asdf.git"
-readonly VERSION="v0.7.5"
+readonly VERSION="v0.8.0"
 
 install_plugin() {
   local name="$1"

@@ -1,12 +1,18 @@
 #!/bin/bash
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# To debug, uncomment:
+# set -o xtrace
 
 source "./../script/lib/utils.sh"
 
-readonly TOPIC_DIR=$(pwd)
-# NOTE: necessary for having absolute paths
-readonly SYMLINKS=$(find "$TOPIC_DIR" -maxdepth 1 -name "*.symlink")
+TOPIC_DIR=$(pwd)
+SYMLINKS=$(find "$TOPIC_DIR" -maxdepth 1 -name "*.symlink")
+readonly TOPIC_DIR
+readonly SYMLINKS
 
 for src in $SYMLINKS; do
   name=$(basename "$src" .symlink)
