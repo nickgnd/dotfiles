@@ -34,12 +34,3 @@ script/setup
 ```
 
 _See [docs](./DOCS.md) for additional help._
-
-### Backups
-
-Configure daily backups of certain directories.
-
-```sh
-# copy example file and adapt for current machine
-cp backup/backup.conf.example backup/backup.conf
-```
