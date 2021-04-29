@@ -4,9 +4,12 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly DOTS_DIR="$( cd -- "$(dirname "$(dirname "$0")")" >/dev/null 2>&1 ; pwd -P )"
-readonly DIR_PATTERN=(! -name ".git" -and ! -name "homebrew" -and ! -name "script")
-readonly TOPICS=$(find "$DOTS_DIR" -maxdepth 1 -type d "${DIR_PATTERN[@]}")
+DOTS_DIR="$( cd -- "$(dirname "$(dirname "$0")")" >/dev/null 2>&1 ; pwd -P )"
+readonly DOTS_DIR
+DIR_PATTERN=(! -name ".git" -and ! -name "homebrew" -and ! -name "script")
+readonly DIR_PATTERN
+TOPICS=$(find "$DOTS_DIR" -maxdepth 1 -type d "${DIR_PATTERN[@]}")
+readonly TOPICS
 
 install_topic() {
   local topic=$1
@@ -24,9 +27,9 @@ install_topics() {
 
   install_topic "$DOTS_DIR/homebrew"
 
-  for topic in ${TOPICS[*]}; do
-    install_topic "$topic"
-  done
+  # for topic in ${TOPICS[*]}; do
+  #   install_topic "$topic"
+  # done
 }
 
 install_topics
