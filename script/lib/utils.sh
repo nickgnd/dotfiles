@@ -58,7 +58,7 @@ function symlink () {
   info "LINK '$src' to '$dest'…"
   if is_symlink "$dest"; then
     if [ "$(readlink "$dest")" == "$src" ]; then
-      info "LINK '$dest' ALREADY EXISTS…"
+      success "LINK '$dest' ALREADY EXISTS…"
       return 0
     else
       ask "File already exists: $dest ($(basename "$src")) [s]kip/[o]override"
@@ -81,4 +81,18 @@ function symlink () {
     ln -s "$src" "$dest"
     success "LINKED $src TO $dest"
   fi
+}
+
+function create_symlinks() {
+  local topic_dir=$1
+  local base_destination=${2:-"$HOME/."}
+  local files
+
+  files=$(find "$topic_dir" -maxdepth 1 -name "*.symlink")
+
+  for src in $files; do
+    name=$(basename "$src" .symlink)
+    dest="$base_destination$name"
+    symlink "$src" "$dest"
+  done
 }

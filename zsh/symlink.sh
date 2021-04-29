@@ -1,15 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
 
-source "../script/lib/utils.sh"
+# To debug, uncomment:
+# set -o xtrace
 
-readonly TOPIC_DIR=$(pwd)
-# NOTE: necessary for having absolute paths
-readonly SYMLINKS=$(find "$TOPIC_DIR" -maxdepth 1 -name "*.symlink")
+source "./../script/lib/utils.sh"
 
-for src in $SYMLINKS; do
-  name=$(basename "$src" .symlink)
-  dest="$HOME/.$name"
-  symlink "$src" "$dest"
-done
+create_symlinks "$(pwd)"
