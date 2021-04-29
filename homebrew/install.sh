@@ -9,11 +9,9 @@ SCRIPT_DIR=$(dirname "$0")
 # shellcheck source=../script/lib/utils.sh
 source "$SCRIPT_DIR/../script/lib/utils.sh"
 
-readonly HOMEBREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
-
 if ! command -v brew >/dev/null; then
   print_info "INSTALL HOMEBEW…"
-  curl -fsSL "$HOMEBREW_URL" | ruby 2>&1 | print_progress
+  /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   print_info "UPDATE HOMEBEW…"
   brew update | print_progress
