@@ -11,13 +11,12 @@ source "$SCRIPT_DIR/lib/utils.sh"
 
 COMPUTER_NAME=$(scutil --get ComputerName)
 
-print_question "HOW SHOULD THIS COMPUTER BE CALLED? (currently: $COMPUTER_NAME)"
-printf -v prompt "\r  [ \033[0;33m!!\033[0m ] -> "
-read -r -e -p "$prompt" name </dev/tty
+ask "HOW SHOULD THIS COMPUTER BE CALLED? (currently: $COMPUTER_NAME)"
+read -r name
 
-print_info "SETTING COMPUTER NAME to '$name'…"
+info "SETTING COMPUTER NAME to '$name'…"
 sudo scutil --set ComputerName "$name"
 sudo scutil --set LocalHostName "$name"
 
-print_info "INSTALLING TOPICS…"
+info "INSTALLING TOPICS…"
 "$SCRIPT_DIR/install"

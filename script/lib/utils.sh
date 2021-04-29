@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 
-set -o errexit
-set -o nounset
-set -o pipefail
+# Utilities used in other scripts
+
+function info() {
+  local message=$1
+  echo -e "[\033[0;34mINFO\033[0m] $message" >&2
+}
+
+function ask() {
+  local message=$1
+  echo -e "[ \033[0;33m??\033[0m ] $message" >&2
+  echo -en "[ \033[0;33m!!\033[0m ] " >&2
+}
 
 print_success() {
   local msg=$1

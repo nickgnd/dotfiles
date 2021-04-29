@@ -14,7 +14,7 @@ if ! command -v brew >/dev/null; then
   /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   print_info "UPDATE HOMEBEW…"
-  brew update | print_progress
+  brew update
 fi
 
 print_info "INSTALL/UPDATE BREWS…"
