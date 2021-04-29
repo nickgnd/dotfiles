@@ -4,32 +4,37 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+SCRIPT_DIR=$(dirname "$0")
+
+# shellcheck source=./lib/utils.sh
+source "$SCRIPT_DIR/lib/utils.sh"
+
 DOTS_DIR="$( cd -- "$(dirname "$(dirname "$0")")" >/dev/null 2>&1 ; pwd -P )"
-readonly DOTS_DIR
 DIR_PATTERN=(! -name ".git" -and ! -name "homebrew" -and ! -name "script")
-readonly DIR_PATTERN
 TOPICS=$(find "$DOTS_DIR" -maxdepth 1 -type d "${DIR_PATTERN[@]}")
+readonly DOTS_DIR
+readonly DIR_PATTERN
 readonly TOPICS
 
-install_topic() {
+function install_topic() {
   local topic=$1
   cd "$topic"
+  echo "$topic"
   find . -maxdepth 1 -name install.sh \
     | while read -r installer; do $installer; done
   find . -maxdepth 1 -name symlink.sh \
     | while read -r symlink; do $symlink; done
 }
 
-install_topics() {
-  export local OVERWRITE_SYMLINKS=false
-  export local BACKUP_SYMLINKS=false
-  export local SKIP_SYMLINKS=false
+info "INSTALLING TOPICS…"
 
-  install_topic "$DOTS_DIR/homebrew"
+# TODO: refactor these out
+export local OVERWRITE_SYMLINKS=false
+export local BACKUP_SYMLINKS=false
+export local SKIP_SYMLINKS=false
 
-  # for topic in ${TOPICS[*]}; do
-  #   install_topic "$topic"
-  # done
-}
+install_topic "$DOTS_DIR/homebrew"
 
-install_topics
+for topic in ${TOPICS[*]}; do
+  install_topic "$topic"
+done

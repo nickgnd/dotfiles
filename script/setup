@@ -18,5 +18,4 @@ info "SETTING COMPUTER NAME to '$name'…"
 sudo scutil --set ComputerName "$name"
 sudo scutil --set LocalHostName "$name"
 
-info "INSTALLING TOPICS…"
 "$SCRIPT_DIR/install"
