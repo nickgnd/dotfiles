@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -o errexit
 set -o nounset
@@ -7,47 +7,37 @@ set -o pipefail
 # To debug, uncomment:
 # set -o xtrace
 
-# TODO: check versions and fail if too old
-
 source "../script/lib//utils.sh"
 
 declare ASDF_BIN="$HOME/.asdf"
-readonly REPO="https://github.com/asdf-vm/asdf.git"
 readonly VERSION="v0.8.0"
 
-install_plugin() {
+function add_plugin() {
   local name="$1"
-  local url="$2"
   if ! asdf plugin-list | grep -Fq "$name"; then
-    print_info "INSTALL ASDF $name PLUGIN…"
-    asdf plugin-add "$name" "$url" | print_progress
+    asdf plugin-add "$name"
   fi
 }
 
-install_plugins() {
-  install_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
-  install_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
-  install_plugin "postgres" "https://github.com/smashedtoatoms/asdf-postgres"
-  install_plugin "erlang" "https://github.com/asdf-vm/asdf-erlang.git"
-  install_plugin "elixir" "https://github.com/asdf-vm/asdf-elixir.git"
-}
-
-update_plugins() {
-  print_info "UPDATE ASDF PLUGINS…"
-  asdf plugin-update --all | print_progress
-}
-
 if [ ! -d "$ASDF_BIN" ]; then
-  git clone "$REPO" "$ASDF_BIN" --branch "$VERSION" | print_progress
+  info "INSTALL ASDF…"
+  git clone \
+    "https://github.com/asdf-vm/asdf.git" \
+    "$ASDF_BIN" \
+    --branch "$VERSION"
 else
-  print_info "UPDATE ASDF…"
-  asdf update | print_progress
+  info "UPDATE ASDF…"
+  asdf update
 fi
 
-# needs to be available for adding plugins
 # shellcheck source=../../.asdf/asdf.sh
 source "$ASDF_BIN/asdf.sh"
-install_plugins
-# import keyring for nodejs plugin
-"$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring" 2>&1 | print_progress
-update_plugins
+
+add_plugin "ruby"
+add_plugin "nodejs"
+add_plugin "postgres"
+add_plugin "erlang"
+add_plugin "elixir"
+
+info "UPDATE ASDF PLUGINS…"
+asdf plugin-update --all

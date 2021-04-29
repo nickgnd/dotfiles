@@ -28,14 +28,7 @@ function install_topic() {
 }
 
 info "INSTALL TOPICS…"
-
-# TODO: refactor these out
-export local OVERWRITE_SYMLINKS=false
-export local BACKUP_SYMLINKS=false
-export local SKIP_SYMLINKS=false
-
 install_topic "$DOTS_DIR/homebrew"
-
 for topic in ${TOPICS[*]}; do
   install_topic "$topic"
 done
