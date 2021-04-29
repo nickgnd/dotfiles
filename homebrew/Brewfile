@@ -1,88 +1,88 @@
 # frozen_string_literal: true
 
-tap 'homebrew/bundle'
-tap 'homebrew/core'
-tap 'homebrew/cask'
-tap 'homebrew/services'
-tap 'homebrew/cask-fonts'
-tap 'pmeinhardt/tools'
+# tap 'homebrew/bundle'
+# tap 'homebrew/core'
+# tap 'homebrew/cask'
+# tap 'homebrew/services'
+# tap 'homebrew/cask-fonts'
+# tap 'pmeinhardt/tools'
 
 # apps
-cask 'flux'
-cask 'rectangle'          # window management
-cask 'karabiner-elements' # keyboard mappings
+# cask 'flux'
+# cask 'rectangle'          # window management
+# cask 'karabiner-elements' # keyboard mappings
 cask 'nextcloud'
-cask 'whatsapp'
-cask 'signal'
-cask 'telegram'
+# cask 'whatsapp'
+# cask 'signal'
+# cask 'telegram'
 
-cask 'chromedriver'
-cask 'google-chrome'
-cask 'iterm2'
-cask 'atom'
-cask 'java'
-cask 'insomnia'           # postman alternative
-cask 'docker'
+# cask 'chromedriver'
+# cask 'google-chrome'
+# cask 'iterm2'
+# cask 'atom'
+# cask 'java'
+# cask 'insomnia'           # postman alternative
+# cask 'docker'
 
 cask 'keepassxc'          # password manager
 cask 'firefox'
-cask 'kap'                # record screencasts
-cask 'libreoffice'
-cask 'slack'
-cask 'gimp'
-cask 'inkscape'
-cask 'imageoptim'         # remove exif-data from images
+# cask 'kap'                # record screencasts
+# cask 'libreoffice'
+# cask 'slack'
+# cask 'gimp'
+# cask 'inkscape'
+# cask 'imageoptim'         # remove exif-data from images
 
-cask 'spotify'
-cask 'vlc'
+# cask 'spotify'
+# cask 'vlc'
 
 # fonts
-cask 'font-dosis'
-cask 'font-lato'
-cask 'font-quicksand'
-cask 'font-source-sans-pro'
+# cask 'font-dosis'
+# cask 'font-lato'
+# cask 'font-quicksand'
+# cask 'font-source-sans-pro'
 
 # Unix tools
-brew 'coreutils'           # GNU file, shell and text utilities
-brew 'gpg'                 # GNU privacy packages
-brew 'openssl'
-brew 'readline'
-brew 'watch'               # execute command periodically
-brew 'wget'
-brew 'rsync'
-brew 'autoconf'            # for installing erlang
-brew 'wxmac'               # for starting erlang observer / debugger
+# brew 'coreutils'           # GNU file, shell and text utilities
+# brew 'gpg'                 # GNU privacy packages
+# brew 'openssl'
+# brew 'readline'
+# brew 'watch'               # execute command periodically
+# brew 'wget'
+# brew 'rsync'
+# brew 'autoconf'            # for installing erlang
+# brew 'wxmac'               # for starting erlang observer / debugger
 
 # dev tools
 brew 'fzf'
-brew 'tmux'
-brew 'reattach-to-user-namespace' # fix tmux for macOS
-brew 'the_silver_searcher'        # the Ag search tool
-brew 'overmind'                   # Process manager (Procfile based)
-brew 'shellcheck'                 # Linter for shell scripts
-brew 'python'
+# brew 'tmux'
+# brew 'reattach-to-user-namespace' # fix tmux for macOS
+# brew 'the_silver_searcher'        # the Ag search tool
+# brew 'overmind'                   # Process manager (Procfile based)
+# brew 'shellcheck'                 # Linter for shell scripts
+# brew 'python'
 brew 'git'
-brew 'gh'                         # Github CLI
+# brew 'gh'                         # Github CLI
 brew 'neovim'
 brew 'zsh'
-brew 'htop'
-brew 'fd'
-brew 'ansible'
-brew 'jq'                         # format JSON
-brew 'watchman'                   # for filewatchers
-brew 'yarn'                       # run with --ignore-engines if incompatible with node version
-brew 'hadolint'                   # lint dockerfiles
-brew 'highlight'                  # utility for converting code to rtf
-brew 'poetry'                     # python package manager
-brew 'pyenv'                      # python version manager
+# brew 'htop'
+# brew 'fd'
+# brew 'ansible'
+# brew 'jq'                         # format JSON
+# brew 'watchman'                   # for filewatchers
+# brew 'yarn'                       # run with --ignore-engines if incompatible with node version
+# brew 'hadolint'                   # lint dockerfiles
+# brew 'highlight'                  # utility for converting code to rtf
+# brew 'poetry'                     # python package manager
+# brew 'pyenv'                      # python version manager
 
 # work related tools
-brew 'pmeinhardt/tools/hmm'
+# brew 'pmeinhardt/tools/hmm'
 
 # postgis dependencies
-brew 'geos'
-brew 'proj'
-brew 'json-c'
+# brew 'geos'
+# brew 'proj'
+# brew 'json-c'
 
 # services
-brew 'redis', restart_service: true
+# brew 'redis', restart_service: true
