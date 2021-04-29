@@ -4,8 +4,10 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-SCRIPT_DIR=$(dirname "$0")
+# To debug, uncomment:
+# set -o xtrace
 
+SCRIPT_DIR=$(dirname "$0")
 # shellcheck source=../script/lib/utils.sh
 source "$SCRIPT_DIR/../script/lib/utils.sh"
 
