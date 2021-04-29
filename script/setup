@@ -14,7 +14,7 @@ COMPUTER_NAME=$(scutil --get ComputerName)
 ask "HOW SHOULD THIS COMPUTER BE CALLED? (currently: $COMPUTER_NAME)"
 read -r name
 
-info "SETTING COMPUTER NAME to '$name'…"
+info "SET COMPUTER NAME to '$name'…"
 sudo scutil --set ComputerName "$name"
 sudo scutil --set LocalHostName "$name"
 

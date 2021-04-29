@@ -19,14 +19,13 @@ readonly TOPICS
 function install_topic() {
   local topic=$1
   cd "$topic"
-  echo "$topic"
   find . -maxdepth 1 -name install.sh \
     | while read -r installer; do $installer; done
   find . -maxdepth 1 -name symlink.sh \
     | while read -r symlink; do $symlink; done
 }
 
-info "INSTALLING TOPICS…"
+info "INSTALL TOPICS…"
 
 # TODO: refactor these out
 export local OVERWRITE_SYMLINKS=false
