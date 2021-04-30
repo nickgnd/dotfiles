@@ -7,7 +7,7 @@ set -o pipefail
 # To debug, uncomment:
 # set -o xtrace
 
-source "../script/lib//utils.sh"
+source "../script/lib/utils.sh"
 
 declare ASDF_BIN="$HOME/.asdf"
 readonly VERSION="v0.8.0"
