@@ -1,19 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# To debug, uncomment:
+# set -o xtrace
 
 source "../script/lib/utils.sh"
 
-readonly HOMEBREW_ZSH="/usr/local/bin/zsh"
-
-set_shell() {
-  if ! grep "$HOMEBREW_ZSH" /etc/shells > /dev/null 2>&1 ; then
-    sudo sh -c "echo $HOMEBREW_ZSH >> /etc/shells" 2>&1 | print_progress
-  fi
-  sudo chsh -s "$HOMEBREW_ZSH" "$USER" 2>&1 | print_progress
-}
+HOMEBREW_ZSH="$(brew --prefix)/bin/zsh"
+readonly HOMEBREW_ZSH
 
 if [ "$SHELL" != "$HOMEBREW_ZSH" ]; then
-  print_info "SET HOMEBEW ZSH AS DEFAULT SHELL…"
-  set_shell
+  info "SET HOMEBEW'S ZSH AS DEFAULT SHELL…"
+
+  if ! grep "$HOMEBREW_ZSH" /etc/shells > /dev/null 2>&1 ; then
+    sudo sh -c "echo $HOMEBREW_ZSH >> /etc/shells" 2>&1
+  fi
+  sudo chsh -s "$HOMEBREW_ZSH" "$USER" 2>&1
 fi
