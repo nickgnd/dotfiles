@@ -23,28 +23,6 @@ function ask() {
   echo -en "[ \033[0;33m!!\033[0m ] " >&2
 }
 
-print_success() {
-  local msg=$1
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$msg"
-}
-
-print_info() {
-  local msg=$1
-  printf "\r  [\033[00;34mINFO\033[0m] %s\n" "$msg"
-}
-
-print_question() {
-  local msg=$1
-  printf "\r  [ \033[0;33m??\033[0m ] -> %s\n" "$msg"
-}
-
-print_progress() {
-  local data
-  while read -r data; do
-    printf "\r  [ \033[00;34m..\033[0m ] %s\n" "${data}"
-  done
-}
-
 function is_symlink() {
   local dest=$1
   # NOTE: checks if dest is a file, directory or symlink
