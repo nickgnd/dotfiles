@@ -102,7 +102,7 @@ set -g @resurrect-hook-pre-restore-pane-processes 'for _pane in $(tmux list-pane
 set -g @continuum-restore 'on'
 set -g @continuum-save-interval '15'
 
-# install tmp if not already there
+# install tpm if not already there
 if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'; \
    set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins/'; \
