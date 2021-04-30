@@ -47,3 +47,24 @@ Allow rbenv's ruby on the macOS firewall *(same for other executables)*
 Update all submodules to the latest tips of their remote branches:
 
     git submodule update --recursive --remote
+
+### Compinit insecure directories
+
+If you receive a warning message by ZSH's completion system `compinit` when starting a new session, like:
+
+    zsh compinit: insecure directories, run compaudit for list.
+    Ignore insecure directories and continue [y] or abort compinit [n]?
+
+You can list the insecure directories with this command:
+
+    compaudit
+    There are insecure directories:
+    /usr/local/share/zsh/site-functions
+    /usr/local/share/zsh
+
+You can change the owner and group of these directories by running these 2 commands:
+
+    compaudit | xargs chown -R "$(whoami)"
+    compaudit | xargs chmod go-w
+
+More info at https://stackoverflow.com/a/43544733
