@@ -1,9 +1,9 @@
 [user]
-  name = Max Mulatz
+  name = Nicolo Gnudi
   useConfigOnly = true
 [alias]
-  personal = "config user.email 'klappradla@posteo.net'"
-  work = "config user.email 'max@bitcrowd.net'"
+  personal = "config user.email 'nicolo.gnudi@gmail.com'"
+  work = "config user.email 'nicolo.gnudi@taxfix.de'"
   pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
   housekeep = "!f(){\
                 git remote prune origin; \
@@ -13,9 +13,9 @@
                 | xargs git branch -D;\
               }; f"
   update = "!git fetch && git pull && git housekeep"
-[includeIf "gitdir:code/klappradla/"]
+[includeIf "gitdir:code/personal/"]
   path = ~/.gitconfig_personal
-[includeIf "gitdir:code/bitcrowd/"]
+[includeIf "gitdir:code/taxfix/"]
   path = ~/.gitconfig_work
 [core]
   excludesfile = ~/.gitignore_global
