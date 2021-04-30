@@ -5,33 +5,26 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'pmeinhardt/tools'
 
-# core apps
+# code apps
 cask 'firefox'
-cask 'flux'
 cask 'iterm2'
-cask 'karabiner-elements' # keyboard mappings
-cask 'keepassxc'          # password manager
-cask 'nextcloud'
 cask 'rectangle'          # window management
 
 # dev apps
-cask 'atom'
 cask 'chromedriver'
 cask 'docker'
-cask 'google-chrome'
+# cask 'google-chrome'
+cask 'insomnia'           # postman alternative
+cask 'visual-studio-code'
 
 # other apps
-cask 'gimp'
+# cask '1password'
 cask 'imageoptim'         # remove exif-data from images
-cask 'inkscape'
-cask 'kap'                # record screencasts
-cask 'libreoffice'
-cask 'signal'
-cask 'slack'
+cask 'keepingyouawake'
+# cask 'slack'
 cask 'spotify'
-cask 'telegram'
 cask 'vlc'
-cask 'whatsapp'
+cask 'zoom'
 
 # fonts
 cask 'font-dosis'
@@ -42,6 +35,7 @@ brew 'autoconf'            # for installing erlang
 brew 'coreutils'           # GNU file, shell and text utilities
 brew 'gpg'                 # GNU privacy packages
 brew 'htop'
+brew 'nmap'                # Network Mapper - network discovery and security auditing
 brew 'openssl'
 brew 'readline'
 brew 'rsync'
@@ -54,16 +48,15 @@ brew 'wxmac'               # for starting erlang observer / debugger
 brew 'ansible'
 brew 'fd'
 brew 'fzf'
-brew 'gh'                         # Github CLI
 brew 'git'
+brew 'git-quick-stats'            # git repo stats
 brew 'hadolint'                   # lint dockerfiles
+brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
-brew 'neovim'
 brew 'overmind'                   # Process manager (Procfile based)
-brew 'python'
 brew 'reattach-to-user-namespace' # fix tmux for macOS
+brew 'ripgrep'                    # search tool
 brew 'shellcheck'                 # Linter for shell scripts
-brew 'the_silver_searcher'        # the Ag search tool
 brew 'tmux'
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
