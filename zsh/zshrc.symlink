@@ -77,7 +77,6 @@ zle -N clear-screen custom_prompt_pure_clear_screen
 
 # aliases
 alias be="bundle exec"
-alias vim="vim"
 alias tm="tmux attach || tmux"
 alias md='mkdir -p'
 alias l='ls -lah'
@@ -95,6 +94,8 @@ alias gcn!="git commit -v --no-edit --amend"
 alias gco="git checkout"
 alias gp="git push"
 alias gpf="git push --force-with-lease"
+
+alias reload!='source ~/.zshrc'
 
 # locals
 if [[ -a ~/.localrc ]]
