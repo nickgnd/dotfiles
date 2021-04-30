@@ -23,15 +23,15 @@ zstyle ':completion:*' special-dirs true                # complete the . and .. 
 zstyle ':completion:*:*:*:*:*' menu select              # show completion as menu and navigate with arrow keys
 zstyle ':completion:*' squeeze-slashes true             # treat multiple slashes as multiple directories
 zstyle ':completion:*' use-cache yes                    # cache completion
-zstyle ':completion:*' cache-path $ZSH_DIR/.cache       # custom cache directory
+zstyle ':completion:*' cache-path $HOME/.zcompcache     # completion cache directory
 
 # TODO: speed this up by only loading every 24h
 # https://gist.github.com/ctechols/ca1035271ad134841284
-autoload -Uz compinit && compinit -d $ZSH_DIR/.zcompdump # load completion
-autoload bashcompinit && bashcompinit                    # load bash completion
+autoload -Uz compinit && compinit -d $HOME/.zcompdump   # load completion
+autoload bashcompinit && bashcompinit                   # load bash completion
 
 # histoy
-HISTFILE=$ZSH_DIR/.zsh_history
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=50000
 SAVEHIST=10000
 
