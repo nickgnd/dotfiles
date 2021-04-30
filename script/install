@@ -25,6 +25,8 @@ function install_topic() {
     | while read -r installer; do $installer; done
   find . -maxdepth 1 -name symlink.sh \
     | while read -r symlink; do $symlink; done
+  find . -maxdepth 1 -name finalize.sh \
+    | while read -r finalize; do $finalize; done
 }
 
 info "INSTALL TOPICS…"
