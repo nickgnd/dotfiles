@@ -1,0 +1,8 @@
+{
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
+    "files.insertFinalNewline": true,
+    "editor.minimap.enabled": false,
+    "redhat.telemetry.enabled": false
+}
