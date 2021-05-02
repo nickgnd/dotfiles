@@ -87,9 +87,12 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias -g ...='../..'
 alias vmd="npx 'vmd'"
+alias reload!='source ~/.zshrc'
 
+# git aliases (inspired by oh-my-zsh https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh)
 alias gst="git status"
 alias gb="git branch"
+alias gbnm="git branch --no-merged"
 alias ga="git add"
 alias gaa="git add --all"
 alias gc="git commit -v"
@@ -98,8 +101,17 @@ alias gcn!="git commit -v --no-edit --amend"
 alias gco="git checkout"
 alias gp="git push"
 alias gpf="git push --force-with-lease"
-
-alias reload!='source ~/.zshrc'
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gdt="git diff-tree --no-commit-id --name-only -r"
+alias gdw="git diff --word-diff"
+alias gfa="git fetch --all --prune --jobs=10"
+alias glg="git log --stat"
+alias glgp="git log --stat -p"
+alias glo="git log --oneline --decorate"
+alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias grbi="git rebase -i"
+alias gpsup="git pushup" # defined in gitconfig file
 
 # locals
 if [[ -a ~/.localrc ]]
