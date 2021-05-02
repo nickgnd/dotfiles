@@ -51,6 +51,10 @@ setopt autocd                                           # automatically change d
 bindkey -e                                              # emacs keybindings
 bindkey "${terminfo[kcbt]}" reverse-menu-complete       # shift-tab for reverse completion menu
 
+# Fix delete-forward on tmux (https://stackoverflow.com/a/41885766)
+bindkey "^[[3~"             delete-char                 # enable delete key on any keyboard
+bindkey "^[3;5~"            delete-char                 # enable delete key on any keyboard
+
 # tools
 source $HOME/.asdf/asdf.sh                              # asdf
 source $HOME/.asdf/completions/asdf.bash                # asdf completion
