@@ -12,6 +12,11 @@ function warn() {
   echo -e "[\033[0;33mWARN\033[0m] $message" >&2
 }
 
+function error() {
+  local message=$1
+  echo -e "[\033[0;31mERROR\033[0m] $message" >&2
+}
+
 function success() {
   local message=$1
   echo -e "[ \033[0;32mOK\033[0m ] $message" >&2
