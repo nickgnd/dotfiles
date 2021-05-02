@@ -1,0 +1,138 @@
+""" Based on the incredible https://github.com/pmeinhardt/dotfiles/blob/main/vim/vimrc.symlink
+""" Thank you Paul.
+
+" Use Vim settings, rather then Vi settings.
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+
+""" Filetype Detection
+
+filetype on                         " enable filetype detection
+filetype indent on                  " enable filetype-specific indenting
+filetype plugin on                  " enable filetype-specific plugins
+
+
+""" Syntax Highlighting
+
+syntax enable
+
+
+""" General Configuration
+
+set encoding=utf-8                  " set utf-8 encoding
+set backspace=indent,eol,start      " allow backspacing over everything
+set history=1000                    " store lots of :cmdline history
+set showcmd                         " show incomplete cmds down the bottom
+set showmode                        " show current mode down the bottom
+set wildmenu                        " enable wildmenu for completion
+set guicursor+=a:blinkon0           " disable cursor blink
+set visualbell                      " silence
+set report=0                        " tell us about changes
+set nomodeline                      " disable modelines (security)
+
+" To reload files changed outside vim, enable 'autoread'.
+set autoread
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" set hidden
+
+" Change leader to a comma. All \x commands turn into ,x.
+" The mapleader has to be set before loading plugins.
+" let mapleader = ','
+
+
+""" Configure Backup and Swap Files
+
+set noswapfile                      " not using swap files
+set nobackup                        " no persistent backup
+set writebackup                     " write a temporary backup file
+
+
+""" Indentation
+
+set autoindent                      " indent according to previous line
+set smartindent                     " guess new line indentation level
+set shiftwidth=2                    " auto-indent depth
+set softtabstop=2                   " yep, two
+set tabstop=4                       " real tabs are 4 spaces
+set expandtab                       " no real tabs please!
+set nosmarttab                      " fuck tabs
+
+
+""" Formatting
+
+set formatoptions+=j                " remove comment chars when joining lines
+set nojoinspaces                    " only insert single space after '.', '?'
+                                    " and '!' with join command
+
+""" Visual Cues
+
+set showmatch                       " brackets/braces that is
+set matchtime=5                     " duration to show matching brace (1/10 sec)
+set listchars=tab:▸\ ,trail:·,eol:¬ " chars for invisibles
+set listchars+=precedes:<,extends:> " indicators for lines longer than window
+set nolist                          " print non-printable characters
+
+
+""" Searching and Replacing
+
+set incsearch                       " perform incremental search
+set ignorecase                      " ignore case when searching
+
+""" Navigation
+
+set ruler
+set scrolloff=3                     " keep at least 3 lines above/below
+set sidescrolloff=3                 " at least 3 columns left/right (w/ nowrap)
+
+
+""" Splits
+
+set splitbelow                      " put new window below the current one
+set splitright                      " put new window right of the current one
+
+
+""" Mappings
+
+" Quick tab switching
+nnoremap <tab> gt
+nnoremap <s-tab> gT
+
+" Clear search highlighting until next search
+nnoremap <leader><space> :nohlsearch<cr>
+
+" Copy to clipboard
+nnoremap <leader>* "*y
+xnoremap <leader>* "*y
+
+" Re-edit the current file (in case it changed outside of vim)
+nnoremap <leader>e :edit<cr>
+
+" Quick help
+nnoremap <leader>h :help<space>
+xnoremap <leader>h y:help <c-r>"
+
+" Close window
+nnoremap <leader>q :q<cr>
+
+" Strip trailing whitespace
+nnoremap <leader>s :%s/\s\+$//gc<cr>
+
+" Sort lines
+xnoremap <leader>s :sort<cr>
+
+" Write the current file
+nnoremap <leader>w :w<cr>
+
+" Write the current file if it changed and quit
+nnoremap <leader>x :x<cr>
+
+" Quick-jump to files
+nnoremap <c-p> :GFiles --cached --exclude-standard --others<cr>
+
+
+""" Colors
+
+colorscheme base
