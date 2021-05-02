@@ -9,10 +9,10 @@ set -g focus-events on
 # no delay when hitting escape
 set-option -s escape-time 0
 
-# remap prefix to ctrl + j
+# remap prefix to ctrl + a
 unbind C-b
-set -g prefix C-Space
-bind C-Space send-prefix
+set -g prefix C-a
+bind C-a send-prefix
 
 # do not allow to suspend the client
 unbind-key C-z
@@ -34,8 +34,14 @@ set-option -w -g automatic-rename on
 # refresh the status line every second
 set -g status-interval 1
 
+# Reload the config!
+bind r source-file ~/.tmux.conf \; display "Config reloaded!"
+
 # use vim motion in copy mode
 setw -g mode-keys vi
+
+# Unbind default rectangle-toggle
+unbind-key -T copy-mode-vi v
 
 # bind ESC to enter copy-mode
 bind Escape copy-mode
@@ -43,6 +49,7 @@ bind Escape copy-mode
 # copy like in vim (y will copy to system clipboard and exit copy-mode)
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'V' send -X select-line
+bind-key -T copy-mode-vi 'C-v' send-keys -X rectangle-toggle
 bind-key -T copy-mode-vi 'y' send-keys -X copy-selection-and-cancel
 
 # create new windows in the same directory
@@ -59,6 +66,10 @@ bind-key h select-pane -L
 bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
+
+# swap panes
+bind > swap-pane -D       # swap current pane with the next one
+bind < swap-pane -U       # swap current pane with the previous one
 
 # resize panes with shift + direction
 bind-key -r H resize-pane -L 3
