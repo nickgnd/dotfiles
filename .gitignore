@@ -1,5 +1,3 @@
 .DS_Store
 
 *.log
-karabiner/karabiner.symlink/*
-!karabiner/karabiner.symlink/karabiner.json
