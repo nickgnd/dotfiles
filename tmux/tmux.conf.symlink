@@ -80,21 +80,37 @@ bind-key -r L resize-pane -R 3
 # Layout
 ###
 # Basic status bar colors
-set -g status-style bg=black,fg=cyan
+# set -g status-style bg=black,fg=cyan
 # Left side of status bar
-set -g status-left-length 40
-set -g status-left " #S "
+# set -g status-left-length 40
+# set -g status-left " #S "
 # Window status
-set -g window-status-format " #W#F "
-set -g window-status-current-format " #W#F "
+# set -g window-status-format " #W#F "
+# set -g window-status-current-format " #W#F "
 # Current window status
-set -g window-status-current-style bg=cyan,fg=black
+# set -g window-status-current-style bg=cyan,fg=black
 # Window separator
-set -g window-status-separator ""
+# set -g window-status-separator ""
 # Window status alignment
-set -g status-justify centre
+# set -g status-justify centre
 # left status bar (spacegame...)
 set-option -g status-right '#{?client_prefix, space ,#{?pane_in_mode,   copy ,       }}'
+
+###
+# Status bar
+###
+set-option -g status-justify left
+set-option -g status-left '#[bg=colour72] #[bg=colour237] #[bg=colour236] #[bg=colour235]#[fg=colour185] #S #[bg=colour236] '
+set-option -g status-left-length 40
+set-option -g status-bg colour237
+set-option -g status-right '#[bg=colour236] #[bg=colour235]#[fg=colour185] %a %R #[bg=colour236]#[fg=colour3] #[bg=colour237] #[bg=colour72] #[]'
+set-option -g status-interval 60
+
+set-option -g pane-active-border-style fg=colour246
+set-option -g pane-border-style fg=colour238
+
+set-window-option -g window-status-format '#[bg=colour238]#[fg=colour107] #I #[bg=colour239]#[fg=colour110] #[bg=colour240]#W#[bg=colour239]#[fg=colour195]#F#[bg=colour238] '
+set-window-option -g window-status-current-format '#[bg=colour236]#[fg=colour215] #I #[bg=colour235]#[fg=colour167] #[bg=colour234]#W#[bg=colour235]#[fg=colour195]#F#[bg=colour236] '
 
 ###
 # Plugins
