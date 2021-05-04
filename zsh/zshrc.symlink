@@ -72,6 +72,20 @@ br() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
+# tat: tmux attach
+# https://juliu.is/a-simple-tmux/
+function tat {
+  name=$(basename `pwd` | sed -e 's/\.//g')
+
+  if tmux ls 2>&1 | grep "$name"; then
+    tmux attach -t "$name"
+  elif [ -f .envrc ]; then
+    direnv exec / tmux new-session -s "$name"
+  else
+    tmux new-session -s "$name"
+  fi
+}
+
 custom_prompt_pure_clear_screen() {
   zle -I                   # Enable output to terminal.
   print -n '\e[2J\e[4;0H'  # Clear screen and move cursor to (4, 0).
@@ -81,7 +95,6 @@ zle -N clear-screen custom_prompt_pure_clear_screen
 
 # aliases
 alias be="bundle exec"
-alias tm="tmux attach || tmux"
 alias md='mkdir -p'
 alias l='ls -lah'
 alias ll='ls -lh'
