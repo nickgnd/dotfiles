@@ -94,23 +94,7 @@ bind-key -r L resize-pane -R 3
 # Window status alignment
 # set -g status-justify centre
 # left status bar (spacegame...)
-set-option -g status-right '#{?client_prefix, space ,#{?pane_in_mode,   copy ,       }}'
-
-###
-# Status bar
-###
-set-option -g status-justify left
-set-option -g status-left '#[bg=colour72] #[bg=colour237] #[bg=colour236] #[bg=colour235]#[fg=colour185] #S #[bg=colour236] '
-set-option -g status-left-length 40
-set-option -g status-bg colour237
-set-option -g status-right '#[bg=colour236] #[bg=colour235]#[fg=colour185] %a %R #[bg=colour236]#[fg=colour3] #[bg=colour237] #[bg=colour72] #[]'
-set-option -g status-interval 60
-
-set-option -g pane-active-border-style fg=colour246
-set-option -g pane-border-style fg=colour238
-
-set-window-option -g window-status-format '#[bg=colour238]#[fg=colour107] #I #[bg=colour239]#[fg=colour110] #[bg=colour240]#W#[bg=colour239]#[fg=colour195]#F#[bg=colour238] '
-set-window-option -g window-status-current-format '#[bg=colour236]#[fg=colour215] #I #[bg=colour235]#[fg=colour167] #[bg=colour234]#W#[bg=colour235]#[fg=colour195]#F#[bg=colour236] '
+# set-option -g status-right '#{?client_prefix, space ,#{?pane_in_mode,   copy ,       }}'
 
 ###
 # Plugins
@@ -124,3 +108,45 @@ if "test ! -d ~/.tmux/plugins/tpm" \
    set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins/'; \
    run '~/.tmux/plugins/tpm/bin/install_plugins'"
 run '~/.tmux/plugins/tpm/tpm'
+
+###
+# Status bar
+###
+# set-option -g status-justify left
+#set-option -g status-left '#[bg=colour72] #h #[bg=colour237] #[bg=colour236] #[bg=colour235]#[fg=colour185] #S #[bg=colour236] '
+# set-option -g status-left-length 40
+# set-option -g status-bg colour237
+# set-option -g status-right "#[fg=green]#($TMUX_PLUGIN_MANAGER_PATH/tmux-mem-cpu-load/tmux-mem-cpu-load)#[default]"
+## set-option -ag status-right '#[bg=colour236] #[bg=colour235]#[fg=colour185] %a %R #[bg=colour236]#[fg=colour3] #[bg=colour237] #[bg=colour72] #[]'
+#set-option -g status-interval 2
+
+# set-option -g pane-active-border-style fg=colour246
+# set-option -g pane-border-style fg=colour238
+
+# set-window-option -g window-status-format '#[bg=colour238]#[fg=colour107] #I #[bg=colour239]#[fg=colour110] #[bg=colour240]#W#[bg=colour239]#[fg=colour195]#F#[bg=colour238] '
+# set-window-option -g window-status-current-format '#[bg=colour236]#[fg=colour215] #I #[bg=colour235]#[fg=colour167] #[bg=colour234]#W#[bg=colour235]#[fg=colour195]#F#[bg=colour236] '
+
+
+set -g status 'on'
+set -g status-bg 'colour235'
+set -g status-justify 'centre'
+set -g status-left-length '100'
+set -g status-right-length '100'
+set -g message-style fg='colour222',bg='colour238'
+set -g message-command-style fg='colour222',bg='colour238'
+set -g pane-border-style fg='colour238'
+set -g pane-active-border-style fg='colour154'
+setw -g window-status-activity-style fg='colour154',bg='colour235',none
+setw -g window-status-separator ''
+setw -g window-status-style fg='colour121',bg='colour235',none
+set -g status-left '#[fg=colour232,bg=colour154] #S #[fg=colour154,bg=colour238,nobold,nounderscore,noitalics] #[fg=colour222,bg=colour238] #W #[fg=colour238,bg=colour235,nobold,nounderscore,noitalics] #[fg=colour121,bg=colour235] #(whoami) #{?client_prefix,#[bg=colour2],} #{?window_zoomed_flag,🔍,} #[fg=colour235,bg=colour235,nobold,nounderscore,noitalics] '
+set -g status-right '#[fg=colour235,bg=colour235,nobold,nounderscore,noitalics] #[fg=colour121,bg=colour235] %r %a %Y #[fg=colour238,bg=colour235,nobold,nounderscore,noitalics] #[fg=colour222,bg=colour238] #H #[fg=colour154,bg=colour238,nobold,nounderscore,noitalics] #[fg=colour232,bg=colour154] '
+setw -g window-status-format '#[fg=colour235,bg=colour235,nobold,nounderscore,noitalics] #[default] #I #W #[fg=colour235,bg=colour235,nobold,nounderscore,noitalics] '
+setw -g window-status-current-format '#[fg=colour235,bg=colour238,nobold,nounderscore,noitalics] #[fg=colour222,bg=colour238] #I #W #F #[fg=colour238,bg=colour235,nobold,nounderscore,noitalics] '
+
+
+set-option -g status on
+set-option -g status-interval 2
+set-option -g status-justify "centre"
+set-option -g status-left-length 60
+set-option -g status-right-length 90
