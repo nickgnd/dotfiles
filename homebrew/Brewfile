@@ -46,8 +46,8 @@ brew 'wxmac'               # for starting erlang observer / debugger
 
 # dev packages
 brew 'ansible'
-brew 'fd'
-brew 'fzf'
+brew 'fd'                         # faster alternative fo `find`
+brew 'fzf'                        # command line fuzzy finder
 brew 'git'
 brew 'git-quick-stats'            # git repo stats
 brew 'hadolint'                   # lint dockerfiles
