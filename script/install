@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install topics
+# Usage: script/install [topic]
+
 set -o errexit
 set -o nounset
 set -o pipefail
@@ -29,8 +32,17 @@ function install_topic() {
     | while read -r finalize; do $finalize; done
 }
 
-info "INSTALL TOPICS…"
-install_topic "$DOTS_DIR/homebrew"
-for topic in ${TOPICS[*]}; do
-  install_topic "$topic"
-done
+if [ $# -eq 0 ]; then
+  info "INSTALL ALL TOPICS…"
+
+  # Evaluate the Brewfile first
+  install_topic "$DOTS_DIR/homebrew"
+
+  # then, install the other topics.
+  for topic in ${TOPICS[*]}; do
+    install_topic "$topic"
+  done
+else
+  info "INSTALL $1…"
+  install_topic "$DOTS_DIR/$1"
+fi
