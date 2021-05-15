@@ -13,22 +13,15 @@ export HOMEBREW_BUNDLE_NO_LOCK=1                        # disable lockfile for b
 # PATH
 typeset -U PATH path                                    # make PATH an array with unique entries
 export PATH="$HOME/dotfiles/bin:$PATH"                  # dotfiles bin
-export PATH="/usr/local/bin:$PATH"                      # homebrew bin
-export PATH="/usr/local/sbin:$PATH"                     # homebrew sbin
 export PATH="/usr/local/opt/openssl/bin:$PATH"          # add openssl
 
-# completion
+# configure completion
 zstyle ':completion:*' list-colors ''                   # use LSCOLORS list colors for completion
 zstyle ':completion:*' special-dirs true                # complete the . and .. special directories
 zstyle ':completion:*:*:*:*:*' menu select              # show completion as menu and navigate with arrow keys
 zstyle ':completion:*' squeeze-slashes true             # treat multiple slashes as multiple directories
 zstyle ':completion:*' use-cache yes                    # cache completion
 zstyle ':completion:*' cache-path $HOME/.zcompcache     # completion cache directory
-
-# TODO: speed this up by only loading every 24h
-# https://gist.github.com/ctechols/ca1035271ad134841284
-autoload -Uz compinit && compinit -d $HOME/.zcompdump   # load completion
-autoload bashcompinit && bashcompinit                   # load bash completion
 
 # history
 HISTFILE=$HOME/.zsh_history
@@ -56,8 +49,12 @@ bindkey "^[[3~"             delete-char                 # enable delete key on a
 bindkey "^[3;5~"            delete-char                 # enable delete key on any keyboard
 
 # tools
-source $HOME/.asdf/asdf.sh                              # asdf
-source $HOME/.asdf/completions/asdf.bash                # asdf completion
+if [ -f "$HOME/.asdf/asdf.sh" ]; then                   # asdf
+  source $HOME/.asdf/asdf.sh
+
+  # append completions to fpath
+  fpath=(${ASDF_DIR}/completions $fpath)
+fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                  # fzf
 if which pyenv > /dev/null; then                        # pyenv
   eval "$(pyenv init - zsh --no-rehash)";
@@ -156,6 +153,12 @@ fi
 fpath+=$ZSH_DIR/plugins/pure
 autoload -U promptinit; promptinit
 prompt pure
+
+# init completion
+# TODO: speed this up by only loading every 24h
+# https://gist.github.com/ctechols/ca1035271ad134841284
+autoload -Uz compinit && compinit -d $HOME/.zcompdump   # load completion
+autoload bashcompinit && bashcompinit                   # load bash completion
 
 # plugins
 source $ZSH_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
