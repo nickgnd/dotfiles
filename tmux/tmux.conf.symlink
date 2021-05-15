@@ -101,16 +101,6 @@ set-option -g status-right '#{?client_prefix, space ,#{?pane_in_mode,   copy ,  
 ###
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-open'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-# restore panes but not their contents
-set -g @resurrect-capture-pane-contents 'off'
-# do not restore programs (e.g. vim)
-set -g @resurrect-processes 'false'
-# reenable auto renaming panes when restoring
-set -g @resurrect-hook-pre-restore-pane-processes 'for _pane in $(tmux list-panes -a -F "#{pane_id}"); do tmux set-option -w -t $_pane automatic-rename on; done'
-set -g @continuum-restore 'on'
-set -g @continuum-save-interval '15'
 
 # install tpm if not already there
 if "test ! -d ~/.tmux/plugins/tpm" \
