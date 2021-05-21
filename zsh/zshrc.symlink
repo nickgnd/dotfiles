@@ -13,6 +13,7 @@ export HOMEBREW_BUNDLE_NO_LOCK=1                        # disable lockfile for b
 # PATH
 typeset -U PATH path                                    # make PATH an array with unique entries
 export PATH="$HOME/dotfiles/bin:$PATH"                  # dotfiles bin
+export PATH="/usr/local/sbin:$PATH"                     # homebrew sbin
 export PATH="/usr/local/opt/openssl/bin:$PATH"          # add openssl
 
 # configure completion
