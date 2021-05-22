@@ -8,6 +8,7 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"                # define colors for list
 export CLICOLOR=1                                       # enable colors for list command
 export ERL_AFLAGS="-kernel shell_history enabled"       # shell history for Erlang / Elixir
 export ERL_EPMD_ADDRESS=127.0.0.1                       # prevent epmd from exposing a port
+export KERL_BUILD_DOCS=yes                              # enable docs consultation for Erlang
 export HOMEBREW_BUNDLE_NO_LOCK=1                        # disable lockfile for brew bundle
 
 # PATH

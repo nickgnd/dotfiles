@@ -5,6 +5,12 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 tap 'pmeinhardt/tools'
 
+# Required to install `wxmac@3.1.5`. Remove these extra
+# formulae as soon `wxmac@3.2` is released.
+# http://www.wxwidgets.org/
+# https://github.com/Homebrew/homebrew-core/blob/master/Formula/wxmac.rb
+tap 'dominicletz/homebrew-extra'
+
 # code apps
 cask 'firefox'
 cask 'iterm2'
@@ -42,7 +48,7 @@ brew 'rsync'
 brew 'tree'
 brew 'watch'               # execute command periodically
 brew 'wget'
-brew 'wxmac'               # for starting erlang observer / debugger
+brew 'wxmac@3.1.5'         # for starting erlang observer / debugger (OTP 24)
 
 # dev packages
 brew 'ansible'
