@@ -4,5 +4,6 @@
     "editor.renderWhitespace": "all",
     "files.insertFinalNewline": true,
     "editor.minimap.enabled": false,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "editor.linkedEditing": true
 }
