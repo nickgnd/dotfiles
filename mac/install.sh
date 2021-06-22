@@ -9,6 +9,10 @@ set -o pipefail
 
 source "../script/lib/utils.sh"
 
+# You can find more macOS defaults here:
+# - https://macos-defaults.com/
+# - https://github.com/mathiasbynens/dotfiles
+
 info "SET MACOS DEFAULTS…"
 
 # General
