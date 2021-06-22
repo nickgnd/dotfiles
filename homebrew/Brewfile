@@ -19,6 +19,7 @@ cask 'rectangle'          # window management
 # dev apps
 cask 'chromedriver'
 cask 'docker'
+cask 'google-cloud-sdk'
 # cask 'google-chrome'
 cask 'insomnia'           # postman alternative
 cask 'visual-studio-code'
@@ -59,6 +60,7 @@ brew 'git-quick-stats'            # git repo stats
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
+brew 'k9s'                        # Kubernetes CLI tool
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'ripgrep'                    # search tool
 brew 'shellcheck'                 # Linter for shell scripts

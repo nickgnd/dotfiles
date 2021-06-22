@@ -164,3 +164,8 @@ autoload bashcompinit && bashcompinit                   # load bash completion
 
 # plugins
 source $ZSH_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Google Cloud SDK
+# (run `brew info google-cloud-sdk` to get the paths)
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
