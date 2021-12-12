@@ -20,4 +20,17 @@ info "SET COMPUTER NAME to '$name'…"
 sudo scutil --set ComputerName "$name"
 sudo scutil --set LocalHostName "$name"
 
+# Maybe update `/etc/hosts`
+LINE="127.0.0.1 $name"
+FILE='/etc/hosts'
+grep -xqF -- "$LINE" "$FILE" || {
+  echo "# --> Addeded by Dotfiles"
+  echo "# LocalHostName has changed from the default one."
+  echo '# The entry below fixes the Erlang distribution when'
+  echo '# starting the distribuited node with the `--sname` flag.'
+  echo "# See https://github.com/livebook-dev/livebook/issues/275#issuecomment-845850328"
+  echo "$LINE"
+  echo "# <--"
+} | sudo tee -a "$FILE"
+
 "$SCRIPT_DIR/install"
