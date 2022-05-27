@@ -88,6 +88,18 @@ defaults write com.apple.dock tilesize -int 36
 info "Restarting the dock…"
 killall Dock
 
+# Hot corners
+## https://blog.jiayu.co/2018/12/quickly-configuring-hot-corners-on-macos/
+## Use this command to check current config `defaults read com.apple.dock | grep wvous`
+
+## Show desktop on bottom-right
+info "Set hot corners…"
+defaults write com.apple.dock wvous-br-corner -int 4
+defaults write com.apple.dock wvous-br-modifier -int 0
+
+info "Restarting the dock…"
+killall Dock
+
 # Input
 info "Set fast key-repeat-rate…"
 defaults write -globalDomain "InitialKeyRepeat" -int 15
