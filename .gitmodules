@@ -6,3 +6,6 @@
 	path = zsh/plugins/pure
 	url = https://github.com/sindresorhus/pure
   branch = main
+[submodule "tmux/kube-tmux"]
+	path = tmux/kube-tmux
+	url = https://github.com/jonmosco/kube-tmux
