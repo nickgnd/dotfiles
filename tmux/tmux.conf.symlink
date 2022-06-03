@@ -77,30 +77,11 @@ bind-key -r K resize-pane -U 3
 bind-key -r L resize-pane -R 3
 
 ###
-# Layout
-###
-# Basic status bar colors
-set -g status-style bg=black,fg=cyan
-# Left side of status bar
-set -g status-left-length 40
-set -g status-left " #S "
-# Window status
-set -g window-status-format " #W#F "
-set -g window-status-current-format " #W#F "
-# Current window status
-set -g window-status-current-style bg=cyan,fg=black
-# Window separator
-set -g window-status-separator ""
-# Window status alignment
-set -g status-justify centre
-# left status bar (spacegame...)
-set-option -g status-right '#{?client_prefix, space ,#{?pane_in_mode,   copy ,       }}'
-
-###
 # Plugins
 ###
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-open'
+set -g @plugin 'wfxr/tmux-power'
 
 # install tpm if not already there
 if "test ! -d ~/.tmux/plugins/tpm" \
@@ -108,3 +89,10 @@ if "test ! -d ~/.tmux/plugins/tpm" \
    set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins/'; \
    run '~/.tmux/plugins/tpm/bin/install_plugins'"
 run '~/.tmux/plugins/tpm/tpm'
+
+###
+# Theme customization
+# See https://github.com/wfxr/tmux-power
+###
+
+set -g @tmux_power_theme 'moon'

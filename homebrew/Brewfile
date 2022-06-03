@@ -34,6 +34,8 @@ cask 'vlc'
 cask 'zoom'
 
 # fonts
+cask 'font-fira-code'
+cask 'font-hack-nerd-font'
 cask 'font-dosis'
 cask 'font-quicksand'
 
