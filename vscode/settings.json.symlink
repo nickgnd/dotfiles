@@ -5,5 +5,7 @@
     "files.insertFinalNewline": true,
     "editor.minimap.enabled": false,
     "redhat.telemetry.enabled": false,
-    "editor.linkedEditing": true
+    "editor.linkedEditing": true,
+    "elixirLS.fetchDeps": false,
+    "elixirLS.mixEnv": "dev"
 }
