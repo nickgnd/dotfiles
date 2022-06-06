@@ -3,6 +3,7 @@
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
+tap 'heroku/brew'
 tap 'pmeinhardt/tools'
 
 # Required to install `wxmac@3.1.5`. Remove these extra
@@ -30,6 +31,7 @@ cask 'imageoptim'         # remove exif-data from images
 cask 'keepingyouawake'
 # cask 'slack'
 cask 'spotify'
+cask 'vnc-viewer'
 cask 'vlc'
 cask 'zoom'
 
@@ -46,6 +48,7 @@ brew 'gpg'                 # GNU privacy packages
 brew 'htop'
 brew 'nmap'                # Network Mapper - network discovery and security auditing
 brew 'openssl'
+brew 'p7zip'               # Required for Elixir Burrito projects (https://github.com/burrito-elixir/burrito)
 brew 'readline'
 brew 'rsync'
 brew 'tree'
@@ -59,6 +62,7 @@ brew 'fd'                         # faster alternative fo `find`
 brew 'fzf'                        # command line fuzzy finder
 brew 'git'
 brew 'git-quick-stats'            # git repo stats
+brew 'heroku'
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
