@@ -7,5 +7,6 @@
     "redhat.telemetry.enabled": false,
     "editor.linkedEditing": true,
     "elixirLS.fetchDeps": false,
-    "elixirLS.mixEnv": "dev"
+    "elixirLS.mixEnv": "dev",
+    "security.workspace.trust.untrustedFiles": "open"
 }

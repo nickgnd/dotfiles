@@ -1,0 +1,21 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "alt+cmd+o alt+cmd+l",
+    "command": "workbench.action.tasks.runTask",
+    "when": "editorTextFocus && resourceExtname == .exs",
+    "args": "Elixir: Run test for specified line in the open file"
+  },
+  {
+    "key": "alt+cmd+o alt+cmd+p",
+    "command": "workbench.action.tasks.runTask",
+    "when": "editorTextFocus && resourceExtname == .exs",
+    "args": "Elixir: Run all tests for the open file"
+  },
+  {
+    "key": "alt+cmd+o alt+cmd+k",
+    "command": "workbench.action.tasks.runTask",
+    "when": "editorTextFocus && resourceExtname == .exs",
+    "args": "Elixir: Run all tagged tests for the open file"
+  }
+]

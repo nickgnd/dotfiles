@@ -9,5 +9,8 @@ set -o pipefail
 
 source "../script/lib/utils.sh"
 
-# Symling settings
+# Symlink custom settings, tasks and keybindings
 create_symlinks "$(pwd)" "$HOME/Library/Application Support/Code/User/"
+
+# Symlink custom snippets
+create_symlinks "$(pwd)/snippets" "$HOME/Library/Application Support/Code/User/snippets/"
