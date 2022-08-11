@@ -17,9 +17,19 @@
 		"body": "$TM_SELECTED_TEXT |> IO.inspect(label: \"${TM_SELECTED_TEXT/(.*)/${1:/upcase}/}$0\")",
 		"description": "IO.inspect with selected text as label."
 	},
-	"Inspect with clipboard content as label": {
+	"Inspect with empty label": {
 		"prefix": "IO",
+		"body": "|> IO.inspect(label: \"$0\")",
+		"description": "IO.inspect with selected text as label."
+	},
+	"Inspect with clipboard content as label": {
+		"prefix": "IOC",
 		"body": "$CLIPBOARD |> IO.inspect(label: \"${CLIPBOARD/(.*)/${1:/upcase}/}$0\")",
 		"description": "IO.inspect with clipboard as label."
+	},
+	"@tag :this": {
+		"prefix": "this",
+		"body": "@tag :this$0",
+		"description": "Add `@tag :this` for testing purposes"
 	}
 }
