@@ -49,7 +49,10 @@ bind Escape copy-mode
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'V' send -X select-line
 bind-key -T copy-mode-vi 'C-v' send-keys -X rectangle-toggle
-bind-key -T copy-mode-vi 'y' send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi 'y' send-keys -X copy-selection
+
+# Don't scroll down when selecting the text to copy with the mouse
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection
 
 # create new windows in the same directory
 bind-key c new-window -c '#{pane_current_path}'
