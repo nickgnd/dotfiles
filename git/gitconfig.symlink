@@ -25,8 +25,10 @@
 [status]
   submoduleSummary = true
 [pull]
-	ff = only
+  ff = only
 [init]
   defaultBranch = main
 [branch]
   sort = -committerdate
+[rerere]
+  enabled = true
