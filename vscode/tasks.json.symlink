@@ -6,7 +6,7 @@
     {
       "label": "Elixir: Run test for specified line in the open file",
       "type": "shell",
-      "command": "tmux send-keys -t ${workspaceFolderBasename} \"mix test ${relativeFile}:${lineNumber}\" ENTER",
+      "command": "tmux send-keys -t ${workspaceFolderBasename} C-u; tmux send-keys -t ${workspaceFolderBasename} \"mix test ${relativeFile}:${lineNumber}\" ENTER",
       "group": "test",
       "presentation": {
         "reveal": "never",
@@ -17,7 +17,7 @@
     {
       "label": "Elixir: Run all tests for the open file",
       "type": "shell",
-      "command": "tmux send-keys -t ${workspaceFolderBasename} \"mix test ${relativeFile}\" ENTER",
+      "command": "tmux send-keys -t ${workspaceFolderBasename} C-u; tmux send-keys -t ${workspaceFolderBasename} \"mix test ${relativeFile}\" ENTER",
       "group": "test",
       "presentation": {
         "reveal": "never",
@@ -27,7 +27,7 @@
     {
       "label": "Elixir: Run all tagged tests for the open file",
       "type": "shell",
-      "command": "tmux send-keys -t ${workspaceFolderBasename} \"mix test ${relativeFile} --only this\" ENTER",
+      "command": "tmux send-keys -t ${workspaceFolderBasename} C-u; tmux send-keys -t ${workspaceFolderBasename} \"mix test ${relativeFile} --only this\" ENTER",
       "group": "test",
       "presentation": {
         "reveal": "never",
