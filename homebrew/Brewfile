@@ -58,11 +58,12 @@ brew 'wxmac@3.1.5'         # for starting erlang observer / debugger (OTP 24)
 
 # dev packages
 brew 'ansible'
+brew 'duf'                        # du (disk usage) alternative
 brew 'fd'                         # faster alternative fo `find`
 brew 'fzf'                        # command line fuzzy finder
 brew 'git'
 brew 'git-quick-stats'            # git repo stats
-brew 'heroku'
+brew 'flyctl'
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
