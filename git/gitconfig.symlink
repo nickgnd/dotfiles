@@ -21,6 +21,7 @@
   path = ~/.gitconfig_work
 [core]
   excludesfile = ~/.gitignore_global
+  autocrlf = input
 [status]
   submoduleSummary = true
 [pull]
