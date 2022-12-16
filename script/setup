@@ -12,8 +12,9 @@ SCRIPT_DIR=$(dirname "$0")
 source "$SCRIPT_DIR/lib/utils.sh"
 
 COMPUTER_NAME=$(scutil --get ComputerName)
+LOCAL_HOST_NAME=$(scutil --get LocalHostName)
 
-ask "HOW SHOULD THIS COMPUTER BE CALLED? (currently: $COMPUTER_NAME)"
+ask "HOW SHOULD THIS COMPUTER BE CALLED? (currently, ComputerName: $COMPUTER_NAME - LocalHostName: $LOCAL_HOST_NAME)"
 read -r name
 
 info "SET COMPUTER NAME to '$name'…"
