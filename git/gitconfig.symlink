@@ -13,6 +13,8 @@
                 | xargs git branch -D;\
               }; f"
   update = "!git fetch && git pull && git housekeep"
+[push]
+  autoSetupRemote = true
 [includeIf "gitdir:code/personal/"]
   path = ~/.gitconfig_personal
 [includeIf "gitdir:code/taxfix/"]
