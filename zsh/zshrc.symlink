@@ -120,6 +120,7 @@ alias ll='ls -lh'
 alias -g ...='../..'
 alias vmd="npx 'vmd'"
 alias reload!='source ~/.zshrc'
+alias t="tree -L 1"
 
 # git aliases (inspired by oh-my-zsh https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh)
 alias gst="git status"
@@ -144,6 +145,9 @@ alias glo="git log --oneline --decorate"
 alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 alias grbi="git rebase -i"
 alias gpsup="git pushup" # defined in gitconfig file
+
+# show datetime in the history
+alias history="history -i"
 
 # locals
 if [[ -a ~/.localrc ]]
