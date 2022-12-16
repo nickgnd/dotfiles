@@ -12,24 +12,29 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Inspect with selected text as label": {
-		"prefix": "IO",
-		"body": "$TM_SELECTED_TEXT |> IO.inspect(label: \"${TM_SELECTED_TEXT/(.*)/${1:/upcase}/}$0\")",
+	"inpsectSelectedText": {
+		"prefix": "lin",
+		"body": "IO.inspect($TM_SELECTED_TEXT, label: \"${TM_SELECTED_TEXT/(.*)/${1:/upcase}/}$0\")",
 		"description": "IO.inspect with selected text as label."
 	},
-	"Inspect with empty label": {
-		"prefix": "IO",
-		"body": "|> IO.inspect(label: \"$0\")",
+	"pipeInspect": {
+		"prefix": "pin",
+		"body": "|> IO.inspect(label: \"$TM_FILEPATH:$TM_LINE_NUMBER$0\")",
 		"description": "IO.inspect with selected text as label."
 	},
-	"Inspect with clipboard content as label": {
-		"prefix": "IOC",
-		"body": "$CLIPBOARD |> IO.inspect(label: \"${CLIPBOARD/(.*)/${1:/upcase}/}$0\")",
-		"description": "IO.inspect with clipboard as label."
+	"inspectFromClipboard": {
+		"prefix": "cin",
+		"body": "IO.inspect($CLIPBOARD, label: \"${CLIPBOARD/(.*)/${1:/upcase}/}$0\")",
+		"description": "IO.inspect clipboard content."
 	},
-	"@tag :this": {
+	"tagThis": {
 		"prefix": "this",
 		"body": "@tag :this$0",
 		"description": "Add `@tag :this` for testing purposes"
-	}
+	},
+	"fastElixirMap": {
+		"prefix": "k",
+		"body": "$1: $1$0",
+		"description": "Fast map creation using the key as value as well `%{foo: foo}`"
+	},
 }
