@@ -8,5 +8,6 @@
     "editor.linkedEditing": true,
     "elixirLS.fetchDeps": false,
     "elixirLS.mixEnv": "dev",
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.guides.bracketPairs": "active"
 }
