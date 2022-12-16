@@ -124,6 +124,7 @@ alias t="tree -L 1"
 
 # git aliases (inspired by oh-my-zsh https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh)
 alias gst="git status"
+alias gss="git status --short --branch"
 alias gb="git branch"
 alias gbnm="git branch --no-merged"
 alias ga="git add"
@@ -145,6 +146,9 @@ alias glo="git log --oneline --decorate"
 alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 alias grbi="git rebase -i"
 alias gpsup="git pushup" # defined in gitconfig file
+alias gwip="git add .; and git commit -m 'WIP'"
+# Checkout github PR, use it like `gpo #1234`
+alias gpo="gh pr checkout"
 
 # show datetime in the history
 alias history="history -i"
