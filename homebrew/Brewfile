@@ -63,6 +63,7 @@ brew 'fd'                         # faster alternative fo `find`
 brew 'fzf'                        # command line fuzzy finder
 brew 'git'
 brew 'git-quick-stats'            # git repo stats
+brew 'gh'                         # Github cli
 brew 'flyctl'
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf

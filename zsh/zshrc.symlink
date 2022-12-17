@@ -147,7 +147,7 @@ alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgre
 alias grbi="git rebase -i"
 alias gpsup="git pushup" # defined in gitconfig file
 alias gwip="git add .; and git commit -m 'WIP'"
-# Checkout github PR, use it like `gpo #1234`
+# Checkout github PR, use it like `gpo 1234`
 alias gpo="gh pr checkout"
 
 # show datetime in the history
