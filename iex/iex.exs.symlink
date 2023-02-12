@@ -1,1 +1,7 @@
 IEx.configure(inspect: [charlists: :as_lists])
+
+# Then, add this line at the top of project scoped
+# `.iex.exs` file in order to load the user specific
+# configuration (`~./iex.exs`)
+#
+# File.exists?(Path.expand("~/.iex.exs")) && import_file("~/.iex.exs")
