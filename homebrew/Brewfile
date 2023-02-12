@@ -16,6 +16,7 @@ tap 'dominicletz/homebrew-extra'
 cask 'firefox'
 cask 'iterm2'
 cask 'rectangle'          # window management
+cask 'flycut'             # clipboard manager with history
 
 # dev apps
 cask 'chromedriver'
