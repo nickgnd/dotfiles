@@ -12,13 +12,23 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"inpsectSelectedText": {
+	"inpsect": {
 		"prefix": "lin",
+		"body": "IO.inspect($1, label: \"$1\")",
+		"description": "IO.inspect with label."
+	},
+	"inpsectSelectedText": {
+		"prefix": "sin",
 		"body": "IO.inspect($TM_SELECTED_TEXT, label: \"${TM_SELECTED_TEXT/(.*)/${1:/upcase}/}$0\")",
 		"description": "IO.inspect with selected text as label."
 	},
 	"pipeInspect": {
 		"prefix": "pin",
+		"body": "|> IO.inspect(label: \"$1\")",
+		"description": "IO.inspect with selected text as label."
+	},
+	"pipeInspectWithFileReference": {
+		"prefix": "pinf",
 		"body": "|> IO.inspect(label: \"$TM_FILEPATH:$TM_LINE_NUMBER$0\")",
 		"description": "IO.inspect with selected text as label."
 	},
@@ -37,4 +47,9 @@
 		"body": "$1: $1$0",
 		"description": "Fast map creation using the key as value as well `%{foo: foo}`"
 	},
+	"pipeFile": {
+		"prefix": "pf",
+		"body": "|> Jason.encode!() |> then(& File.write!(\"./output_$CURRENT_SECONDS_UNIX.json$0\", &1))",
+		"description": "Serialize the content into JSON file (assuming that Jason installed and content serializable)."
+	}
 }
