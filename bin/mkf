@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Kudos to @whatyouhide
+# https://github.com/whatyouhide/dotfiles/blob/main/bin/mkf
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+mkdir -p "$(dirname "$1")"
+touch "$1"
