@@ -59,6 +59,7 @@ brew 'wxmac@3.1.5'         # for starting erlang observer / debugger (OTP 24)
 
 # dev packages
 brew 'ansible'
+brew 'cmake'
 brew 'duf'                        # du (disk usage) alternative
 brew 'fd'                         # faster alternative fo `find`
 brew 'fzf'                        # command line fuzzy finder
@@ -73,6 +74,7 @@ brew 'k9s'                        # Kubernetes CLI tool
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'ripgrep'                    # search tool
 brew 'shellcheck'                 # Linter for shell scripts
+brew 'telnet'
 brew 'tmux'
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
