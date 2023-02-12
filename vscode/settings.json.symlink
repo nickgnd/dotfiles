@@ -9,5 +9,13 @@
     "elixirLS.fetchDeps": false,
     "elixirLS.mixEnv": "dev",
     "security.workspace.trust.untrustedFiles": "open",
-    "editor.guides.bracketPairs": "active"
+    "editor.guides.bracketPairs": "active",
+    "testing.gutterEnabled": false,
+    "[markdown]": {
+        "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+        }
+    }
 }
