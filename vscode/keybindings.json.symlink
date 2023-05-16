@@ -17,5 +17,9 @@
     "command": "workbench.action.tasks.runTask",
     "when": "editorTextFocus && resourceExtname == .exs",
     "args": "Elixir: Run all tagged tests for the open file"
+  },
+  {
+    "key": "alt+cmd+o",
+    "command": "-workbench.action.remote.showMenu"
   }
 ]
