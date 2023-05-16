@@ -3,8 +3,6 @@
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
-tap 'heroku/brew'
-tap 'pmeinhardt/tools'
 
 # Required to install `wxmac@3.1.5`. Remove these extra
 # formulae as soon `wxmac@3.2` is released.
@@ -47,11 +45,13 @@ brew 'autoconf'            # for installing erlang
 brew 'coreutils'           # GNU file, shell and text utilities
 brew 'gpg'                 # GNU privacy packages
 brew 'htop'
+brew 'btop'                # htop alternative https://github.com/aristocratos/btop
 brew 'nmap'                # Network Mapper - network discovery and security auditing
 brew 'openssl'
 brew 'p7zip'               # Required for Elixir Burrito projects (https://github.com/burrito-elixir/burrito)
 brew 'readline'
 brew 'rsync'
+brew 'slides'              # Slides in your terminal from markdown files (https://maaslalani.com/slides/)
 brew 'tree'
 brew 'watch'               # execute command periodically
 brew 'wget'
@@ -64,9 +64,10 @@ brew 'duf'                        # du (disk usage) alternative
 brew 'fd'                         # faster alternative fo `find`
 brew 'fzf'                        # command line fuzzy finder
 brew 'git'
+brew 'git-lfs'                    # Git extension for versioning large files
 brew 'git-quick-stats'            # git repo stats
-brew 'gh'                         # Github cli
-brew 'flyctl'
+brew 'gh'                         # Github CLI
+brew 'flyctl'                     # fly.io CLI
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
@@ -84,9 +85,3 @@ brew 'zsh'
 brew 'geos'
 brew 'json-c'
 brew 'proj'
-
-# work related packages
-brew 'pmeinhardt/tools/hmm'
-
-# services
-brew 'redis', restart_service: true
