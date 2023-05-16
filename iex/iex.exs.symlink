@@ -1,3 +1,5 @@
+IO.puts("Using .iex.exs file loaded from #{__DIR__}/.iex.exs")
+
 IEx.configure(inspect: [charlists: :as_lists])
 
 # Then, add this line at the top of project scoped
@@ -5,3 +7,29 @@ IEx.configure(inspect: [charlists: :as_lists])
 # configuration (`~./iex.exs`)
 #
 # File.exists?(Path.expand("~/.iex.exs")) && import_file("~/.iex.exs")
+
+# Inspired by https://gist.github.com/DaniruKun/ccbaad8720c203fd6d86a39722c63c51
+defmodule IExUtil do
+  def raw(any, label \\ "iex") do
+    IO.inspect(any,
+      label: label,
+      pretty: true,
+      limit: :infinity,
+      structs: false,
+      syntax_colors: [
+        number: :yellow,
+        atom: :cyan,
+        string: :green,
+        nil: :magenta,
+        boolean: :magenta
+      ],
+      width: 0
+    )
+  end
+end
+
+defmodule :_iex_util do
+  defdelegate raw(any), to: IExUtil, as: :raw
+end
+
+import :_iex_util
