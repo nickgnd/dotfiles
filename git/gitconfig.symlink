@@ -1,6 +1,7 @@
 [user]
-  name = Nicolo Gnudi
+	name = Nicolò Gnudi
   useConfigOnly = true
+	email = nicolo.gnudi@taxfix.de
 [alias]
   personal = "config user.email 'nicolo.gnudi@gmail.com'"
   work = "config user.email 'nicolo.gnudi@taxfix.de'"
