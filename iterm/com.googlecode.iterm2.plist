@@ -1645,13 +1645,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.20784313725490197</real>
+				<real>0.27808380126953125</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.16078431372549021</real>
+				<real>0.2321336179118369</real>
 				<key>Red Component</key>
-				<real>0.15686274509803921</real>
+				<real>0.22830444161081687</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -3508,7 +3508,7 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.25816056285149014</real>
+	<real>0.25830315747307342</real>
 	<key>SwitchPaneModifier</key>
 	<integer>9</integer>
 	<key>SwitchTabModifier</key>
