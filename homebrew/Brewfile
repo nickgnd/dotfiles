@@ -72,7 +72,8 @@ brew 'flyctl'                     # fly.io CLI
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
-brew 'k9s'                        # Kubernetes CLI tool
+brew 'kubectl'                    # Kubernetes CLI
+brew 'k9s'                        # Kubernetes CLI UI
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'ripgrep'                    # search tool
 brew 'shellcheck'                 # Linter for shell scripts
