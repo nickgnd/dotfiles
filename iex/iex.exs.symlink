@@ -1,12 +1,58 @@
-IO.puts("Using .iex.exs file loaded from #{__DIR__}/.iex.exs")
-
-IEx.configure(inspect: [charlists: :as_lists])
+IO.puts("Loading .iex.exs from #{__DIR__}/.iex.exs")
 
 # Then, add this line at the top of project scoped
 # `.iex.exs` file in order to load the user specific
 # configuration (`~./iex.exs`)
 #
 # File.exists?(Path.expand("~/.iex.exs")) && import_file("~/.iex.exs")
+
+Application.put_env(:elixir, :ansi_enabled, true)
+
+timestamp = fn ->
+  {_date, {hour, minute, second}} = :calendar.local_time
+  [hour, minute, second]
+  |> Enum.map(&(String.pad_leading(Integer.to_string(&1), 2, "0")))
+  |> Enum.join(":")
+end
+
+# Inspired by https://fly.io/phoenix-files/taking-control-of-map-sort-order-in-elixir/
+# `sort_maps` option added in erlang/OTP 26.0
+# https://github.com/elixir-lang/elixir/releases/tag/v1.14.4
+IEx.configure(
+  colors: [
+    syntax_colors: [
+      number: :light_yellow,
+      atom: :light_cyan,
+      string: :green,
+      boolean: :light_red,
+      nil: [:magenta, :bright],
+    ],
+    ls_directory: :cyan,
+    ls_device: :yellow,
+    doc_code: :green,
+    doc_inline_code: :magenta,
+    doc_headings: [:cyan, :underline],
+    doc_title: [:cyan, :bright, :underline],
+  ],
+  default_prompt:
+    "#{IO.ANSI.white}%prefix#{IO.ANSI.reset} " <>
+    "[#{IO.ANSI.light_magenta}#{timestamp.()}#{IO.ANSI.reset} " <>
+    ":: #{IO.ANSI.cyan}%counter#{IO.ANSI.reset}] >",
+  alive_prompt:
+    "#{IO.ANSI.green}%prefix#{IO.ANSI.reset} " <>
+    "(#{IO.ANSI.yellow}%node#{IO.ANSI.reset}) " <>
+    "[#{IO.ANSI.magenta}#{timestamp.()}#{IO.ANSI.reset} " <>
+    ":: #{IO.ANSI.cyan}%counter#{IO.ANSI.reset}] >",
+  history_size: 150,
+  inspect: [
+    charlists: :as_lists,
+    pretty: true,
+    # limit: :infinity,
+    custom_options: [sort_maps: true]
+  ]
+)
+
+## OTHER UTILITIES
 
 # Inspired by https://gist.github.com/DaniruKun/ccbaad8720c203fd6d86a39722c63c51
 defmodule IExUtil do
@@ -28,8 +74,4 @@ defmodule IExUtil do
   end
 end
 
-defmodule :_iex_util do
-  defdelegate raw(any), to: IExUtil, as: :raw
-end
-
-import :_iex_util
+import IExUtil
