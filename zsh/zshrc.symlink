@@ -112,6 +112,15 @@ if [ -x "$(command -v fd)" ]; then
   }
 fi
 
+# print NPM_TOKEN from `~/.npmrc`
+npm_token() {
+  if [ -f "$HOME/.npmrc" ]; then
+    cat $HOME/.npmrc | grep -o '_authToken=.*' | sed 's/_authToken=//g'
+  else
+    echo "$HOME/.npmrc file does not exist."
+  fi
+}
+
 # aliases
 alias be="bundle exec"
 alias md='mkdir -p'
