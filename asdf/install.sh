@@ -38,6 +38,7 @@ add_plugin "nodejs"
 add_plugin "postgres"
 add_plugin "erlang"
 add_plugin "elixir"
+add_plugin "python"
 
 info "UPDATE ASDF PLUGINS…"
 asdf plugin-update --all
