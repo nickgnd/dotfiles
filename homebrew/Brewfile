@@ -29,6 +29,7 @@ cask 'zed'                # Trying out zed, alternative editor https://zed.dev
 # cask '1password'
 cask 'imageoptim'         # remove exif-data from images
 cask 'keepingyouawake'
+cask 'obsidian'           # private and flexible note‑taking app https://obsidian.md/
 # cask 'slack'
 cask 'spotify'
 cask 'vnc-viewer'
