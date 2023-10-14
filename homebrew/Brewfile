@@ -23,6 +23,7 @@ cask 'google-cloud-sdk'
 # cask 'google-chrome'
 cask 'insomnia'           # postman alternative
 cask 'visual-studio-code'
+cask 'wireshark'          # inspect network traffic
 cask 'zed'                # Trying out zed, alternative editor https://zed.dev
 
 # other apps
@@ -73,6 +74,7 @@ brew 'flyctl'                     # fly.io CLI
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
+brew 'libomp'                     # LLVM's OpenMP runtime library
 brew 'kubectl'                    # Kubernetes CLI
 brew 'k9s'                        # Kubernetes CLI UI
 brew 'overmind'                   # Process manager (Procfile based)
