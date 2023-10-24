@@ -53,6 +53,9 @@ schemes:
 
 ################################
 
+env:
+  TERM: alacritty
+
 # Font configuration
 font:
   offset:
