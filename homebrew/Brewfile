@@ -13,6 +13,7 @@ tap 'dominicletz/homebrew-extra'
 # code apps
 cask 'firefox'
 cask 'iterm2'
+cask 'alacritty'          # A cross-platform, OpenGL terminal emulator
 cask 'rectangle'          # window management
 cask 'flycut'             # clipboard manager with history
 
