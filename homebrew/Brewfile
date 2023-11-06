@@ -71,6 +71,7 @@ brew 'git'
 brew 'git-lfs'                    # Git extension for versioning large files
 brew 'git-quick-stats'            # git repo stats
 brew 'gh'                         # Github CLI
+brew 'graphviz'                   # Graph visualization tool
 brew 'flyctl'                     # fly.io CLI
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
