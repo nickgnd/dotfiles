@@ -32,6 +32,9 @@ set-option -w -g automatic-rename on
 # refresh the status line every second
 set -g status-interval 1
 
+# Conditionally load local config
+if-shell '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'
+
 # Reload the config!
 bind r source-file ~/.tmux.conf \; display "Config reloaded!"
 
