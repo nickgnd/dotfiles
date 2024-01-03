@@ -18,6 +18,7 @@ code --install-extension Shopify.ruby-lsp
 code --install-extension redhat.vscode-yaml
 code --install-extension sleistner.vscode-fileutils
 code --install-extension jakebecker.elixir-ls
+code --install-extension ziglang.vscode-zig
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension florinpatrascu.vscode-elixir-snippets
 code --install-extension ms-azuretools.vscode-docker
