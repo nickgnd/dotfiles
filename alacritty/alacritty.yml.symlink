@@ -57,7 +57,28 @@ env:
   TERM: alacritty
 
 window:
+  # Make `Option` key behave as `Alt` (macOS only):
+  # Does not work for me :/
+  # https://superuser.com/a/1657190
+  # option_as_alt: Both
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window decorations
+  # decorations: buttonless
   decorations: full
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Windowed
 
   opacity: 1.0
 
@@ -89,6 +110,10 @@ cursor:
   style: Block
   blinking: On
 
+
+key_bindings:
+  - { key: Right, mods: Alt, chars: "\x1BF" } # simulate alt+right (move cursor one word right)
+  - { key: Left,  mods: Alt, chars: "\x1BB" } # simulate alt+left (move cursor one word left)
 
 
 colors: *oceanic_next
