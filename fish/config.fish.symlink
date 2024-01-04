@@ -153,8 +153,6 @@ function update -d "Update brew, fish, fisher"
     exit 0
 end
 
-###################################
-
 # Erlang and Elixir
 set -x ERL_AFLAGS "-kernel shell_history enabled"  # shell history for Erlang / Elixir
 set -x KERL_BUILD_DOCS "yes"                       # enable docs consultation for Erlang
