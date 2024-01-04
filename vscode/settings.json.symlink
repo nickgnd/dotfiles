@@ -11,14 +11,21 @@
     "security.workspace.trust.untrustedFiles": "open",
     "editor.guides.bracketPairs": "active",
     "testing.gutterEnabled": false,
+    "gitlens.detectNestedRepositories": true,
+    "gitlens.advanced.repositorySearchDepth": 2,
     "[markdown]": {
         "editor.quickSuggestions": {
-        "other": true,
-        "comments": true,
-        "strings": true
+            "other": true,
+            "comments": true,
+            "strings": true
         }
     },
     "[python]": {
         "editor.formatOnType": true
-    }
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "window.zoomLevel": -1,
+    "zig.path": "",
+    "zig.zls.path": "",
+    "zig.initialSetupDone": true,
 }

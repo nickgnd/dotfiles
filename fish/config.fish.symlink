@@ -1,0 +1,180 @@
+# Don't show greeting message
+set -U fish_greeting
+
+# Use the default (emacs) key bindings
+fish_default_key_bindings
+
+# Environment
+set -x LANG 'en_US.UTF-8'
+set -x LC_ALL 'en_US.UTF-8'
+
+# Shell variables
+set -x SHELL fish
+set -x EDITOR "vim"
+
+################### PATH
+
+# Apppend to path if they exist (orders matter)
+fish_add_path -aP /bin
+fish_add_path -aP /usr/bin
+fish_add_path -aP /usr/local/bin
+fish_add_path -aP /usr/local/sbin
+fish_add_path -aP "$HOME/dotfiles/bin"                 # add executables from dotfiles
+fish_add_path -aP "/usr/local/opt/openssl/bin"         # add openssl
+
+################### Setup and tools
+
+# Setup starship for prompt (https://starship.rs/)
+if type -q starship
+  starship init fish | source
+end
+
+# Setup asdf
+if [ -f "$HOME/.asdf/asdf.fish" ]
+  # asdf node allow partial versions (https://github.com/asdf-vm/asdf-nodejs#partial-and-codename-versions)
+  set -x ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY "latest_installed"
+
+  source "$HOME/.asdf/asdf.fish"
+end
+
+# Fish abbreviations
+
+# Use `bat` instead of `cat`
+if type -q bat
+    abbr cat bat
+    set -x BAT_THEME ansi
+    set -x BAT_PAGER
+    set -x COLORTERM truecolor
+end
+
+# Use `fd` instead of `find`
+if type -q fd
+    # Use fd instead of find
+    abbr find fd
+
+    # Respect .gitignore (https://github.com/junegunn/fzf#respecting-gitignore)
+    set -gx FZF_DEFAULT_COMMAND 'fd --type file --follow --hidden --exclude .git'
+    set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+    set -gx FZF_CTRL_T_OPTS "--preview='bat --style=numbers --color=always {}'"
+end
+
+# Use `eza` instead of `ls`
+if type -q eza
+    abbr l eza
+    abbr ls eza
+    abbr ll 'eza --long --all --sort modified'
+    abbr llg 'eza --long --git'
+else
+    abbr l 'ls -lah'
+    abbr ll 'ls -lh'
+end
+
+# Aliases
+
+alias be="bundle exec"
+alias md='mkdir -p'
+alias reload!='source ~/.config/fish/config.fish'
+alias t="tree -L 1"
+
+# git aliases (inspired by oh-my-zsh https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh)
+# TODO: clean-up unused commands
+alias gst="git status"
+alias gss="git status --short --branch"
+alias gb="git branch"
+alias gbnm="git branch --no-merged"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit -v"
+alias gc!="git commit -v --amend"
+alias gcn!="git commit -v --no-edit --amend"
+alias gco="git checkout"
+alias gp="git push"
+alias gpf="git push --force-with-lease"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gdt="git diff-tree --no-commit-id --name-only -r"
+alias gdw="git diff --word-diff"
+alias gfa="git fetch --all --prune --jobs=10"
+alias glg="git log --stat"
+alias glgp="git log --stat -p"
+alias glo="git log --oneline --decorate"
+alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias grbi="git rebase -i"
+alias gpsup="git pushup" # defined in gitconfig file
+alias gwip="git add .; git commit -m 'WIP. reset me!'"
+# Checkout github PR, use it like `gpo 1234`
+alias gpo="gh pr checkout"
+
+# Key bindings
+
+# fzf <> fish bindings (requires `PatrickF1/fzf.fish` plugin)
+# https://github.com/PatrickF1/fzf.fish/blob/main/functions/_fzf_configure_bindings_help.fish
+if type -q fzf_configure_bindings
+  fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs --history=\cr --variables=\cv --processes=
+end
+
+# Custom functions
+
+# tmux create or attach session
+# https://juliu.is/a-simple-tmux/
+function tat -d "Start a named tmux session in the current folder"
+  set -l name (basename (pwd) | sed -e 's/\.//g')
+
+  if tmux ls 2>&1 | grep "$name"
+    tmux attach -t "$name"
+  else if [ -f .envrc ]
+    direnv exec / tmux new-session -s "$name"
+  else
+    tmux new-session -s "$name"
+  end
+end
+
+# print NPM_TOKEN from `~/.npmrc`
+function npm_token -d "Print npm token"
+  if test -f "$HOME/.npmrc"
+    cat $HOME/.npmrc | grep -o '_authToken=.*' | sed 's/_authToken=//g'
+  else
+    echo "$HOME/.npmrc file does not exist."
+  end
+end
+
+function update -d "Update brew, fish, fisher"
+    echo 'Start updating ...'
+
+    echo 'Updating homebrew'
+    brew update
+    brew upgrade
+    brew cleanup
+
+    echo 'Updating fish shell'
+    fisher
+    fish_update_completions
+
+    exit 0
+end
+
+# Erlang and Elixir
+set -x ERL_AFLAGS "-kernel shell_history enabled"  # shell history for Erlang / Elixir
+set -x KERL_BUILD_DOCS "yes"                       # enable docs consultation for Erlang
+set -x KERL_CONFIGURE_OPTIONS "--disable-debug --without-javac --without-wx"
+set -x ERL_EPMD_ADDRESS "127.0.0.1"                # prevent epmd from exposing port
+
+# Homebrew
+set -x HOMEBREW_BUNDLE_NO_LOCK 1 # Disable lockfile for brew bundle
+
+if test -d (brew --prefix)"/share/fish/completions"
+    set -p fish_complete_path (brew --prefix)/share/fish/completions
+end
+
+if test -d (brew --prefix)"/share/fish/vendor_completions.d"
+    set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+end
+
+# Google Cloud SDK
+if type -q gcloud
+  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+end
+
+if status is-interactive
+  # Commands to run in interactive sessions can go here
+end
