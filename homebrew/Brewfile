@@ -51,6 +51,7 @@ brew 'gpg'                 # GNU privacy packages
 brew 'htop'
 brew 'btop'                # htop alternative https://github.com/aristocratos/btop
 brew 'nmap'                # Network Mapper - network discovery and security auditing
+brew 'eza'                 # ls alternative https://eza.rocks/
 brew 'openssl'
 brew 'p7zip'               # Required for Elixir Burrito projects (https://github.com/burrito-elixir/burrito)
 brew 'readline'
@@ -63,8 +64,11 @@ brew 'wxmac@3.1.5'         # for starting erlang observer / debugger (OTP 24)
 
 # dev packages
 brew 'ansible'
+brew 'bat'                        # cat alternative with syntax highlighting
 brew 'cmake'
 brew 'duf'                        # du (disk usage) alternative
+brew 'fish'                       # Fish shell (alternative to zsh) https://github.com/fish-shell/fish-shell
+brew 'fisher'                     # A plugin manager for fisher https://github.com/jorgebucaran/fisher
 brew 'fd'                         # faster alternative fo `find`
 brew 'fzf'                        # command line fuzzy finder
 brew 'git'
@@ -82,11 +86,12 @@ brew 'k9s'                        # Kubernetes CLI UI
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'ripgrep'                    # search tool
 brew 'shellcheck'                 # Linter for shell scripts
+brew 'starship'                   # Cross-shell customizable prompt (https://starship.rs/)
 brew 'telnet'
 brew 'tmux'
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
-brew 'zsh'
+brew 'zsh'                        # Z shell (alternative to Bash)
 
 # postgis packages
 brew 'geos'

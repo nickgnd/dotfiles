@@ -30,8 +30,18 @@ else
   asdf update
 fi
 
-# shellcheck source=../../.asdf/asdf.sh
-source "$ASDF_BIN/asdf.sh"
+
+if [ "$SHELL" == "fish" ]; then
+  /usr/bin/env fish -c "source \"$ASDF_BIN/asdf.fish\""
+
+  # Add auto-completation
+  # https://asdf-vm.com/guide/getting-started.html
+  mkdir -p ~/.config/fish/completions
+  ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+else
+  # For zsh
+  source "$ASDF_BIN/asdf.sh"
+fi
 
 add_plugin "ruby"
 add_plugin "nodejs"
@@ -39,6 +49,7 @@ add_plugin "postgres"
 add_plugin "erlang"
 add_plugin "elixir"
 add_plugin "python"
+add_plugin "zig"
 
 info "UPDATE ASDF PLUGINS…"
 asdf plugin-update --all

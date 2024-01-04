@@ -56,11 +56,13 @@ schemes:
 env:
   TERM: alacritty
 
+shell:
+  program: /usr/local/bin/fish
+
 window:
   # Make `Option` key behave as `Alt` (macOS only):
-  # Does not work for me :/
   # https://superuser.com/a/1657190
-  # option_as_alt: Both
+  option_as_alt: Both
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -111,9 +113,10 @@ cursor:
   blinking: On
 
 
-key_bindings:
-  - { key: Right, mods: Alt, chars: "\x1BF" } # simulate alt+right (move cursor one word right)
-  - { key: Left,  mods: Alt, chars: "\x1BB" } # simulate alt+left (move cursor one word left)
+# Only needed for ZSH (?)
+#key_bindings:
+#  - { key: Right, mods: Alt, chars: "\x1BF" } # simulate alt+right (move cursor one word right)
+#  - { key: Left,  mods: Alt, chars: "\x1BB" } # simulate alt+left (move cursor one word left)
 
 
 colors: *oceanic_next

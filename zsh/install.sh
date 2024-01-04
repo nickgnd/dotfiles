@@ -18,5 +18,7 @@ if [ "$SHELL" != "$HOMEBREW_ZSH" ]; then
   if ! grep "$HOMEBREW_ZSH" /etc/shells > /dev/null 2>&1 ; then
     sudo sh -c "echo $HOMEBREW_ZSH >> /etc/shells" 2>&1
   fi
-  sudo chsh -s "$HOMEBREW_ZSH" "$USER" 2>&1
+
+  # Skip this step since I moved to Fish 🐠
+  # sudo chsh -s "$HOMEBREW_ZSH" "$USER" 2>&1
 fi
