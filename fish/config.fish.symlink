@@ -73,6 +73,11 @@ else
     abbr ll 'ls -lh'
 end
 
+# Use `rg` (ripgrep) instead of `grep`
+if type -q rg
+    abbr grep rg
+end
+
 # Aliases
 
 alias be="bundle exec"
