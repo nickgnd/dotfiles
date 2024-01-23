@@ -37,6 +37,11 @@ if [ -f "$HOME/.asdf/asdf.fish" ]
   source "$HOME/.asdf/asdf.fish"
 end
 
+# Setup zoxide
+if type -q zoxide
+  zoxide init fish | source
+end
+
 # Fish abbreviations
 
 # Use `bat` instead of `cat`
@@ -49,7 +54,6 @@ end
 
 # Use `fd` instead of `find`
 if type -q fd
-    # Use fd instead of find
     abbr find fd
 
     # Respect .gitignore (https://github.com/junegunn/fzf#respecting-gitignore)

@@ -57,7 +57,13 @@ if [ -f "$HOME/.asdf/asdf.sh" ]; then                   # asdf
   # append completions to fpath
   fpath=(${ASDF_DIR}/completions $fpath)
 fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                  # fzf
+
+if [ -x "$(command -v z)" ]; then
+  eval "$(zoxide init zsh)"                             # Setup zoxide
+fi
+
 if which pyenv > /dev/null; then                        # pyenv
   eval "$(pyenv init - zsh --no-rehash)";
 fi
