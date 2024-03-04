@@ -1,7 +1,8 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 # https://alacritty.org/config-alacritty.html
 
-working_directory = "/Users/nicolo.gnudi/code"
+# IMPORTANT: remember to update the user with a new machine
+working_directory = "/Users/nicolognudi/code"
 
 # # custom dark
 # [colors.bright]

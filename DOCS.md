@@ -83,9 +83,9 @@ The ssh-agent can then automatically load the key from the macOS keychain every 
 
 Allow rbenv's ruby on the macOS firewall *(same for other executables)*
 
-    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/nicolo.gnudi/.rbenv/shims/ruby
+    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/nicolognudi/.rbenv/shims/ruby
 
-    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/nicolo.gnudi/.asdf/shims/ruby
+    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/nicolognudi/.asdf/shims/ruby
 
 ### Git Submodules
 
