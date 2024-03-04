@@ -1,10 +1,10 @@
 [user]
 	name = Nicolò Gnudi
   useConfigOnly = true
-	email = nicolo.gnudi@taxfix.de
+	email = nicolo.gnudi@gmail.com
 [alias]
   personal = "config user.email 'nicolo.gnudi@gmail.com'"
-  work = "config user.email 'nicolo.gnudi@taxfix.de'"
+  work = "config user.email 'nicolo@workera.ai'"
   pushup = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
   housekeep = "!f(){\
                 git remote prune origin; \
@@ -18,7 +18,7 @@
   autoSetupRemote = true
 [includeIf "gitdir:code/personal/"]
   path = ~/.gitconfig_personal
-[includeIf "gitdir:code/taxfix/"]
+[includeIf "gitdir:code/workera/"]
   path = ~/.gitconfig_work
 [core]
   excludesfile = ~/.gitignore_global
