@@ -84,6 +84,8 @@ if type -q rg
     abbr grep rg
 end
 
+abbr imp 'iex -S mix phx.server'
+
 # Aliases
 
 alias be="bundle exec"
