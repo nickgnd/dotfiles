@@ -9,4 +9,7 @@ set -o pipefail
 
 source "./../script/lib/utils.sh"
 
-create_symlinks "$(pwd)" "$HOME/Library/Preferences/"
+# https://github.com/rxhanson/Rectangle?tab=readme-ov-file#import--export-json-config
+dst="${HOME}/Library/Application Support/Rectangle/"
+mkdir -p "$dst"
+create_symlinks "$(pwd)" "$dst"
