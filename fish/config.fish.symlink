@@ -26,6 +26,7 @@ fish_add_path -aP /usr/local/bin
 fish_add_path -aP /usr/local/sbin
 fish_add_path -aP "$HOME/dotfiles/bin"                 # add executables from dotfiles
 fish_add_path -aP "/usr/local/opt/openssl/bin"         # add openssl
+fish_add_path -aP "/opt/homebrew/opt/libpq/bin"        # add libpq for `psql` command
 
 ################### Setup and tools
 
@@ -184,9 +185,9 @@ if test -d (brew --prefix)"/share/fish/vendor_completions.d"
     set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 end
 
-# Google Cloud SDK
-if type -q gcloud
-  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+# Enable AWS CLI autocompletion: github.com/aws/aws-cli/issues/1079
+if type -q aws
+  complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 end
 
 if status is-interactive

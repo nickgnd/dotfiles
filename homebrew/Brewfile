@@ -1,14 +1,7 @@
 # frozen_string_literal: true
 
-tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
-
-# Required to install `wxmac@3.1.5`. Remove these extra
-# formulae as soon `wxmac@3.2` is released.
-# http://www.wxwidgets.org/
-# https://github.com/Homebrew/homebrew-core/blob/master/Formula/wxmac.rb
-tap 'dominicletz/homebrew-extra'
 
 # code apps
 cask 'firefox'
@@ -20,23 +13,24 @@ cask 'flycut'             # clipboard manager with history
 # dev apps
 cask 'chromedriver'
 cask 'docker'
-cask 'google-cloud-sdk'
-# cask 'google-chrome'
+cask 'google-chrome'
 cask 'insomnia'           # postman alternative
+cask 'pgadmin4'           # Postgres interface
 cask 'visual-studio-code'
 cask 'wireshark'          # inspect network traffic
 cask 'zed'                # Trying out zed, alternative editor https://zed.dev
 
 # other apps
-# cask '1password'
+cask '1password'
 cask 'imageoptim'         # remove exif-data from images
 cask 'keepingyouawake'
+cask 'logi-options-plus'
 cask 'obsidian'           # private and flexible note‑taking app https://obsidian.md/
 # cask 'slack'
 cask 'spotify'
 cask 'vnc-viewer'
 cask 'vlc'
-cask 'zoom'
+# cask 'zoom'
 
 # fonts
 cask 'font-fira-code'
@@ -60,14 +54,15 @@ brew 'slides'              # Slides in your terminal from markdown files (https:
 brew 'tree'
 brew 'watch'               # execute command periodically
 brew 'wget'
-brew 'wxmac@3.1.5'         # for starting erlang observer / debugger (OTP 24)
 brew 'zoxide'              # smarter cd command (https://github.com/ajeetdsouza/zoxide), it relies on `fzf`
 
 # dev packages
 brew 'ansible'
+brew 'awscli'                     # AWS cli
 brew 'bat'                        # cat alternative with syntax highlighting
 brew 'cmake'
 brew 'duf'                        # du (disk usage) alternative
+brew 'dvc'                        # Tool for data science https://dvc.org/doc
 brew 'fish'                       # Fish shell (alternative to zsh) https://github.com/fish-shell/fish-shell
 brew 'fisher'                     # A plugin manager for fisher https://github.com/jorgebucaran/fisher
 brew 'fd'                         # faster alternative fo `find`
@@ -82,8 +77,9 @@ brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
 brew 'libomp'                     # LLVM's OpenMP runtime library
-brew 'kubectl'                    # Kubernetes CLI
-brew 'k9s'                        # Kubernetes CLI UI
+brew 'libpq'                      # psql - Interface to PostgreSQL
+# brew 'kubectl'                    # Kubernetes CLI
+# brew 'k9s'                        # Kubernetes CLI UI
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'ripgrep'                    # search tool
 brew 'shellcheck'                 # Linter for shell scripts
@@ -93,8 +89,3 @@ brew 'tmux'
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
 brew 'zsh'                        # Z shell (alternative to Bash)
-
-# postgis packages
-brew 'geos'
-brew 'json-c'
-brew 'proj'
