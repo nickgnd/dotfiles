@@ -14,6 +14,11 @@ source "$SCRIPT_DIR/../script/lib/utils.sh"
 if ! command -v brew >/dev/null; then
   info "INSTALL HOMEBREW…"
   /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  if [ "$(uname -m)" = "arm64" ]; then
+    info "Initialize homebrew shell…"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
 else
   info "UPDATE HOMEBREW…"
   brew update

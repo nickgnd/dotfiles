@@ -9,6 +9,10 @@ set -o pipefail
 
 source "../script/lib/utils.sh"
 
+if [ "$(uname -m)" = "arm64" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 HOMEBREW_ZSH="$(brew --prefix)/bin/zsh"
 readonly HOMEBREW_ZSH
 
