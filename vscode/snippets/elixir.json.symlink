@@ -42,10 +42,25 @@
 		"body": "@tag :this$0",
 		"description": "Add `@tag :this` for testing purposes"
 	},
+	"insertMap": {
+		"prefix": "m",
+		"body": "%{$1: $1$0}",
+		"description": "Insert map with double cursor both for key and value`"
+	},
 	"fastElixirMap": {
 		"prefix": "k",
 		"body": "$1: $1$0",
 		"description": "Fast map creation using the key as value as well `%{foo: foo}`"
+	},
+	"insertLabel": {
+		"prefix": "l",
+		"body": "label: \"$1\"",
+		"description": "insert `label` option to use in IO.inspect"
+	},
+	"insertInfinityOptions": {
+		"prefix": "inf",
+		"body": "limit: :infinity, printable_limit: :infinity$0",
+		"description": "configure IO.inspect to show EVERYTIHNG"
 	},
 	"pipeFile": {
 		"prefix": "pf",
