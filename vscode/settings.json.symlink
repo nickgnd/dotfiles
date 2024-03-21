@@ -28,4 +28,6 @@
     "zig.path": "",
     "zig.zls.path": "",
     "zig.initialSetupDone": true,
+    "elixirLS.dialyzerEnabled": false,
+    "elixir-tools.nextLS.experimental.completions.enable": true
 }
