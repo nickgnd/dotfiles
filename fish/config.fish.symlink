@@ -173,7 +173,7 @@ end
 # Erlang and Elixir
 set -x ERL_AFLAGS "-kernel shell_history enabled"  # shell history for Erlang / Elixir
 set -x KERL_BUILD_DOCS "yes"                       # enable docs consultation for Erlang
-set -x KERL_CONFIGURE_OPTIONS "--disable-debug --without-javac --without-wx"
+set -x KERL_CONFIGURE_OPTIONS "--disable-debug --without-javac"
 set -x ERL_EPMD_ADDRESS "127.0.0.1"                # prevent epmd from exposing port
 
 # Homebrew

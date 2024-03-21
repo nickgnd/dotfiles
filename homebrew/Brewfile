@@ -54,6 +54,7 @@ brew 'slides'              # Slides in your terminal from markdown files (https:
 brew 'tree'
 brew 'watch'               # execute command periodically
 brew 'wget'
+brew 'wxwidgets'           # needed for erlang observer https://www.wxwidgets.org/
 brew 'zoxide'              # smarter cd command (https://github.com/ajeetdsouza/zoxide), it relies on `fzf`
 
 # dev packages
