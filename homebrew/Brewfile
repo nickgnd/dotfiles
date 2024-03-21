@@ -22,6 +22,7 @@ cask 'zed'                # Trying out zed, alternative editor https://zed.dev
 
 # other apps
 cask '1password'
+cask 'betterdisplay'      # great app to control and adjust external monitors https://github.com/waydabber/BetterDisplay
 cask 'imageoptim'         # remove exif-data from images
 cask 'keepingyouawake'
 cask 'logi-options-plus'
