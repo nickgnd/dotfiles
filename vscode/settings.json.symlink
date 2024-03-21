@@ -29,5 +29,12 @@
     "zig.zls.path": "",
     "zig.initialSetupDone": true,
     "elixirLS.dialyzerEnabled": false,
-    "elixir-tools.nextLS.experimental.completions.enable": true
+    "elixir-tools.nextLS.experimental.completions.enable": true,
+    "emmet.includeLanguages": {
+        "phoenix-heex": "html"
+    },
+    "tailwindCSS.includeLanguages": {
+        "elixir": "html",
+        "phoenix-heex": "html"
+    },
 }

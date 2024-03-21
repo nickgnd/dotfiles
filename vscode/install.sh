@@ -19,7 +19,9 @@ code --install-extension redhat.vscode-yaml
 code --install-extension sleistner.vscode-fileutils
 # code --install-extension jakebecker.elixir-ls
 code --install-extension elixir-tools.elixir-tools
+code --install-extension phoenixframework.phoenix
 code --install-extension ziglang.vscode-zig
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension florinpatrascu.vscode-elixir-snippets
 code --install-extension ms-azuretools.vscode-docker
+code --install-extension bradlc.vscode-tailwindcss
