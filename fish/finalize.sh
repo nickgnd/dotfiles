@@ -9,6 +9,9 @@ set -o pipefail
 
 source "../script/lib/utils.sh"
 
-# Setup FZF key bindings and fuzzy completion (https://github.com/junegunn/fzf#using-homebrew)
-info "INSTALL FZF KEY BINDINGS AND COMPLETION…"
-$(brew --prefix)/opt/fzf/install --no-update-rc
+# NOTE: skipping FZF standard key-bindings in favour of `PatrickF1/fzf.fish` key-bindings
+# (https://github.com/PatrickF1/fzf.fish/wiki/Uninstalling-other-fzf-plugins)
+#
+# Setup FZF key bindings and fuzzy completion (https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration)
+# info "INSTALL FZF KEY BINDINGS AND COMPLETION… "
+# fzf --fish | source
