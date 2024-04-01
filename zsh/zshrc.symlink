@@ -64,6 +64,10 @@ if [ -x "$(command -v z)" ]; then
   eval "$(zoxide init zsh)"                             # Setup zoxide
 fi
 
+if [ -f "$HOME/.cargo/env" ]; then
+  source "$HOME/.cargo/env"                             # rust
+fi
+
 if which pyenv > /dev/null; then                        # pyenv
   eval "$(pyenv init - zsh --no-rehash)";
 fi

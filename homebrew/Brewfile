@@ -84,6 +84,7 @@ brew 'libpq'                      # psql - Interface to PostgreSQL
 # brew 'k9s'                        # Kubernetes CLI UI
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'ripgrep'                    # search tool
+brew 'rustup-init'                # Rustup
 brew 'shellcheck'                 # Linter for shell scripts
 brew 'starship'                   # Cross-shell customizable prompt (https://starship.rs/)
 brew 'telnet'

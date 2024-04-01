@@ -1,1 +1,2 @@
 export LIVEBOOK_HOME="/Users/nicolognudi/code/personal"
+export PATH="$PATH:/Users/nicolognudi/.cargo/bin"

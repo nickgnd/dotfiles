@@ -48,6 +48,11 @@ if type -q zoxide
   zoxide init fish | source
 end
 
+# Setup rust
+if [ -f "$HOME/.cargo/env.fish" ]
+  source "$HOME/.cargo/env.fish"
+end
+
 # Fish abbreviations
 
 # Use `bat` instead of `cat`
