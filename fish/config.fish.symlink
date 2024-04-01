@@ -89,7 +89,15 @@ if type -q rg
     abbr grep rg
 end
 
-abbr imp 'iex -S mix phx.server'
+# Elixir abbreviations
+if type -q iex
+  abbr imp 'iex -S mix phx.server'
+end
+
+# VSCode abbreviations
+if type -q code
+  abbr c 'code .'
+end
 
 # Aliases
 
