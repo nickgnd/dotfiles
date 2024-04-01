@@ -84,23 +84,43 @@ bind-key -r L resize-pane -R 3
 ###
 # Plugins
 ###
+
+#### Plugin customizations
+
+###
+# Theme customization
+# See https://github.com/catppuccin/tmux
+###
+
+set -g @catppuccin_flavour 'mocha'
+set -g @catppuccin_window_left_separator "█"
+set -g @catppuccin_window_right_separator "█ "
+set -g @catppuccin_window_number_position "right"
+set -g @catppuccin_window_middle_separator "  █"
+
+set -g @catppuccin_window_default_fill "number"
+
+set -g @catppuccin_window_current_fill "number"
+set -g @catppuccin_window_current_text "#{pane_current_path}"
+
+set -g @catppuccin_status_modules_right "application session date_time"
+set -g @catppuccin_status_left_separator  ""
+set -g @catppuccin_status_right_separator " "
+set -g @catppuccin_status_fill "all"
+set -g @catppuccin_status_connect_separator "yes"
+
+### Install plugins
+
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-open'
-set -g @plugin 'wfxr/tmux-power'
+set -g @plugin 'catppuccin/tmux'
 
-# install tpm if not already there
+# Install tpm if not already there
 if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'; \
    set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.tmux/plugins/'; \
    run '~/.tmux/plugins/tpm/bin/install_plugins'"
 run '~/.tmux/plugins/tpm/tpm'
-
-###
-# Theme customization
-# See https://github.com/wfxr/tmux-power
-###
-
-set -g @tmux_power_theme 'moon'
 
 #-------------------------------------------------------#
 # Pane colours
