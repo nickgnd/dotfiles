@@ -15,7 +15,7 @@ end
 
 # Shell variables
 set -x SHELL fish
-set -x EDITOR "vim"
+set -x EDITOR "nvim"
 
 ################### PATH
 

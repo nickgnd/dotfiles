@@ -80,8 +80,9 @@ brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
 brew 'libomp'                     # LLVM's OpenMP runtime library
 brew 'libpq'                      # psql - Interface to PostgreSQL
-# brew 'kubectl'                    # Kubernetes CLI
-# brew 'k9s'                        # Kubernetes CLI UI
+# brew 'kubectl'                  # Kubernetes CLI
+# brew 'k9s'                      # Kubernetes CLI UI
+brew 'neovim'                     # Popular vim alternative
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'ripgrep'                    # search tool
 brew 'rustup-init'                # Rustup

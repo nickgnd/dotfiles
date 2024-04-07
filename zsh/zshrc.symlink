@@ -1,7 +1,7 @@
 ZSH_DIR=$HOME/dotfiles/zsh                              # zsh config directory in dotfiles
 
 # globals
-export EDITOR='vim'                                     # default editor
+export EDITOR='nvim'                                    # default editor
 export LANG=en_US.UTF-8                                 # set language to English and UTF-8 encoding
 export FZF_DEFAULT_OPTS='--color=16'                    # use the terminal colors for fzf
 export LSCOLORS="Gxfxcxdxbxegedabagacad"                # define colors for list command
