@@ -1,10 +1,12 @@
 # EditorConfig is awesome: https://EditorConfig.org
 
-root = true                         # top-most editorconfig file
+# top-most editorconfig file
+root = true
 
 [*]
 charset = utf-8
-end_of_line = lf                    # unix-style line endings
+# unix-style line endings
+end_of_line = lf
 indent_size = 2
 indent_style = space
 insert_final_newline = true
