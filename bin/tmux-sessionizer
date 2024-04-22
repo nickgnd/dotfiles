@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# tmux-sessionizer is a script to start a Tmux session
+# based on your working directories
+#
+# https://github.com/edr3x/tmux-sessionizer
+
+set -o errexit
+# set -o nounset
+set -o pipefail
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(fd . ~/code/{personal,workera} --max-depth 1 --min-depth 1 --type directory --type symlink | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+
+# We need to fallback to `exit 0` in case `pgrep` does not
+# found the tmux process becuase of the `set -o errexit` option
+tmux_running=$(pgrep tmux || exit 0)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $selected_name -c $selected
+    exit 0
+fi
+
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    tmux new-session -ds $selected_name -c $selected
+fi
+
+if [[ -z $TMUX ]]; then
+    tmux attach -t $selected_name
+else
+    tmux switch-client -t $selected_name
+fi

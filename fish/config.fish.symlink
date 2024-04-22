@@ -89,6 +89,10 @@ if type -q rg
     abbr grep rg
 end
 
+if type -q tmux-sessionizer
+  abbr ts tmux-sessionizer
+end
+
 # Elixir abbreviations
 if type -q iex
   abbr imp 'iex -S mix phx.server'
