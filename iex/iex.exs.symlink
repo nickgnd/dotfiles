@@ -72,6 +72,22 @@ defmodule IExUtil do
       width: 0
     )
   end
+
+  # https://shyr.io/blog/iex-copy-to-clipboard
+  def cpy(term) do
+    text =
+      if is_binary(term) do
+        term
+      else
+        inspect(term, limit: :infinity, pretty: true)
+      end
+
+    port = Port.open({:spawn, "pbcopy"}, [])
+    true = Port.command(port, text)
+    true = Port.close(port)
+
+    :ok
+  end
 end
 
 import IExUtil
