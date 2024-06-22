@@ -1,65 +1,17 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 # https://alacritty.org/config-alacritty.html
-
-# IMPORTANT: remember to update the user with a new machine
+#
+# IMPORTANT: remember to update the working_directory when changing machine
 working_directory = "/Users/nicolognudi/code"
 
-# # custom dark
-# [colors.bright]
-# black = "0x686767"
-# blue = "0x57c6fe"
-# cyan = "0x9aecfd"
-# green = "0x5af68d"
-# magenta = "0xfe69c0"
-# red = "0xfe5b56"
-# white = "0xf1f0ef"
-# yellow = "0xf3f89c"
-# 
-# [colors.normal]
-# black = "0x3a3b46"
-# blue = "0x57c6fe"
-# cyan = "0x9aecfd"
-# green = "0x5af68d"
-# magenta = "0xfe69c0"
-# red = "0xfe5b56"
-# white = "0xf1f0ef"
-# yellow = "0xf3f89c"
-# 
-# [colors.primary]
-# background = "0x282935"
-# foreground = "0xefefea"
-
-# custom oceanic_next
-[colors.bright]
-black = "0x405860"
-blue = "0x6699cc"
-cyan = "0x5fb3b3"
-green = "0x99c794"
-magenta = "0xc594c5"
-red = "0xec5f67"
-white = "0xadb5c0"
-yellow = "0xfac863"
-
-[colors.normal]
-black = "0x29414f"
-blue = "0x6699cc"
-cyan = "0x5fb3b3"
-green = "0x99c794"
-magenta = "0xc594c5"
-red = "0xec5f67"
-white = "0x65737e"
-yellow = "0xfac863"
-
-[colors.primary]
-background = "0x1b2b34"
-foreground = "0xd8dee9"
-
-[cursor.style]
-blinking = "On"
-shape = "Block"
+import = [
+  # Import catppuccin theme
+  "~/dotfiles/alacritty/catppuccin-macchiato.toml"
+]
 
 [env]
 TERM = "alacritty"
+# TERM = "xterm-256color"
 
 [font]
 size = 12

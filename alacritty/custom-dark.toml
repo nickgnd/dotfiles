@@ -1,0 +1,24 @@
+# custom dark
+[colors.bright]
+black = "0x686767"
+blue = "0x57c6fe"
+cyan = "0x9aecfd"
+green = "0x5af68d"
+magenta = "0xfe69c0"
+red = "0xfe5b56"
+white = "0xf1f0ef"
+yellow = "0xf3f89c"
+
+[colors.normal]
+black = "0x3a3b46"
+blue = "0x57c6fe"
+cyan = "0x9aecfd"
+green = "0x5af68d"
+magenta = "0xfe69c0"
+red = "0xfe5b56"
+white = "0xf1f0ef"
+yellow = "0xf3f89c"
+
+[colors.primary]
+background = "0x282935"
+foreground = "0xefefea"
