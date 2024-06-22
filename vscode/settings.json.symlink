@@ -1,12 +1,13 @@
 {
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.colorTheme": "Catppuccin Macchiato",
     "editor.tabSize": 2,
     "editor.renderWhitespace": "all",
     "files.insertFinalNewline": true,
     "editor.minimap.enabled": false,
     "redhat.telemetry.enabled": false,
     "editor.linkedEditing": true,
-    "elixirLS.fetchDeps": false,
+    "elixirLS.fetchDeps": true,
     "elixirLS.mixEnv": "dev",
     "security.workspace.trust.untrustedFiles": "open",
     "editor.guides.bracketPairs": "active",
@@ -29,7 +30,9 @@
     "zig.zls.path": "",
     "zig.initialSetupDone": true,
     "elixirLS.dialyzerEnabled": false,
+    "elixirLS.suggestSpecs": false,
     "elixir-tools.nextLS.experimental.completions.enable": true,
+    "elixir-tools.nextLS.spitfire": true,
     "emmet.includeLanguages": {
         "phoenix-heex": "html"
     },
