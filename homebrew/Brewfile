@@ -82,6 +82,7 @@ brew 'libomp'                     # LLVM's OpenMP runtime library
 brew 'libpq'                      # psql - Interface to PostgreSQL
 # brew 'kubectl'                  # Kubernetes CLI
 # brew 'k9s'                      # Kubernetes CLI UI
+brew 'mise'                       # Package manager, alternative to asdf (no need to activate it when installed via Brew - https://mise.jdx.dev/getting-started.html#shells)
 brew 'neovim'                     # Popular vim alternative
 brew 'overmind'                   # Process manager (Procfile based)
 brew 'ripgrep'                    # search tool

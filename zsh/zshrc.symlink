@@ -50,13 +50,7 @@ bindkey "${terminfo[kcbt]}" reverse-menu-complete       # shift-tab for reverse 
 bindkey "^[[3~"             delete-char                 # enable delete key on any keyboard
 bindkey "^[3;5~"            delete-char                 # enable delete key on any keyboard
 
-# tools
-if [ -f "$HOME/.asdf/asdf.sh" ]; then                   # asdf
-  source $HOME/.asdf/asdf.sh
-
-  # append completions to fpath
-  fpath=(${ASDF_DIR}/completions $fpath)
-fi
+# Tools
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh                  # fzf
 

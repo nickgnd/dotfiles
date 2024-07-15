@@ -17,7 +17,7 @@ HOMEBREW_ZSH="$(brew --prefix)/bin/zsh"
 readonly HOMEBREW_ZSH
 
 if [ "$SHELL" != "$HOMEBREW_ZSH" ]; then
-  info "SET HOMEBREW'S ZSH AS DEFAULT SHELL…"
+  info "ADD HOMEBREW'S ZSH TO SHELLS…"
 
   if ! grep "$HOMEBREW_ZSH" /etc/shells > /dev/null 2>&1 ; then
     sudo sh -c "echo $HOMEBREW_ZSH >> /etc/shells" 2>&1

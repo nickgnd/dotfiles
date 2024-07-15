@@ -79,14 +79,6 @@ To manually add keys to the macOS ssh-agent:
 
 The ssh-agent can then automatically load the key from the macOS keychain every time it needs it.
 
-### Firewall
-
-Allow rbenv's ruby on the macOS firewall *(same for other executables)*
-
-    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/nicolognudi/.rbenv/shims/ruby
-
-    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Users/nicolognudi/.asdf/shims/ruby
-
 ### Git Submodules
 
 Update all submodules to the latest tips of their remote branches:

@@ -9,4 +9,5 @@ set -o pipefail
 
 source "./../script/lib/utils.sh"
 
+mkdir -p "${HOME}/.config/fish"
 create_symlinks "$(pwd)" "${HOME}/.config/fish/"

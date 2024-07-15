@@ -35,14 +35,6 @@ if type -q starship
   starship init fish | source
 end
 
-# Setup asdf
-if [ -f "$HOME/.asdf/asdf.fish" ]
-  # asdf node allow partial versions (https://github.com/asdf-vm/asdf-nodejs#partial-and-codename-versions)
-  set -x ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY "latest_installed"
-
-  source "$HOME/.asdf/asdf.fish"
-end
-
 # Setup zoxide
 if type -q zoxide
   zoxide init fish | source
