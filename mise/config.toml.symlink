@@ -1,0 +1,13 @@
+# Mise global configuration
+# https://mise.jdx.dev/configuration.html
+
+[tools]
+erlang = ['26.2.1']
+elixir = ['1.16.0-otp-26']
+node = ['18.20.2']
+usage = "latest"
+python = "3.12.4"
+
+[settings]
+# for example, .nvmrc in the case of node's nvm
+legacy_version_file = true
