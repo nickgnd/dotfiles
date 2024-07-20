@@ -60,6 +60,7 @@ brew 'zoxide'              # smarter cd command (https://github.com/ajeetdsouza/
 
 # dev packages
 brew 'ansible'
+brew 'atuin'                      # Alternative to `shell history+fzf` https://github.com/atuinsh/atuin
 brew 'awscli'                     # AWS cli
 brew 'bat'                        # cat alternative with syntax highlighting
 brew 'cmake'

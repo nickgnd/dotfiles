@@ -11,6 +11,9 @@ set -x LC_ALL 'en_US.UTF-8'
 # Setup homebrew
 if status is-interactive
   eval (/opt/homebrew/bin/brew shellenv)
+
+  # Setup atuin
+  atuin init fish | source
 end
 
 # Shell variables
@@ -137,7 +140,7 @@ alias gpo="gh pr checkout"
 # fzf <> fish bindings (requires `PatrickF1/fzf.fish` plugin)
 # https://github.com/PatrickF1/fzf.fish/blob/main/functions/_fzf_configure_bindings_help.fish
 if type -q fzf_configure_bindings
-  fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs --history=\cr --variables=\cv --processes=
+  fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs --history= --variables=\cv --processes=
 end
 
 # Custom functions
