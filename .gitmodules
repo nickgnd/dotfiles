@@ -6,3 +6,7 @@
 	path = zsh/plugins/pure
 	url = https://github.com/sindresorhus/pure
   branch = main
+[submodule "neovim/nvim.symlink"]
+	path = neovim/nvim.symlink
+	url = git@github.com:nickgnd/kickstart.nvim.git
+	branch = nico/nvim-kickstarter
