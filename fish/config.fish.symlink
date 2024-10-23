@@ -131,6 +131,7 @@ alias glo="git log --oneline --decorate"
 alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 alias grbi="git rebase -i"
 alias gpsup="git pushup" # defined in gitconfig file
+alias gdi="git delete-fzf" # delete git branch interactive - defined in gitconfig file
 alias gwip="git add .; git commit -m 'WIP. reset me!'"
 # Checkout github PR, use it like `gpo 1234`
 alias gpo="gh pr checkout"
