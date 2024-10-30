@@ -141,7 +141,8 @@ alias gpo="gh pr checkout"
 # fzf <> fish bindings (requires `PatrickF1/fzf.fish` plugin)
 # https://github.com/PatrickF1/fzf.fish/blob/main/functions/_fzf_configure_bindings_help.fish
 if type -q fzf_configure_bindings
-  fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs --history= --variables=\cv --processes=
+  # Trigger git log search with `CTRL + ALT + l` to don't clash with tmux/nvim panes navigation
+  fzf_configure_bindings --directory=\cf --git_log=\e\cl --git_status=\cs --history= --variables=\cv --processes=
 end
 
 # Custom functions
