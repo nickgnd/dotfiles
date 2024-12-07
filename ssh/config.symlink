@@ -2,3 +2,9 @@ Host *
   UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
+
+# Do not record the IP addresses of the Nerves target
+Host nerves.local
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+
