@@ -8,7 +8,7 @@ cask 'firefox'
 cask 'iterm2'
 cask 'alacritty'          # A cross-platform, OpenGL terminal emulator
 cask 'rectangle'          # window management
-cask 'flycut'             # clipboard manager with history
+cask  'claude'            # Anthropic's official Claude AI desktop app
 
 # dev apps
 cask 'chromedriver'
