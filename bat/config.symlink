@@ -1,0 +1,6 @@
+# Specify desired highlighting theme. Run `bat --list-themes` for a list of all available themes.
+--theme=base16
+
+# Just add syntax highlighting and behave like cat(1) otherwise.
+--style=plain
+
