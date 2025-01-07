@@ -27,6 +27,7 @@ cask 'imageoptim'         # remove exif-data from images
 cask 'keepingyouawake'
 cask 'logi-options-plus'
 cask 'obsidian'           # private and flexible note‑taking app https://obsidian.md/
+cask 'raycast'            # productivity tool to controls apps, files, and services https://raycast.com/
 # cask 'slack'
 cask 'spotify'
 cask 'vnc-viewer'
