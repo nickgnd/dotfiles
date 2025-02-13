@@ -8,7 +8,8 @@ cask 'firefox'
 cask 'iterm2'
 cask 'alacritty'          # A cross-platform, OpenGL terminal emulator
 cask 'rectangle'          # window management
-cask  'claude'            # Anthropic's official Claude AI desktop app
+cask 'claude'             # Anthropic's official Claude AI desktop app
+cask 'chatgpt'            # OpenAI's official ChatGPT desktop app
 
 # dev apps
 cask 'chromedriver'
@@ -48,6 +49,7 @@ brew 'htop'
 brew 'btop'                # htop alternative https://github.com/aristocratos/btop
 brew 'nmap'                # Network Mapper - network discovery and security auditing
 brew 'eza'                 # ls alternative https://eza.rocks/
+brew 'ffmpeg'
 brew 'openssl'
 brew 'p7zip'               # Required for Elixir Burrito projects (https://github.com/burrito-elixir/burrito)
 brew 'readline'
@@ -57,6 +59,7 @@ brew 'tree'
 brew 'watch'               # execute command periodically
 brew 'wget'
 brew 'wxwidgets'           # needed for erlang observer https://www.wxwidgets.org/
+brew 'yt-dlp'              # CLI to download video from Youtube
 brew 'zoxide'              # smarter cd command (https://github.com/ajeetdsouza/zoxide), it relies on `fzf`
 
 # dev packages
