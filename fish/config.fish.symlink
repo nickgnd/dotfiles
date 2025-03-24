@@ -84,6 +84,11 @@ if type -q rg
     abbr grep rg
 end
 
+if type -q tmux
+  # Get current tmux pane id
+  abbr tcp "tmux display-message -p '#{pane_id}'"
+end
+
 if type -q tmux-sessionizer
   abbr ts tmux-sessionizer
 end
