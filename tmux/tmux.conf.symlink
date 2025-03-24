@@ -34,6 +34,9 @@ set-option -w -g automatic-rename on
 # refresh the status line every second
 set -g status-interval 1
 
+# show status bar at the top
+set-option -g status-position top
+
 # Conditionally load local config
 if-shell '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'
 
@@ -134,5 +137,5 @@ run '~/.tmux/plugins/tpm/tpm'
 # https://unix.stackexchange.com/a/636496
 # set -g pane-border-style fg=brightblack,bg=black
 # set -g pane-active-border-style fg=blue,bg=black
-set-window-option -g window-active-style bg=terminal
-set-window-option -g window-style bg=black
+# set-window-option -g window-active-style bg=terminal
+# set-window-option -g window-style bg=black
