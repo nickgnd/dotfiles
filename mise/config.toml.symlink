@@ -2,7 +2,7 @@
 # https://mise.jdx.dev/configuration.html
 
 [tools]
-node = ['18.20.2']
+node = ['22.14.0']
 usage = "latest"
 python = "3.12.4"
 elixir = "1.18.2-otp-27"
