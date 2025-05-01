@@ -20,6 +20,9 @@ end
 set -x SHELL fish
 set -x EDITOR "nvim"
 
+# https://yellowduck.be/posts/edit-multiline-elixir-commands-in-your-favourite-editor-from-iex
+set -x VISION "nvim"
+
 ################### PATH
 
 # Apppend to path if they exist (orders matter)
