@@ -1,5 +1,5 @@
 #!/bin/bash
-# URL Example: nvim:///Users/nicolognudi/dotfiles/README.md?param=value
+# URL Example: nvim://file//Users/nicolognudi/dotfiles/README.md:10?tmux-session=dotfiles
 
 LOG_FILE="/tmp/script_args.log"
 
@@ -16,45 +16,91 @@ for arg in "$@"; do
     ((ARG_NUM++))
 done
 
-# Extract path from first argument
-PATH_ARG="$1"
+# Extract socket and path from arguments
+TMUX_SESSION_NAME="$1"
+FILE_PATH="$2"
 
-# Check if an argument was provided
-if [ -n "$PATH_ARG" ]; then
+# Check if both arguments were provided
+if [ -n "$TMUX_SESSION_NAME" ] && [ -n "$FILE_PATH" ]; then
+    # Build the socket path (see /bin/nvim_listen script)
+    SOCKET_PATH="/tmp/nvim-$TMUX_SESSION_NAME"
+
     # Log the exact command we're trying to execute
-    COMMAND="/opt/homebrew/bin/alacritty -e nvim \"$PATH_ARG\""
-    echo "UEEE! Attempting to execute: $COMMAND" >> "$LOG_FILE"
+    COMMAND="/opt/homebrew/bin/nvim --server \"$SOCKET_PATH\" --remote \"$FILE_PATH\""
+    echo "Attempting to execute: $COMMAND" >> "$LOG_FILE"
 
-    # Try executing with full paths and without background
-    /opt/homebrew/bin/alacritty -e /opt/homebrew/bin/nvim "$PATH_ARG"
+    # Check if the socket exists
+    if [ -e "$SOCKET_PATH" ]; then
+        # Try connecting to existing nvim instance
+        /opt/homebrew/bin/nvim --server "$SOCKET_PATH" --remote "$FILE_PATH"
 
-    # Log execution result
-    if [ $? -eq 0 ]; then
-        echo "Command executed successfully" >> "$LOG_FILE"
+        # Log execution result
+        if [ $? -eq 0 ]; then
+            echo "File opened in existing Neovim instance on socket $SOCKET_NAME" >> "$LOG_FILE"
+        else
+            echo "Failed to open file in existing Neovim instance, exit code $?" >> "$LOG_FILE"
+
+            # Fall back to opening in a new instance if remote connection fails
+            echo "Falling back to new Alacritty window" >> "$LOG_FILE"
+            /opt/homebrew/bin/alacritty -e /opt/homebrew/bin/nvim "$FILE_PATH"
+        fi
     else
-        echo "Command failed with exit code $?" >> "$LOG_FILE"
+        # Socket doesn't exist, log this and fall back to opening in a new window
+        echo "Socket $SOCKET_PATH doesn't exist, opening in new Alacritty window" >> "$LOG_FILE"
+        /opt/homebrew/bin/alacritty -e /opt/homebrew/bin/nvim "$FILE_PATH"
     fi
+elif [ -n "$FILE_PATH" ]; then
+    # Only file path provided (no socket), open in new Alacritty window
+    echo "No socket provided, opening in new Alacritty window" >> "$LOG_FILE"
+    /opt/homebrew/bin/alacritty -e /opt/homebrew/bin/nvim "$FILE_PATH"
 else
     echo "No path provided to open" >> "$LOG_FILE"
 fi
 
-## WORKING version
-# on open location schemeUrl
-# 	-- display alert schemeUrl
+# AppleScript
 #
-# 	-- URL Example: nvim:///Users/nicolognudi/dotfiles/README.md
-# 	-- Parse the URL to get both path and parameter
+# on open location schemeUrl
+# 	-- Save original delimiters
 # 	set oldDelims to AppleScript's text item delimiters
 #
-# 	-- First extract everything after nvim://
-# 	set AppleScript's text item delimiters to {"nvim://"}
-# 	set fullPath to item 2 of the text items of schemeUrl
+# 	try
+# 		-- Extract everything after nvim://
+# 		set AppleScript's text item delimiters to {"nvim://"}
+# 		if (count of text items of schemeUrl) < 2 then error "Invalid URL format"
+# 		set fullContent to item 2 of the text items of schemeUrl
+#
+# 		-- Extract the file path (everything between file:/ and ?)
+# 		set AppleScript's text item delimiters to {"file/"}
+# 		if (count of text items of fullContent) < 2 then error "Invalid URL format, missing file path"
+# 		set pathWithQuery to item 2 of the text items of fullContent
+#
+# 		-- Split path and query
+# 		set AppleScript's text item delimiters to {"?"}
+# 		set filePath to item 1 of the text items of pathWithQuery
+#
+# 		-- Extract tmux session from query if present
+# 		set tmuxSession to ""
+# 		if (count of text items of pathWithQuery) > 1 then
+# 			set queryPart to item 2 of the text items of pathWithQuery
+#
+# 			-- Look for tmux-session parameter
+# 			set AppleScript's text item delimiters to {"tmux-session="}
+# 			if (count of text items of queryPart) > 1 then
+# 				set tmuxSession to item 2 of the text items of queryPart
+#
+# 				-- Handle additional query parameters (if any)
+# 				set AppleScript's text item delimiters to {"&"}
+# 				set tmuxSession to item 1 of the text items of tmuxSession
+# 			end if
+# 		end if
+#
+# 		-- Pass tmux session name and file path to the bash script
+# 		do shell script "/bin/bash " & quoted form of "/Users/nicolognudi/dotfiles/neovim_url_handler/nvim_url_handler.sh" & " " & quoted form of tmuxSession & " " & quoted form of filePath
+#
+# 	on error errMsg
+# 		display alert "Error processing URL: " & errMsg
+# 	end try
 #
 # 	-- Restore original delimiters
 # 	set AppleScript's text item delimiters to oldDelims
-#
-# 	-- Pass both path and parameter to the bash script
-# 	do shell script "/bin/bash " & quoted form of "/Users/nicolognudi/dotfiles/neovim_url_handler/nvim_url_handler.sh" & " " & quoted form of fullPath
-#
-# 	-- display alert "Path: " & fullPath
-# end open location
+# end open location## WORKING version
