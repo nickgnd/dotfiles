@@ -51,7 +51,60 @@ if [ -f "$HOME/.cargo/env.fish" ]
   source "$HOME/.cargo/env.fish"
 end
 
+################### Custom functions
+
+# tmux create or attach session
+function tat -d "Start a named tmux session in the current folder"
+  set -l name (basename (pwd) | sed -e 's/\.//g')
+
+  if tmux ls 2>&1 | grep "$name"
+    tmux attach -t "$name"
+  else
+    tmux new-session -s "$name"
+  end
+end
+
+# print NPM_TOKEN from `~/.npmrc`
+function npm_token -d "Print npm token"
+  if test -f "$HOME/.npmrc"
+    cat $HOME/.npmrc | grep -o '_authToken=.*' | sed 's/_authToken=//g'
+  else
+    echo "$HOME/.npmrc file does not exist."
+  end
+end
+
+function update -d "Update brew, fish, fisher"
+    echo 'Start updating ...'
+
+    echo 'Updating homebrew'
+    brew update
+    brew upgrade
+    brew cleanup
+
+    echo 'Updating fish shell'
+    fisher
+    fish_update_completions
+
+    exit 0
+end
+
+# start nvim listning to a socket if in tmux session
+function nvim_with_socket
+    if test -n "$TMUX"
+        echo "Using tmux session-aware Neovim"
+        bash -c "nvim_listen $argv"
+    else
+        command nvim $argv
+    end
+end
+
+
+################# Abbreviations and Aliases
+
 # Fish abbreviations
+
+# Create abbreviation
+abbr -a n nvim_with_socket
 
 # Use `bat` instead of `cat`
 if type -q bat
@@ -90,6 +143,8 @@ end
 if type -q tmux
   # Get current tmux pane id
   abbr tcp "tmux display-message -p '#{pane_id}'"
+
+
 end
 
 if type -q tmux-sessionizer
@@ -151,46 +206,6 @@ alias gpo="gh pr checkout"
 if type -q fzf_configure_bindings
   # Trigger git log search with `CTRL + ALT + l` to don't clash with tmux/nvim panes navigation
   fzf_configure_bindings --directory=\cf --git_log=\e\cl --git_status=\cs --history= --variables=\cv --processes=
-end
-
-# Custom functions
-
-# tmux create or attach session
-# https://juliu.is/a-simple-tmux/
-function tat -d "Start a named tmux session in the current folder"
-  set -l name (basename (pwd) | sed -e 's/\.//g')
-
-  if tmux ls 2>&1 | grep "$name"
-    tmux attach -t "$name"
-  else if [ -f .envrc ]
-    direnv exec / tmux new-session -s "$name"
-  else
-    tmux new-session -s "$name"
-  end
-end
-
-# print NPM_TOKEN from `~/.npmrc`
-function npm_token -d "Print npm token"
-  if test -f "$HOME/.npmrc"
-    cat $HOME/.npmrc | grep -o '_authToken=.*' | sed 's/_authToken=//g'
-  else
-    echo "$HOME/.npmrc file does not exist."
-  end
-end
-
-function update -d "Update brew, fish, fisher"
-    echo 'Start updating ...'
-
-    echo 'Updating homebrew'
-    brew update
-    brew upgrade
-    brew cleanup
-
-    echo 'Updating fish shell'
-    fisher
-    fish_update_completions
-
-    exit 0
 end
 
 # Erlang and Elixir

@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Function to start Neovim with session-specific socket
+nvim_listen() {
+  # Get current tmux session name
+  SESSION_NAME=$(tmux display-message -p '#S')
+
+  # Set socket path based on session name
+  SOCKET_PATH="/tmp/nvim-$SESSION_NAME"
+
+  # Set environment variable in current tmux session
+  # Don't use `NVIM_LISTEN_ADDRESS`, it has been deprecated and
+  # it might create weird behaviour (unable to open 2 nvim instances in the same tmux
+  # session)
+  tmux setenv -t "$SESSION_NAME" NVIM_SOCKET_PATH "$SOCKET_PATH"}
+
+  # TODO: it needs to set the the `PLUG_EDITOR` variable too in the tmux session, that specifies the socket and the file/line
+
+  echo "Nvim will listen on socket: $SOCKET_PATH"
+
+  # Start Neovim with the socket
+  command nvim --listen "$SOCKET_PATH" "$@"
+}
+
+# If script is sourced, define the function
+# otherwise, if script is executed directly, run the function
+if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
+  export -f nvim_listen
+else
+  nvim_listen "$@"
+fi
+
