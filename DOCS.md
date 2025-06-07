@@ -55,6 +55,23 @@ If it is not turned on, enable:
 
     sudo fdesetup enable
 
+### Neovim URL handler
+
+Custom URL handler for Neovim that allows you to open files in Neovim directly from URLs, such as `nvim://file//path/to/file:line?tmux-session=session_name`.
+
+#### How it works
+
+It is really specific to my workflow: tmux, neovim started in Alacritty and listening to a socket named as the tmux session in the `/tmp` folder.
+
+- It first tries to see if there is an existing tmux session with that name
+- If so, it checks if there is any nvim socket open at `/tmp/nvim-<tmux_session_name>`
+- Eventually, it opens the file at the specified line in the existing nvim instance
+- If any of the previous condition is not matched, it tries to open the file in a new Alacritty session.
+
+#### How to install
+
+Copy the `NvimURLHandler.app` in `~/Applications` and run it once to register the URL handler. It shuold out of the box 🤞, you can try it by opening a link like: "nvim://file//Users/nicolognudi/dotfiles/README.md:10?tmux-session=dotfiles". If it does not work enable the logging in the bash script.
+
 ## Troubleshooting Guide
 
 ### XCode Command Line Tools
