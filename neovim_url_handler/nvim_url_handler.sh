@@ -1,5 +1,8 @@
 #!/bin/bash
 # URL Example: nvim://file//Users/nicolognudi/dotfiles/README.md:10?tmux-session=dotfiles
+#
+# Relevant sources:
+# - https://github.com/chrisliuqq/mac-custom-url-scheme-to-script
 
 DEBUG=false
 LOG_FILE="/tmp/script_args.log"
@@ -64,7 +67,9 @@ else
     log "No path provided to open"
 fi
 
-# AppleScript
+# AppleScript to register the URL schema
+# (create a new script with the Script Editor application)
+#
 #
 # on open location schemeUrl
 # 	-- Save original delimiters
@@ -110,4 +115,4 @@ fi
 #
 # 	-- Restore original delimiters
 # 	set AppleScript's text item delimiters to oldDelims
-# end open location## WORKING version
+# end open location
