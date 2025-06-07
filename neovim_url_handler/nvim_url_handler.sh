@@ -1,18 +1,25 @@
 #!/bin/bash
 # URL Example: nvim://file//Users/nicolognudi/dotfiles/README.md:10?tmux-session=dotfiles
 
+DEBUG=false
 LOG_FILE="/tmp/script_args.log"
 
 # Get the current date and time
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
+log() {
+    if [ "$DEBUG" = true ]; then
+        echo "$1" >> "$LOG_FILE"
+    fi
+}
+
 # Write a header with timestamp
-echo "[$TIMESTAMP] Script executed with arguments:" >> "$LOG_FILE"
+log "[$TIMESTAMP] Script executed with arguments:"
 
 # Loop through all arguments and write them to the log file
 ARG_NUM=1
 for arg in "$@"; do
-    echo "  Arg $ARG_NUM: $arg" >> "$LOG_FILE"
+    log "  Arg $ARG_NUM: $arg"
     ((ARG_NUM++))
 done
 
@@ -27,7 +34,7 @@ if [ -n "$TMUX_SESSION_NAME" ] && [ -n "$FILE_PATH" ]; then
 
     # Log the exact command we're trying to execute
     COMMAND="/opt/homebrew/bin/nvim --server \"$SOCKET_PATH\" --remote \"$FILE_PATH\""
-    echo "Attempting to execute: $COMMAND" >> "$LOG_FILE"
+    log "Attempting to execute: $COMMAND"
 
     # Check if the socket exists
     if [ -e "$SOCKET_PATH" ]; then
@@ -36,25 +43,25 @@ if [ -n "$TMUX_SESSION_NAME" ] && [ -n "$FILE_PATH" ]; then
 
         # Log execution result
         if [ $? -eq 0 ]; then
-            echo "File opened in existing Neovim instance on socket $SOCKET_NAME" >> "$LOG_FILE"
+            log "File opened in existing Neovim instance on socket $SOCKET_NAME"
         else
-            echo "Failed to open file in existing Neovim instance, exit code $?" >> "$LOG_FILE"
+            log "Failed to open file in existing Neovim instance, exit code $?"
 
             # Fall back to opening in a new instance if remote connection fails
-            echo "Falling back to new Alacritty window" >> "$LOG_FILE"
+            log "Falling back to new Alacritty window"
             /opt/homebrew/bin/alacritty -e /opt/homebrew/bin/nvim "$FILE_PATH"
         fi
     else
         # Socket doesn't exist, log this and fall back to opening in a new window
-        echo "Socket $SOCKET_PATH doesn't exist, opening in new Alacritty window" >> "$LOG_FILE"
+        log "Socket $SOCKET_PATH doesn't exist, opening in new Alacritty window"
         /opt/homebrew/bin/alacritty -e /opt/homebrew/bin/nvim "$FILE_PATH"
     fi
 elif [ -n "$FILE_PATH" ]; then
     # Only file path provided (no socket), open in new Alacritty window
-    echo "No socket provided, opening in new Alacritty window" >> "$LOG_FILE"
+    log "No socket provided, opening in new Alacritty window"
     /opt/homebrew/bin/alacritty -e /opt/homebrew/bin/nvim "$FILE_PATH"
 else
-    echo "No path provided to open" >> "$LOG_FILE"
+    log "No path provided to open"
 fi
 
 # AppleScript

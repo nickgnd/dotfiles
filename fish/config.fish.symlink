@@ -103,9 +103,6 @@ end
 
 # Fish abbreviations
 
-# Create abbreviation
-abbr -a n nvim_with_socket
-
 # Use `bat` instead of `cat`
 if type -q bat
     abbr cat bat
@@ -167,6 +164,7 @@ alias be="bundle exec"
 alias md='mkdir -p'
 alias reload!='source ~/.config/fish/config.fish'
 alias t="tree -L 1"
+alias nn="nvim_with_socket ."
 
 # git aliases (inspired by oh-my-zsh https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh)
 # TODO: clean-up unused commands

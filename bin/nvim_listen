@@ -7,16 +7,16 @@ set -o pipefail
 # Function to start Neovim with session-specific socket
 nvim_listen() {
   # Get current tmux session name
-  SESSION_NAME=$(tmux display-message -p '#S')
+  TMUX_SESSION_NAME=$(tmux display-message -p '#S')
 
   # Set socket path based on session name
-  SOCKET_PATH="/tmp/nvim-$SESSION_NAME"
+  SOCKET_PATH="/tmp/nvim-$TMUX_SESSION_NAME"
 
   # Set environment variable in current tmux session
   # Don't use `NVIM_LISTEN_ADDRESS`, it has been deprecated and
   # it might create weird behaviour (unable to open 2 nvim instances in the same tmux
   # session)
-  tmux setenv -t "$SESSION_NAME" NVIM_SOCKET_PATH "$SOCKET_PATH"}
+  tmux setenv -t "$TMUX_SESSION_NAME" TMUX_SESSION_NAME "$TMUX_SESSION_NAME"
 
   # TODO: it needs to set the the `PLUG_EDITOR` variable too in the tmux session, that specifies the socket and the file/line
 
