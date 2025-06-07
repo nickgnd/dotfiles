@@ -41,7 +41,7 @@ set-option -g status-position top
 if-shell '[ -f ~/.tmux.conf.local ]' 'source ~/.tmux.conf.local'
 
 # Reload the config!
-bind r source-file ~/.tmux.conf \; display "Config reloaded!"
+bind R source-file ~/.tmux.conf \; display "Config reloaded!"
 
 # use vim motion in copy mode
 setw -g mode-keys vi
