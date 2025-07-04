@@ -18,8 +18,6 @@ nvim_listen() {
   # session)
   tmux setenv -t "$TMUX_SESSION_NAME" TMUX_SESSION_NAME "$TMUX_SESSION_NAME"
 
-  # TODO: it needs to set the the `PLUG_EDITOR` variable too in the tmux session, that specifies the socket and the file/line
-
   echo "Nvim will listen on socket: $SOCKET_PATH"
 
   # Start Neovim with the socket
