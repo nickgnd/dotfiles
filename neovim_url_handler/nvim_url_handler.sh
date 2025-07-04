@@ -46,7 +46,7 @@ if [ -n "$TMUX_SESSION_NAME" ] && [ -n "$FILE_PATH" ]; then
 
         # Log execution result
         if [ $? -eq 0 ]; then
-            log "File opened in existing Neovim instance on socket $SOCKET_NAME"
+            log "File opened in existing Neovim instance on socket $SOCKET_PATH"
         else
             log "Failed to open file in existing Neovim instance, exit code $?"
 
