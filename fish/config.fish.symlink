@@ -30,6 +30,7 @@ fish_add_path -aP /bin
 fish_add_path -aP /usr/bin
 fish_add_path -aP /usr/local/bin
 fish_add_path -aP /usr/local/sbin
+fish_add_path -aP /Users/nicolognudi/.local/bin
 fish_add_path -aP "$HOME/dotfiles/bin"                 # add executables from dotfiles
 fish_add_path -aP "/usr/local/opt/openssl/bin"         # add openssl
 fish_add_path -aP "/opt/homebrew/opt/libpq/bin"        # add libpq for `psql` command
