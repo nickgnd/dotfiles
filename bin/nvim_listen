@@ -12,12 +12,6 @@ nvim_listen() {
   # Set socket path based on session name
   SOCKET_PATH="/tmp/nvim-$TMUX_SESSION_NAME"
 
-  # Set environment variable in current tmux session
-  # Don't use `NVIM_LISTEN_ADDRESS`, it has been deprecated and
-  # it might create weird behaviour (unable to open 2 nvim instances in the same tmux
-  # session)
-  tmux setenv -t "$TMUX_SESSION_NAME" TMUX_SESSION_NAME "$TMUX_SESSION_NAME"
-
   echo "Nvim will listen on socket: $SOCKET_PATH"
 
   # Start Neovim with the socket
