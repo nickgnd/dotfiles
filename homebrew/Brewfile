@@ -73,7 +73,7 @@ brew 'duf'                        # du (disk usage) alternative
 brew 'dvc'                        # Tool for data science https://dvc.org/doc
 brew 'fish'                       # Fish shell (alternative to zsh) https://github.com/fish-shell/fish-shell
 brew 'fisher'                     # A plugin manager for fisher https://github.com/jorgebucaran/fisher
-brew 'fd'                         # faster alternative fo `find`
+brew 'fd'                         # faster alternative to `find`
 brew 'fzf'                        # command line fuzzy finder
 brew 'git'
 brew 'git-lfs'                    # Git extension for versioning large files
@@ -84,6 +84,7 @@ brew 'flyctl'                     # fly.io CLI
 brew 'hadolint'                   # lint dockerfiles
 brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
+brew 'just'                       # Handy way to save and run project-specific commands
 brew 'libomp'                     # LLVM's OpenMP runtime library
 brew 'libpq'                      # psql - Interface to PostgreSQL
 brew 'kubectl'                    # Kubernetes CLI
