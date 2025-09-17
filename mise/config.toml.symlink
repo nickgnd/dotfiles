@@ -8,6 +8,7 @@ python = "3.12.4"
 elixir = "1.18.2-otp-27"
 erlang = "27.2"
 ruby = "latest"
+zig = "0.14.1"
 
 [settings]
 # for example, .nvmrc in the case of node's nvm
