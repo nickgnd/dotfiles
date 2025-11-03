@@ -17,7 +17,6 @@ if status is-interactive
 end
 
 # Shell variables
-set -x SHELL fish
 set -x EDITOR "nvim"
 
 # https://yellowduck.be/posts/edit-multiline-elixir-commands-in-your-favourite-editor-from-iex
