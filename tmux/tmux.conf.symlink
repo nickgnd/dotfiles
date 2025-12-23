@@ -64,7 +64,7 @@ bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-selection
 # create new windows in the same directory
 bind-key c new-window -c '#{pane_current_path}'
 
-# split window with current directoy
+# split window with current directory
 bind-key \\ split-window -h -c '#{pane_current_path}'
 bind-key - split-window -v -c '#{pane_current_path}'
 bind-key | split-window -fh -c '#{pane_current_path}'
@@ -85,6 +85,20 @@ bind-key -r H resize-pane -L 3
 bind-key -r J resize-pane -D 3
 bind-key -r K resize-pane -U 3
 bind-key -r L resize-pane -R 3
+
+# Hidden Pane Swap
+# ----------------
+# Swap active pane with a hidden window for quick context switching,
+# useful with small screens.
+# Pressing Tab again swaps them back (fully reversible toggle).
+#
+# Setup (one-time):
+#   1. Create a pane you want to hide (e.g., split with prefix + \)
+#   2. Break it to a hidden window: tmux break-pane -d -n _hidden
+#
+# Usage:
+#   prefix + Tab  - Toggle active pane with hidden one
+bind-key Tab swap-pane -d -s :_hidden.0
 
 ###
 # Plugins
