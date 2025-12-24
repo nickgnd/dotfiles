@@ -97,7 +97,9 @@ bind-key -r L resize-pane -R 3
 #   2. Break it to a hidden window: tmux break-pane -d -n _hidden
 #
 # Usage:
+#   prefix + B    - Break current pane to hidden window
 #   prefix + Tab  - Toggle active pane with hidden one
+bind-key B break-pane -d -n _hidden
 bind-key Tab swap-pane -d -s :_hidden.0
 
 ###
