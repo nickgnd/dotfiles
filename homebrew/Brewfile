@@ -16,6 +16,7 @@ cask 'chromedriver'
 cask 'docker'
 cask 'google-chrome'
 cask 'insomnia'           # postman alternative
+cask 'mole'               # Deep clean and optimize your Mac
 cask 'pgadmin4'           # Postgres interface
 cask 'visual-studio-code'
 cask 'wireshark'          # inspect network traffic
@@ -97,6 +98,7 @@ brew 'rustup-init'                # Rustup
 brew 'shellcheck'                 # Linter for shell scripts
 brew 'starship'                   # Cross-shell customizable prompt (https://starship.rs/)
 brew 'telnet'
+brew 'tree-sitter-cli'            # tree-sitter CLI for syntax highlighting in Neovim
 brew 'tmux'
 brew 'watchman'                   # for filewatchers
 brew 'yarn'                       # run with --ignore-engines if incompatible with node version
