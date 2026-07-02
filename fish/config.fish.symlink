@@ -231,3 +231,7 @@ end
 if status is-interactive
   # Commands to run in interactive sessions can go here
 end
+
+# Init try.rb to generate folders on the fly
+# https://github.com/nickgnd/try
+~/dotfiles/bin/try.rb init ~/code/personal/tries | source
