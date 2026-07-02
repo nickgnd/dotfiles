@@ -86,21 +86,18 @@ bind-key -r J resize-pane -D 3
 bind-key -r K resize-pane -U 3
 bind-key -r L resize-pane -R 3
 
-# Hidden Pane Swap
-# ----------------
-# Swap active pane with a hidden window for quick context switching,
-# useful with small screens.
-# Pressing Tab again swaps them back (fully reversible toggle).
-#
-# Setup (one-time):
-#   1. Create a pane you want to hide (e.g., split with prefix + \)
-#   2. Break it to a hidden window: tmux break-pane -d -n _hidden
+# Hidden Pane Swap (per window)
+# -----------------------------
+# Keep one hidden pane per window for quick context switching.
+# Works as a reversible toggle:
+#   - first Tab: hides current pane for this window
+#   - next Tab: swaps it back
 #
 # Usage:
-#   prefix + B    - Break current pane to hidden window
-#   prefix + Tab  - Toggle active pane with hidden one
-bind-key B break-pane -d -n _hidden
-bind-key Tab swap-pane -d -s :_hidden.0
+#   prefix + B    - reset hidden pane for current window from current pane
+#   prefix + Tab  - toggle active pane with current window's hidden pane
+bind-key B run-shell -b 'wid="$(tmux display-message -p "#{window_id}")"; name="_hidden_${wid#@}"; tmux kill-window -t ":$name" 2>/dev/null; tmux break-pane -d -n "$name"'
+bind-key Tab run-shell -b 'wid="$(tmux display-message -p "#{window_id}")"; name="_hidden_${wid#@}"; if tmux list-panes -t ":$name" >/dev/null 2>&1; then tmux swap-pane -d -s ":$name.0"; else tmux break-pane -d -n "$name"; fi'
 
 ###
 # Plugins
