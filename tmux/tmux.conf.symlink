@@ -155,7 +155,7 @@ set -ag status-right "#{E:@catppuccin_status_uptime}"
 ### Install plugins
 
 set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'Morantron/tmux-fingers'
+set -g @plugin 'Morantron/tmux-fingers' # Install it using brew
 # Seamless navigation between nvim and tmux panes (requires analogous vim plugin)
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'catppuccin/tmux'
