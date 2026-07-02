@@ -96,8 +96,25 @@ bind-key -r L resize-pane -R 3
 # Usage:
 #   prefix + B    - reset hidden pane for current window from current pane
 #   prefix + Tab  - toggle active pane with current window's hidden pane
-bind-key B run-shell -b 'wid="$(tmux display-message -p "#{window_id}")"; name="_hidden_${wid#@}"; tmux kill-window -t ":$name" 2>/dev/null; tmux break-pane -d -n "$name"'
-bind-key Tab run-shell -b 'wid="$(tmux display-message -p "#{window_id}")"; name="_hidden_${wid#@}"; if tmux list-panes -t ":$name" >/dev/null 2>&1; then tmux swap-pane -d -s ":$name.0"; else tmux break-pane -d -n "$name"; fi'
+#
+# NOTE: the hidden window MUST have automatic-rename turned off, otherwise
+# it is instantly renamed to its running process and the ":$name" lookup
+# below fails (Tab then breaks another pane instead of swapping back). So
+# after breaking we find the new window via the broken pane's stable id
+# (#{pane_id} survives break-pane), disable automatic-rename, then pin the
+# name.
+#
+# QUOTING: run-shell expands #{...} formats in its argument BEFORE the
+# shell runs, using the key's pane as target. So use #{pane_id}/#{window_id}
+# directly (do NOT wrap them in $(tmux display-message ...) — that double-
+# expands and #{pane_id}'s leading % gets eaten, corrupting the target).
+# The post-break lookup must be evaluated at RUNTIME against the moved
+# pane, so escape it as ##{window_id} (run-shell turns ##{ into #{).
+#
+# tmux 3.7 gotchas: do NOT use `break-pane -P`, and always pass `-n` — a
+# nameless `break-pane -d` crashes the whole server (fixed in 3.7a).
+bind-key B run-shell -b 'pane="#{pane_id}"; wid="#{window_id}"; name="_hidden_${wid#@}"; tmux kill-window -t ":$name" 2>/dev/null; tmux break-pane -d -s "$pane" -n "$name" && new="$(tmux display-message -p -t "$pane" "##{window_id}")" && tmux set-window-option -t "$new" automatic-rename off && tmux rename-window -t "$new" "$name"'
+bind-key Tab run-shell -b 'pane="#{pane_id}"; wid="#{window_id}"; name="_hidden_${wid#@}"; if tmux list-panes -t ":$name" >/dev/null 2>&1; then tmux swap-pane -d -s ":$name.0" -t "$pane"; else tmux break-pane -d -s "$pane" -n "$name" && new="$(tmux display-message -p -t "$pane" "##{window_id}")" && tmux set-window-option -t "$new" automatic-rename off && tmux rename-window -t "$new" "$name"; fi'
 
 ###
 # Plugins
@@ -161,3 +178,15 @@ run '~/.tmux/plugins/tpm/tpm'
 # set -g pane-active-border-style fg=blue,bg=black
 # set-window-option -g window-active-style bg=terminal
 # set-window-option -g window-style bg=black
+
+#-------------------------------------------------------#
+# Command prompt / message line
+#-------------------------------------------------------#
+# tmux 3.5+ draws the message and command prompt ON TOP of the status
+# line instead of replacing it. The catppuccin theme sets the message
+# background to `default` (transparent), so the top status bar bleeds
+# through and the prompt appears to overlap the tab bar. Override with
+# an opaque, full-width bar so the prompt gets its own clean line.
+# Kept at the end of the file so it wins over the theme on reload.
+set -g message-style "fg=#cdd6f4,bg=#313244,align=left"
+set -g message-command-style "fg=#cdd6f4,bg=#313244,align=left"
