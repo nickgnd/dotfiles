@@ -49,3 +49,19 @@ command = "/Users/nicolognudi/dotfiles/bin/herdr-nav up"
 key = "ctrl+l"
 type = "shell"
 command = "/Users/nicolognudi/dotfiles/bin/herdr-nav right"
+
+# Hidden Pane Swap — a per-tab parked pane with a reversible toggle. Ported from
+# the tmux.conf feature (was prefix+B / prefix+Tab). Delegates to
+# bin/herdr-hidden-pane, which parks the pane in a hidden tab labelled
+# `_hidden_<tab_id>`. prefix+shift+b re-parks the current pane (was tmux
+# prefix+B); prefix+space toggles it in/out (tmux used prefix+Tab, but herdr
+# keeps prefix+tab for cycle_pane_next, so the toggle moves to prefix+space).
+[[keys.command]]
+key = "prefix+shift+b"
+type = "shell"
+command = "/Users/nicolognudi/dotfiles/bin/herdr-hidden-pane reset"
+
+[[keys.command]]
+key = "prefix+space"
+type = "shell"
+command = "/Users/nicolognudi/dotfiles/bin/herdr-hidden-pane toggle"

@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+# herdr-hidden-pane <reset|toggle>
+# Port of the tmux "Hidden Pane Swap" (was `prefix+B` / `prefix+Tab` in
+# tmux.conf) — a per-tab parked pane with a reversible toggle.
+#
+# Bound from ~/.config/herdr/config.toml via [[keys.command]]:
+#   prefix+shift+b -> reset   (was tmux `prefix+B`)
+#   prefix+space   -> toggle  (was tmux `prefix+Tab`; herdr keeps prefix+tab)
+#
+# herdr has no native scratch/stash pane, so we park the pane in a dedicated
+# hidden *tab* labelled `_hidden_<tab_id>` (tmux window ≈ herdr tab). Default
+# tab labels are just "1", "2", … so this label never collides.
+#
+#   reset  — discard whatever is parked for this tab, then park the current pane.
+#   toggle — swap the current pane with the parked one (reversible: the current
+#            pane becomes the newly-parked one); if nothing is parked, park it.
+#
+# Pairs with bin/herdr-nav. Reference: herdr 0.7.1 pane/tab socket API.
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# [[keys.command]] may run with a minimal PATH; make sure herdr + jq resolve.
+export PATH="/opt/homebrew/bin:$HOME/dotfiles/bin:$PATH"
+
+action=${1:?usage: herdr-hidden-pane <reset|toggle>}
+
+info=$(herdr pane current --current)
+pane_id=$(jq -r '.result.pane.pane_id' <<<"$info")
+tab_id=$(jq -r '.result.pane.tab_id' <<<"$info")
+ws_id=$(jq -r '.result.pane.workspace_id' <<<"$info")
+
+label="_hidden_${tab_id}"
+
+# The hidden tab (if any) is the one carrying our per-tab label.
+hidden_tab=$(herdr tab list --workspace "$ws_id" 2>/dev/null \
+  | jq -r --arg l "$label" \
+      '.result.tabs[]? | select(.label == $l) | .tab_id' \
+  | head -n1) || true
+
+# Park the current pane into a fresh hidden tab, keeping focus where it is.
+park() {
+  herdr pane move "$pane_id" --new-tab --workspace "$ws_id" \
+    --label "$label" --no-focus >/dev/null
+}
+
+case "$action" in
+  reset)
+    # Throw away whatever was parked for this tab, then park the current pane.
+    [[ -n ${hidden_tab:-} ]] && herdr tab close "$hidden_tab" >/dev/null
+    park
+    ;;
+  toggle)
+    if [[ -n ${hidden_tab:-} ]]; then
+      hidden_pane=$(herdr pane list --workspace "$ws_id" \
+        | jq -r --arg t "$hidden_tab" \
+            '.result.panes[]? | select(.tab_id == $t) | .pane_id' \
+        | head -n1)
+      # `herdr pane swap` is spatial (within-tab only — it refuses cross-tab
+      # with reason "cross_tab"), so emulate the reversible swap with two moves:
+      # bring the parked pane into the current tab beside us, then park the
+      # current pane. The now-empty old hidden tab is auto-closed by herdr.
+      #
+      # The two moves aren't atomic, so a transient split is briefly visible.
+      # `--ratio 0.05` (clamped by herdr to ~10% min) gives the OUTGOING pane
+      # only a thin sliver, so the incoming pane arrives near-full and the flash
+      # reads as it expanding in rather than a 50/50 split popping open.
+      herdr pane move "$hidden_pane" --tab "$tab_id" --split right \
+        --target-pane "$pane_id" --ratio 0.05 --focus >/dev/null
+      park
+    else
+      park
+    fi
+    ;;
+  *)
+    echo "herdr-hidden-pane: bad action '$action' (want reset|toggle)" >&2
+    exit 1
+    ;;
+esac
