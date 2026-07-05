@@ -15,17 +15,14 @@ cask 'chatgpt'            # OpenAI's official ChatGPT desktop app
 cask 'chromedriver'
 cask 'docker'
 cask 'google-chrome'
-cask 'insomnia'           # postman alternative
 cask 'mole'               # Deep clean and optimize your Mac
 cask 'pgadmin4'           # Postgres interface
 cask 'visual-studio-code'
 cask 'wireshark'          # inspect network traffic
-cask 'zed'                # Trying out zed, alternative editor https://zed.dev
 
 # other apps
 cask '1password'
 cask 'betterdisplay'      # great app to control and adjust external monitors https://github.com/waydabber/BetterDisplay
-cask 'imageoptim'         # remove exif-data from images
 cask 'keepingyouawake'
 cask 'linear-linear'      # Linear - App to manage software development and track bugs
 cask 'logi-options-plus'
@@ -56,7 +53,6 @@ brew 'openssl'
 brew 'p7zip'               # Required for Elixir Burrito projects (https://github.com/burrito-elixir/burrito)
 brew 'readline'
 brew 'rsync'
-brew 'slides'              # Slides in your terminal from markdown files (https://maaslalani.com/slides/)
 brew 'tree'
 brew 'watch'               # execute command periodically
 brew 'wget'
@@ -71,19 +67,15 @@ brew 'awscli'                     # AWS cli
 brew 'bat'                        # cat alternative with syntax highlighting
 brew 'cmake'
 brew 'duf'                        # du (disk usage) alternative
-brew 'dvc'                        # Tool for data science https://dvc.org/doc
 brew 'fish'                       # Fish shell (alternative to zsh) https://github.com/fish-shell/fish-shell
 brew 'fisher'                     # A plugin manager for fisher https://github.com/jorgebucaran/fisher
 brew 'fd'                         # faster alternative to `find`
 brew 'fzf'                        # command line fuzzy finder
 brew 'git'
 brew 'git-lfs'                    # Git extension for versioning large files
-brew 'git-quick-stats'            # git repo stats
 brew 'gh'                         # Github CLI
 brew 'graphviz'                   # Graph visualization tool
 brew 'flyctl'                     # fly.io CLI
-brew 'hadolint'                   # lint dockerfiles
-brew 'highlight'                  # utility for converting code to rtf
 brew 'jq'                         # format JSON
 brew 'just'                       # Handy way to save and run project-specific commands
 brew 'libomp'                     # LLVM's OpenMP runtime library
@@ -92,7 +84,6 @@ brew 'kubectl'                    # Kubernetes CLI
 brew 'k9s'                        # Kubernetes CLI UI
 brew 'mise'                       # Package manager, alternative to asdf (no need to activate it when installed via Brew - https://mise.jdx.dev/getting-started.html#shells)
 brew 'neovim'                     # Popular vim alternative
-brew 'overmind'                   # Process manager (Procfile based)
 brew 'ripgrep'                    # search tool
 brew 'rustup-init'                # Rustup
 brew 'shellcheck'                 # Linter for shell scripts
@@ -100,6 +91,4 @@ brew 'starship'                   # Cross-shell customizable prompt (https://sta
 brew 'telnet'
 brew 'tree-sitter-cli'            # tree-sitter CLI for syntax highlighting in Neovim
 brew 'tmux'
-brew 'watchman'                   # for filewatchers
-brew 'yarn'                       # run with --ignore-engines if incompatible with node version
 brew 'zsh'                        # Z shell (alternative to Bash)
