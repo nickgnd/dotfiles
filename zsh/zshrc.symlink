@@ -90,6 +90,14 @@ function tat {
   fi
 }
 
+# hat: herdr attach — the herdr counterpart to tat. Delegates to
+# bin/herdr-sessionizer, whose single-arg path skips the fzf picker and just
+# create-or-focuses the workspace for $PWD (starting the server and attaching
+# the client if needed).
+function hat {
+  herdr-sessionizer "$(pwd)"
+}
+
 custom_prompt_pure_clear_screen() {
   zle -I                   # Enable output to terminal.
   print -n '\e[2J\e[4;0H'  # Clear screen and move cursor to (4, 0).

@@ -91,4 +91,5 @@ brew 'starship'                   # Cross-shell customizable prompt (https://sta
 brew 'telnet'
 brew 'tree-sitter-cli'            # tree-sitter CLI for syntax highlighting in Neovim
 brew 'tmux'
+brew 'herdr'                      # terminal multiplexer built for AI coding agents (tmux alternative)
 brew 'zsh'                        # Z shell (alternative to Bash)

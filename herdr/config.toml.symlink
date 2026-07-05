@@ -1,0 +1,51 @@
+onboarding = false
+# herdr configuration — https://herdr.dev/docs/configuration/
+# Symlinked from dotfiles to ~/.config/herdr/config.toml
+# See every available option with: `herdr --default-config`
+#
+# Ported from tmux.conf. What already matches herdr's defaults (so it is
+# NOT repeated here): prefix+h/j/k/l pane navigation, prefix+c new tab,
+# prefix+q detach, mouse support, and a large scrollback buffer.
+
+[theme]
+# Same look as the tmux setup (catppuccin mocha), now a built-in theme
+# instead of the catppuccin/tmux plugin.
+name = "catppuccin"
+
+[keys]
+# Match the tmux prefix (was `set -g prefix C-a` in tmux.conf).
+prefix = "ctrl+a"
+
+[session]
+# Restore AI-agent panes (Claude Code, etc.) into their native conversation
+# sessions after a server restart. Requires the matching integration:
+#   herdr integration install claude
+resume_agents_on_restore = true
+
+[ui]
+agent_panel_sort = "spaces"
+
+# Vim-aware ctrl+hjkl navigation between nvim splits and herdr panes — the
+# herdr equivalent of vim-tmux-navigator. Delegates to bin/herdr-nav, which
+# forwards the key into (n)vim when it's focused, else moves herdr pane focus.
+# Pairs with neovim/.../nvim-tmux-navigator.lua. See herdr issue #281.
+# NOTE: ctrl+h shares a byte with Backspace at the terminal level.
+[[keys.command]]
+key = "ctrl+h"
+type = "shell"
+command = "/Users/nicolognudi/dotfiles/bin/herdr-nav left"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "shell"
+command = "/Users/nicolognudi/dotfiles/bin/herdr-nav down"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "shell"
+command = "/Users/nicolognudi/dotfiles/bin/herdr-nav up"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "shell"
+command = "/Users/nicolognudi/dotfiles/bin/herdr-nav right"

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# herdr-nav <left|right|up|down>
+# Vim-aware herdr pane navigation — the herdr equivalent of vim-tmux-navigator.
+#
+# Bound to ctrl+<hjkl> from ~/.config/herdr/config.toml via [[keys.command]].
+# If the focused pane is running (n)vim, forward ctrl+<hjkl> INTO it so nvim's
+# own mapping moves the split (handing focus back to herdr at edge splits via
+# `herdr pane focus`). Otherwise move herdr's pane focus directly.
+#
+# Pairs with the herdr branch of
+# neovim/nvim.symlink/lua/custom/plugins/nvim-tmux-navigator.lua.
+# Reference: https://github.com/ogulcancelik/herdr/issues/281
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# [[keys.command]] may run with a minimal PATH; make sure herdr + jq resolve.
+export PATH="/opt/homebrew/bin:$HOME/dotfiles/bin:$PATH"
+
+dir=${1:?usage: herdr-nav <left|right|up|down>}
+case "$dir" in
+  left)  key=ctrl+h ;;
+  down)  key=ctrl+j ;;
+  up)    key=ctrl+k ;;
+  right) key=ctrl+l ;;
+  *) echo "herdr-nav: bad direction '$dir'" >&2; exit 1 ;;
+esac
+
+info=$(herdr pane process-info --current)
+pane_id=$(jq -r '.result.process_info.pane_id' <<<"$info")
+
+# Is (n)vim the foreground process of the focused pane?
+if jq -r '.result.process_info.foreground_processes[]? | .argv0, .name' <<<"$info" \
+     | grep -qiwE 'n?vim'; then
+  herdr pane send-keys "$pane_id" "$key"      # let nvim's mapping move the split
+else
+  herdr pane focus --direction "$dir" --current  # move herdr pane focus
+fi

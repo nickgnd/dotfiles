@@ -64,6 +64,14 @@ function tat -d "Start a named tmux session in the current folder"
   end
 end
 
+# herdr create-or-focus the workspace for the current folder — the herdr
+# counterpart to `tat`. Delegates to bin/herdr-sessionizer, whose single-arg
+# path skips the fzf picker and just create-or-focuses the workspace for $PWD
+# (starting the server and attaching the client if needed).
+function hat -d "Create or focus the herdr workspace for the current folder"
+  herdr-sessionizer (pwd)
+end
+
 # print NPM_TOKEN from `~/.npmrc`
 function npm_token -d "Print npm token"
   if test -f "$HOME/.npmrc"
@@ -146,6 +154,10 @@ end
 
 if type -q tmux-sessionizer
   abbr ts tmux-sessionizer
+end
+
+if type -q herdr-sessionizer
+  abbr hs herdr-sessionizer   # fzf-jump to a project's herdr workspace
 end
 
 # Elixir abbreviations

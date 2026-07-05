@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# herdr-sessionizer — fzf-pick a project directory and jump to its herdr
+# workspace, creating the workspace if it doesn't exist yet.
+#
+# Ported from tmux-sessionizer (which still lives beside this file). The logic
+# is shorter here because herdr keeps ONE always-on server with every project
+# as a *workspace* inside a single session — there's no per-project
+# attach/detach/has-session dance like tmux needs.
+#
+# Note: herdr already auto-labels a workspace from its folder name, so --label
+# below only pins it deterministically so the create-or-focus lookup can match.
+
+set -o errexit
+set -o pipefail
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(fd . ~/code/{personal,workera} --max-depth 1 --min-depth 1 \
+                 --type directory --type symlink | fzf)
+fi
+
+[[ -z ${selected:-} ]] && exit 0
+
+label=$(basename "$selected" | tr . _)
+
+# Workspace commands talk to the herdr server over its socket. Make sure a
+# server is up (start it headless if not; a plain `herdr` later attaches to it).
+# NOTE: `herdr status server` exits 0 even when down, so match its output.
+if ! herdr status server 2>/dev/null | grep -q "status: running"; then
+    herdr server >/dev/null 2>&1 &
+    for _ in $(seq 1 30); do
+        herdr status server >/dev/null 2>&1 && break
+        sleep 0.1
+    done
+fi
+
+# Create-or-focus: reuse the workspace if one with this label already exists.
+ws_id=$(herdr workspace list 2>/dev/null \
+          | jq -r --arg l "$label" \
+              '.result.workspaces[]? | select(.label == $l) | .workspace_id' \
+          | head -n1) || true
+
+if [[ -n ${ws_id:-} ]]; then
+    herdr workspace focus "$ws_id" >/dev/null
+else
+    herdr workspace create --cwd "$selected" --label "$label" --focus >/dev/null
+fi
+
+# If we're not already inside a herdr pane, attach the client — this opens the
+# session focused on the workspace we just selected.
+if [[ -z ${HERDR_PANE_ID:-} && -z ${HERDR_ACTIVE_PANE_ID:-} ]]; then
+    exec herdr
+fi
