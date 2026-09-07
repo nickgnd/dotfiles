@@ -25,6 +25,19 @@ if test -x /opt/homebrew/bin/brew
   end
 end
 
+# fzf <> fish bindings (requires `PatrickF1/fzf.fish` plugin)
+# https://github.com/PatrickF1/fzf.fish/blob/main/functions/_fzf_configure_bindings_help.fish
+#
+# NOTE: this must run *before* atuin's init below. `--history=` already tells fzf
+# not to bind ctrl-r, but each `fzf_configure_bindings` call starts by erasing the
+# key set the previous call installed — and conf.d/fzf.fish installs the defaults,
+# which include ctrl-r. Called after atuin, that erase takes atuin's ctrl-r with
+# it and leaves fish's preset `history-pager` on the key.
+if type -q fzf_configure_bindings
+  # Trigger git log search with `CTRL + ALT + l` to don't clash with tmux/nvim panes navigation
+  fzf_configure_bindings --directory=\cf --git_log=\e\cl --git_status=\cs --history= --variables=\cv --processes=
+end
+
 if status is-interactive
   # Setup atuin
   if type -q atuin
@@ -40,7 +53,7 @@ set -x VISION "nvim"
 
 ################### PATH
 
-# Apppend to path if they exist (orders matter)
+# Append to path if they exist (orders matter)
 fish_add_path -aP /bin
 fish_add_path -aP /usr/bin
 fish_add_path -aP /usr/local/bin
@@ -112,7 +125,7 @@ function update -d "Update brew, fish, fisher"
     exit 0
 end
 
-# start nvim listning to a socket if in tmux session
+# start nvim listening to a socket if in tmux session
 function nvim_with_socket
     if test -n "$TMUX"
         echo "Using tmux session-aware Neovim"
@@ -224,15 +237,6 @@ alias gdi="git delete-fzf" # delete git branch interactive - defined in gitconfi
 alias gwip="git add .; git commit -m 'WIP. reset me!'"
 # Checkout github PR, use it like `gpo 1234`
 alias gpo="gh pr checkout"
-
-# Key bindings
-
-# fzf <> fish bindings (requires `PatrickF1/fzf.fish` plugin)
-# https://github.com/PatrickF1/fzf.fish/blob/main/functions/_fzf_configure_bindings_help.fish
-if type -q fzf_configure_bindings
-  # Trigger git log search with `CTRL + ALT + l` to don't clash with tmux/nvim panes navigation
-  fzf_configure_bindings --directory=\cf --git_log=\e\cl --git_status=\cs --history= --variables=\cv --processes=
-end
 
 # Erlang and Elixir
 set -x ERL_AFLAGS "-kernel shell_history enabled"  # shell history for Erlang / Elixir
