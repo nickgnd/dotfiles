@@ -8,12 +8,28 @@ fish_default_key_bindings
 set -x LANG 'en_US.UTF-8'
 set -x LC_ALL 'en_US.UTF-8'
 
-# Setup homebrew
-if status is-interactive
-  eval (/opt/homebrew/bin/brew shellenv)
+# Setup homebrew.
+# NOTE: this runs outside `status is-interactive` on purpose — it is what puts
+# /opt/homebrew/bin on PATH, and everything below that shells out to `brew`
+# needs it in non-interactive shells too.
+# `brew shellenv` prints nothing when HOMEBREW_PATH is already inherited from a
+# parent `brew` process, so fall back to wiring up the prefix by hand.
+if test -x /opt/homebrew/bin/brew
+  /opt/homebrew/bin/brew shellenv fish | source
 
+  if not type -q brew
+    set -gx HOMEBREW_PREFIX /opt/homebrew
+    set -gx HOMEBREW_CELLAR /opt/homebrew/Cellar
+    set -gx HOMEBREW_REPOSITORY /opt/homebrew
+    fish_add_path -gP /opt/homebrew/bin /opt/homebrew/sbin
+  end
+end
+
+if status is-interactive
   # Setup atuin
-  atuin init fish | source
+  if type -q atuin
+    atuin init fish | source
+  end
 end
 
 # Shell variables
@@ -227,12 +243,16 @@ set -x ERL_EPMD_ADDRESS "127.0.0.1"                # prevent epmd from exposing 
 # Homebrew
 set -x HOMEBREW_BUNDLE_NO_LOCK 1 # Disable lockfile for brew bundle
 
-if test -d (brew --prefix)"/share/fish/completions"
-    set -p fish_complete_path (brew --prefix)/share/fish/completions
-end
+# Use $HOMEBREW_PREFIX rather than shelling out to `brew --prefix`: it is set by
+# `brew shellenv` above, and keeps startup from erroring out if brew is missing.
+if set -q HOMEBREW_PREFIX
+    if test -d "$HOMEBREW_PREFIX/share/fish/completions"
+        set -p fish_complete_path "$HOMEBREW_PREFIX/share/fish/completions"
+    end
 
-if test -d (brew --prefix)"/share/fish/vendor_completions.d"
-    set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+    if test -d "$HOMEBREW_PREFIX/share/fish/vendor_completions.d"
+        set -p fish_complete_path "$HOMEBREW_PREFIX/share/fish/vendor_completions.d"
+    end
 end
 
 # Enable AWS CLI autocompletion: github.com/aws/aws-cli/issues/1079
