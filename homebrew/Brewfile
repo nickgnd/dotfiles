@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-tap 'homebrew/cask-fonts'
 tap 'homebrew/services'
 
 # code apps
