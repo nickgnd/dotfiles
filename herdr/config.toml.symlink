@@ -25,6 +25,14 @@ resume_agents_on_restore = true
 [ui]
 agent_panel_sort = "spaces"
 
+# $ticket and $phoenix are reported by bin/herdr-space-status: the Linear
+# ticket (or full branch) and the port of a running Phoenix server.
+[ui.sidebar.spaces]
+rows = [
+  ["state_icon", "workspace"],
+  ["$ticket", "git_status", { token = "$phoenix", fg = "#a6e3a1", bold = true }],
+]
+
 # Vim-aware ctrl+hjkl navigation between nvim splits and herdr panes — the
 # herdr equivalent of vim-tmux-navigator. Delegates to bin/herdr-nav, which
 # forwards the key into (n)vim when it's focused, else moves herdr pane focus.

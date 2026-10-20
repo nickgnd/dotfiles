@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# herdr-space-status — report per-space values shown in the herdr sidebar
+# (used as $ticket and $phoenix in [ui.sidebar.spaces] rows):
+#   ticket   Linear ticket from the git branch ("eng-7799"), else the full branch
+#   phoenix  port of a Phoenix server running in the space's repo (":4002")
+#
+# Runs forever (started by launchd). Values expire after a TTL, so they vanish
+# on their own if this script stops.
+
+set -o nounset
+set -o pipefail
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+interval=5
+ttl_ms=15000
+
+while true; do
+  # "<cwd> <port>" for each BEAM process listening on a port in 4000-4099.
+  servers=$(
+    lsof -nP -a -c beam -iTCP:4000-4099 -sTCP:LISTEN -Fpn 2>/dev/null \
+      | awk '/^p/ { pid = substr($0, 2) } /^n/ { sub(/.*:/, ""); print pid, $0 }' \
+      | while read -r pid port; do
+          echo "$(lsof -a -p "$pid" -d cwd -Fn | sed -n 's/^n//p') :$port"
+        done
+  )
+
+  # One "<workspace_id> <cwd>" per space, from its first pane.
+  herdr pane list | jq -r '.result.panes[] | "\(.workspace_id) \(.cwd)"' | sort -u -k1,1 \
+    | while read -r ws_id cwd; do
+        repo=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null || echo "$cwd")
+        branch=$(git -C "$repo" branch --show-current 2>/dev/null)
+        ticket=$(grep -oE '^eng-[0-9]{4}' <<<"$branch" || echo "$branch")
+        port=$(awk -v r="$repo" '$1 == r { print $2; exit }' <<<"$servers")
+
+        args=(--source herdr-space-status --ttl-ms "$ttl_ms")
+        if [[ -n $ticket ]]; then args+=(--token "ticket=$ticket"); else args+=(--clear-token ticket); fi
+        if [[ -n $port ]]; then args+=(--token "phoenix=$port"); else args+=(--clear-token phoenix); fi
+
+        herdr workspace report-metadata "$ws_id" "${args[@]}" >/dev/null
+      done
+
+  sleep "$interval"
+done

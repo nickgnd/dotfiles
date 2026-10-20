@@ -23,7 +23,8 @@ fi
 
 [[ -z ${selected:-} ]] && exit 0
 
-label=$(basename "$selected" | tr . _)
+# Short labels for the workera_webapps clones: wa, wa_2, wa_3, …
+label=$(basename "$selected" | tr . _ | sed 's/^workera_webapps/wa/')
 
 # Workspace commands talk to the herdr server over its socket. Make sure a
 # server is up (start it headless if not; a plain `herdr` later attaches to it).
