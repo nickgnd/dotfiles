@@ -26,7 +26,7 @@ if [[ -d $app ]]; then
   fi
 fi
 
-info "INSTALL Alacritty $latest…"
+info "INSTALL Alacritty ${latest}…"
 tmp=$(mktemp -d)
 curl -fsSL -o "$tmp/alacritty.dmg" \
   "https://github.com/alacritty/alacritty/releases/download/v$latest/Alacritty-v$latest.dmg"
