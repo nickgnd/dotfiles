@@ -11,7 +11,6 @@ cask 'claude'             # Anthropic's official Claude AI desktop app
 cask 'chatgpt'            # OpenAI's official ChatGPT desktop app
 
 # dev apps
-cask 'chromedriver'
 cask 'docker'
 cask 'google-chrome'
 cask 'mole'               # Deep clean and optimize your Mac
