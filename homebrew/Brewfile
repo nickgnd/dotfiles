@@ -5,7 +5,6 @@ tap 'homebrew/services'
 # code apps
 cask 'firefox'
 cask 'iterm2'
-cask 'alacritty'          # A cross-platform, OpenGL terminal emulator
 cask 'rectangle'          # window management
 cask 'claude'             # Anthropic's official Claude AI desktop app
 cask 'chatgpt'            # OpenAI's official ChatGPT desktop app
